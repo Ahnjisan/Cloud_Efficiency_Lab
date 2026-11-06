@@ -8,6 +8,7 @@
 - 클라우드 공급자의 공식 문서
 - FinOps Foundation의 공식 자료
 - FOCUS 등 공식 표준·사양
+- Docker·Kubernetes 공식 문서
 - 정식 학술 논문과 별도로 구분한 프리프린트
 - 공식 공개 데이터셋
 

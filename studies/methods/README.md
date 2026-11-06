@@ -4,14 +4,18 @@
 
 ## 학습 범위
 
-- 비용 및 자원 사용량 예측
-- 비용 이상탐지
-- 자원 적정성 및 추천
-- 구성 최적화
-- 관련 통계·머신러닝 방법
-- 기존 논문과 모델 비교
+- 규칙 기반 분석(Rule-based Analysis): 임계값·조건·판단 근거와 보류 조건
+- 자원 적정성 판단(Rightsizing): 사용량·여유 용량·성능 위험과 추천
+- 예측(Forecasting): 비용·자원 사용량과 단순 시계열 기준선
+- 이상탐지(Anomaly Detection): 통계·머신러닝 방법과 오탐·탐지 지연
+- 구성 최적화(Configuration Optimization): 후보·목적 함수·제약과 탐색 비용
+- 비용 배분(Cost Allocation): 직접·공유·유휴 비용과 배분 정책
+- 서비스 간 분석(Cross-service Analysis): 의존성과 전체 비용 영향
+- 관측 자료 분석, 관련 통계·머신러닝 방법과 기존 논문·모델 비교
 
 위 항목은 연구 영역의 예시이며 필수 구현 목록이나 확정 일정이 아닙니다.
+
+Docker·Kubernetes의 기본 구조와 자원 관리 기능은 [Platforms](../platforms/README.md), AWS 고유의 비용 관리 기능은 [AWS Services](../aws/README.md)에서 다룹니다. 학습 순서와 세부 범위는 [전체 커리큘럼](../curriculum.md)을 참고합니다.
 
 ## 기록 원칙
 
