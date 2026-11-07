@@ -22,11 +22,16 @@
 - 실제 읽은 절 또는 페이지와 확인일
 - 관련 학습 주제와 참고 목적
 
-초기에는 이 README의 단일 목록으로 관리합니다. 자료가 많아졌을 때만 `official-docs.md`, `standards.md`, `papers.md`, `datasets.md` 등으로 분리를 검토합니다.
+자료는 유형별로 구분하고 실제 확인한 절과 확인일을 남깁니다.
 
 ## 참고문헌 목록
 
-기존 Foundations 문서에 기록된 공식 자료와 확인 범위는 [확인한 자료와 해석 범위](../studies/foundations/README.md#확인한-자료와-해석-범위)에서 찾을 수 있습니다. 이번 구조 정리에서는 새 문헌을 조사하거나 추가하지 않았습니다. 목록에 등록했다는 사실만으로 자료를 읽었거나 학습을 완료했다고 표시하지 않습니다.
+- [공식 기술 문서](official-docs.md)
+- [표준·프레임워크](standards.md)
+- [학술 논문](papers.md)
+- [공식 데이터 예제](datasets.md)
+
+기존 Foundations 문서의 [확인한 자료와 해석 범위](../studies/foundations/README.md#확인한-자료와-해석-범위)도 참고합니다.
 
 ## 외부 자료 재사용
 

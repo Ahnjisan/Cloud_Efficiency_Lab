@@ -38,6 +38,16 @@ Docker·Kubernetes 자체의 구조와 자원 관리는 [Platforms](../platforms
 - [VPC 비용 산정 01 — NAT Gateway·VPC Endpoint·데이터 전송](vpc/README.md)
 - [VPC 비용 산정 02 — 중앙 NAT와 AZ별 NAT의 손익분기점](vpc/nat-gateway-break-even.md)
 
-문서 작성은 사용자의 학습 완료를 뜻하지 않습니다. 새로운 서비스 학습을 시작할 때 해당 폴더를 만들고, 실제 작성한 문서의 상대 링크를 이 목차에 추가합니다.
+- [EC2 Rightsizing·Auto Scaling](ec2/rightsizing-and-autoscaling.md)
+- [ELB](elb/README.md)
+- [CloudWatch](cloudwatch/README.md)
+- [ECR](ecr/README.md)
+- [ECS·Fargate](ecs-fargate/README.md)
+- [DynamoDB](dynamodb/README.md)
+- [Aurora](aurora/README.md)
+- [EKS](eks/README.md)
+- [AWS 비용 데이터](cost-data/README.md)
+
+자료가 준비되어 있으며 사용자 학습 완료 여부는 미확인입니다.
 
 [전체 학습 목차와 순서](../README.md) · [공통 기초](../foundations/README.md) · [분석 방법론](../methods/README.md)

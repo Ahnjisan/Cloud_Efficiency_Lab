@@ -22,7 +22,14 @@ AWS 서비스에 종속되지 않는 애플리케이션·컨테이너·오케스
 
 ## 기록 방식과 문서 탐색
 
-현재는 영역 안내 문서만 있으며 실제 Docker·Kubernetes 학습 문서는 없습니다. 실제 학습을 시작할 때 필요한 하위 폴더나 문서를 추가하고 이 README에 상대 링크를 등록합니다. 챕터별 빈 폴더는 미리 만들지 않습니다.
+- [Docker 구조](docker/README.md)
+- [이미지 최적화](docker/image-optimization.md)
+- [자원 제한](docker/resource-constraints.md)
+
+- [Kubernetes 구조](kubernetes/README.md)
+- [자원 관리](kubernetes/resource-management.md)
+- [배치와 확장](kubernetes/scheduling-and-autoscaling.md)
+- [관측과 비용](kubernetes/observability-and-cost.md)
 
 학습 기록에는 질문, 확인한 공식 자료와 버전, 구성·자원 설정, 해석과 확인하지 못한 조건을 필요한 만큼 남깁니다. 실제 실행·측정 결과는 [Experiments](../../experiments/README.md)에 별도로 기록하고 연결합니다. 로컬 자료 검토만으로 가능한 학습도 있으며 상시 클러스터 운영을 요구하지 않습니다.
 

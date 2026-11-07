@@ -2,7 +2,7 @@
 
 클라우드 비용 구조, 자원 사용, 워크로드, 성능·안정성의 관계를 공부하기 위한 독립적인 학습·연구 가이드입니다. AWS에서 출발해 Linux·Docker·Kubernetes 실행 환경과 분석·최적화 방법으로 확장합니다.
 
-아래 내용은 앞으로 학습할 범위와 이해도 확인 기준입니다. 학습 완료, 공식 자료 검토 완료 또는 실험 결과를 뜻하지 않습니다. 정해진 기간에 모든 주제를 끝내야 하는 고정 일정이나 제품 기능 구현 목록이 아닙니다. 이번 문서 작성에서는 새 문헌 조사, 기술 학습·실행, 모델 학습을 수행하지 않았습니다.
+아래 내용은 학습 범위와 이해도 확인 기준입니다. 자료의 탐색 경로는 각 과정과 [Studies 목차](README.md)에 있습니다. 사용자 학습 완료 여부는 미확인입니다. 실험 결과는 별도로 기록합니다.
 
 ## 권장 학습 흐름
 
@@ -31,6 +31,8 @@
 대규모 머신러닝 모델, 복잡한 최적화 알고리즘, 멀티클라우드 확장, 실제 EKS 대규모 실험, 고급 서비스 간 비용 분석은 선택적 심화입니다. 연구 질문에 필요한 경우에만 선택하며 필수 구현이나 완료 조건으로 삼지 않습니다.
 
 ## 과정 01. Infrastructure & FinOps Foundations
+
+학습 자료 — [Linux 자원](foundations/linux-resources.md) · [네트워크와 데이터 흐름](foundations/network-and-data-flow.md) · [워크로드 성능](foundations/workload-performance.md) · [FinOps 비용 지표](foundations/finops-cost-metrics.md)
 
 ### 목적과 필요성
 
@@ -70,9 +72,11 @@ Linux 공식 문서의 프로세스·메모리·자원 제어 설명, 네트워�
 
 ### 기록 위치와 다음 과정 연결
 
-[Foundations](foundations/README.md)에 공통 기초를 기록합니다. 기존 본문은 이번 작업에서 보존하며 추가 주제는 실제 학습 시 필요한 별도 문서로 구분합니다. 다음 과정에서는 이 비교 기준으로 AWS 서비스별 자원과 과금 항목을 살펴봅니다.
+[Foundations](foundations/README.md)에 공통 기초를 기록합니다. 기존 본문과 별도 주제 문서를 함께 참고합니다. 다음 과정에서는 이 비교 기준으로 AWS 서비스별 자원과 과금 항목을 살펴봅니다.
 
 ## 과정 02. AWS Infrastructure & Pricing
+
+학습 자료 — [기존 AWS 자료](aws/README.md) · [EC2 Rightsizing·Auto Scaling](aws/ec2/rightsizing-and-autoscaling.md) · [ELB](aws/elb/README.md) · [CloudWatch](aws/cloudwatch/README.md) · [ECR](aws/ecr/README.md) · [ECS·Fargate](aws/ecs-fargate/README.md) · [DynamoDB](aws/dynamodb/README.md) · [Aurora](aws/aurora/README.md) · [EKS](aws/eks/README.md) · [AWS 비용 데이터](aws/cost-data/README.md)
 
 ### 목적과 필요성
 
@@ -119,6 +123,8 @@ EC2 실행 시간 또는 EBS 할당 용량을 바꾸는 가상 계산표에서 �
 
 ## 과정 03. Application & Container Efficiency
 
+학습 자료 — [Docker 구조](platforms/docker/README.md) · [이미지 최적화](platforms/docker/image-optimization.md) · [자원 제한](platforms/docker/resource-constraints.md) · [워크로드 성능](foundations/workload-performance.md)
+
 ### 목적과 필요성
 
 애플리케이션과 컨테이너의 실행 구조를 이해하고 이미지·자원·실행 성능을 효율화하는 기존 방법을 공부합니다. 배포 산출물의 크기와 실행 중 자원 사용, 실제 청구 비용의 차이를 구분하는 것이 목표입니다.
@@ -162,6 +168,8 @@ Dockerfile·Multi-stage Build·이미지 계층, cgroups·namespaces, JVM의 메
 
 ## 과정 04. Observability & Cost Data
 
+학습 자료 — [CloudWatch](aws/cloudwatch/README.md) · [AWS 비용 데이터](aws/cost-data/README.md) · [관측과 비용](platforms/kubernetes/observability-and-cost.md)
+
 ### 목적과 필요성
 
 자원 사용·서비스 성능·클라우드 비용을 분석할 자료의 구조와 한계를 이해합니다. 서로 다른 시간·집계·식별 기준의 자료를 연결할 조건을 살피고, 누락·지연·정의 차이로 확정할 수 없는 판단을 구분합니다.
@@ -204,6 +212,8 @@ CloudWatch·Prometheus·Grafana, AWS 비용 보고 기능, FOCUS 사양, 태그�
 공통 관측·분석 방법은 [Methods](methods/README.md), AWS 비용 관리 기능은 [AWS Services](aws/README.md), 실제 검증은 [Experiments](../experiments/README.md)에 기록합니다. 다음 과정의 규칙·예측·추천에 필요한 입력 조건과 평가 기준으로 연결합니다.
 
 ## 과정 05. Optimization Methods
+
+학습 자료 — [Rightsizing](methods/rightsizing.md) · [예측](methods/forecasting.md) · [이상탐지](methods/anomaly-detection.md) · [구성 최적화](methods/configuration-optimization.md) · [비용 배분](methods/cost-allocation.md) · [서비스 간 분석](methods/cross-service-analysis.md)
 
 ### 목적과 필요성
 
@@ -251,6 +261,8 @@ CloudWatch·Prometheus·Grafana, AWS 비용 보고 기능, FOCUS 사양, 태그�
 
 ## 과정 06. Kubernetes Resource Management
 
+학습 자료 — [Kubernetes 구조](platforms/kubernetes/README.md) · [자원 관리](platforms/kubernetes/resource-management.md) · [배치와 확장](platforms/kubernetes/scheduling-and-autoscaling.md) · [관측과 비용](platforms/kubernetes/observability-and-cost.md)
+
 ### 목적과 필요성
 
 Kubernetes에서 워크로드 자원이 요청·할당·사용·조정되는 과정을 이해합니다. 애플리케이션 사용량만으로 설명되지 않는 배치·확장·용량 제약을 살피고 비용 분석에 필요한 클러스터 관점을 마련합니다.
@@ -294,6 +306,8 @@ Kubernetes 공식 자원 관리·스케줄링 자료와 HPA·VPA·Cluster Autosc
 
 ## 과정 07. EKS & Kubernetes FinOps
 
+학습 자료 — [EKS](aws/eks/README.md) · [관측과 비용](platforms/kubernetes/observability-and-cost.md) · [비용 배분](methods/cost-allocation.md)
+
 ### 목적과 필요성
 
 Kubernetes 자원 관리와 클라우드 과금을 연결해 클러스터 비용·자원 효율을 이해합니다. 워크로드에 배분한 비용과 실제 청구 총액의 차이, 자원 변경이 청구 비용을 줄이는 조건을 구분합니다.
@@ -335,6 +349,8 @@ AWS EKS 공식 과금 문서, AWS Split Cost Allocation Data, OpenCost 공식 �
 EKS 서비스·과금은 [AWS Services](aws/README.md), Kubernetes 자원 관리는 [Platforms](platforms/README.md), 배분·최적화 방법은 [Methods](methods/README.md), 실제 검증은 [Experiments](../experiments/README.md)에 기록합니다. 다음 과정에서는 발견한 구체적 질문을 기존 연구·재현과 연결합니다.
 
 ## 과정 08. Research & Reproduction
+
+학습 자료 — [연구 방법](methods/research-methodology.md) · [학술 논문](../references/papers.md) · [공식 데이터 예제](../references/datasets.md) · [실험 안내](../experiments/experiment-guide.md)
 
 ### 목적과 필요성
 
@@ -390,10 +406,8 @@ EKS 서비스·과금은 [AWS Services](aws/README.md), Kubernetes 자원 관리
 | 실제 계산 검증·실행·재현 결과 | [Experiments](../experiments/README.md) |
 | 공식 자료·표준·학술 원문·공식 데이터셋 정보 | [References](../references/README.md) |
 
-위 링크는 현재 존재하는 README만 가리킵니다. 학습을 시작할 때 필요한 주제별 하위 폴더나 문서를 만들고 상위 README에 실제 링크를 추가합니다. 존재하지 않는 학습·실험 문서, 빈 챕터 폴더, 선행 템플릿은 미리 만들지 않습니다.
+사용자 학습 완료 여부는 미확인입니다. 합성 데이터를 사용한 [EBS 탐지 규칙 로컬 검증](../experiments/001-ebs-waste-rules/README.md)에 실행 결과와 한계를 기록했습니다.
 
-현재 학습 본문은 Foundations와 AWS Services에 작성돼 있으며, 실제 문서 목록은 [Studies 목차](README.md)에서 확인할 수 있습니다. 자료 작성, 사용자 학습 완료, 실제 검증·실험은 별도로 기록합니다. 향후 진행 기록에는 계획, 실제 읽은 범위, 자신의 해석, 검증한 결과, 미검증 가정을 구분합니다. 실제 실험만 실험 목록에 등록하며 원본 결과·집계 방식·한계를 함께 남깁니다.
-
-첫 학습 단위로 기존 Foundations 내용 확인과 필요한 보완을 제안합니다. 사용자가 이해한 부분과 남은 질문을 확인한 뒤 다음 주제를 정하며, 이 커리큘럼 작성 작업에서 기존 본문을 수정하거나 다음 학습 본문을 자동 생성하지 않습니다.
+첫 학습은 [기존 비용 기초](foundations/README.md)와 [Linux 자원](foundations/linux-resources.md)에서 시작합니다.
 
 [전체 학습 목차](README.md) · [프로젝트 소개](../README.md)

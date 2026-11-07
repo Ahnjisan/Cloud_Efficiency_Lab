@@ -32,6 +32,12 @@ Docker·Kubernetes의 기본 구조와 자원 관리 기능은 [Platforms](../pl
 
 ## 방법별 문서 탐색
 
-현재 등록된 방법별 학습 문서는 없습니다. 아직 학습하지 않은 모델이나 논문을 완료 항목으로 등록하지 않습니다. 방법론별 하위 폴더는 미리 만들지 않고 실제 학습 자료가 생길 때 추가합니다.
+- [Rightsizing](rightsizing.md)
+- [예측](forecasting.md)
+- [이상탐지](anomaly-detection.md)
+- [구성 최적화](configuration-optimization.md)
+- [비용 배분](cost-allocation.md)
+- [서비스 간 분석](cross-service-analysis.md)
+- [연구 방법](research-methodology.md)
 
 [전체 학습 목차와 순서](../README.md) · [AWS 서비스 학습](../aws/README.md)
