@@ -55,4 +55,4 @@
 
 ## 현재 진행 상태
 
-[클라우드 비용과 자원 효율의 기초](studies/foundations/README.md) 문서가 있습니다. AWS Services·Platforms·Methods는 안내 문서만 있으며, 등록된 실험은 없습니다. 커리큘럼과 폴더의 생성은 학습 완료나 실제 환경 검증을 뜻하지 않습니다. 다음 학습 대상으로 기존 Foundations 내용 확인과 필요한 보완을 제안하며, 완료 여부는 사용자의 확인에 따라 기록합니다.
+[클라우드 비용과 자원 효율의 기초](studies/foundations/README.md)와 [AWS 서비스별 학습 자료](studies/aws/README.md)가 작성돼 있습니다. Platforms·Methods에는 안내 문서가 있으며, 등록된 실험은 없습니다. 자료 작성, 사용자 학습 완료, 실제 환경 검증·실험은 별도로 기록합니다. 다음 학습 대상으로 기존 Foundations 내용 확인과 필요한 보완을 제안하며, 학습 완료 여부는 사용자의 확인에 따라 기록합니다.

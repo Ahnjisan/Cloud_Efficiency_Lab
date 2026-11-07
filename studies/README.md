@@ -26,6 +26,16 @@ AWS 서비스별 작동 원리, 과금 항목과 비용 산정, 자원 구성과
 
 - [클라우드 비용과 자원 효율의 기초](foundations/README.md)
 - [EC2 비용 산정 01 — 인스턴스 실행 상태와 컴퓨팅 비용](aws/ec2/README.md)
+- [EBS 비용 산정 01 — 볼륨 유형·용량·IOPS·Throughput](aws/ebs/README.md)
+- [A-03. EBS 스냅샷 비용 산정 — 증분 저장·삭제·보존](aws/ebs/snapshots.md)
+- [S3 비용 산정 01 — Storage Class와 요청·조회·전송 비용](aws/s3/README.md)
+- [S3 비용 산정 02 — Lifecycle과 Intelligent-Tiering 비교](aws/s3/lifecycle-intelligent-tiering.md)
+- [RDS 비용 산정 01 — DB 인스턴스·스토리지·Multi-AZ](aws/rds/README.md)
+- [RDS 비용 산정 02 — Rightsizing과 성능·가용성의 균형](aws/rds/rightsizing.md)
+- [Lambda 비용 산정 01 — 메모리·실행시간·요청 비용](aws/lambda/README.md)
+- [Lambda 비용 산정 02 — 콜드 스타트와 Provisioned Concurrency](aws/lambda/cold-start-concurrency.md)
+- [VPC 비용 산정 01 — NAT Gateway·VPC Endpoint·데이터 전송](aws/vpc/README.md)
+- [VPC 비용 산정 02 — 중앙 NAT와 AZ별 NAT의 손익분기점](aws/vpc/nat-gateway-break-even.md)
 
 Platforms·Methods는 안내 문서만 있으며 등록된 실험은 없습니다. 커리큘럼은 계획이며, 문서 존재는 학습 완료를 뜻하지 않습니다.
 

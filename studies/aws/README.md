@@ -27,6 +27,16 @@ Docker·Kubernetes 자체의 구조와 자원 관리는 [Platforms](../platforms
 ## 서비스별 문서 탐색
 
 - [EC2 비용 산정 01 — 인스턴스 실행 상태와 컴퓨팅 비용](ec2/README.md): 중지 후 남는 비용, 상태별 컴퓨팅 과금과 가상 계산 예제
+- [EBS 비용 산정 01 — 볼륨 유형·용량·IOPS·Throughput](ebs/README.md)에서 gp2·gp3의 과금 구조와 전환 조건을 비교합니다.
+- [A-03. EBS 스냅샷 비용 산정 — 증분 저장·삭제·보존](ebs/snapshots.md)
+- [S3 비용 산정 01 — Storage Class와 요청·조회·전송 비용](s3/README.md)
+- [S3 비용 산정 02 — Lifecycle과 Intelligent-Tiering 비교](s3/lifecycle-intelligent-tiering.md)
+- [RDS 비용 산정 01 — DB 인스턴스·스토리지·Multi-AZ](rds/README.md)
+- [RDS 비용 산정 02 — Rightsizing과 성능·가용성의 균형](rds/rightsizing.md)
+- [Lambda 비용 산정 01 — 메모리·실행시간·요청 비용](lambda/README.md)
+- [Lambda 비용 산정 02 — 콜드 스타트와 Provisioned Concurrency](lambda/cold-start-concurrency.md)
+- [VPC 비용 산정 01 — NAT Gateway·VPC Endpoint·데이터 전송](vpc/README.md)
+- [VPC 비용 산정 02 — 중앙 NAT와 AZ별 NAT의 손익분기점](vpc/nat-gateway-break-even.md)
 
 문서 작성은 사용자의 학습 완료를 뜻하지 않습니다. 새로운 서비스 학습을 시작할 때 해당 폴더를 만들고, 실제 작성한 문서의 상대 링크를 이 목차에 추가합니다.
 
