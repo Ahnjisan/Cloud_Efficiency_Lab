@@ -1,0 +1,69 @@
+{
+  "initial": {
+    "unresolved_billing_lines": [
+      "missing"
+    ],
+    "decisions": {
+      "aws_instance.orders": {
+        "decision": "hold",
+        "reason": "peak-unmatched-or-ambiguous"
+      },
+      "aws_instance.worker": {
+        "decision": "keep",
+        "baseline": "100.00",
+        "candidate": "70.00",
+        "candidate_config": "worker-small-v1",
+        "p99_ms": 250
+      },
+      "aws_instance.conflict": {
+        "decision": "candidate",
+        "baseline": "50.00",
+        "candidate": "40.00",
+        "candidate_config": "conflict-small-v1",
+        "p99_ms": 130
+      },
+      "aws_instance.missing": {
+        "decision": "hold",
+        "reason": "billing-unmatched"
+      },
+      "aws_instance.stale": {
+        "decision": "hold",
+        "reason": "peak-unmatched-or-ambiguous"
+      }
+    }
+  },
+  "reconciled": {
+    "unresolved_billing_lines": [
+      "c",
+      "missing"
+    ],
+    "decisions": {
+      "aws_instance.orders": {
+        "decision": "candidate",
+        "baseline": "120.00",
+        "candidate": "100.00",
+        "candidate_config": "orders-small-v1",
+        "p99_ms": 180
+      },
+      "aws_instance.worker": {
+        "decision": "keep",
+        "baseline": "100.00",
+        "candidate": "70.00",
+        "candidate_config": "worker-small-v1",
+        "p99_ms": 250
+      },
+      "aws_instance.conflict": {
+        "decision": "hold",
+        "reason": "billing-conflict"
+      },
+      "aws_instance.missing": {
+        "decision": "hold",
+        "reason": "billing-unmatched"
+      },
+      "aws_instance.stale": {
+        "decision": "hold",
+        "reason": "peak-unmatched-or-ambiguous"
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+[
+  {"address":"aws_instance.orders","resource":"i-orders","window":"peak-01","candidate_config":"orders-small-v1","candidate":"100.00"},
+  {"address":"aws_instance.worker","resource":"i-worker","window":"peak-01","candidate_config":"worker-small-v1","candidate":"70.00"},
+  {"address":"aws_instance.conflict","resource":"i-conflict","window":"peak-01","candidate_config":"conflict-small-v1","candidate":"40.00"},
+  {"address":"aws_instance.missing","resource":"i-missing","window":"peak-01","candidate_config":"missing-small-v1","candidate":"40.00"},
+  {"address":"aws_instance.stale","resource":"i-stale","window":"peak-01","candidate_config":"stale-small-v1","candidate":"90.00"}
+]

@@ -1,0 +1,9 @@
+{
+  "profile": "infrafit-28a3ea2f5e",
+  "available_before_gib": 3.907062530517578,
+  "commands": [],
+  "scheduling": {},
+  "runs": [],
+  "status": "blocked",
+  "reason": "host memory below isolated cluster start guard"
+}

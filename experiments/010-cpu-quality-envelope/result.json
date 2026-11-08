@@ -1,0 +1,90 @@
+{
+  "docker": {
+    "500": {
+      "runs": [
+        {
+          "successes": 309,
+          "offered": 750,
+          "dropped": 441,
+          "p99_ms": 495.57162800000003,
+          "http_error_rate": 0,
+          "offered_success_fraction": 0.412,
+          "p99_only_pass": false,
+          "joint_gate_pass": false
+        },
+        {
+          "successes": 323,
+          "offered": 751,
+          "dropped": 428,
+          "p99_ms": 460.9497659999999,
+          "http_error_rate": 0,
+          "offered_success_fraction": 0.43009320905459386,
+          "p99_only_pass": false,
+          "joint_gate_pass": false
+        }
+      ],
+      "joint_passes": 0,
+      "observed_p99_spread_ms": 34.621862000000135
+    },
+    "1000": {
+      "runs": [
+        {
+          "successes": 748,
+          "offered": 750,
+          "dropped": 2,
+          "p99_ms": 74.09327599999989,
+          "http_error_rate": 0,
+          "offered_success_fraction": 0.9973333333333333,
+          "p99_only_pass": true,
+          "joint_gate_pass": true
+        },
+        {
+          "successes": 750,
+          "offered": 751,
+          "dropped": 1,
+          "p99_ms": 45.357715999999996,
+          "http_error_rate": 0,
+          "offered_success_fraction": 0.9986684420772304,
+          "p99_only_pass": true,
+          "joint_gate_pass": true
+        }
+      ],
+      "joint_passes": 2,
+      "observed_p99_spread_ms": 28.735559999999893
+    }
+  },
+  "kubernetes": {
+    "500": {
+      "runs": [
+        {
+          "successes": 283,
+          "offered": 751,
+          "dropped": 468,
+          "p99_ms": 484.988434,
+          "http_error_rate": 0,
+          "offered_success_fraction": 0.37683089214380827,
+          "p99_only_pass": false,
+          "joint_gate_pass": false
+        }
+      ],
+      "joint_passes": 0,
+      "observed_p99_spread_ms": null
+    },
+    "1000": {
+      "runs": [
+        {
+          "successes": 743,
+          "offered": 750,
+          "dropped": 7,
+          "p99_ms": 110.14798600000003,
+          "http_error_rate": 0,
+          "offered_success_fraction": 0.9906666666666667,
+          "p99_only_pass": true,
+          "joint_gate_pass": true
+        }
+      ],
+      "joint_passes": 1,
+      "observed_p99_spread_ms": null
+    }
+  }
+}

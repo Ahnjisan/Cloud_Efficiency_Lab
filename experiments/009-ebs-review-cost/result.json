@@ -1,0 +1,57 @@
+{
+  "no_age_limit": {
+    "initial": {
+      "TN": 3,
+      "hold_unresolved": 2,
+      "FN": 2,
+      "hold_normal": 1,
+      "hold_waste": 1,
+      "TP": 1,
+      "FP": 1
+    },
+    "after_review": {
+      "TN": 4,
+      "hold_unresolved": 2,
+      "FN": 2,
+      "TP": 2,
+      "FP": 1
+    },
+    "modeled_hold_review_minutes": 55,
+    "immediate_recall": 0.25
+  },
+  "90_days": {
+    "initial": {
+      "TN": 3,
+      "hold_unresolved": 2,
+      "FN": 1,
+      "hold_normal": 2,
+      "hold_waste": 2,
+      "TP": 1
+    },
+    "after_review": {
+      "TN": 5,
+      "hold_unresolved": 2,
+      "FN": 1,
+      "TP": 3
+    },
+    "modeled_hold_review_minutes": 90,
+    "immediate_recall": 0.25
+  },
+  "30_days": {
+    "initial": {
+      "TN": 3,
+      "hold_unresolved": 2,
+      "FN": 1,
+      "hold_normal": 2,
+      "hold_waste": 3
+    },
+    "after_review": {
+      "TN": 5,
+      "hold_unresolved": 2,
+      "FN": 1,
+      "TP": 3
+    },
+    "modeled_hold_review_minutes": 100,
+    "immediate_recall": 0.0
+  }
+}

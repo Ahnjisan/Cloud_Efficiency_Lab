@@ -1,0 +1,21 @@
+vol-data | A | no-alert | attached | none
+vol-data | B | out-of-scope | attached | none
+vol-recovery | A | alert | detached | platform-triage
+vol-recovery | B | retain | operational-or-recovery-need | operations
+vol-unknown | A | alert | detached | platform-triage
+vol-unknown | B | hold | missing-records | inventory-team
+vol-migrated | A | alert | detached | platform-triage
+vol-migrated | B | alert | retired-without-dependencies | orders
+vol-temp | A | alert | detached | platform-triage
+vol-temp | B | alert | retired-without-dependencies | batch
+vol-stale | A | no-alert | attached | none
+vol-stale | B | out-of-scope | attached | none
+vol-os | A | no-alert | attached | none
+vol-os | B | out-of-scope | attached | none
+vol-transfer | A | alert | detached | platform-triage
+vol-transfer | B | hold | conflicting-records | migration
+vol-conflict-extra | required | hold | conflicting-records | orders
+vol-conflict-extra | retired-no-dependency | hold | conflicting-records | orders
+A: {'TN': 2, 'FP': 1, 'unresolved': 2, 'TP': 2, 'FN': 1}; initial review queue=5
+B: {'TN': 3, 'unresolved': 2, 'TP': 2, 'FN': 1}; initial review queue=4
+PASS: 8 baseline volumes and 2 conflict precedence checks

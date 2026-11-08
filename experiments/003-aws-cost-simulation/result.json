@@ -1,0 +1,300 @@
+{
+  "scenarios": {
+    "A-compute": {
+      "before": "144.00",
+      "after": "72.00",
+      "before_lines": [
+        {
+          "id": "commitment",
+          "usd": "0.00"
+        },
+        {
+          "id": "uncovered_ec2",
+          "usd": "144.00"
+        },
+        {
+          "id": "ebs",
+          "usd": "0.00"
+        }
+      ],
+      "after_lines": [
+        {
+          "id": "commitment",
+          "usd": "0.00"
+        },
+        {
+          "id": "uncovered_ec2",
+          "usd": "72.00"
+        },
+        {
+          "id": "ebs",
+          "usd": "0.00"
+        }
+      ],
+      "difference": "72.00",
+      "savings_rate": "0.5000",
+      "usd_per_1000_jobs": [
+        "144.00",
+        "72.00"
+      ],
+      "same_work": true,
+      "decision": "candidate"
+    },
+    "B-ebs-retained": {
+      "before": "152.00",
+      "after": "8.00",
+      "before_lines": [
+        {
+          "id": "commitment",
+          "usd": "0.00"
+        },
+        {
+          "id": "uncovered_ec2",
+          "usd": "144.00"
+        },
+        {
+          "id": "ebs",
+          "usd": "8.00"
+        }
+      ],
+      "after_lines": [
+        {
+          "id": "commitment",
+          "usd": "0.00"
+        },
+        {
+          "id": "uncovered_ec2",
+          "usd": "0.00"
+        },
+        {
+          "id": "ebs",
+          "usd": "8.00"
+        }
+      ],
+      "difference": "144.00",
+      "savings_rate": "0.9474",
+      "usd_per_1000_jobs": [
+        "152.00",
+        "8.00"
+      ],
+      "same_work": true,
+      "decision": "hold"
+    },
+    "C-commitment": {
+      "before": "94.40",
+      "after": "94.40",
+      "before_lines": [
+        {
+          "id": "commitment",
+          "usd": "86.40"
+        },
+        {
+          "id": "uncovered_ec2",
+          "usd": "0.00"
+        },
+        {
+          "id": "ebs",
+          "usd": "8.00"
+        }
+      ],
+      "after_lines": [
+        {
+          "id": "commitment",
+          "usd": "86.40"
+        },
+        {
+          "id": "uncovered_ec2",
+          "usd": "0.00"
+        },
+        {
+          "id": "ebs",
+          "usd": "8.00"
+        }
+      ],
+      "difference": "0.00",
+      "savings_rate": "0.0000",
+      "usd_per_1000_jobs": [
+        "94.40",
+        "94.40"
+      ],
+      "same_work": true,
+      "decision": "retain"
+    },
+    "D-different-work": {
+      "before": "152.00",
+      "after": "152.00",
+      "before_lines": [
+        {
+          "id": "commitment",
+          "usd": "0.00"
+        },
+        {
+          "id": "uncovered_ec2",
+          "usd": "144.00"
+        },
+        {
+          "id": "ebs",
+          "usd": "8.00"
+        }
+      ],
+      "after_lines": [
+        {
+          "id": "commitment",
+          "usd": "0.00"
+        },
+        {
+          "id": "uncovered_ec2",
+          "usd": "144.00"
+        },
+        {
+          "id": "ebs",
+          "usd": "8.00"
+        }
+      ],
+      "difference": "0.00",
+      "savings_rate": null,
+      "usd_per_1000_jobs": [
+        "152.00",
+        "76.00"
+      ],
+      "same_work": false,
+      "decision": "hold"
+    },
+    "E-quality-unknown": {
+      "before": "152.00",
+      "after": "80.00",
+      "before_lines": [
+        {
+          "id": "commitment",
+          "usd": "0.00"
+        },
+        {
+          "id": "uncovered_ec2",
+          "usd": "144.00"
+        },
+        {
+          "id": "ebs",
+          "usd": "8.00"
+        }
+      ],
+      "after_lines": [
+        {
+          "id": "commitment",
+          "usd": "0.00"
+        },
+        {
+          "id": "uncovered_ec2",
+          "usd": "72.00"
+        },
+        {
+          "id": "ebs",
+          "usd": "8.00"
+        }
+      ],
+      "difference": "72.00",
+      "savings_rate": "0.4737",
+      "usd_per_1000_jobs": [
+        "152.00",
+        "80.00"
+      ],
+      "same_work": true,
+      "decision": "hold",
+      "cost_basis": {
+        "resource_id": "aws_instance.orders",
+        "before": {
+          "instance_type": "model.large"
+        },
+        "after": {
+          "instance_type": "model.medium"
+        }
+      }
+    },
+    "F-storage-type-performance": {
+      "before": "82.00",
+      "after": "86.00",
+      "before_lines": [
+        {
+          "id": "commitment",
+          "usd": "0.00"
+        },
+        {
+          "id": "uncovered_ec2",
+          "usd": "72.00"
+        },
+        {
+          "id": "ebs",
+          "usd": "10.00"
+        }
+      ],
+      "after_lines": [
+        {
+          "id": "commitment",
+          "usd": "0.00"
+        },
+        {
+          "id": "uncovered_ec2",
+          "usd": "72.00"
+        },
+        {
+          "id": "ebs",
+          "usd": "14.00"
+        }
+      ],
+      "difference": "-4.00",
+      "savings_rate": "-0.0488",
+      "usd_per_1000_jobs": [
+        "82.00",
+        "86.00"
+      ],
+      "same_work": true,
+      "decision": "retain"
+    },
+    "G-missing-storage": {
+      "before": "152.00",
+      "after": null,
+      "decision": "hold",
+      "missing": "missing or invalid number"
+    },
+    "H-operating-hours": {
+      "before": "152.00",
+      "after": "80.00",
+      "before_lines": [
+        {
+          "id": "commitment",
+          "usd": "0.00"
+        },
+        {
+          "id": "uncovered_ec2",
+          "usd": "144.00"
+        },
+        {
+          "id": "ebs",
+          "usd": "8.00"
+        }
+      ],
+      "after_lines": [
+        {
+          "id": "commitment",
+          "usd": "0.00"
+        },
+        {
+          "id": "uncovered_ec2",
+          "usd": "72.00"
+        },
+        {
+          "id": "ebs",
+          "usd": "8.00"
+        }
+      ],
+      "difference": "72.00",
+      "savings_rate": "0.4737",
+      "usd_per_1000_jobs": [
+        "152.00",
+        "80.00"
+      ],
+      "same_work": true,
+      "decision": "candidate"
+    }
+  },
+  "checks": "invalid numbers, missing or duplicate EBS IDs, and duplicate cost rows rejected"
+}

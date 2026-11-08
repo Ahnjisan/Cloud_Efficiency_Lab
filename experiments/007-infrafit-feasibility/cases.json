@@ -1,0 +1,111 @@
+{
+  "workload_id": "orders-fixture",
+  "environment_id": "synthetic-bench",
+  "time_range": "synthetic 15-minute comparison window",
+  "quality": {
+    "p99_ms": 200,
+    "error_pct": 0.5,
+    "min_rps": 100
+  },
+  "baseline_metrics": {
+    "cpu_m": 260,
+    "memory_mib": 340,
+    "io_mib_s": 8,
+    "p95_ms": 120,
+    "p99_ms": 170,
+    "throughput_rps": 100,
+    "error_pct": 0.2
+  },
+  "cases": [
+    {
+      "id": "A",
+      "resource": "aws_instance.orders",
+      "cost": "ec2",
+      "metrics": {
+        "cpu_m": 220,
+        "memory_mib": 300,
+        "io_mib_s": 8,
+        "p95_ms": 120,
+        "p99_ms": 180,
+        "throughput_rps": 100,
+        "error_pct": 0.2
+      },
+      "expected": "candidate"
+    },
+    {
+      "id": "B",
+      "resource": "aws_instance.orders",
+      "cost": "ec2",
+      "metrics": {
+        "cpu_m": 220,
+        "memory_mib": 300,
+        "io_mib_s": 8,
+        "p95_ms": 120,
+        "p99_ms": 250,
+        "throughput_rps": 100,
+        "error_pct": 0.2
+      },
+      "expected": "retain"
+    },
+    {
+      "id": "C",
+      "resource": "aws_instance.orders",
+      "cost": "ec2",
+      "metrics": {
+        "cpu_m": 220,
+        "memory_mib": null,
+        "io_mib_s": null,
+        "p95_ms": 120,
+        "p99_ms": 180,
+        "throughput_rps": 100,
+        "error_pct": 0.2
+      },
+      "expected": "hold"
+    },
+    {
+      "id": "D",
+      "resource": "aws_instance.orders",
+      "cost": "node",
+      "metrics": {
+        "cpu_m": 220,
+        "memory_mib": 300,
+        "io_mib_s": 8,
+        "p95_ms": 120,
+        "p99_ms": 180,
+        "throughput_rps": 100,
+        "error_pct": 0.2
+      },
+      "expected": "retain"
+    },
+    {
+      "id": "E",
+      "resource": "aws_ebs_volume.unknown",
+      "cost": "ec2",
+      "metrics": {
+        "cpu_m": 220,
+        "memory_mib": 300,
+        "io_mib_s": 8,
+        "p95_ms": 120,
+        "p99_ms": 180,
+        "throughput_rps": 100,
+        "error_pct": 0.2
+      },
+      "expected": "hold"
+    },
+    {
+      "id": "F",
+      "resource": "aws_instance.orders",
+      "cost": "duplicate",
+      "metrics": {
+        "cpu_m": 220,
+        "memory_mib": 300,
+        "io_mib_s": 8,
+        "p95_ms": 120,
+        "p99_ms": 180,
+        "throughput_rps": 100,
+        "error_pct": 0.2
+      },
+      "expected": "hold"
+    }
+  ]
+}

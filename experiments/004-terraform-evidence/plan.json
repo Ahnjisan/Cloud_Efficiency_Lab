@@ -1,0 +1,254 @@
+{
+  "format_version": "1.2",
+  "terraform_version": "1.9.0",
+  "resource_changes": [
+    {
+      "address": "aws_instance.same",
+      "type": "aws_instance",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "mode": "managed",
+      "name": "same",
+      "change": {
+        "actions": [
+          "no-op"
+        ],
+        "before": {
+          "instance_type": "model.large"
+        },
+        "after": {
+          "instance_type": "model.large"
+        },
+        "after_unknown": {},
+        "before_sensitive": {},
+        "after_sensitive": {}
+      }
+    },
+    {
+      "address": "aws_ebs_volume.new",
+      "type": "aws_ebs_volume",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "mode": "managed",
+      "name": "new",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "type": "gp3",
+          "size": 100,
+          "iops": 3000,
+          "throughput": 125
+        },
+        "after_unknown": {},
+        "before_sensitive": {},
+        "after_sensitive": {}
+      }
+    },
+    {
+      "address": "aws_instance.orders",
+      "type": "aws_instance",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "mode": "managed",
+      "name": "orders",
+      "change": {
+        "actions": [
+          "update"
+        ],
+        "before": {
+          "instance_type": "model.large"
+        },
+        "after": {
+          "instance_type": "model.medium"
+        },
+        "after_unknown": {},
+        "before_sensitive": {},
+        "after_sensitive": {}
+      }
+    },
+    {
+      "address": "aws_ebs_volume.old",
+      "type": "aws_ebs_volume",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "mode": "managed",
+      "name": "old",
+      "change": {
+        "actions": [
+          "delete"
+        ],
+        "before": {
+          "type": "gp3",
+          "size": 100,
+          "iops": 3000,
+          "throughput": 125
+        },
+        "after": null,
+        "after_unknown": {},
+        "before_sensitive": {},
+        "after_sensitive": {}
+      }
+    },
+    {
+      "address": "aws_instance.replace",
+      "type": "aws_instance",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "mode": "managed",
+      "name": "replace",
+      "change": {
+        "actions": [
+          "delete",
+          "create"
+        ],
+        "before": {
+          "instance_type": "model.large"
+        },
+        "after": {
+          "instance_type": "model.medium"
+        },
+        "after_unknown": {},
+        "before_sensitive": {},
+        "after_sensitive": {}
+      }
+    },
+    {
+      "address": "aws_instance.replace_first",
+      "type": "aws_instance",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "mode": "managed",
+      "name": "replace_first",
+      "change": {
+        "actions": [
+          "create",
+          "delete"
+        ],
+        "before": {
+          "instance_type": "model.large"
+        },
+        "after": {
+          "instance_type": "model.medium"
+        },
+        "after_unknown": {},
+        "before_sensitive": {},
+        "after_sensitive": {}
+      }
+    },
+    {
+      "address": "aws_s3_bucket.unsupported",
+      "type": "aws_s3_bucket",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "mode": "managed",
+      "name": "unsupported",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "bucket": "fixture-only"
+        },
+        "after_unknown": {},
+        "before_sensitive": {},
+        "after_sensitive": {}
+      }
+    },
+    {
+      "address": "aws_ebs_volume.unknown",
+      "type": "aws_ebs_volume",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "mode": "managed",
+      "name": "unknown",
+      "change": {
+        "actions": [
+          "update"
+        ],
+        "before": {
+          "type": "gp3",
+          "size": 100,
+          "iops": 3000,
+          "throughput": 125
+        },
+        "after": {
+          "type": "gp3",
+          "iops": 3000,
+          "throughput": 125
+        },
+        "after_unknown": {
+          "size": true
+        },
+        "before_sensitive": {},
+        "after_sensitive": {}
+      }
+    },
+    {
+      "address": "aws_instance.masked",
+      "type": "aws_instance",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "mode": "managed",
+      "name": "masked",
+      "change": {
+        "actions": [
+          "update"
+        ],
+        "before": {
+          "instance_type": "fixture-mask-before"
+        },
+        "after": {
+          "instance_type": "fixture-mask-after",
+          "user_data": "fixture-mask-other"
+        },
+        "after_unknown": {},
+        "before_sensitive": {
+          "instance_type": true
+        },
+        "after_sensitive": {
+          "instance_type": true,
+          "user_data": true
+        }
+      }
+    },
+    {
+      "address": "aws_ebs_volume.duplicate",
+      "type": "aws_ebs_volume",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "mode": "managed",
+      "name": "duplicate",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "type": "gp3",
+          "size": 100,
+          "iops": 3000,
+          "throughput": 125
+        },
+        "after_unknown": {},
+        "before_sensitive": {},
+        "after_sensitive": {}
+      }
+    },
+    {
+      "address": "aws_ebs_volume.duplicate",
+      "type": "aws_ebs_volume",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "mode": "managed",
+      "name": "duplicate",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "type": "gp3",
+          "size": 100,
+          "iops": 3000,
+          "throughput": 125
+        },
+        "after_unknown": {},
+        "before_sensitive": {},
+        "after_sensitive": {}
+      }
+    }
+  ]
+}

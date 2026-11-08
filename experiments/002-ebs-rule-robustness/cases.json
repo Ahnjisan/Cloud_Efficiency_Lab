@@ -1,0 +1,123 @@
+[
+  {
+    "input": {
+      "id": "vol-r02-legal",
+      "attached": false,
+      "owner": "records",
+      "evidence": "complete",
+      "purpose": "required"
+    },
+    "label": "normal",
+    "basis": "보존 담당자가 보존 기한과 복구 절차를 독립 확인"
+  },
+  {
+    "input": {
+      "id": "vol-r02-noowner",
+      "attached": false,
+      "owner": "",
+      "evidence": "missing",
+      "purpose": "unknown"
+    },
+    "label": "unresolved",
+    "basis": "자산 인수 문서 미확인"
+  },
+  {
+    "input": {
+      "id": "vol-r02-duplicate",
+      "attached": true,
+      "owner": "ops",
+      "evidence": "complete",
+      "purpose": "retired-no-dependency"
+    },
+    "label": "waste",
+    "basis": "대체 경로 검증 및 기존 마운트 해소 확인"
+  },
+  {
+    "input": {
+      "id": "vol-r02-restore",
+      "attached": false,
+      "owner": "ops",
+      "evidence": "missing",
+      "purpose": "retired-no-dependency"
+    },
+    "label": "normal",
+    "basis": "별도 복원 훈련에서 이 볼륨에 의존"
+  },
+  {
+    "input": {
+      "id": "vol-r02-conflict",
+      "attached": false,
+      "owner": "ops",
+      "evidence": "conflicting",
+      "purpose": "retired-no-dependency"
+    },
+    "label": "unresolved",
+    "basis": "이관 기록과 복구 책임자의 기록 불일치"
+  },
+  {
+    "input": {
+      "id": "vol-r02-stale",
+      "attached": false,
+      "owner": "ops",
+      "evidence": "missing",
+      "purpose": "retired-no-dependency"
+    },
+    "label": "waste",
+    "basis": "사후 감사가 새 복구본과 이전 볼륨 미사용을 확인"
+  },
+  {
+    "input": {
+      "id": "vol-r02-retired",
+      "attached": false,
+      "owner": "batch",
+      "evidence": "complete",
+      "purpose": "retired-no-dependency"
+    },
+    "label": "waste",
+    "basis": "배치 종료, 재처리 가능 및 보존 기한 만료 확인"
+  },
+  {
+    "input": {
+      "id": "vol-r02-active",
+      "attached": true,
+      "owner": "orders",
+      "evidence": "complete",
+      "purpose": "required"
+    },
+    "label": "normal",
+    "basis": "업무 트래픽과 마운트 확인"
+  },
+  {
+    "input": {
+      "id": "vol-r02-wrong",
+      "attached": false,
+      "owner": "orders",
+      "evidence": "complete",
+      "purpose": "retired-no-dependency"
+    },
+    "label": "normal",
+    "basis": "사후 복구 검증에서 다른 시스템 의존성 확인"
+  },
+  {
+    "input": {
+      "id": "vol-r02-obsolete",
+      "attached": false,
+      "owner": "backup",
+      "evidence": "complete",
+      "purpose": "required"
+    },
+    "label": "waste",
+    "basis": "사후 감사에서 대체 복구본이 있고 기존 계획은 폐기된 것으로 확인"
+  },
+  {
+    "input": {
+      "id": "vol-r02-new",
+      "attached": false,
+      "owner": "orders",
+      "evidence": "complete",
+      "purpose": "required"
+    },
+    "label": "normal",
+    "basis": "인수 작업과 시작 시각 확인"
+  }
+]

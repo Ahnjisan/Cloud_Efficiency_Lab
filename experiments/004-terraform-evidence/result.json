@@ -1,0 +1,162 @@
+{
+  "rows": [
+    {
+      "address": "aws_instance.same",
+      "type": "aws_instance",
+      "action": "no-op",
+      "before": {
+        "values": {
+          "instance_type": "model.large"
+        },
+        "unavailable": {}
+      },
+      "after": {
+        "values": {
+          "instance_type": "model.large"
+        },
+        "unavailable": {}
+      },
+      "status": "extracted"
+    },
+    {
+      "address": "aws_ebs_volume.new",
+      "type": "aws_ebs_volume",
+      "action": "create",
+      "after": {
+        "values": {
+          "type": "gp3",
+          "size": 100,
+          "iops": 3000,
+          "throughput": 125
+        },
+        "unavailable": {}
+      },
+      "status": "extracted"
+    },
+    {
+      "address": "aws_instance.orders",
+      "type": "aws_instance",
+      "action": "update",
+      "before": {
+        "values": {
+          "instance_type": "model.large"
+        },
+        "unavailable": {}
+      },
+      "after": {
+        "values": {
+          "instance_type": "model.medium"
+        },
+        "unavailable": {}
+      },
+      "status": "extracted"
+    },
+    {
+      "address": "aws_ebs_volume.old",
+      "type": "aws_ebs_volume",
+      "action": "delete",
+      "before": {
+        "values": {
+          "type": "gp3",
+          "size": 100,
+          "iops": 3000,
+          "throughput": 125
+        },
+        "unavailable": {}
+      },
+      "status": "extracted"
+    },
+    {
+      "address": "aws_instance.replace",
+      "type": "aws_instance",
+      "action": "replace",
+      "before": {
+        "values": {
+          "instance_type": "model.large"
+        },
+        "unavailable": {}
+      },
+      "after": {
+        "values": {
+          "instance_type": "model.medium"
+        },
+        "unavailable": {}
+      },
+      "status": "extracted"
+    },
+    {
+      "address": "aws_instance.replace_first",
+      "type": "aws_instance",
+      "action": "replace",
+      "before": {
+        "values": {
+          "instance_type": "model.large"
+        },
+        "unavailable": {}
+      },
+      "after": {
+        "values": {
+          "instance_type": "model.medium"
+        },
+        "unavailable": {}
+      },
+      "status": "extracted"
+    },
+    {
+      "address": "aws_s3_bucket.unsupported",
+      "type": "aws_s3_bucket",
+      "action": "create",
+      "status": "unsupported"
+    },
+    {
+      "address": "aws_ebs_volume.unknown",
+      "type": "aws_ebs_volume",
+      "action": "update",
+      "before": {
+        "values": {
+          "type": "gp3",
+          "size": 100,
+          "iops": 3000,
+          "throughput": 125
+        },
+        "unavailable": {}
+      },
+      "after": {
+        "values": {
+          "type": "gp3",
+          "iops": 3000,
+          "throughput": 125
+        },
+        "unavailable": {
+          "size": "unknown"
+        }
+      },
+      "status": "hold"
+    },
+    {
+      "address": "aws_instance.masked",
+      "type": "aws_instance",
+      "action": "update",
+      "before": {
+        "values": {},
+        "unavailable": {
+          "instance_type": "sensitive"
+        }
+      },
+      "after": {
+        "values": {},
+        "unavailable": {
+          "instance_type": "sensitive"
+        }
+      },
+      "status": "hold"
+    },
+    {
+      "address": "aws_ebs_volume.duplicate",
+      "type": "aws_ebs_volume",
+      "action": "create",
+      "status": "duplicate-hold"
+    }
+  ],
+  "drift_records_not_analyzed": 0
+}

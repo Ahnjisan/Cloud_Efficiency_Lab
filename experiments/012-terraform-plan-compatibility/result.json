@@ -1,0 +1,39 @@
+{
+  "status": "pass",
+  "terraform_version": "1.13.5",
+  "format_version": "1.2",
+  "builtin_resources_unsupported_by_aws_extractor": 2,
+  "rows": {
+    "module.fixture.terraform_data.create_first": {
+      "actions": [
+        "create",
+        "delete"
+      ],
+      "normalized_action": "replace",
+      "selected_after": {
+        "values": {
+          "input": "public-fixture-value"
+        },
+        "unavailable": {
+          "output": "unknown",
+          "id": "unknown"
+        }
+      }
+    },
+    "module.fixture.terraform_data.replace_first": {
+      "actions": [
+        "delete",
+        "create"
+      ],
+      "normalized_action": "replace",
+      "selected_after": {
+        "values": {},
+        "unavailable": {
+          "input": "sensitive",
+          "output": "unknown",
+          "id": "unknown"
+        }
+      }
+    }
+  }
+}

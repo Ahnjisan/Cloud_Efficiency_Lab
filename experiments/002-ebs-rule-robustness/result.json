@@ -1,0 +1,210 @@
+{
+  "A": {
+    "rows": [
+      {
+        "id": "vol-r02-legal",
+        "label": "normal",
+        "status": "alert",
+        "reason": "detached",
+        "next_owner": "platform-triage",
+        "bucket": "FP"
+      },
+      {
+        "id": "vol-r02-noowner",
+        "label": "unresolved",
+        "status": "alert",
+        "reason": "detached",
+        "next_owner": "platform-triage",
+        "bucket": "unresolved"
+      },
+      {
+        "id": "vol-r02-duplicate",
+        "label": "waste",
+        "status": "no-alert",
+        "reason": "attached",
+        "next_owner": "none",
+        "bucket": "FN"
+      },
+      {
+        "id": "vol-r02-restore",
+        "label": "normal",
+        "status": "alert",
+        "reason": "detached",
+        "next_owner": "platform-triage",
+        "bucket": "FP"
+      },
+      {
+        "id": "vol-r02-conflict",
+        "label": "unresolved",
+        "status": "alert",
+        "reason": "detached",
+        "next_owner": "platform-triage",
+        "bucket": "unresolved"
+      },
+      {
+        "id": "vol-r02-stale",
+        "label": "waste",
+        "status": "alert",
+        "reason": "detached",
+        "next_owner": "platform-triage",
+        "bucket": "TP"
+      },
+      {
+        "id": "vol-r02-retired",
+        "label": "waste",
+        "status": "alert",
+        "reason": "detached",
+        "next_owner": "platform-triage",
+        "bucket": "TP"
+      },
+      {
+        "id": "vol-r02-active",
+        "label": "normal",
+        "status": "no-alert",
+        "reason": "attached",
+        "next_owner": "none",
+        "bucket": "TN"
+      },
+      {
+        "id": "vol-r02-wrong",
+        "label": "normal",
+        "status": "alert",
+        "reason": "detached",
+        "next_owner": "platform-triage",
+        "bucket": "FP"
+      },
+      {
+        "id": "vol-r02-obsolete",
+        "label": "waste",
+        "status": "alert",
+        "reason": "detached",
+        "next_owner": "platform-triage",
+        "bucket": "TP"
+      },
+      {
+        "id": "vol-r02-new",
+        "label": "normal",
+        "status": "alert",
+        "reason": "detached",
+        "next_owner": "platform-triage",
+        "bucket": "FP"
+      }
+    ],
+    "counts": {
+      "FP": 4,
+      "unresolved": 2,
+      "FN": 1,
+      "TP": 3,
+      "TN": 1
+    },
+    "precision": 0.42857142857142855,
+    "immediate_recall": 0.75,
+    "hold_rate": 0.0,
+    "queue": 9
+  },
+  "B": {
+    "rows": [
+      {
+        "id": "vol-r02-legal",
+        "label": "normal",
+        "status": "retain",
+        "reason": "operational-or-recovery-need",
+        "next_owner": "records",
+        "bucket": "TN"
+      },
+      {
+        "id": "vol-r02-noowner",
+        "label": "unresolved",
+        "status": "hold",
+        "reason": "missing-records",
+        "next_owner": "inventory-team",
+        "bucket": "hold_unresolved"
+      },
+      {
+        "id": "vol-r02-duplicate",
+        "label": "waste",
+        "status": "out-of-scope",
+        "reason": "attached",
+        "next_owner": "none",
+        "bucket": "FN"
+      },
+      {
+        "id": "vol-r02-restore",
+        "label": "normal",
+        "status": "hold",
+        "reason": "missing-records",
+        "next_owner": "ops",
+        "bucket": "hold_normal"
+      },
+      {
+        "id": "vol-r02-conflict",
+        "label": "unresolved",
+        "status": "hold",
+        "reason": "conflicting-records",
+        "next_owner": "ops",
+        "bucket": "hold_unresolved"
+      },
+      {
+        "id": "vol-r02-stale",
+        "label": "waste",
+        "status": "hold",
+        "reason": "missing-records",
+        "next_owner": "ops",
+        "bucket": "hold_waste"
+      },
+      {
+        "id": "vol-r02-retired",
+        "label": "waste",
+        "status": "alert",
+        "reason": "retired-without-dependencies",
+        "next_owner": "batch",
+        "bucket": "TP"
+      },
+      {
+        "id": "vol-r02-active",
+        "label": "normal",
+        "status": "out-of-scope",
+        "reason": "attached",
+        "next_owner": "none",
+        "bucket": "TN"
+      },
+      {
+        "id": "vol-r02-wrong",
+        "label": "normal",
+        "status": "alert",
+        "reason": "retired-without-dependencies",
+        "next_owner": "orders",
+        "bucket": "FP"
+      },
+      {
+        "id": "vol-r02-obsolete",
+        "label": "waste",
+        "status": "retain",
+        "reason": "operational-or-recovery-need",
+        "next_owner": "backup",
+        "bucket": "FN"
+      },
+      {
+        "id": "vol-r02-new",
+        "label": "normal",
+        "status": "retain",
+        "reason": "operational-or-recovery-need",
+        "next_owner": "orders",
+        "bucket": "TN"
+      }
+    ],
+    "counts": {
+      "TN": 3,
+      "hold_unresolved": 2,
+      "FN": 2,
+      "hold_normal": 1,
+      "hold_waste": 1,
+      "TP": 1,
+      "FP": 1
+    },
+    "precision": 0.5,
+    "immediate_recall": 0.25,
+    "hold_rate": 0.36363636363636365,
+    "queue": 6
+  }
+}

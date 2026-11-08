@@ -33,5 +33,21 @@ AWS 자원 생성·실행은 필수가 아닙니다. AWS 등 유료 자원을 �
 ## 실험 목록
 
 - [001 · EBS 낭비 탐지 규칙 로컬 검증](001-ebs-waste-rules/README.md) — 가상 볼륨 8건과 충돌 우선순위 2건 재현
+- [002 · EBS 규칙 신규 반례 평가](002-ebs-rule-robustness/README.md) — 합성 11건과 보류의 영향
+- [003 · EC2·EBS 비용 시뮬레이션](003-aws-cost-simulation/README.md) — 가상 비용 8가지 조건
+- [004 · Terraform 변경 근거](004-terraform-evidence/README.md) — 합성 Plan 추출과 민감정보 처리
+- [005 · Docker 워크로드 자원 효율 실측](005-container-resource-efficiency/README.md) — CPU 한도별 두 차례 반복
+- [006 · Kubernetes 자원 검증](006-kubernetes-resource-efficiency/README.md) — 정적 비용 모형과 실제 Requests 배치·Limits 부하
+- [007 · InfraFit 통합 가능성](007-infrafit-feasibility/README.md) — 품질·결측·중복 비용을 포함한 합성 판정
+- [008 · 청구·변경·피크 관측 대사](008-evidence-reconciliation/README.md) — 지연 도착, 중복, 불일치와 재대사
+- [009 · EBS 기록 최신성과 보류 검토 비용](009-ebs-review-cost/README.md) — 최신성 기준에 따른 오탐과 검토량
+- [010 · CPU 한도별 품질 기준 재검증](010-cpu-quality-envelope/README.md) — 보존 로그 분석과 전용 환경 반복 절차
+- [011 · 약정·피크 겹침·전환비 민감도](011-cost-quality-sensitivity/README.md) — 비용과 품질에 따른 채택 조건
+- [012 · 실제 Terraform Plan JSON 호환성](012-terraform-plan-compatibility/README.md) — 내장 리소스의 모듈 주소·교체·민감도·미확정 값
+- [013 · 피크 품질 악화 후 CPU 한도 롤백](013-peak-rollback/README.md) — 전용 로컬 컨테이너의 기준·축소·복원 실측
+- [014 · AWS provider의 실제 EC2·EBS Plan](014-aws-provider-plan/README.md) — AWS API를 호출하지 않는 생성 계획과 필드 호환성
+- [015 · Kubernetes 반복 부하와 Deployment 롤백](015-kubernetes-rollback/README.md) — 전용 Minikube에서 CPU 축소·복원 반복
+
+[InfraFit 통합 연구 결과](infrafit-predevelopment-review.md)에 001 재실행과 전체 결과를 모았다. Docker와 Kubernetes 후속 실측의 결과 및 한계를 포함한다.
 
 실제 실행한 실험만 문서의 상대 링크와 함께 이 목록에 등록합니다. 관련 [Studies](../studies/README.md) 학습 문서와 실험 문서를 상호 연결해 학습 근거와 재현 경로를 찾을 수 있도록 합니다.

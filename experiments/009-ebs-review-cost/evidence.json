@@ -1,0 +1,11 @@
+{
+  "vol-r02-stale": {"review_minutes":20,"update":{"evidence":"complete","purpose":"retired-no-dependency"}},
+  "vol-r02-restore": {"review_minutes":15,"update":{"evidence":"complete","purpose":"required"}},
+  "vol-r02-retired": {"age_days":45,"review_minutes":10,"update":{"evidence":"complete"}},
+  "vol-r02-obsolete": {"age_days":120,"review_minutes":20,"update":{"evidence":"complete","purpose":"retired-no-dependency"}},
+  "vol-r02-wrong": {"age_days":100,"review_minutes":15,"update":{"evidence":"complete","purpose":"required"}},
+  "vol-r02-legal": {"age_days":10},
+  "vol-r02-duplicate": {"age_days":10},
+  "vol-r02-active": {"age_days":10},
+  "vol-r02-new": {"age_days":10}
+}

@@ -1,0 +1,534 @@
+[
+  {
+    "experiment_id": "007",
+    "scenario": "A",
+    "environment_id": "synthetic-bench",
+    "workload_id": "orders-fixture",
+    "resource_id": "aws_instance.orders",
+    "time_range": "synthetic 15-minute comparison window",
+    "measured_or_synthetic": "synthetic",
+    "sources": {
+      "terraform": "004-terraform-evidence/result.json",
+      "cost": "003-aws-cost-simulation/result.json",
+      "kubernetes": "006-kubernetes-resource-efficiency/result.json",
+      "container_and_quality": "cases.json"
+    },
+    "node_model": null,
+    "current": {
+      "terraform": {
+        "values": {
+          "instance_type": "model.large"
+        },
+        "unavailable": {}
+      },
+      "request_limit": [
+        [
+          700,
+          512
+        ],
+        [
+          1000,
+          1024
+        ]
+      ],
+      "metrics": {
+        "cpu_m": 260,
+        "memory_mib": 340,
+        "io_mib_s": 8,
+        "p95_ms": 120,
+        "p99_ms": 170,
+        "throughput_rps": 100,
+        "error_pct": 0.2
+      }
+    },
+    "candidate": {
+      "terraform": {
+        "values": {
+          "instance_type": "model.medium"
+        },
+        "unavailable": {}
+      },
+      "request_limit": [
+        [
+          400,
+          512
+        ],
+        [
+          1000,
+          1024
+        ]
+      ],
+      "metrics": {
+        "cpu_m": 220,
+        "memory_mib": 300,
+        "io_mib_s": 8,
+        "p95_ms": 120,
+        "p99_ms": 180,
+        "throughput_rps": 100,
+        "error_pct": 0.2
+      }
+    },
+    "cloud_price_reference": "synthetic USD, 720-hour model",
+    "estimated_cost": {
+      "before": "152.00",
+      "after": "80.00",
+      "difference": "72.00"
+    },
+    "quality_pass": true,
+    "missing_fields": [],
+    "invalid_fields": [],
+    "decision": "candidate",
+    "evidence": [
+      "lower modeled cost with synthetic quality gates met"
+    ],
+    "next_check": "join same-scope measured resource and workload evidence; reconcile charge IDs"
+  },
+  {
+    "experiment_id": "007",
+    "scenario": "B",
+    "environment_id": "synthetic-bench",
+    "workload_id": "orders-fixture",
+    "resource_id": "aws_instance.orders",
+    "time_range": "synthetic 15-minute comparison window",
+    "measured_or_synthetic": "synthetic",
+    "sources": {
+      "terraform": "004-terraform-evidence/result.json",
+      "cost": "003-aws-cost-simulation/result.json",
+      "kubernetes": "006-kubernetes-resource-efficiency/result.json",
+      "container_and_quality": "cases.json"
+    },
+    "node_model": null,
+    "current": {
+      "terraform": {
+        "values": {
+          "instance_type": "model.large"
+        },
+        "unavailable": {}
+      },
+      "request_limit": [
+        [
+          700,
+          512
+        ],
+        [
+          1000,
+          1024
+        ]
+      ],
+      "metrics": {
+        "cpu_m": 260,
+        "memory_mib": 340,
+        "io_mib_s": 8,
+        "p95_ms": 120,
+        "p99_ms": 170,
+        "throughput_rps": 100,
+        "error_pct": 0.2
+      }
+    },
+    "candidate": {
+      "terraform": {
+        "values": {
+          "instance_type": "model.medium"
+        },
+        "unavailable": {}
+      },
+      "request_limit": [
+        [
+          400,
+          512
+        ],
+        [
+          1000,
+          1024
+        ]
+      ],
+      "metrics": {
+        "cpu_m": 220,
+        "memory_mib": 300,
+        "io_mib_s": 8,
+        "p95_ms": 120,
+        "p99_ms": 250,
+        "throughput_rps": 100,
+        "error_pct": 0.2
+      }
+    },
+    "cloud_price_reference": "synthetic USD, 720-hour model",
+    "estimated_cost": {
+      "before": "152.00",
+      "after": "80.00",
+      "difference": "72.00"
+    },
+    "quality_pass": false,
+    "missing_fields": [],
+    "invalid_fields": [],
+    "decision": "retain",
+    "evidence": [
+      "candidate violates synthetic quality constraints"
+    ],
+    "next_check": "join same-scope measured resource and workload evidence; reconcile charge IDs"
+  },
+  {
+    "experiment_id": "007",
+    "scenario": "C",
+    "environment_id": "synthetic-bench",
+    "workload_id": "orders-fixture",
+    "resource_id": "aws_instance.orders",
+    "time_range": "synthetic 15-minute comparison window",
+    "measured_or_synthetic": "synthetic",
+    "sources": {
+      "terraform": "004-terraform-evidence/result.json",
+      "cost": "003-aws-cost-simulation/result.json",
+      "kubernetes": "006-kubernetes-resource-efficiency/result.json",
+      "container_and_quality": "cases.json"
+    },
+    "node_model": null,
+    "current": {
+      "terraform": {
+        "values": {
+          "instance_type": "model.large"
+        },
+        "unavailable": {}
+      },
+      "request_limit": [
+        [
+          700,
+          512
+        ],
+        [
+          1000,
+          1024
+        ]
+      ],
+      "metrics": {
+        "cpu_m": 260,
+        "memory_mib": 340,
+        "io_mib_s": 8,
+        "p95_ms": 120,
+        "p99_ms": 170,
+        "throughput_rps": 100,
+        "error_pct": 0.2
+      }
+    },
+    "candidate": {
+      "terraform": {
+        "values": {
+          "instance_type": "model.medium"
+        },
+        "unavailable": {}
+      },
+      "request_limit": [
+        [
+          400,
+          512
+        ],
+        [
+          1000,
+          1024
+        ]
+      ],
+      "metrics": {
+        "cpu_m": 220,
+        "memory_mib": null,
+        "io_mib_s": null,
+        "p95_ms": 120,
+        "p99_ms": 180,
+        "throughput_rps": 100,
+        "error_pct": 0.2
+      }
+    },
+    "cloud_price_reference": "synthetic USD, 720-hour model",
+    "estimated_cost": {
+      "before": "152.00",
+      "after": "80.00",
+      "difference": "72.00"
+    },
+    "quality_pass": true,
+    "missing_fields": [
+      "memory_mib",
+      "io_mib_s"
+    ],
+    "invalid_fields": [],
+    "decision": "hold",
+    "evidence": [
+      "required evidence is missing or inconsistent"
+    ],
+    "next_check": "join same-scope measured resource and workload evidence; reconcile charge IDs"
+  },
+  {
+    "experiment_id": "007",
+    "scenario": "D",
+    "environment_id": "synthetic-bench",
+    "workload_id": "orders-fixture",
+    "resource_id": "aws_instance.orders",
+    "time_range": "synthetic 15-minute comparison window",
+    "measured_or_synthetic": "synthetic",
+    "sources": {
+      "terraform": "004-terraform-evidence/result.json",
+      "cost": "006-kubernetes-resource-efficiency/result.json",
+      "kubernetes": "006-kubernetes-resource-efficiency/result.json",
+      "container_and_quality": "cases.json"
+    },
+    "node_model": {
+      "node": "large",
+      "capacity": [
+        4000,
+        8192
+      ],
+      "allocatable": [
+        3600,
+        7168
+      ],
+      "replicas": 4
+    },
+    "current": {
+      "terraform": {
+        "values": {
+          "instance_type": "model.large"
+        },
+        "unavailable": {}
+      },
+      "request_limit": [
+        [
+          700,
+          512
+        ],
+        [
+          1000,
+          1024
+        ]
+      ],
+      "metrics": {
+        "cpu_m": 260,
+        "memory_mib": 340,
+        "io_mib_s": 8,
+        "p95_ms": 120,
+        "p99_ms": 170,
+        "throughput_rps": 100,
+        "error_pct": 0.2
+      }
+    },
+    "candidate": {
+      "terraform": {
+        "values": {
+          "instance_type": "model.medium"
+        },
+        "unavailable": {}
+      },
+      "request_limit": [
+        [
+          400,
+          512
+        ],
+        [
+          1000,
+          1024
+        ]
+      ],
+      "metrics": {
+        "cpu_m": 220,
+        "memory_mib": 300,
+        "io_mib_s": 8,
+        "p95_ms": 120,
+        "p99_ms": 180,
+        "throughput_rps": 100,
+        "error_pct": 0.2
+      }
+    },
+    "cloud_price_reference": "synthetic USD, 720-hour model",
+    "estimated_cost": {
+      "before": "158.40",
+      "after": "158.40",
+      "difference": "0.00"
+    },
+    "quality_pass": true,
+    "missing_fields": [],
+    "invalid_fields": [],
+    "decision": "retain",
+    "evidence": [
+      "no modeled cost reduction"
+    ],
+    "next_check": "join same-scope measured resource and workload evidence; reconcile charge IDs"
+  },
+  {
+    "experiment_id": "007",
+    "scenario": "E",
+    "environment_id": "synthetic-bench",
+    "workload_id": "orders-fixture",
+    "resource_id": "aws_ebs_volume.unknown",
+    "time_range": "synthetic 15-minute comparison window",
+    "measured_or_synthetic": "synthetic",
+    "sources": {
+      "terraform": "004-terraform-evidence/result.json",
+      "cost": "003-aws-cost-simulation/result.json",
+      "kubernetes": "006-kubernetes-resource-efficiency/result.json",
+      "container_and_quality": "cases.json"
+    },
+    "node_model": null,
+    "current": {
+      "terraform": {
+        "values": {
+          "type": "gp3",
+          "size": 100,
+          "iops": 3000,
+          "throughput": 125
+        },
+        "unavailable": {}
+      },
+      "request_limit": [
+        [
+          700,
+          512
+        ],
+        [
+          1000,
+          1024
+        ]
+      ],
+      "metrics": {
+        "cpu_m": 260,
+        "memory_mib": 340,
+        "io_mib_s": 8,
+        "p95_ms": 120,
+        "p99_ms": 170,
+        "throughput_rps": 100,
+        "error_pct": 0.2
+      }
+    },
+    "candidate": {
+      "terraform": {
+        "values": {
+          "type": "gp3",
+          "iops": 3000,
+          "throughput": 125
+        },
+        "unavailable": {
+          "size": "unknown"
+        }
+      },
+      "request_limit": [
+        [
+          400,
+          512
+        ],
+        [
+          1000,
+          1024
+        ]
+      ],
+      "metrics": {
+        "cpu_m": 220,
+        "memory_mib": 300,
+        "io_mib_s": 8,
+        "p95_ms": 120,
+        "p99_ms": 180,
+        "throughput_rps": 100,
+        "error_pct": 0.2
+      }
+    },
+    "cloud_price_reference": "synthetic USD, 720-hour model",
+    "estimated_cost": {
+      "before": null,
+      "after": null,
+      "difference": null
+    },
+    "quality_pass": true,
+    "missing_fields": [
+      "terraform.after.size",
+      "cost.matching_configuration"
+    ],
+    "invalid_fields": [],
+    "decision": "hold",
+    "evidence": [
+      "no price evidence for this Terraform address and before/after configuration",
+      "required evidence is missing or inconsistent"
+    ],
+    "next_check": "join same-scope measured resource and workload evidence; reconcile charge IDs"
+  },
+  {
+    "experiment_id": "007",
+    "scenario": "F",
+    "environment_id": "synthetic-bench",
+    "workload_id": "orders-fixture",
+    "resource_id": "aws_instance.orders",
+    "time_range": "synthetic 15-minute comparison window",
+    "measured_or_synthetic": "synthetic",
+    "sources": {
+      "terraform": "004-terraform-evidence/result.json",
+      "cost": "003-aws-cost-simulation/result.json",
+      "kubernetes": "006-kubernetes-resource-efficiency/result.json",
+      "container_and_quality": "cases.json"
+    },
+    "node_model": null,
+    "current": {
+      "terraform": {
+        "values": {
+          "instance_type": "model.large"
+        },
+        "unavailable": {}
+      },
+      "request_limit": [
+        [
+          700,
+          512
+        ],
+        [
+          1000,
+          1024
+        ]
+      ],
+      "metrics": {
+        "cpu_m": 260,
+        "memory_mib": 340,
+        "io_mib_s": 8,
+        "p95_ms": 120,
+        "p99_ms": 170,
+        "throughput_rps": 100,
+        "error_pct": 0.2
+      }
+    },
+    "candidate": {
+      "terraform": {
+        "values": {
+          "instance_type": "model.medium"
+        },
+        "unavailable": {}
+      },
+      "request_limit": [
+        [
+          400,
+          512
+        ],
+        [
+          1000,
+          1024
+        ]
+      ],
+      "metrics": {
+        "cpu_m": 220,
+        "memory_mib": 300,
+        "io_mib_s": 8,
+        "p95_ms": 120,
+        "p99_ms": 180,
+        "throughput_rps": 100,
+        "error_pct": 0.2
+      }
+    },
+    "cloud_price_reference": "synthetic USD, 720-hour model",
+    "estimated_cost": {
+      "before": "152.00",
+      "after": null,
+      "difference": null
+    },
+    "quality_pass": true,
+    "missing_fields": [
+      "cost.unique_charge_ids"
+    ],
+    "invalid_fields": [],
+    "decision": "hold",
+    "evidence": [
+      "duplicate charge key; cost total withheld",
+      "required evidence is missing or inconsistent"
+    ],
+    "next_check": "join same-scope measured resource and workload evidence; reconcile charge IDs"
+  }
+]

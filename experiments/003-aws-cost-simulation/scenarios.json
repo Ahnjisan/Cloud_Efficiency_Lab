@@ -1,0 +1,392 @@
+{
+  "currency": "USD",
+  "region": "synthetic-region",
+  "month_hours": 720,
+  "extra_iops_rate": "0.005",
+  "extra_mib_s_rate": "0.04",
+  "cases": [
+    {
+      "id": "A-compute",
+      "before": {
+        "compute": {
+          "type": "model.large",
+          "hours": 720,
+          "od": "0.20",
+          "sp": "0.12"
+        },
+        "ebs": [],
+        "commit": "0",
+        "jobs": 1000,
+        "quality": "pass"
+      },
+      "after": {
+        "compute": {
+          "type": "model.medium",
+          "hours": 720,
+          "od": "0.10",
+          "sp": "0.06"
+        },
+        "ebs": [],
+        "commit": "0",
+        "jobs": 1000,
+        "quality": "pass"
+      },
+      "expected": {
+        "before": "144.00",
+        "after": "72.00",
+        "decision": "candidate"
+      }
+    },
+    {
+      "id": "B-ebs-retained",
+      "before": {
+        "compute": {
+          "type": "model.large",
+          "hours": 720,
+          "od": "0.20",
+          "sp": "0.12"
+        },
+        "ebs": [
+          {
+            "type": "gp3",
+            "gib": 100,
+            "rate": "0.08",
+            "extra_iops": 0,
+            "extra_mib_s": 0,
+            "resource_id": "vol-synthetic-1"
+          }
+        ],
+        "commit": "0",
+        "jobs": 1000,
+        "quality": "pass"
+      },
+      "after": {
+        "compute": {
+          "type": "model.large",
+          "hours": 0,
+          "od": "0.20",
+          "sp": "0.12"
+        },
+        "ebs": [
+          {
+            "type": "gp3",
+            "gib": 100,
+            "rate": "0.08",
+            "extra_iops": 0,
+            "extra_mib_s": 0,
+            "resource_id": "vol-synthetic-1"
+          }
+        ],
+        "commit": "0",
+        "jobs": 1000,
+        "quality": "unknown"
+      },
+      "expected": {
+        "before": "152.00",
+        "after": "8.00",
+        "decision": "hold"
+      }
+    },
+    {
+      "id": "C-commitment",
+      "before": {
+        "compute": {
+          "type": "model.large",
+          "hours": 720,
+          "od": "0.20",
+          "sp": "0.12"
+        },
+        "ebs": [
+          {
+            "type": "gp3",
+            "gib": 100,
+            "rate": "0.08",
+            "extra_iops": 0,
+            "extra_mib_s": 0,
+            "resource_id": "vol-synthetic-1"
+          }
+        ],
+        "commit": "0.12",
+        "jobs": 1000,
+        "quality": "pass"
+      },
+      "after": {
+        "compute": {
+          "type": "model.medium",
+          "hours": 720,
+          "od": "0.10",
+          "sp": "0.06"
+        },
+        "ebs": [
+          {
+            "type": "gp3",
+            "gib": 100,
+            "rate": "0.08",
+            "extra_iops": 0,
+            "extra_mib_s": 0,
+            "resource_id": "vol-synthetic-1"
+          }
+        ],
+        "commit": "0.12",
+        "jobs": 1000,
+        "quality": "pass"
+      },
+      "expected": {
+        "before": "94.40",
+        "after": "94.40",
+        "decision": "retain"
+      }
+    },
+    {
+      "id": "D-different-work",
+      "before": {
+        "compute": {
+          "type": "model.large",
+          "hours": 720,
+          "od": "0.20",
+          "sp": "0.12"
+        },
+        "ebs": [
+          {
+            "type": "gp3",
+            "gib": 100,
+            "rate": "0.08",
+            "extra_iops": 0,
+            "extra_mib_s": 0,
+            "resource_id": "vol-synthetic-1"
+          }
+        ],
+        "commit": "0",
+        "jobs": 1000,
+        "quality": "pass"
+      },
+      "after": {
+        "compute": {
+          "type": "model.large",
+          "hours": 720,
+          "od": "0.20",
+          "sp": "0.12"
+        },
+        "ebs": [
+          {
+            "type": "gp3",
+            "gib": 100,
+            "rate": "0.08",
+            "extra_iops": 0,
+            "extra_mib_s": 0,
+            "resource_id": "vol-synthetic-1"
+          }
+        ],
+        "commit": "0",
+        "jobs": 2000,
+        "quality": "pass"
+      },
+      "expected": {
+        "before": "152.00",
+        "after": "152.00",
+        "decision": "hold"
+      }
+    },
+    {
+      "id": "E-quality-unknown",
+      "before": {
+        "compute": {
+          "type": "model.large",
+          "hours": 720,
+          "od": "0.20",
+          "sp": "0.12"
+        },
+        "ebs": [
+          {
+            "type": "gp3",
+            "gib": 100,
+            "rate": "0.08",
+            "extra_iops": 0,
+            "extra_mib_s": 0,
+            "resource_id": "vol-synthetic-1"
+          }
+        ],
+        "commit": "0",
+        "jobs": 1000,
+        "quality": "pass"
+      },
+      "after": {
+        "compute": {
+          "type": "model.medium",
+          "hours": 720,
+          "od": "0.10",
+          "sp": "0.06"
+        },
+        "ebs": [
+          {
+            "type": "gp3",
+            "gib": 100,
+            "rate": "0.08",
+            "extra_iops": 0,
+            "extra_mib_s": 0,
+            "resource_id": "vol-synthetic-1"
+          }
+        ],
+        "commit": "0",
+        "jobs": 1000,
+        "quality": "unknown"
+      },
+      "expected": {
+        "before": "152.00",
+        "after": "80.00",
+        "decision": "hold"
+      },
+      "terraform_address": "aws_instance.orders"
+    },
+    {
+      "id": "F-storage-type-performance",
+      "before": {
+        "compute": {
+          "type": "model.medium",
+          "hours": 720,
+          "od": "0.10",
+          "sp": "0.06"
+        },
+        "ebs": [
+          {
+            "type": "gp2",
+            "gib": 100,
+            "rate": "0.10",
+            "extra_iops": 0,
+            "extra_mib_s": 0,
+            "resource_id": "vol-synthetic-1"
+          }
+        ],
+        "commit": "0",
+        "jobs": 1000,
+        "quality": "pass"
+      },
+      "after": {
+        "compute": {
+          "type": "model.medium",
+          "hours": 720,
+          "od": "0.10",
+          "sp": "0.06"
+        },
+        "ebs": [
+          {
+            "type": "gp3",
+            "gib": 100,
+            "rate": "0.08",
+            "extra_iops": 1000,
+            "extra_mib_s": 25,
+            "resource_id": "vol-synthetic-1"
+          }
+        ],
+        "commit": "0",
+        "jobs": 1000,
+        "quality": "pass"
+      },
+      "expected": {
+        "before": "82.00",
+        "after": "86.00",
+        "decision": "retain"
+      }
+    },
+    {
+      "id": "G-missing-storage",
+      "before": {
+        "compute": {
+          "type": "model.large",
+          "hours": 720,
+          "od": "0.20",
+          "sp": "0.12"
+        },
+        "ebs": [
+          {
+            "type": "gp3",
+            "gib": 100,
+            "rate": "0.08",
+            "extra_iops": 0,
+            "extra_mib_s": 0,
+            "resource_id": "vol-synthetic-1"
+          }
+        ],
+        "commit": "0",
+        "jobs": 1000,
+        "quality": "pass"
+      },
+      "after": {
+        "compute": {
+          "type": "model.medium",
+          "hours": 720,
+          "od": "0.10",
+          "sp": "0.06"
+        },
+        "ebs": [
+          {
+            "type": "gp3",
+            "gib": null,
+            "rate": "0.08",
+            "extra_iops": 0,
+            "extra_mib_s": 0,
+            "resource_id": "vol-synthetic-1"
+          }
+        ],
+        "commit": "0",
+        "jobs": 1000,
+        "quality": "pass"
+      },
+      "expected": {
+        "before": "152.00",
+        "after": null,
+        "decision": "hold"
+      }
+    },
+    {
+      "id": "H-operating-hours",
+      "before": {
+        "compute": {
+          "type": "model.large",
+          "hours": 720,
+          "od": "0.20",
+          "sp": "0.12"
+        },
+        "ebs": [
+          {
+            "type": "gp3",
+            "gib": 100,
+            "rate": "0.08",
+            "extra_iops": 0,
+            "extra_mib_s": 0,
+            "resource_id": "vol-synthetic-1"
+          }
+        ],
+        "commit": "0",
+        "jobs": 1000,
+        "quality": "pass"
+      },
+      "after": {
+        "compute": {
+          "type": "model.large",
+          "hours": 360,
+          "od": "0.20",
+          "sp": "0.12"
+        },
+        "ebs": [
+          {
+            "type": "gp3",
+            "gib": 100,
+            "rate": "0.08",
+            "extra_iops": 0,
+            "extra_mib_s": 0,
+            "resource_id": "vol-synthetic-1"
+          }
+        ],
+        "commit": "0",
+        "jobs": 1000,
+        "quality": "pass"
+      },
+      "expected": {
+        "before": "152.00",
+        "after": "80.00",
+        "decision": "candidate"
+      }
+    }
+  ]
+}

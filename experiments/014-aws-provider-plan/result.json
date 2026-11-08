@@ -1,0 +1,70 @@
+{
+  "status": "pass",
+  "terraform_version": "1.13.5",
+  "provider_version": "5.100.0",
+  "format_version": "1.2",
+  "denied_requests": 0,
+  "rows": {
+    "aws_ebs_volume.fixture": {
+      "address": "aws_ebs_volume.fixture",
+      "type": "aws_ebs_volume",
+      "action": "create",
+      "after": {
+        "values": {
+          "type": "gp3",
+          "size": 20,
+          "iops": 3000,
+          "throughput": 125
+        },
+        "unavailable": {}
+      },
+      "status": "extracted"
+    },
+    "aws_ebs_volume.unknown": {
+      "address": "aws_ebs_volume.unknown",
+      "type": "aws_ebs_volume",
+      "action": "create",
+      "after": {
+        "values": {
+          "type": "gp3",
+          "iops": 3000,
+          "throughput": 125
+        },
+        "unavailable": {
+          "size": "unknown"
+        }
+      },
+      "status": "hold"
+    },
+    "aws_instance.fixture": {
+      "address": "aws_instance.fixture",
+      "type": "aws_instance",
+      "action": "create",
+      "after": {
+        "values": {
+          "instance_type": "t3.micro"
+        },
+        "unavailable": {}
+      },
+      "status": "extracted"
+    },
+    "aws_instance.masked": {
+      "address": "aws_instance.masked",
+      "type": "aws_instance",
+      "action": "create",
+      "after": {
+        "values": {},
+        "unavailable": {
+          "instance_type": "sensitive"
+        }
+      },
+      "status": "hold"
+    },
+    "terraform_data.future": {
+      "address": "terraform_data.future",
+      "type": "terraform_data",
+      "action": "create",
+      "status": "unsupported"
+    }
+  }
+}

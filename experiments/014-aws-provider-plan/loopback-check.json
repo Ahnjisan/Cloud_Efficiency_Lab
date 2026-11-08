@@ -1,0 +1,11 @@
+{
+  "target": "127.0.0.1",
+  "statuses": {
+    "GET": 403,
+    "CONNECT": 403
+  },
+  "recorded_methods": [
+    "GET",
+    "CONNECT"
+  ]
+}

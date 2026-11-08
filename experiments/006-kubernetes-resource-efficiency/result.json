@@ -1,0 +1,159 @@
+{
+  "kind": "synthetic-static",
+  "nodes": [
+    {
+      "name": "small",
+      "capacity": [
+        2000,
+        4096
+      ],
+      "allocatable": [
+        1800,
+        3072
+      ],
+      "usd_per_hour": "0.12"
+    },
+    {
+      "name": "large",
+      "capacity": [
+        4000,
+        8192
+      ],
+      "allocatable": [
+        3600,
+        7168
+      ],
+      "usd_per_hour": "0.22"
+    }
+  ],
+  "replicas": 4,
+  "pods": {
+    "baseline": {
+      "request": [
+        700,
+        512
+      ],
+      "limit": [
+        1000,
+        1024
+      ],
+      "scenarios": {
+        "small": {
+          "fits_on_one": null,
+          "fits_on_two": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "minimum_of_tested": 2,
+          "estimated_usd_720h": "172.80"
+        },
+        "large": {
+          "fits_on_one": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "fits_on_two": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "minimum_of_tested": 1,
+          "estimated_usd_720h": "158.40"
+        }
+      }
+    },
+    "candidate": {
+      "request": [
+        400,
+        512
+      ],
+      "limit": [
+        1000,
+        1024
+      ],
+      "scenarios": {
+        "small": {
+          "fits_on_one": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "fits_on_two": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "minimum_of_tested": 1,
+          "estimated_usd_720h": "86.40"
+        },
+        "large": {
+          "fits_on_one": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "fits_on_two": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "minimum_of_tested": 1,
+          "estimated_usd_720h": "158.40"
+        }
+      }
+    },
+    "candidate-cpu-cap": {
+      "request": [
+        400,
+        512
+      ],
+      "limit": [
+        600,
+        1024
+      ],
+      "scenarios": {
+        "small": {
+          "fits_on_one": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "fits_on_two": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "minimum_of_tested": 1,
+          "estimated_usd_720h": "86.40"
+        },
+        "large": {
+          "fits_on_one": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "fits_on_two": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "minimum_of_tested": 1,
+          "estimated_usd_720h": "158.40"
+        }
+      }
+    }
+  }
+}

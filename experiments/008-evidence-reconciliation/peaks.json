@@ -1,0 +1,7 @@
+[
+  {"resource":"i-orders","window":"peak-01","config":"orders-small-v1","arrived":2,"p99_ms":180},
+  {"resource":"i-worker","window":"peak-01","config":"worker-small-v1","arrived":1,"p99_ms":250},
+  {"resource":"i-conflict","window":"peak-01","config":"conflict-small-v1","arrived":1,"p99_ms":130},
+  {"resource":"i-missing","window":"peak-01","config":"missing-small-v1","arrived":1,"p99_ms":160},
+  {"resource":"i-stale","window":"peak-00","config":"stale-small-v1","arrived":1,"p99_ms":120}
+]

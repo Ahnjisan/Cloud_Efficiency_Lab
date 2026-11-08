@@ -1,0 +1,206 @@
+{
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.14.7",
+  "runs": [
+    {
+      "id": "001",
+      "command": "py -3 -B experiments/001-ebs-waste-rules/verify_rules.py",
+      "started_utc": "2026-11-08T04:36:46.891823+00:00",
+      "exit_code": 0,
+      "stdout_path": "001-reproduction.stdout.txt",
+      "failed_stdout": null,
+      "stderr": ""
+    },
+    {
+      "id": "002",
+      "command": "py -3 -B experiments/002-ebs-rule-robustness/evaluate.py",
+      "started_utc": "2026-11-08T04:36:47.016133+00:00",
+      "exit_code": 0,
+      "stdout_path": "002-ebs-rule-robustness/result.json",
+      "failed_stdout": null,
+      "stderr": ""
+    },
+    {
+      "id": "003",
+      "command": "py -3 -B experiments/003-aws-cost-simulation/simulate.py",
+      "started_utc": "2026-11-08T04:36:47.141387+00:00",
+      "exit_code": 1,
+      "stdout_path": null,
+      "failed_stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"[repository]\\experiments\\003-aws-cost-simulation\\simulate.py\", line 91, in <module>\n    main()\n    ~~~~^^\n  File \"[repository]\\experiments\\003-aws-cost-simulation\\simulate.py\", line 70, in main\n    assert {key: result[key] for key in case[\"expected\"]} == case[\"expected\"], result\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: {'before': '152.00', 'after': '8.00', 'before_lines': [{'id': 'commitment', 'usd': '0.00'}, {'id': 'uncovered_ec2', 'usd': '144.00'}, {'id': 'ebs', 'usd': '8.00'}], 'after_lines': [{'id': 'commitment', 'usd': '0.00'}, {'id': 'uncovered_ec2', 'usd': '0.00'}, {'id': 'ebs', 'usd': '8.00'}], 'difference': '144.00', 'savings_rate': '0.9474', 'usd_per_1000_jobs': ['152.00', '8.00'], 'same_work': True, 'decision': 'candidate'}\n"
+    },
+    {
+      "id": "004",
+      "command": "py -3 -B experiments/004-terraform-evidence/analyze.py",
+      "started_utc": "2026-11-08T04:36:47.362863+00:00",
+      "exit_code": 0,
+      "stdout_path": "004-terraform-evidence/result.json",
+      "failed_stdout": null,
+      "stderr": ""
+    },
+    {
+      "id": "006",
+      "command": "py -3 -B experiments/006-kubernetes-resource-efficiency/placement.py",
+      "started_utc": "2026-11-08T04:36:47.515609+00:00",
+      "exit_code": 0,
+      "stdout_path": "006-kubernetes-resource-efficiency/result.json",
+      "failed_stdout": null,
+      "stderr": ""
+    },
+    {
+      "id": "003",
+      "command": "py -3 -B experiments/003-aws-cost-simulation/simulate.py",
+      "started_utc": "2026-11-08T04:37:48.199146+00:00",
+      "exit_code": 0,
+      "stdout_path": null,
+      "failed_stdout": null,
+      "stderr": "",
+      "superseded_stdout_sha256": "b7fd9dde7365986d7b5bb911f95db1af3dc591a1be06b74e168e5086ba669214"
+    },
+    {
+      "id": "007",
+      "command": "py -3 -B experiments/007-infrafit-feasibility/integrate.py",
+      "started_utc": "2026-11-08T04:37:48.315683+00:00",
+      "exit_code": 0,
+      "stdout_path": null,
+      "failed_stdout": null,
+      "stderr": "",
+      "note": "The initial successful stdout was superseded by the final output, which adds node-model evidence. The final raw stdout is recorded by the later run."
+    },
+    {
+      "id": "001",
+      "command": "py -3 -B experiments/001-ebs-waste-rules/verify_rules.py",
+      "started_utc": "2026-11-08T04:41:01.157307+00:00",
+      "exit_code": 0,
+      "stdout_path": "001-reproduction.stdout.txt",
+      "same_as_previous_stdout": true,
+      "failed_stdout": null,
+      "stderr": ""
+    },
+    {
+      "id": "002",
+      "command": "py -3 -B experiments/002-ebs-rule-robustness/evaluate.py",
+      "started_utc": "2026-11-08T04:41:01.260274+00:00",
+      "exit_code": 0,
+      "stdout_path": "002-ebs-rule-robustness/result.json",
+      "same_as_previous_stdout": true,
+      "failed_stdout": null,
+      "stderr": ""
+    },
+    {
+      "id": "003",
+      "command": "py -3 -B experiments/003-aws-cost-simulation/simulate.py",
+      "started_utc": "2026-11-08T04:41:01.410150+00:00",
+      "exit_code": 0,
+      "stdout_path": null,
+      "same_as_previous_stdout": true,
+      "failed_stdout": null,
+      "stderr": "",
+      "superseded_stdout_sha256": "b7fd9dde7365986d7b5bb911f95db1af3dc591a1be06b74e168e5086ba669214"
+    },
+    {
+      "id": "004",
+      "command": "py -3 -B experiments/004-terraform-evidence/analyze.py",
+      "started_utc": "2026-11-08T04:41:01.518881+00:00",
+      "exit_code": 0,
+      "stdout_path": "004-terraform-evidence/result.json",
+      "same_as_previous_stdout": true,
+      "failed_stdout": null,
+      "stderr": ""
+    },
+    {
+      "id": "006",
+      "command": "py -3 -B experiments/006-kubernetes-resource-efficiency/placement.py",
+      "started_utc": "2026-11-08T04:41:01.610686+00:00",
+      "exit_code": 0,
+      "stdout_path": "006-kubernetes-resource-efficiency/result.json",
+      "same_as_previous_stdout": true,
+      "failed_stdout": null,
+      "stderr": ""
+    },
+    {
+      "id": "007",
+      "command": "py -3 -B experiments/007-infrafit-feasibility/integrate.py",
+      "started_utc": "2026-11-08T04:41:01.707891+00:00",
+      "exit_code": 0,
+      "stdout_path": null,
+      "same_as_previous_stdout": false,
+      "failed_stdout": null,
+      "stderr": "",
+      "note": "Output differs from the initial successful run because node-model evidence was added; all six decisions were independently reasserted.",
+      "superseded_stdout_sha256": "60ce414c5a0d681b861d7b470b18b53e37ef3ed01cd1695a1d138b0f724ac7b1"
+    },
+    {
+      "id": "001",
+      "command": "py -3 -B experiments/001-ebs-waste-rules/verify_rules.py",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "python": "3.14.7",
+      "started_utc": "2026-11-08T05:00:29.219975+00:00",
+      "exit_code": 0,
+      "stdout_path": "001-reproduction.stdout.txt",
+      "stdout_sha256": "ff058b186e40eadcc123715559f609e784147bddff927700f481c1f150462c7e",
+      "stderr": "",
+      "failed_stdout": null
+    },
+    {
+      "id": "002",
+      "command": "py -3 -B experiments/002-ebs-rule-robustness/evaluate.py",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "python": "3.14.7",
+      "started_utc": "2026-11-08T05:00:29.588558+00:00",
+      "exit_code": 0,
+      "stdout_path": "002-ebs-rule-robustness/result.json",
+      "stdout_sha256": "8d179ac26ad00bfae73ebc3e5cd8fdc71db60aed210e84a98c89e499628d2e73",
+      "stderr": "",
+      "failed_stdout": null
+    },
+    {
+      "id": "003",
+      "command": "py -3 -B experiments/003-aws-cost-simulation/simulate.py",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "python": "3.14.7",
+      "started_utc": "2026-11-08T05:00:29.783996+00:00",
+      "exit_code": 0,
+      "stdout_path": "003-aws-cost-simulation/result.json",
+      "stdout_sha256": "2382079f6d390e36c000c21982ed8fecee547db8127ec9b8ba8650856a998845",
+      "stderr": "",
+      "failed_stdout": null
+    },
+    {
+      "id": "004",
+      "command": "py -3 -B experiments/004-terraform-evidence/analyze.py",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "python": "3.14.7",
+      "started_utc": "2026-11-08T05:00:29.904846+00:00",
+      "exit_code": 0,
+      "stdout_path": "004-terraform-evidence/result.json",
+      "stdout_sha256": "cb25fe35462115e9eb6a6bf6a75c8487039b2440416f54f492c5d5d6e35d1ce5",
+      "stderr": "",
+      "failed_stdout": null
+    },
+    {
+      "id": "006",
+      "command": "py -3 -B experiments/006-kubernetes-resource-efficiency/placement.py",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "python": "3.14.7",
+      "started_utc": "2026-11-08T05:00:30.040958+00:00",
+      "exit_code": 0,
+      "stdout_path": "006-kubernetes-resource-efficiency/result.json",
+      "stdout_sha256": "1e809ab0b8af5089d2aae5d66727b5bc68bf854c536fc424b364420dc8bc4109",
+      "stderr": "",
+      "failed_stdout": null
+    },
+    {
+      "id": "007",
+      "command": "py -3 -B experiments/007-infrafit-feasibility/integrate.py",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "python": "3.14.7",
+      "started_utc": "2026-11-08T05:00:30.182745+00:00",
+      "exit_code": 0,
+      "stdout_path": "007-infrafit-feasibility/result.json",
+      "stdout_sha256": "d804f25978d232de63b7ad6a4e66820af9cb3e452cefcd7b2851027f5bc82b69",
+      "stderr": "",
+      "failed_stdout": null
+    }
+  ]
+}

@@ -1,0 +1,262 @@
+{
+  "profile": "infrafit-3301a2c2fb",
+  "available_before_gib": 3.9325790405273438,
+  "start_guard_gib": 3.75,
+  "stop_guard_gib": 1.5,
+  "commands": [
+    {
+      "args": [
+        "docker",
+        "image",
+        "inspect",
+        "finguardops-python:k8s-371-395200c3",
+        "--format",
+        "{{.Id}}"
+      ],
+      "exit_code": 0,
+      "min_host_gib": 3.9330101013183594,
+      "stdout": "sha256:519591d6871b7bc437060736b9f7456b8731f1499a57e22e6c285135ae657bf7\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "kubectl",
+        "config",
+        "current-context"
+      ],
+      "exit_code": 0,
+      "min_host_gib": 3.927947998046875,
+      "stdout": "minikube\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "docker",
+        "network",
+        "create",
+        "--label",
+        "infrafit.run=infrafit-3301a2c2fb",
+        "infrafit-3301a2c2fb"
+      ],
+      "exit_code": 0,
+      "min_host_gib": 3.6147193908691406,
+      "stdout": "3a0af721af0aa59a472530d097f679bd80f7fe4ca8dac8f932b79aec3de2964e\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "minikube",
+        "start",
+        "-p",
+        "infrafit-3301a2c2fb",
+        "--driver=docker",
+        "--container-runtime=containerd",
+        "--kubernetes-version=v1.37.0",
+        "--cpus=2",
+        "--memory=2048",
+        "--disk-size=8g",
+        "--network=infrafit-3301a2c2fb",
+        "--listen-address=127.0.0.1",
+        "--install-addons=false",
+        "--auto-update-drivers=false",
+        "--interactive=false",
+        "--wait=apiserver",
+        "--wait-timeout=90s"
+      ],
+      "exit_code": 0,
+      "min_host_gib": 1.9501571655273438,
+      "stdout": "* [infrafit-3301a2c2fb] minikube v1.39.0 on Microsoft Windows 11 Home 25H2\n  - KUBECONFIG=[scratch]\\kubeconfig\n  - MINIKUBE_HOME=[scratch]\n  - MINIKUBE_IN_STYLE=false\n* Using the docker driver based on user configuration\n* Using Docker Desktop driver with root privileges\n* Starting \"infrafit-3301a2c2fb\" primary control-plane node in \"infrafit-3301a2c2fb\" cluster\n* Pulling base image v0.0.51 ...\n* Preparing Kubernetes v1.37.0 on containerd 2.3.4 ...\n* Configuring CNI (Container Networking Interface) ...\n* Verifying Kubernetes components...\n* Done! kubectl is now configured to use \"infrafit-3301a2c2fb\" cluster and \"default\" namespace by default\n",
+      "stderr": "E1108 14:41:55.717979   38624 start.go:158] Unable to scale down deployment \"coredns\" in namespace \"kube-system\" to 1 replica: non-retryable failure while rescaling coredns deployment: Operation cannot be fulfilled on deployments.apps \"coredns\": the object has been modified; please apply your changes to the latest version and try again\n"
+    },
+    {
+      "args": [
+        "minikube",
+        "image",
+        "load",
+        "finguardops-python:k8s-371-395200c3",
+        "--daemon",
+        "-p",
+        "infrafit-3301a2c2fb"
+      ],
+      "exit_code": 0,
+      "min_host_gib": 1.6683349609375,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "kubectl",
+        "--context",
+        "infrafit-3301a2c2fb",
+        "--request-timeout=12s",
+        "get",
+        "nodes",
+        "-o",
+        "json"
+      ],
+      "exit_code": 0,
+      "min_host_gib": 1.9633369445800781,
+      "stdout": "{\n    \"apiVersion\": \"v1\",\n    \"items\": [\n        {\n            \"apiVersion\": \"v1\",\n            \"kind\": \"Node\",\n            \"metadata\": {\n                \"annotations\": {\n                    \"node.alpha.kubernetes.io/ttl\": \"0\",\n                    \"volumes.kubernetes.io/controller-managed-attach-detach\": \"true\"\n                },\n                \"creationTimestamp\": \"2026-11-08T05:41:43Z\",\n                \"labels\": {\n                    \"beta.kubernetes.io/arch\": \"amd64\",\n                    \"beta.kubernetes.io/os\": \"linux\",\n                    \"kubernetes.io/arch\": \"amd64\",\n                    \"kubernetes.io/hostname\": \"infrafit-3301a2c2fb\",\n                    \"kubernetes.io/os\": \"linux\",\n                    \"minikube.k8s.io/commit\": \"7a9f6a841470a207de8cf4bafcccee0969d8ba10\",\n                    \"minikube.k8s.io/name\": \"infrafit-3301a2c2fb\",\n                    \"minikube.k8s.io/primary\": \"true\",\n                    \"minikube.k8s.io/updated_at\": \"2026_11_08T14_41_51_0700\",\n                    \"minikube.k8s.io/version\": \"v1.39.0\",\n                    \"node-role.kubernetes.io/control-plane\": \"\",\n                    \"node.kubernetes.io/exclude-from-external-load-balancers\": \"\"\n                },\n                \"name\": \"infrafit-3301a2c2fb\",\n                \"resourceVersion\": \"435\",\n                \"uid\": \"5a8ffd76-3b9b-43e1-a913-7b756e1f8352\"\n            },\n            \"spec\": {\n                \"podCIDR\": \"10.244.0.0/24\",\n                \"podCIDRs\": [\n                    \"10.244.0.0/24\"\n                ],\n                \"taints\": [\n                    {\n                        \"effect\": \"NoSchedule\",\n                        \"key\": \"node.kubernetes.io/not-ready\"\n                    }\n                ]\n            },\n            \"status\": {\n                \"addresses\": [\n                    {\n                        \"address\": \"192.168.0.2\",\n                        \"type\": \"InternalIP\"\n                    },\n                    {\n                        \"address\": \"infrafit-3301a2c2fb\",\n                        \"type\": \"Hostname\"\n                    }\n                ],\n                \"allocatable\": {\n                    \"cpu\": \"12\",\n                    \"ephemeral-storage\": \"1081101176832\",\n                    \"hugepages-1Gi\": \"0\",\n                    \"hugepages-2Mi\": \"0\",\n                    \"memory\": \"7969996Ki\",\n                    \"pods\": \"110\"\n                },\n                \"capacity\": {\n                    \"cpu\": \"12\",\n                    \"ephemeral-storage\": \"1081101176832\",\n                    \"hugepages-1Gi\": \"0\",\n                    \"hugepages-2Mi\": \"0\",\n                    \"memory\": \"7969996Ki\",\n                    \"pods\": \"110\"\n                },\n                \"conditions\": [\n                    {\n                        \"lastHeartbeatTime\": \"2026-11-08T05:42:20Z\",\n                        \"lastTransitionTime\": \"2026-11-08T05:41:41Z\",\n                        \"message\": \"kubelet has sufficient memory available\",\n                        \"reason\": \"KubeletHasSufficientMemory\",\n                        \"status\": \"False\",\n                        \"type\": \"MemoryPressure\"\n                    },\n                    {\n                        \"lastHeartbeatTime\": \"2026-11-08T05:42:20Z\",\n                        \"lastTransitionTime\": \"2026-11-08T05:41:41Z\",\n                        \"message\": \"kubelet has no disk pressure\",\n                        \"reason\": \"KubeletHasNoDiskPressure\",\n                        \"status\": \"False\",\n                        \"type\": \"DiskPressure\"\n                    },\n                    {\n                        \"lastHeartbeatTime\": \"2026-11-08T05:42:20Z\",\n                        \"lastTransitionTime\": \"2026-11-08T05:41:41Z\",\n                        \"message\": \"kubelet has sufficient PID available\",\n                        \"reason\": \"KubeletHasSufficientPID\",\n                        \"status\": \"False\",\n                        \"type\": \"PIDPressure\"\n                    },\n                    {\n                        \"lastHeartbeatTime\": \"2026-11-08T05:42:20Z\",\n                        \"lastTransitionTime\": \"2026-11-08T05:41:41Z\",\n                        \"message\": \"container runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:Network plugin returns error: cni plugin not initialized\",\n                        \"reason\": \"KubeletNotReady\",\n                        \"status\": \"False\",\n                        \"type\": \"Ready\"\n                    }\n                ],\n                \"daemonEndpoints\": {\n                    \"kubeletEndpoint\": {\n                        \"Port\": 10250\n                    }\n                },\n                \"declaredFeatures\": [\n                    \"ExtendWebSocketsToKubelet\",\n                    \"InPlacePodLevelResourcesVerticalScaling\",\n                    \"InPlacePodVerticalScalingInitContainers\",\n                    \"RestartAllContainersOnContainerExits\"\n                ],\n                \"features\": {\n                    \"supplementalGroupsPolicy\": true\n                },\n                \"images\": [\n                    {\n                        \"names\": [\n                            \"docker.io/kindest/kindnetd@sha256:07a4b3fe0077a0ae606cc0a200fc25a28fa64dcc30b8d311b461089969449f9a\",\n                            \"docker.io/kindest/kindnetd:v20250512-df8de77b\"\n                        ],\n                        \"sizeBytes\": 44375501\n                    },\n                    {\n                        \"names\": [\n                            \"docker.io/kindest/kindnetd@sha256:526969f0a1a7a788a7a96f53a4ad3b51607bde7bb2841edf52a02916e8d52650\",\n                            \"docker.io/kindest/kindnetd:v20260820-69b56db7\"\n                        ],\n                        \"sizeBytes\": 39744255\n                    },\n                    {\n                        \"names\": [\n                            \"registry.k8s.io/kube-apiserver@sha256:d1045e5c6d2f016797d22143eba7502e1bb712a4681836a7c35763a9c192dd70\",\n                            \"registry.k8s.io/kube-apiserver:v1.37.0\"\n                        ],\n                        \"sizeBytes\": 31171933\n                    },\n                    {\n                        \"names\": [\n                            \"registry.k8s.io/kube-proxy@sha256:77bf2b08ff8ac1a4a446cffaa85e79e87379c8cb54fcf60f2cb6c62c966829c8\",\n                            \"registry.k8s.io/kube-proxy:v1.37.0\"\n                        ],\n                        \"sizeBytes\": 30200433\n                    },\n                    {\n                        \"names\": [\n                            \"registry.k8s.io/kube-controller-manager@sha256:997c997924eb8574f63f204a0b0af133aaf33c10df84009c32d34037f4e0e077\",\n                            \"registry.k8s.io/kube-controller-manager:v1.37.0\"\n                        ],\n                        \"sizeBytes\": 27291057\n                    },\n                    {\n                        \"names\": [\n                            \"registry.k8s.io/coredns/coredns@sha256:900f9c109f7a33545d3c811516e8376df9019147b750f5ce3e254468769176ea\",\n                            \"registry.k8s.io/coredns/coredns:v1.14.6\"\n                        ],\n                        \"sizeBytes\": 23758055\n                    },\n                    {\n                        \"names\": [\n                            \"registry.k8s.io/etcd@sha256:6ecefbe2510c4a30573a62a4d6dd175acf881ca67003fcd91849a16df7a724d5\",\n                            \"registry.k8s.io/etcd:3.7.0-0\"\n                        ],\n                        \"sizeBytes\": 22342384\n                    },\n                    {\n                        \"names\": [\n                            \"registry.k8s.io/kube-scheduler@sha256:a27622f132aa09cf2461ba077894a070c0186ec607366d14e805912d4804d11f\",\n                            \"registry.k8s.io/kube-scheduler:v1.37.0\"\n                        ],\n                        \"sizeBytes\": 20845306\n                    },\n                    {\n                        \"names\": [\n                            \"gcr.io/k8s-minikube/storage-provisioner@sha256:18eb69d1418e854ad5a19e399310e52808a8321e4c441c1dddad8977a0d7a944\",\n                            \"gcr.io/k8s-minikube/storage-provisioner:v5\"\n                        ],\n                        \"sizeBytes\": 9058936\n                    },\n                    {\n                        \"names\": [\n                            \"registry.k8s.io/pause@sha256:f548e0e8e3dc1896ca956272154dde3314e8cc4fde0a57577ee9fa1c63f5baf4\",\n                            \"registry.k8s.io/pause:3.10.2\"\n                        ],\n                        \"sizeBytes\": 320805\n                    }\n                ],\n                \"nodeInfo\": {\n                    \"architecture\": \"amd64\",\n                    \"bootID\": \"1c0d762e-69e8-415a-a5ac-4c2ba771aed9\",\n                    \"containerRuntimeVersion\": \"containerd://2.3.4\",\n                    \"kernelVersion\": \"6.6.87.2-microsoft-standard-WSL2\",\n                    \"kubeProxyVersion\": \"\",\n                    \"kubeletVersion\": \"v1.37.0\",\n                    \"machineID\": \"b7566eefbea02b7ce85821e86a97158b\",\n                    \"operatingSystem\": \"linux\",\n                    \"osImage\": \"Debian GNU/Linux 12 (bookworm)\",\n                    \"runningInUserNamespace\": false,\n                    \"swap\": {\n                        \"capacity\": 2147483648\n                    },\n                    \"systemUUID\": \"b7566eefbea02b7ce85821e86a97158b\"\n                },\n                \"runtimeHandlers\": [\n                    {\n                        \"features\": {\n                            \"recursiveReadOnlyMounts\": true,\n                            \"userNamespaces\": true\n                        },\n                        \"name\": \"\"\n                    },\n                    {\n                        \"features\": {\n                            \"recursiveReadOnlyMounts\": true,\n                            \"userNamespaces\": true\n                        },\n                        \"name\": \"runc\"\n                    }\n                ]\n            }\n        }\n    ],\n    \"kind\": \"List\",\n    \"metadata\": {\n        \"resourceVersion\": \"\"\n    }\n}\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "kubectl",
+        "--context",
+        "infrafit-3301a2c2fb",
+        "--request-timeout=12s",
+        "apply",
+        "-f",
+        "-"
+      ],
+      "exit_code": 0,
+      "min_host_gib": 1.9397697448730469,
+      "stdout": "pod/large1 created\npod/large2 created\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "kubectl",
+        "--context",
+        "infrafit-3301a2c2fb",
+        "--request-timeout=12s",
+        "get",
+        "pods",
+        "-o",
+        "json"
+      ],
+      "exit_code": 0,
+      "min_host_gib": 1.9249496459960938,
+      "stdout": "{\n    \"apiVersion\": \"v1\",\n    \"items\": [\n        {\n            \"apiVersion\": \"v1\",\n            \"kind\": \"Pod\",\n            \"metadata\": {\n                \"annotations\": {\n                    \"kubectl.kubernetes.io/last-applied-configuration\": \"{\\\"apiVersion\\\":\\\"v1\\\",\\\"kind\\\":\\\"Pod\\\",\\\"metadata\\\":{\\\"annotations\\\":{},\\\"name\\\":\\\"large1\\\",\\\"namespace\\\":\\\"default\\\"},\\\"spec\\\":{\\\"containers\\\":[{\\\"command\\\":[\\\"python3\\\",\\\"-c\\\",\\\"import time; time.sleep(240)\\\"],\\\"image\\\":\\\"finguardops-python:k8s-371-395200c3\\\",\\\"imagePullPolicy\\\":\\\"Never\\\",\\\"name\\\":\\\"fixture\\\",\\\"resources\\\":{\\\"limits\\\":{\\\"cpu\\\":\\\"12000m\\\",\\\"memory\\\":\\\"128Mi\\\"},\\\"requests\\\":{\\\"cpu\\\":\\\"6050m\\\",\\\"memory\\\":\\\"64Mi\\\"}}}],\\\"restartPolicy\\\":\\\"Never\\\"}}\\n\"\n                },\n                \"creationTimestamp\": \"2026-11-08T05:42:30Z\",\n                \"generation\": 1,\n                \"name\": \"large1\",\n                \"namespace\": \"default\",\n                \"resourceVersion\": \"441\",\n                \"uid\": \"1aab1382-1425-42d3-9a52-5e6592b49988\"\n            },\n            \"spec\": {\n                \"containers\": [\n                    {\n                        \"command\": [\n                            \"python3\",\n                            \"-c\",\n                            \"import time; time.sleep(240)\"\n                        ],\n                        \"image\": \"finguardops-python:k8s-371-395200c3\",\n                        \"imagePullPolicy\": \"Never\",\n                        \"name\": \"fixture\",\n                        \"resources\": {\n                            \"limits\": {\n                                \"cpu\": \"12\",\n                                \"memory\": \"128Mi\"\n                            },\n                            \"requests\": {\n                                \"cpu\": \"6050m\",\n                                \"memory\": \"64Mi\"\n                            }\n                        },\n                        \"terminationMessagePath\": \"/dev/termination-log\",\n                        \"terminationMessagePolicy\": \"File\",\n                        \"volumeMounts\": [\n                            {\n                                \"mountPath\": \"/var/run/secrets/kubernetes.io/serviceaccount\",\n                                \"name\": \"kube-api-access-69rvt\",\n                                \"readOnly\": true\n                            }\n                        ]\n                    }\n                ],\n                \"dnsPolicy\": \"ClusterFirst\",\n                \"enableServiceLinks\": true,\n                \"preemptionPolicy\": \"PreemptLowerPriority\",\n                \"priority\": 0,\n                \"restartPolicy\": \"Never\",\n                \"schedulerName\": \"default-scheduler\",\n                \"securityContext\": {},\n                \"serviceAccount\": \"default\",\n                \"serviceAccountName\": \"default\",\n                \"terminationGracePeriodSeconds\": 30,\n                \"tolerations\": [\n                    {\n                        \"effect\": \"NoExecute\",\n                        \"key\": \"node.kubernetes.io/not-ready\",\n                        \"operator\": \"Exists\",\n                        \"tolerationSeconds\": 300\n                    },\n                    {\n                        \"effect\": \"NoExecute\",\n                        \"key\": \"node.kubernetes.io/unreachable\",\n                        \"operator\": \"Exists\",\n                        \"tolerationSeconds\": 300\n                    }\n                ],\n                \"volumes\": [\n                    {\n                        \"name\": \"kube-api-access-69rvt\",\n                        \"projected\": {\n                            \"defaultMode\": 420,\n                            \"sources\": [\n                                {\n                                    \"serviceAccountToken\": {\n                                        \"expirationSeconds\": 3607,\n                                        \"path\": \"token\"\n                                    }\n                                },\n                                {\n                                    \"configMap\": {\n                                        \"items\": [\n                                            {\n                                                \"key\": \"ca.crt\",\n                                                \"path\": \"ca.crt\"\n                                            }\n                                        ],\n                                        \"name\": \"kube-root-ca.crt\"\n                                    }\n                                },\n                                {\n                                    \"downwardAPI\": {\n                                        \"items\": [\n                                            {\n                                                \"fieldRef\": {\n                                                    \"apiVersion\": \"v1\",\n                                                    \"fieldPath\": \"metadata.namespace\"\n                                                },\n                                                \"path\": \"namespace\"\n                                            }\n                                        ]\n                                    }\n                                }\n                            ]\n                        }\n                    }\n                ]\n            },\n            \"status\": {\n                \"conditions\": [\n                    {\n                        \"lastProbeTime\": null,\n                        \"lastTransitionTime\": \"2026-11-08T05:42:30Z\",\n                        \"message\": \"0/1 nodes are available: 1 node(s) had untolerated taint(s). preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.\",\n                        \"observedGeneration\": 1,\n                        \"reason\": \"Unschedulable\",\n                        \"status\": \"False\",\n                        \"type\": \"PodScheduled\"\n                    }\n                ],\n                \"phase\": \"Pending\",\n                \"qosClass\": \"Burstable\"\n            }\n        },\n        {\n            \"apiVersion\": \"v1\",\n            \"kind\": \"Pod\",\n            \"metadata\": {\n                \"annotations\": {\n                    \"kubectl.kubernetes.io/last-applied-configuration\": \"{\\\"apiVersion\\\":\\\"v1\\\",\\\"kind\\\":\\\"Pod\\\",\\\"metadata\\\":{\\\"annotations\\\":{},\\\"name\\\":\\\"large2\\\",\\\"namespace\\\":\\\"default\\\"},\\\"spec\\\":{\\\"containers\\\":[{\\\"command\\\":[\\\"python3\\\",\\\"-c\\\",\\\"import time; time.sleep(240)\\\"],\\\"image\\\":\\\"finguardops-python:k8s-371-395200c3\\\",\\\"imagePullPolicy\\\":\\\"Never\\\",\\\"name\\\":\\\"fixture\\\",\\\"resources\\\":{\\\"limits\\\":{\\\"cpu\\\":\\\"12000m\\\",\\\"memory\\\":\\\"128Mi\\\"},\\\"requests\\\":{\\\"cpu\\\":\\\"6050m\\\",\\\"memory\\\":\\\"64Mi\\\"}}}],\\\"restartPolicy\\\":\\\"Never\\\"}}\\n\"\n                },\n                \"creationTimestamp\": \"2026-11-08T05:42:30Z\",\n                \"generation\": 1,\n                \"name\": \"large2\",\n                \"namespace\": \"default\",\n                \"resourceVersion\": \"444\",\n                \"uid\": \"5d6ae112-ea3d-4a1f-9c5f-ec8b73d2a57a\"\n            },\n            \"spec\": {\n                \"containers\": [\n                    {\n                        \"command\": [\n                            \"python3\",\n                            \"-c\",\n                            \"import time; time.sleep(240)\"\n                        ],\n                        \"image\": \"finguardops-python:k8s-371-395200c3\",\n                        \"imagePullPolicy\": \"Never\",\n                        \"name\": \"fixture\",\n                        \"resources\": {\n                            \"limits\": {\n                                \"cpu\": \"12\",\n                                \"memory\": \"128Mi\"\n                            },\n                            \"requests\": {\n                                \"cpu\": \"6050m\",\n                                \"memory\": \"64Mi\"\n                            }\n                        },\n                        \"terminationMessagePath\": \"/dev/termination-log\",\n                        \"terminationMessagePolicy\": \"File\",\n                        \"volumeMounts\": [\n                            {\n                                \"mountPath\": \"/var/run/secrets/kubernetes.io/serviceaccount\",\n                                \"name\": \"kube-api-access-9xl5t\",\n                                \"readOnly\": true\n                            }\n                        ]\n                    }\n                ],\n                \"dnsPolicy\": \"ClusterFirst\",\n                \"enableServiceLinks\": true,\n                \"preemptionPolicy\": \"PreemptLowerPriority\",\n                \"priority\": 0,\n                \"restartPolicy\": \"Never\",\n                \"schedulerName\": \"default-scheduler\",\n                \"securityContext\": {},\n                \"serviceAccount\": \"default\",\n                \"serviceAccountName\": \"default\",\n                \"terminationGracePeriodSeconds\": 30,\n                \"tolerations\": [\n                    {\n                        \"effect\": \"NoExecute\",\n                        \"key\": \"node.kubernetes.io/not-ready\",\n                        \"operator\": \"Exists\",\n                        \"tolerationSeconds\": 300\n                    },\n                    {\n                        \"effect\": \"NoExecute\",\n                        \"key\": \"node.kubernetes.io/unreachable\",\n                        \"operator\": \"Exists\",\n                        \"tolerationSeconds\": 300\n                    }\n                ],\n                \"volumes\": [\n                    {\n                        \"name\": \"kube-api-access-9xl5t\",\n                        \"projected\": {\n                            \"defaultMode\": 420,\n                            \"sources\": [\n                                {\n                                    \"serviceAccountToken\": {\n                                        \"expirationSeconds\": 3607,\n                                        \"path\": \"token\"\n                                    }\n                                },\n                                {\n                                    \"configMap\": {\n                                        \"items\": [\n                                            {\n                                                \"key\": \"ca.crt\",\n                                                \"path\": \"ca.crt\"\n                                            }\n                                        ],\n                                        \"name\": \"kube-root-ca.crt\"\n                                    }\n                                },\n                                {\n                                    \"downwardAPI\": {\n                                        \"items\": [\n                                            {\n                                                \"fieldRef\": {\n                                                    \"apiVersion\": \"v1\",\n                                                    \"fieldPath\": \"metadata.namespace\"\n                                                },\n                                                \"path\": \"namespace\"\n                                            }\n                                        ]\n                                    }\n                                }\n                            ]\n                        }\n                    }\n                ]\n            },\n            \"status\": {\n                \"conditions\": [\n                    {\n                        \"lastProbeTime\": null,\n                        \"lastTransitionTime\": \"2026-11-08T05:42:30Z\",\n                        \"message\": \"0/1 nodes are available: 1 node(s) had untolerated taint(s). preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.\",\n                        \"observedGeneration\": 1,\n                        \"reason\": \"Unschedulable\",\n                        \"status\": \"False\",\n                        \"type\": \"PodScheduled\"\n                    }\n                ],\n                \"phase\": \"Pending\",\n                \"qosClass\": \"Burstable\"\n            }\n        }\n    ],\n    \"kind\": \"List\",\n    \"metadata\": {\n        \"resourceVersion\": \"\"\n    }\n}\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "kubectl",
+        "--context",
+        "infrafit-3301a2c2fb",
+        "--request-timeout=12s",
+        "get",
+        "pods",
+        "-o",
+        "json"
+      ],
+      "exit_code": 0,
+      "min_host_gib": 1.9877891540527344,
+      "stdout": "{\n    \"apiVersion\": \"v1\",\n    \"items\": [\n        {\n            \"apiVersion\": \"v1\",\n            \"kind\": \"Pod\",\n            \"metadata\": {\n                \"annotations\": {\n                    \"kubectl.kubernetes.io/last-applied-configuration\": \"{\\\"apiVersion\\\":\\\"v1\\\",\\\"kind\\\":\\\"Pod\\\",\\\"metadata\\\":{\\\"annotations\\\":{},\\\"name\\\":\\\"large1\\\",\\\"namespace\\\":\\\"default\\\"},\\\"spec\\\":{\\\"containers\\\":[{\\\"command\\\":[\\\"python3\\\",\\\"-c\\\",\\\"import time; time.sleep(240)\\\"],\\\"image\\\":\\\"finguardops-python:k8s-371-395200c3\\\",\\\"imagePullPolicy\\\":\\\"Never\\\",\\\"name\\\":\\\"fixture\\\",\\\"resources\\\":{\\\"limits\\\":{\\\"cpu\\\":\\\"12000m\\\",\\\"memory\\\":\\\"128Mi\\\"},\\\"requests\\\":{\\\"cpu\\\":\\\"6050m\\\",\\\"memory\\\":\\\"64Mi\\\"}}}],\\\"restartPolicy\\\":\\\"Never\\\"}}\\n\"\n                },\n                \"creationTimestamp\": \"2026-11-08T05:42:30Z\",\n                \"generation\": 1,\n                \"name\": \"large1\",\n                \"namespace\": \"default\",\n                \"resourceVersion\": \"458\",\n                \"uid\": \"1aab1382-1425-42d3-9a52-5e6592b49988\"\n            },\n            \"spec\": {\n                \"containers\": [\n                    {\n                        \"command\": [\n                            \"python3\",\n                            \"-c\",\n                            \"import time; time.sleep(240)\"\n                        ],\n                        \"image\": \"finguardops-python:k8s-371-395200c3\",\n                        \"imagePullPolicy\": \"Never\",\n                        \"name\": \"fixture\",\n                        \"resources\": {\n                            \"limits\": {\n                                \"cpu\": \"12\",\n                                \"memory\": \"128Mi\"\n                            },\n                            \"requests\": {\n                                \"cpu\": \"6050m\",\n                                \"memory\": \"64Mi\"\n                            }\n                        },\n                        \"terminationMessagePath\": \"/dev/termination-log\",\n                        \"terminationMessagePolicy\": \"File\",\n                        \"volumeMounts\": [\n                            {\n                                \"mountPath\": \"/var/run/secrets/kubernetes.io/serviceaccount\",\n                                \"name\": \"kube-api-access-69rvt\",\n                                \"readOnly\": true\n                            }\n                        ]\n                    }\n                ],\n                \"dnsPolicy\": \"ClusterFirst\",\n                \"enableServiceLinks\": true,\n                \"nodeName\": \"infrafit-3301a2c2fb\",\n                \"preemptionPolicy\": \"PreemptLowerPriority\",\n                \"priority\": 0,\n                \"restartPolicy\": \"Never\",\n                \"schedulerName\": \"default-scheduler\",\n                \"securityContext\": {},\n                \"serviceAccount\": \"default\",\n                \"serviceAccountName\": \"default\",\n                \"terminationGracePeriodSeconds\": 30,\n                \"tolerations\": [\n                    {\n                        \"effect\": \"NoExecute\",\n                        \"key\": \"node.kubernetes.io/not-ready\",\n                        \"operator\": \"Exists\",\n                        \"tolerationSeconds\": 300\n                    },\n                    {\n                        \"effect\": \"NoExecute\",\n                        \"key\": \"node.kubernetes.io/unreachable\",\n                        \"operator\": \"Exists\",\n                        \"tolerationSeconds\": 300\n                    }\n                ],\n                \"volumes\": [\n                    {\n                        \"name\": \"kube-api-access-69rvt\",\n                        \"projected\": {\n                            \"defaultMode\": 420,\n                            \"sources\": [\n                                {\n                                    \"serviceAccountToken\": {\n                                        \"expirationSeconds\": 3607,\n                                        \"path\": \"token\"\n                                    }\n                                },\n                                {\n                                    \"configMap\": {\n                                        \"items\": [\n                                            {\n                                                \"key\": \"ca.crt\",\n                                                \"path\": \"ca.crt\"\n                                            }\n                                        ],\n                                        \"name\": \"kube-root-ca.crt\"\n                                    }\n                                },\n                                {\n                                    \"downwardAPI\": {\n                                        \"items\": [\n                                            {\n                                                \"fieldRef\": {\n                                                    \"apiVersion\": \"v1\",\n                                                    \"fieldPath\": \"metadata.namespace\"\n                                                },\n                                                \"path\": \"namespace\"\n                                            }\n                                        ]\n                                    }\n                                }\n                            ]\n                        }\n                    }\n                ]\n            },\n            \"status\": {\n                \"allocatedResources\": {\n                    \"cpu\": \"6050m\",\n                    \"memory\": \"64Mi\"\n                },\n                \"conditions\": [\n                    {\n                        \"lastProbeTime\": null,\n                        \"lastTransitionTime\": \"2026-11-08T05:42:31Z\",\n                        \"message\": \"no pod sandbox exists\",\n                        \"observedGeneration\": 1,\n                        \"reason\": \"PodSandboxNotReady\",\n                        \"status\": \"False\",\n                        \"type\": \"PodReadyToStartContainers\"\n                    },\n                    {\n                        \"lastProbeTime\": null,\n                        \"lastTransitionTime\": \"2026-11-08T05:42:31Z\",\n                        \"observedGeneration\": 1,\n                        \"status\": \"True\",\n                        \"type\": \"Initialized\"\n                    },\n                    {\n                        \"lastProbeTime\": null,\n                        \"lastTransitionTime\": \"2026-11-08T05:42:31Z\",\n                        \"message\": \"containers with unready status: [fixture]\",\n                        \"observedGeneration\": 1,\n                        \"reason\": \"ContainersNotReady\",\n                        \"status\": \"False\",\n                        \"type\": \"Ready\"\n                    },\n                    {\n                        \"lastProbeTime\": null,\n                        \"lastTransitionTime\": \"2026-11-08T05:42:31Z\",\n                        \"message\": \"containers with unready status: [fixture]\",\n                        \"observedGeneration\": 1,\n                        \"reason\": \"ContainersNotReady\",\n                        \"status\": \"False\",\n                        \"type\": \"ContainersReady\"\n                    },\n                    {\n                        \"lastProbeTime\": null,\n                        \"lastTransitionTime\": \"2026-11-08T05:42:30Z\",\n                        \"observedGeneration\": 1,\n                        \"status\": \"True\",\n                        \"type\": \"PodScheduled\"\n                    }\n                ],\n                \"containerStatuses\": [\n                    {\n                        \"image\": \"finguardops-python:k8s-371-395200c3\",\n                        \"imageID\": \"\",\n                        \"lastState\": {},\n                        \"name\": \"fixture\",\n                        \"ready\": false,\n                        \"restartCount\": 0,\n                        \"started\": false,\n                        \"state\": {\n                            \"waiting\": {\n                                \"reason\": \"ContainerCreating\"\n                            }\n                        },\n                        \"volumeMounts\": [\n                            {\n                                \"mountPath\": \"/var/run/secrets/kubernetes.io/serviceaccount\",\n                                \"name\": \"kube-api-access-69rvt\",\n                                \"readOnly\": true,\n                                \"recursiveReadOnly\": \"Disabled\"\n                            }\n                        ]\n                    }\n                ],\n                \"hostIP\": \"192.168.0.2\",\n                \"hostIPs\": [\n                    {\n                        \"ip\": \"192.168.0.2\"\n                    }\n                ],\n                \"observedGeneration\": 1,\n                \"phase\": \"Pending\",\n                \"qosClass\": \"Burstable\",\n                \"resources\": {\n                    \"limits\": {\n                        \"cpu\": \"12\",\n                        \"memory\": \"128Mi\"\n                    },\n                    \"requests\": {\n                        \"cpu\": \"6050m\",\n                        \"memory\": \"64Mi\"\n                    }\n                },\n                \"startTime\": \"2026-11-08T05:42:31Z\"\n            }\n        },\n        {\n            \"apiVersion\": \"v1\",\n            \"kind\": \"Pod\",\n            \"metadata\": {\n                \"annotations\": {\n                    \"kubectl.kubernetes.io/last-applied-configuration\": \"{\\\"apiVersion\\\":\\\"v1\\\",\\\"kind\\\":\\\"Pod\\\",\\\"metadata\\\":{\\\"annotations\\\":{},\\\"name\\\":\\\"large2\\\",\\\"namespace\\\":\\\"default\\\"},\\\"spec\\\":{\\\"containers\\\":[{\\\"command\\\":[\\\"python3\\\",\\\"-c\\\",\\\"import time; time.sleep(240)\\\"],\\\"image\\\":\\\"finguardops-python:k8s-371-395200c3\\\",\\\"imagePullPolicy\\\":\\\"Never\\\",\\\"name\\\":\\\"fixture\\\",\\\"resources\\\":{\\\"limits\\\":{\\\"cpu\\\":\\\"12000m\\\",\\\"memory\\\":\\\"128Mi\\\"},\\\"requests\\\":{\\\"cpu\\\":\\\"6050m\\\",\\\"memory\\\":\\\"64Mi\\\"}}}],\\\"restartPolicy\\\":\\\"Never\\\"}}\\n\"\n                },\n                \"creationTimestamp\": \"2026-11-08T05:42:30Z\",\n                \"generation\": 1,\n                \"name\": \"large2\",\n                \"namespace\": \"default\",\n                \"resourceVersion\": \"453\",\n                \"uid\": \"5d6ae112-ea3d-4a1f-9c5f-ec8b73d2a57a\"\n            },\n            \"spec\": {\n                \"containers\": [\n                    {\n                        \"command\": [\n                            \"python3\",\n                            \"-c\",\n                            \"import time; time.sleep(240)\"\n                        ],\n                        \"image\": \"finguardops-python:k8s-371-395200c3\",\n                        \"imagePullPolicy\": \"Never\",\n                        \"name\": \"fixture\",\n                        \"resources\": {\n                            \"limits\": {\n                                \"cpu\": \"12\",\n                                \"memory\": \"128Mi\"\n                            },\n                            \"requests\": {\n                                \"cpu\": \"6050m\",\n                                \"memory\": \"64Mi\"\n                            }\n                        },\n                        \"terminationMessagePath\": \"/dev/termination-log\",\n                        \"terminationMessagePolicy\": \"File\",\n                        \"volumeMounts\": [\n                            {\n                                \"mountPath\": \"/var/run/secrets/kubernetes.io/serviceaccount\",\n                                \"name\": \"kube-api-access-9xl5t\",\n                                \"readOnly\": true\n                            }\n                        ]\n                    }\n                ],\n                \"dnsPolicy\": \"ClusterFirst\",\n                \"enableServiceLinks\": true,\n                \"preemptionPolicy\": \"PreemptLowerPriority\",\n                \"priority\": 0,\n                \"restartPolicy\": \"Never\",\n                \"schedulerName\": \"default-scheduler\",\n                \"securityContext\": {},\n                \"serviceAccount\": \"default\",\n                \"serviceAccountName\": \"default\",\n                \"terminationGracePeriodSeconds\": 30,\n                \"tolerations\": [\n                    {\n                        \"effect\": \"NoExecute\",\n                        \"key\": \"node.kubernetes.io/not-ready\",\n                        \"operator\": \"Exists\",\n                        \"tolerationSeconds\": 300\n                    },\n                    {\n                        \"effect\": \"NoExecute\",\n                        \"key\": \"node.kubernetes.io/unreachable\",\n                        \"operator\": \"Exists\",\n                        \"tolerationSeconds\": 300\n                    }\n                ],\n                \"volumes\": [\n                    {\n                        \"name\": \"kube-api-access-9xl5t\",\n                        \"projected\": {\n                            \"defaultMode\": 420,\n                            \"sources\": [\n                                {\n                                    \"serviceAccountToken\": {\n                                        \"expirationSeconds\": 3607,\n                                        \"path\": \"token\"\n                                    }\n                                },\n                                {\n                                    \"configMap\": {\n                                        \"items\": [\n                                            {\n                                                \"key\": \"ca.crt\",\n                                                \"path\": \"ca.crt\"\n                                            }\n                                        ],\n                                        \"name\": \"kube-root-ca.crt\"\n                                    }\n                                },\n                                {\n                                    \"downwardAPI\": {\n                                        \"items\": [\n                                            {\n                                                \"fieldRef\": {\n                                                    \"apiVersion\": \"v1\",\n                                                    \"fieldPath\": \"metadata.namespace\"\n                                                },\n                                                \"path\": \"namespace\"\n                                            }\n                                        ]\n                                    }\n                                }\n                            ]\n                        }\n                    }\n                ]\n            },\n            \"status\": {\n                \"conditions\": [\n                    {\n                        \"lastProbeTime\": null,\n                        \"lastTransitionTime\": \"2026-11-08T05:42:30Z\",\n                        \"message\": \"0/1 nodes are available: 1 Insufficient cpu. preemption: 0/1 nodes are available: 1 No preemption victims found for incoming pod.\",\n                        \"observedGeneration\": 1,\n                        \"reason\": \"Unschedulable\",\n                        \"status\": \"False\",\n                        \"type\": \"PodScheduled\"\n                    }\n                ],\n                \"phase\": \"Pending\",\n                \"qosClass\": \"Burstable\"\n            }\n        }\n    ],\n    \"kind\": \"List\",\n    \"metadata\": {\n        \"resourceVersion\": \"\"\n    }\n}\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "kubectl",
+        "--context",
+        "infrafit-3301a2c2fb",
+        "--request-timeout=12s",
+        "delete",
+        "pod",
+        "large1",
+        "large2",
+        "--wait=true",
+        "--timeout=10s"
+      ],
+      "exit_code": 1,
+      "min_host_gib": 1.94891357421875,
+      "stdout": "pod \"large1\" deleted from default namespace\npod \"large2\" deleted from default namespace\n",
+      "stderr": "error: timed out waiting for the condition on pods/large1\n"
+    },
+    {
+      "args": [
+        "minikube",
+        "delete",
+        "-p",
+        "infrafit-3301a2c2fb"
+      ],
+      "exit_code": 0,
+      "min_host_gib": 1.9679183959960938,
+      "stdout": "* Deleting \"infrafit-3301a2c2fb\" in docker ...\n* Deleting container \"infrafit-3301a2c2fb\" ...\n* Removing [scratch]\\.minikube\\machines\\infrafit-3301a2c2fb ...\n* Removed all traces of the \"infrafit-3301a2c2fb\" cluster.\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "docker",
+        "network",
+        "inspect",
+        "--format",
+        "{{index .Labels \"infrafit.run\"}}",
+        "infrafit-3301a2c2fb"
+      ],
+      "exit_code": 0,
+      "min_host_gib": 2.2662200927734375,
+      "stdout": "infrafit-3301a2c2fb\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "docker",
+        "network",
+        "rm",
+        "infrafit-3301a2c2fb"
+      ],
+      "exit_code": 0,
+      "min_host_gib": 2.2665672302246094,
+      "stdout": "infrafit-3301a2c2fb\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "docker",
+        "ps",
+        "-aq",
+        "--filter",
+        "name=^/infrafit-3301a2c2fb$"
+      ],
+      "exit_code": 0,
+      "min_host_gib": 2.2589569091796875,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "docker",
+        "network",
+        "ls",
+        "-q",
+        "--filter",
+        "name=^infrafit-3301a2c2fb$"
+      ],
+      "exit_code": 0,
+      "min_host_gib": 2.269683837890625,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "scheduling": {
+    "large": {
+      "request_m": 6050,
+      "scheduled": 1,
+      "unschedulable": true
+    }
+  },
+  "runs": [],
+  "status": "blocked",
+  "node": {
+    "capacity": {
+      "cpu": "12",
+      "ephemeral-storage": "1081101176832",
+      "hugepages-1Gi": "0",
+      "hugepages-2Mi": "0",
+      "memory": "7969996Ki",
+      "pods": "110"
+    },
+    "allocatable": {
+      "cpu": "12",
+      "ephemeral-storage": "1081101176832",
+      "hugepages-1Gi": "0",
+      "hugepages-2Mi": "0",
+      "memory": "7969996Ki",
+      "pods": "110"
+    }
+  },
+  "reason": "kubectl --context failed",
+  "cleanup_verified": true
+}

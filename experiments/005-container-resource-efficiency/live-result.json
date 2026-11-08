@@ -1,0 +1,1042 @@
+{
+  "scope": "infrafit-docker-8d2498b7fb",
+  "image": "python@sha256:519591d6871b7bc437060736b9f7456b8731f1499a57e22e6c285135ae657bf7",
+  "start_guard_gib": 2.25,
+  "stop_guard_gib": 1.5,
+  "available_before_gib": 3.2246932983398438,
+  "status": "pass",
+  "commands": [
+    {
+      "args": [
+        "docker",
+        "image",
+        "inspect",
+        "python@sha256:519591d6871b7bc437060736b9f7456b8731f1499a57e22e6c285135ae657bf7",
+        "--format",
+        "{{.Id}}"
+      ],
+      "exit_code": 0,
+      "min_host_gib": 3.227275848388672,
+      "stdout": "sha256:519591d6871b7bc437060736b9f7456b8731f1499a57e22e6c285135ae657bf7\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "docker",
+        "network",
+        "create",
+        "--label",
+        "infrafit.run=infrafit-docker-8d2498b7fb",
+        "infrafit-docker-8d2498b7fb"
+      ],
+      "exit_code": 0,
+      "min_host_gib": 3.2222213745117188,
+      "stdout": "83ebc325c097a739821979a9f7cc95f77ffe3405641f682b4be417ea608249f1\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "docker",
+        "run",
+        "-d",
+        "--rm",
+        "--pull=never",
+        "--name",
+        "infrafit-docker-8d2498b7fb-1",
+        "--label",
+        "infrafit.run=infrafit-docker-8d2498b7fb",
+        "--network",
+        "infrafit-docker-8d2498b7fb",
+        "--publish",
+        "127.0.0.1::8080",
+        "--cpus",
+        "1.0",
+        "--memory",
+        "512m",
+        "--memory-swap",
+        "512m",
+        "--pids-limit",
+        "32",
+        "--mount",
+        "type=bind,src=[fixture]\\workload.py,dst=/fixture.py,readonly",
+        "python@sha256:519591d6871b7bc437060736b9f7456b8731f1499a57e22e6c285135ae657bf7",
+        "python3",
+        "/fixture.py"
+      ],
+      "exit_code": 0,
+      "min_host_gib": 3.2175445556640625,
+      "stdout": "4caae760f88151e7758c0d6cdd9ad07bbb47e68efba1d5eda5e95328f3bbb22f\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "docker",
+        "port",
+        "infrafit-docker-8d2498b7fb-1",
+        "8080/tcp"
+      ],
+      "exit_code": 0,
+      "min_host_gib": 3.21026611328125,
+      "stdout": "127.0.0.1:58172\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "k6",
+        "run",
+        "--summary-export",
+        "[scratch]\\run-1.json",
+        "[fixture]\\load.js"
+      ],
+      "exit_code": 0,
+      "min_host_gib": 3.157154083251953,
+      "stdout": "\n         /\\      Grafana   /\u203e\u203e/  \n    /\\  /  \\     |\\  __   /  /   \n   /  \\/    \\    | |/ /  /   \u203e\u203e\\ \n  /          \\   |   (  |  (\u203e)  |\n / __________ \\  |_|\\_\\  \\_____/ \n\n\n     execution: local\n        script: [fixture]\\load.js\n        output: -\n\n     scenarios: (100.00%) 1 scenario, 3 max VUs, 32s max duration (incl. graceful stop):\n              * fixed: 25.00 iterations/s for 30s (maxVUs: 3, gracefulStop: 2s)\n\n\nrunning (01.0s), 0/3 VUs, 25 complete and 0 interrupted iterations\nfixed   [   3% ] 1/3 VUs  01.0s/30s  25.00 iters/s\n\nrunning (02.0s), 0/3 VUs, 50 complete and 0 interrupted iterations\nfixed   [   7% ] 0/3 VUs  02.0s/30s  25.00 iters/s\n\nrunning (03.0s), 1/3 VUs, 75 complete and 0 interrupted iterations\nfixed   [  10% ] 1/3 VUs  03.0s/30s  25.00 iters/s\n\nrunning (04.0s), 0/3 VUs, 100 complete and 0 interrupted iterations\nfixed   [  13% ] 0/3 VUs  04.0s/30s  25.00 iters/s\n\nrunning (05.0s), 0/3 VUs, 125 complete and 0 interrupted iterations\nfixed   [  17% ] 1/3 VUs  05.0s/30s  25.00 iters/s\n\nrunning (06.0s), 1/3 VUs, 150 complete and 0 interrupted iterations\nfixed   [  20% ] 1/3 VUs  06.0s/30s  25.00 iters/s\n\nrunning (07.0s), 1/3 VUs, 175 complete and 0 interrupted iterations\nfixed   [  23% ] 1/3 VUs  07.0s/30s  25.00 iters/s\n\nrunning (08.0s), 1/3 VUs, 200 complete and 0 interrupted iterations\nfixed   [  27% ] 1/3 VUs  08.0s/30s  25.00 iters/s\n\nrunning (09.0s), 1/3 VUs, 225 complete and 0 interrupted iterations\nfixed   [  30% ] 1/3 VUs  09.0s/30s  25.00 iters/s\n\nrunning (10.0s), 0/3 VUs, 250 complete and 0 interrupted iterations\nfixed   [  33% ] 0/3 VUs  10.0s/30s  25.00 iters/s\n\nrunning (11.0s), 1/3 VUs, 275 complete and 0 interrupted iterations\nfixed   [  37% ] 1/3 VUs  11.0s/30s  25.00 iters/s\n\nrunning (12.0s), 0/3 VUs, 300 complete and 0 interrupted iterations\nfixed   [  40% ] 0/3 VUs  12.0s/30s  25.00 iters/s\n\nrunning (13.0s), 1/3 VUs, 325 complete and 0 interrupted iterations\nfixed   [  43% ] 1/3 VUs  13.0s/30s  25.00 iters/s\n\nrunning (14.0s), 1/3 VUs, 350 complete and 0 interrupted iterations\nfixed   [  47% ] 1/3 VUs  14.0s/30s  25.00 iters/s\n\nrunning (15.0s), 0/3 VUs, 375 complete and 0 interrupted iterations\nfixed   [  50% ] 0/3 VUs  15.0s/30s  25.00 iters/s\n\nrunning (16.0s), 1/3 VUs, 400 complete and 0 interrupted iterations\nfixed   [  53% ] 1/3 VUs  16.0s/30s  25.00 iters/s\n\nrunning (17.0s), 1/3 VUs, 425 complete and 0 interrupted iterations\nfixed   [  57% ] 1/3 VUs  17.0s/30s  25.00 iters/s\n\nrunning (18.0s), 0/3 VUs, 450 complete and 0 interrupted iterations\nfixed   [  60% ] 0/3 VUs  18.0s/30s  25.00 iters/s\n\nrunning (19.0s), 1/3 VUs, 475 complete and 0 interrupted iterations\nfixed   [  63% ] 1/3 VUs  19.0s/30s  25.00 iters/s\n\nrunning (20.0s), 1/3 VUs, 500 complete and 0 interrupted iterations\nfixed   [  67% ] 1/3 VUs  20.0s/30s  25.00 iters/s\n\nrunning (21.0s), 1/3 VUs, 525 complete and 0 interrupted iterations\nfixed   [  70% ] 1/3 VUs  21.0s/30s  25.00 iters/s\n\nrunning (22.0s), 0/3 VUs, 550 complete and 0 interrupted iterations\nfixed   [  73% ] 0/3 VUs  22.0s/30s  25.00 iters/s\n\nrunning (23.0s), 0/3 VUs, 575 complete and 0 interrupted iterations\nfixed   [  77% ] 0/3 VUs  23.0s/30s  25.00 iters/s\n\nrunning (24.0s), 0/3 VUs, 600 complete and 0 interrupted iterations\nfixed   [  80% ] 0/3 VUs  24.0s/30s  25.00 iters/s\n\nrunning (25.0s), 0/3 VUs, 625 complete and 0 interrupted iterations\nfixed   [  83% ] 0/3 VUs  25.0s/30s  25.00 iters/s\n\nrunning (26.0s), 1/3 VUs, 650 complete and 0 interrupted iterations\nfixed   [  87% ] 1/3 VUs  26.0s/30s  25.00 iters/s\n\nrunning (27.0s), 0/3 VUs, 673 complete and 0 interrupted iterations\nfixed   [  90% ] 0/3 VUs  27.0s/30s  25.00 iters/s\n\nrunning (28.0s), 1/3 VUs, 697 complete and 0 interrupted iterations\nfixed   [  93% ] 1/3 VUs  28.0s/30s  25.00 iters/s\n\nrunning (29.0s), 0/3 VUs, 723 complete and 0 interrupted iterations\nfixed   [  97% ] 0/3 VUs  29.0s/30s  25.00 iters/s\n\nrunning (30.0s), 0/3 VUs, 748 complete and 0 interrupted iterations\nfixed \u2713 [ 100% ] 0/3 VUs  30s  25.00 iters/s\n\n\n  \u2588 TOTAL RESULTS \n\n    CUSTOM\n    successful_requests............: 748    24.932442/s\n\n    HTTP\n    http_req_duration..............: avg=28.26ms p(95)=35.85ms p(99)=74.09ms max=179.67ms\n      { expected_response:true }...: avg=28.26ms p(95)=35.85ms p(99)=74.09ms max=179.67ms\n    http_req_failed................: 0.00%  0 out of 748\n    http_reqs......................: 748    24.932442/s\n\n    EXECUTION\n    dropped_iterations.............: 2      0.066664/s\n    iteration_duration.............: avg=29.29ms p(95)=36.88ms p(99)=75.88ms max=179.67ms\n    iterations.....................: 748    24.932442/s\n    vus............................: 0      min=0        max=1\n    vus_max........................: 3      min=3        max=3\n\n    NETWORK\n    data_received..................: 176 kB 5.9 kB/s\n    data_sent......................: 56 kB  1.9 kB/s\n\n\n\n\nrunning (30.0s), 0/3 VUs, 748 complete and 0 interrupted iterations\nfixed \u2713 [ 100% ] 0/3 VUs  30s  25.00 iters/s\n",
+      "stderr": "time=\"2026-11-08T14:55:59+09:00\" level=warning msg=\"Insufficient VUs, reached 3 active VUs and cannot initialize more\" executor=constant-arrival-rate scenario=fixed\n"
+    },
+    {
+      "args": [
+        "docker",
+        "inspect",
+        "--format",
+        "{{json .State}}",
+        "infrafit-docker-8d2498b7fb-1"
+      ],
+      "exit_code": 0,
+      "min_host_gib": 3.2847442626953125,
+      "stdout": "{\"Status\":\"running\",\"Running\":true,\"Paused\":false,\"Restarting\":false,\"OOMKilled\":false,\"Dead\":false,\"Pid\":1041263,\"ExitCode\":0,\"Error\":\"\",\"StartedAt\":\"2026-11-08T05:55:32.403310944Z\",\"FinishedAt\":\"0001-01-01T00:00:00Z\"}\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "docker",
+        "inspect",
+        "--format",
+        "{{.RestartCount}}",
+        "infrafit-docker-8d2498b7fb-1"
+      ],
+      "exit_code": 0,
+      "min_host_gib": 3.289459228515625,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "docker",
+        "stop",
+        "--time",
+        "2",
+        "infrafit-docker-8d2498b7fb-1"
+      ],
+      "exit_code": 0,
+      "min_host_gib": 3.265544891357422,
+      "stdout": "Flag --time has been deprecated, use --timeout instead\ninfrafit-docker-8d2498b7fb-1\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "docker",
+        "run",
+        "-d",
+        "--rm",
+        "--pull=never",
+        "--name",
+        "infrafit-docker-8d2498b7fb-2",
+        "--label",
+        "infrafit.run=infrafit-docker-8d2498b7fb",
+        "--network",
+        "infrafit-docker-8d2498b7fb",
+        "--publish",
+        "127.0.0.1::8080",
+        "--cpus",
+        "0.5",
+        "--memory",
+        "512m",
+        "--memory-swap",
+        "512m",
+        "--pids-limit",
+        "32",
+        "--mount",
+        "type=bind,src=[fixture]\\workload.py,dst=/fixture.py,readonly",
+        "python@sha256:519591d6871b7bc437060736b9f7456b8731f1499a57e22e6c285135ae657bf7",
+        "python3",
+        "/fixture.py"
+      ],
+      "exit_code": 0,
+      "min_host_gib": 3.276111602783203,
+      "stdout": "d003f2a2026fc4bf048948ff9f15df070f0b1b8f700cba3e227253e04a912a89\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "docker",
+        "port",
+        "infrafit-docker-8d2498b7fb-2",
+        "8080/tcp"
+      ],
+      "exit_code": 0,
+      "min_host_gib": 3.2738304138183594,
+      "stdout": "127.0.0.1:58939\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "k6",
+        "run",
+        "--summary-export",
+        "[scratch]\\run-2.json",
+        "[fixture]\\load.js"
+      ],
+      "exit_code": 0,
+      "min_host_gib": 3.186298370361328,
+      "stdout": "\n         /\\      Grafana   /\u203e\u203e/  \n    /\\  /  \\     |\\  __   /  /   \n   /  \\/    \\    | |/ /  /   \u203e\u203e\\ \n  /          \\   |   (  |  (\u203e)  |\n / __________ \\  |_|\\_\\  \\_____/ \n\n\n     execution: local\n        script: [fixture]\\load.js\n        output: -\n\n     scenarios: (100.00%) 1 scenario, 3 max VUs, 32s max duration (incl. graceful stop):\n              * fixed: 25.00 iterations/s for 30s (maxVUs: 3, gracefulStop: 2s)\n\n\nrunning (01.0s), 3/3 VUs, 14 complete and 0 interrupted iterations\nfixed   [   3% ] 3/3 VUs  01.0s/30s  25.00 iters/s\n\nrunning (02.0s), 3/3 VUs, 24 complete and 0 interrupted iterations\nfixed   [   7% ] 3/3 VUs  02.0s/30s  25.00 iters/s\n\nrunning (03.0s), 0/3 VUs, 38 complete and 0 interrupted iterations\nfixed   [  10% ] 0/3 VUs  03.0s/30s  25.00 iters/s\n\nrunning (04.0s), 2/3 VUs, 50 complete and 0 interrupted iterations\nfixed   [  13% ] 2/3 VUs  04.0s/30s  25.00 iters/s\n\nrunning (05.0s), 3/3 VUs, 61 complete and 0 interrupted iterations\nfixed   [  17% ] 3/3 VUs  05.0s/30s  25.00 iters/s\n\nrunning (06.0s), 2/3 VUs, 74 complete and 0 interrupted iterations\nfixed   [  20% ] 2/3 VUs  06.0s/30s  25.00 iters/s\n\nrunning (07.0s), 2/3 VUs, 86 complete and 0 interrupted iterations\nfixed   [  23% ] 2/3 VUs  07.0s/30s  25.00 iters/s\n\nrunning (08.0s), 3/3 VUs, 94 complete and 0 interrupted iterations\nfixed   [  27% ] 3/3 VUs  08.0s/30s  25.00 iters/s\n\nrunning (09.0s), 3/3 VUs, 104 complete and 0 interrupted iterations\nfixed   [  30% ] 3/3 VUs  09.0s/30s  25.00 iters/s\n\nrunning (10.0s), 3/3 VUs, 115 complete and 0 interrupted iterations\nfixed   [  33% ] 3/3 VUs  10.0s/30s  25.00 iters/s\n\nrunning (11.0s), 3/3 VUs, 126 complete and 0 interrupted iterations\nfixed   [  37% ] 3/3 VUs  11.0s/30s  25.00 iters/s\n\nrunning (12.0s), 2/3 VUs, 136 complete and 0 interrupted iterations\nfixed   [  40% ] 2/3 VUs  12.0s/30s  25.00 iters/s\n\nrunning (13.0s), 3/3 VUs, 143 complete and 0 interrupted iterations\nfixed   [  43% ] 3/3 VUs  13.0s/30s  25.00 iters/s\n\nrunning (14.0s), 3/3 VUs, 149 complete and 0 interrupted iterations\nfixed   [  47% ] 3/3 VUs  14.0s/30s  25.00 iters/s\n\nrunning (15.0s), 3/3 VUs, 156 complete and 0 interrupted iterations\nfixed   [  50% ] 3/3 VUs  15.0s/30s  25.00 iters/s\n\nrunning (16.0s), 3/3 VUs, 165 complete and 0 interrupted iterations\nfixed   [  53% ] 3/3 VUs  16.0s/30s  25.00 iters/s\n\nrunning (17.0s), 1/3 VUs, 178 complete and 0 interrupted iterations\nfixed   [  57% ] 1/3 VUs  17.0s/30s  25.00 iters/s\n\nrunning (18.0s), 1/3 VUs, 189 complete and 0 interrupted iterations\nfixed   [  60% ] 1/3 VUs  18.0s/30s  25.00 iters/s\n\nrunning (19.0s), 2/3 VUs, 197 complete and 0 interrupted iterations\nfixed   [  63% ] 2/3 VUs  19.0s/30s  25.00 iters/s\n\nrunning (20.0s), 2/3 VUs, 207 complete and 0 interrupted iterations\nfixed   [  67% ] 2/3 VUs  20.0s/30s  25.00 iters/s\n\nrunning (21.0s), 3/3 VUs, 216 complete and 0 interrupted iterations\nfixed   [  70% ] 3/3 VUs  21.0s/30s  25.00 iters/s\n\nrunning (22.0s), 3/3 VUs, 225 complete and 0 interrupted iterations\nfixed   [  73% ] 3/3 VUs  22.0s/30s  25.00 iters/s\n\nrunning (23.0s), 3/3 VUs, 234 complete and 0 interrupted iterations\nfixed   [  77% ] 3/3 VUs  23.0s/30s  25.00 iters/s\n\nrunning (24.0s), 3/3 VUs, 244 complete and 0 interrupted iterations\nfixed   [  80% ] 3/3 VUs  24.0s/30s  25.00 iters/s\n\nrunning (25.0s), 2/3 VUs, 256 complete and 0 interrupted iterations\nfixed   [  83% ] 2/3 VUs  25.0s/30s  25.00 iters/s\n\nrunning (26.0s), 2/3 VUs, 268 complete and 0 interrupted iterations\nfixed   [  87% ] 2/3 VUs  26.0s/30s  25.00 iters/s\n\nrunning (27.0s), 3/3 VUs, 277 complete and 0 interrupted iterations\nfixed   [  90% ] 3/3 VUs  27.0s/30s  25.00 iters/s\n\nrunning (28.0s), 3/3 VUs, 286 complete and 0 interrupted iterations\nfixed   [  93% ] 3/3 VUs  28.0s/30s  25.00 iters/s\n\nrunning (29.0s), 3/3 VUs, 295 complete and 0 interrupted iterations\nfixed   [  97% ] 3/3 VUs  29.0s/30s  25.00 iters/s\n\nrunning (30.0s), 2/3 VUs, 307 complete and 0 interrupted iterations\nfixed   [ 100% ] 2/3 VUs  30.0s/30s  25.00 iters/s\n\n\n  \u2588 TOTAL RESULTS \n\n    CUSTOM\n    successful_requests............: 309   10.278352/s\n\n    HTTP\n    http_req_duration..............: avg=252.34ms p(95)=457.63ms p(99)=495.57ms max=546.58ms\n      { expected_response:true }...: avg=252.34ms p(95)=457.63ms p(99)=495.57ms max=546.58ms\n    http_req_failed................: 0.00% 0 out of 309\n    http_reqs......................: 309   10.278352/s\n\n    EXECUTION\n    dropped_iterations.............: 441   14.669104/s\n    iteration_duration.............: avg=253.93ms p(95)=458.71ms p(99)=496.37ms max=548.57ms\n    iterations.....................: 309   10.278352/s\n    vus............................: 2     min=0        max=3\n    vus_max........................: 3     min=3        max=3\n\n    NETWORK\n    data_received..................: 73 kB 2.4 kB/s\n    data_sent......................: 23 kB 771 B/s\n\n\n\n\nrunning (30.1s), 0/3 VUs, 309 complete and 0 interrupted iterations\nfixed \u2713 [ 100% ] 0/3 VUs  30s  25.00 iters/s\n",
+      "stderr": "time=\"2026-11-08T14:56:08+09:00\" level=warning msg=\"Insufficient VUs, reached 3 active VUs and cannot initialize more\" executor=constant-arrival-rate scenario=fixed\n"
+    },
+    {
+      "args": [
+        "docker",
+        "inspect",
+        "--format",
+        "{{json .State}}",
+        "infrafit-docker-8d2498b7fb-2"
+      ],
+      "exit_code": 0,
+      "min_host_gib": 3.614696502685547,
+      "stdout": "{\"Status\":\"running\",\"Running\":true,\"Paused\":false,\"Restarting\":false,\"OOMKilled\":false,\"Dead\":false,\"Pid\":1042683,\"ExitCode\":0,\"Error\":\"\",\"StartedAt\":\"2026-11-08T05:56:06.872588476Z\",\"FinishedAt\":\"0001-01-01T00:00:00Z\"}\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "docker",
+        "inspect",
+        "--format",
+        "{{.RestartCount}}",
+        "infrafit-docker-8d2498b7fb-2"
+      ],
+      "exit_code": 0,
+      "min_host_gib": 3.60986328125,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "docker",
+        "stop",
+        "--time",
+        "2",
+        "infrafit-docker-8d2498b7fb-2"
+      ],
+      "exit_code": 0,
+      "min_host_gib": 3.5975379943847656,
+      "stdout": "Flag --time has been deprecated, use --timeout instead\ninfrafit-docker-8d2498b7fb-2\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "docker",
+        "run",
+        "-d",
+        "--rm",
+        "--pull=never",
+        "--name",
+        "infrafit-docker-8d2498b7fb-3",
+        "--label",
+        "infrafit.run=infrafit-docker-8d2498b7fb",
+        "--network",
+        "infrafit-docker-8d2498b7fb",
+        "--publish",
+        "127.0.0.1::8080",
+        "--cpus",
+        "0.5",
+        "--memory",
+        "512m",
+        "--memory-swap",
+        "512m",
+        "--pids-limit",
+        "32",
+        "--mount",
+        "type=bind,src=[fixture]\\workload.py,dst=/fixture.py,readonly",
+        "python@sha256:519591d6871b7bc437060736b9f7456b8731f1499a57e22e6c285135ae657bf7",
+        "python3",
+        "/fixture.py"
+      ],
+      "exit_code": 0,
+      "min_host_gib": 3.596118927001953,
+      "stdout": "82ed7b27fc951698d1d985f89f71462f7e6da55fa25d91ed8e12a2d1c3e61f29\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "docker",
+        "port",
+        "infrafit-docker-8d2498b7fb-3",
+        "8080/tcp"
+      ],
+      "exit_code": 0,
+      "min_host_gib": 3.5584335327148438,
+      "stdout": "127.0.0.1:59266\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "k6",
+        "run",
+        "--summary-export",
+        "[scratch]\\run-3.json",
+        "[fixture]\\load.js"
+      ],
+      "exit_code": 0,
+      "min_host_gib": 3.5249671936035156,
+      "stdout": "\n         /\\      Grafana   /\u203e\u203e/  \n    /\\  /  \\     |\\  __   /  /   \n   /  \\/    \\    | |/ /  /   \u203e\u203e\\ \n  /          \\   |   (  |  (\u203e)  |\n / __________ \\  |_|\\_\\  \\_____/ \n\n\n     execution: local\n        script: [fixture]\\load.js\n        output: -\n\n     scenarios: (100.00%) 1 scenario, 3 max VUs, 32s max duration (incl. graceful stop):\n              * fixed: 25.00 iterations/s for 30s (maxVUs: 3, gracefulStop: 2s)\n\n\nrunning (01.0s), 3/3 VUs, 13 complete and 0 interrupted iterations\nfixed   [   3% ] 3/3 VUs  01.0s/30s  25.00 iters/s\n\nrunning (02.0s), 3/3 VUs, 25 complete and 0 interrupted iterations\nfixed   [   7% ] 3/3 VUs  02.0s/30s  25.00 iters/s\n\nrunning (03.0s), 3/3 VUs, 35 complete and 0 interrupted iterations\nfixed   [  10% ] 3/3 VUs  03.0s/30s  25.00 iters/s\n\nrunning (04.0s), 2/3 VUs, 47 complete and 0 interrupted iterations\nfixed   [  13% ] 2/3 VUs  04.0s/30s  25.00 iters/s\n\nrunning (05.0s), 2/3 VUs, 56 complete and 0 interrupted iterations\nfixed   [  17% ] 2/3 VUs  05.0s/30s  25.00 iters/s\n\nrunning (06.0s), 3/3 VUs, 66 complete and 0 interrupted iterations\nfixed   [  20% ] 3/3 VUs  06.0s/30s  25.00 iters/s\n\nrunning (07.0s), 3/3 VUs, 75 complete and 0 interrupted iterations\nfixed   [  23% ] 3/3 VUs  07.0s/30s  25.00 iters/s\n\nrunning (08.0s), 3/3 VUs, 84 complete and 0 interrupted iterations\nfixed   [  27% ] 3/3 VUs  08.0s/30s  25.00 iters/s\n\nrunning (09.0s), 2/3 VUs, 94 complete and 0 interrupted iterations\nfixed   [  30% ] 2/3 VUs  09.0s/30s  25.00 iters/s\n\nrunning (10.0s), 3/3 VUs, 101 complete and 0 interrupted iterations\nfixed   [  33% ] 3/3 VUs  10.0s/30s  25.00 iters/s\n\nrunning (11.0s), 2/3 VUs, 114 complete and 0 interrupted iterations\nfixed   [  37% ] 2/3 VUs  11.0s/30s  25.00 iters/s\n\nrunning (12.0s), 2/3 VUs, 125 complete and 0 interrupted iterations\nfixed   [  40% ] 2/3 VUs  12.0s/30s  25.00 iters/s\n\nrunning (13.0s), 3/3 VUs, 134 complete and 0 interrupted iterations\nfixed   [  43% ] 3/3 VUs  13.0s/30s  25.00 iters/s\n\nrunning (14.0s), 3/3 VUs, 145 complete and 0 interrupted iterations\nfixed   [  47% ] 3/3 VUs  14.0s/30s  25.00 iters/s\n\nrunning (15.0s), 3/3 VUs, 155 complete and 0 interrupted iterations\nfixed   [  50% ] 3/3 VUs  15.0s/30s  25.00 iters/s\n\nrunning (16.0s), 3/3 VUs, 166 complete and 0 interrupted iterations\nfixed   [  53% ] 3/3 VUs  16.0s/30s  25.00 iters/s\n\nrunning (17.0s), 3/3 VUs, 179 complete and 0 interrupted iterations\nfixed   [  57% ] 3/3 VUs  17.0s/30s  25.00 iters/s\n\nrunning (18.0s), 3/3 VUs, 187 complete and 0 interrupted iterations\nfixed   [  60% ] 3/3 VUs  18.0s/30s  25.00 iters/s\n\nrunning (19.0s), 3/3 VUs, 197 complete and 0 interrupted iterations\nfixed   [  63% ] 3/3 VUs  19.0s/30s  25.00 iters/s\n\nrunning (20.0s), 3/3 VUs, 205 complete and 0 interrupted iterations\nfixed   [  67% ] 3/3 VUs  20.0s/30s  25.00 iters/s\n\nrunning (21.0s), 3/3 VUs, 219 complete and 0 interrupted iterations\nfixed   [  70% ] 3/3 VUs  21.0s/30s  25.00 iters/s\n\nrunning (22.0s), 3/3 VUs, 229 complete and 0 interrupted iterations\nfixed   [  73% ] 3/3 VUs  22.0s/30s  25.00 iters/s\n\nrunning (23.0s), 3/3 VUs, 238 complete and 0 interrupted iterations\nfixed   [  77% ] 3/3 VUs  23.0s/30s  25.00 iters/s\n\nrunning (24.0s), 3/3 VUs, 247 complete and 0 interrupted iterations\nfixed   [  80% ] 3/3 VUs  24.0s/30s  25.00 iters/s\n\nrunning (25.0s), 3/3 VUs, 263 complete and 0 interrupted iterations\nfixed   [  83% ] 3/3 VUs  25.0s/30s  25.00 iters/s\n\nrunning (26.0s), 3/3 VUs, 275 complete and 0 interrupted iterations\nfixed   [  87% ] 3/3 VUs  26.0s/30s  25.00 iters/s\n\nrunning (27.0s), 3/3 VUs, 288 complete and 0 interrupted iterations\nfixed   [  90% ] 3/3 VUs  27.0s/30s  25.00 iters/s\n\nrunning (28.0s), 3/3 VUs, 297 complete and 0 interrupted iterations\nfixed   [  93% ] 3/3 VUs  28.0s/30s  25.00 iters/s\n\nrunning (29.0s), 3/3 VUs, 308 complete and 0 interrupted iterations\nfixed   [  97% ] 3/3 VUs  29.0s/30s  25.00 iters/s\n\nrunning (30.0s), 3/3 VUs, 320 complete and 0 interrupted iterations\nfixed   [ 100% ] 3/3 VUs  30.0s/30s  25.00 iters/s\n\n\n  \u2588 TOTAL RESULTS \n\n    CUSTOM\n    successful_requests............: 323   10.689239/s\n\n    HTTP\n    http_req_duration..............: avg=243.16ms p(95)=386.66ms p(99)=460.94ms max=484.13ms\n      { expected_response:true }...: avg=243.16ms p(95)=386.66ms p(99)=460.94ms max=484.13ms\n    http_req_failed................: 0.00% 0 out of 323\n    http_reqs......................: 323   10.689239/s\n\n    EXECUTION\n    dropped_iterations.............: 428   14.164069/s\n    iteration_duration.............: avg=244.72ms p(95)=390.26ms p(99)=467.93ms max=486.22ms\n    iterations.....................: 323   10.689239/s\n    vus............................: 3     min=2        max=3\n    vus_max........................: 3     min=3        max=3\n\n    NETWORK\n    data_received..................: 76 kB 2.5 kB/s\n    data_sent......................: 24 kB 802 B/s\n\n\n\n\nrunning (30.2s), 0/3 VUs, 323 complete and 0 interrupted iterations\nfixed \u2713 [ 100% ] 0/3 VUs  30s  25.00 iters/s\n",
+      "stderr": "time=\"2026-11-08T14:56:43+09:00\" level=warning msg=\"Insufficient VUs, reached 3 active VUs and cannot initialize more\" executor=constant-arrival-rate scenario=fixed\n"
+    },
+    {
+      "args": [
+        "docker",
+        "inspect",
+        "--format",
+        "{{json .State}}",
+        "infrafit-docker-8d2498b7fb-3"
+      ],
+      "exit_code": 0,
+      "min_host_gib": 3.55718994140625,
+      "stdout": "{\"Status\":\"running\",\"Running\":true,\"Paused\":false,\"Restarting\":false,\"OOMKilled\":false,\"Dead\":false,\"Pid\":1043663,\"ExitCode\":0,\"Error\":\"\",\"StartedAt\":\"2026-11-08T05:56:41.955737889Z\",\"FinishedAt\":\"0001-01-01T00:00:00Z\"}\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "docker",
+        "inspect",
+        "--format",
+        "{{.RestartCount}}",
+        "infrafit-docker-8d2498b7fb-3"
+      ],
+      "exit_code": 0,
+      "min_host_gib": 3.5508766174316406,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "docker",
+        "stop",
+        "--time",
+        "2",
+        "infrafit-docker-8d2498b7fb-3"
+      ],
+      "exit_code": 0,
+      "min_host_gib": 3.54107666015625,
+      "stdout": "Flag --time has been deprecated, use --timeout instead\ninfrafit-docker-8d2498b7fb-3\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "docker",
+        "run",
+        "-d",
+        "--rm",
+        "--pull=never",
+        "--name",
+        "infrafit-docker-8d2498b7fb-4",
+        "--label",
+        "infrafit.run=infrafit-docker-8d2498b7fb",
+        "--network",
+        "infrafit-docker-8d2498b7fb",
+        "--publish",
+        "127.0.0.1::8080",
+        "--cpus",
+        "1.0",
+        "--memory",
+        "512m",
+        "--memory-swap",
+        "512m",
+        "--pids-limit",
+        "32",
+        "--mount",
+        "type=bind,src=[fixture]\\workload.py,dst=/fixture.py,readonly",
+        "python@sha256:519591d6871b7bc437060736b9f7456b8731f1499a57e22e6c285135ae657bf7",
+        "python3",
+        "/fixture.py"
+      ],
+      "exit_code": 0,
+      "min_host_gib": 3.5572586059570312,
+      "stdout": "a6238ea8cd19d4018341430d9ef81247fb2b6085f85754f69e843d6589bedc14\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "docker",
+        "port",
+        "infrafit-docker-8d2498b7fb-4",
+        "8080/tcp"
+      ],
+      "exit_code": 0,
+      "min_host_gib": 3.5438499450683594,
+      "stdout": "127.0.0.1:59602\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "k6",
+        "run",
+        "--summary-export",
+        "[scratch]\\run-4.json",
+        "[fixture]\\load.js"
+      ],
+      "exit_code": 0,
+      "min_host_gib": 3.4947738647460938,
+      "stdout": "\n         /\\      Grafana   /\u203e\u203e/  \n    /\\  /  \\     |\\  __   /  /   \n   /  \\/    \\    | |/ /  /   \u203e\u203e\\ \n  /          \\   |   (  |  (\u203e)  |\n / __________ \\  |_|\\_\\  \\_____/ \n\n\n     execution: local\n        script: [fixture]\\load.js\n        output: -\n\n     scenarios: (100.00%) 1 scenario, 3 max VUs, 32s max duration (incl. graceful stop):\n              * fixed: 25.00 iterations/s for 30s (maxVUs: 3, gracefulStop: 2s)\n\n\nrunning (01.0s), 0/3 VUs, 25 complete and 0 interrupted iterations\nfixed   [   3% ] 0/3 VUs  01.0s/30s  25.00 iters/s\n\nrunning (02.0s), 0/3 VUs, 50 complete and 0 interrupted iterations\nfixed   [   7% ] 0/3 VUs  02.0s/30s  25.00 iters/s\n\nrunning (03.0s), 0/3 VUs, 75 complete and 0 interrupted iterations\nfixed   [  10% ] 0/3 VUs  03.0s/30s  25.00 iters/s\n\nrunning (04.0s), 0/3 VUs, 100 complete and 0 interrupted iterations\nfixed   [  13% ] 0/3 VUs  04.0s/30s  25.00 iters/s\n\nrunning (05.0s), 0/3 VUs, 125 complete and 0 interrupted iterations\nfixed   [  17% ] 0/3 VUs  05.0s/30s  25.00 iters/s\n\nrunning (06.0s), 0/3 VUs, 150 complete and 0 interrupted iterations\nfixed   [  20% ] 0/3 VUs  06.0s/30s  25.00 iters/s\n\nrunning (07.0s), 0/3 VUs, 175 complete and 0 interrupted iterations\nfixed   [  23% ] 0/3 VUs  07.0s/30s  25.00 iters/s\n\nrunning (08.0s), 0/3 VUs, 200 complete and 0 interrupted iterations\nfixed   [  27% ] 0/3 VUs  08.0s/30s  25.00 iters/s\n\nrunning (09.0s), 0/3 VUs, 225 complete and 0 interrupted iterations\nfixed   [  30% ] 0/3 VUs  09.0s/30s  25.00 iters/s\n\nrunning (10.0s), 0/3 VUs, 250 complete and 0 interrupted iterations\nfixed   [  33% ] 0/3 VUs  10.0s/30s  25.00 iters/s\n\nrunning (11.0s), 1/3 VUs, 273 complete and 0 interrupted iterations\nfixed   [  37% ] 1/3 VUs  11.0s/30s  25.00 iters/s\n\nrunning (12.0s), 0/3 VUs, 299 complete and 0 interrupted iterations\nfixed   [  40% ] 0/3 VUs  12.0s/30s  25.00 iters/s\n\nrunning (13.0s), 0/3 VUs, 324 complete and 0 interrupted iterations\nfixed   [  43% ] 0/3 VUs  13.0s/30s  25.00 iters/s\n\nrunning (14.0s), 0/3 VUs, 349 complete and 0 interrupted iterations\nfixed   [  47% ] 0/3 VUs  14.0s/30s  25.00 iters/s\n\nrunning (15.0s), 0/3 VUs, 374 complete and 0 interrupted iterations\nfixed   [  50% ] 0/3 VUs  15.0s/30s  25.00 iters/s\n\nrunning (16.0s), 1/3 VUs, 398 complete and 0 interrupted iterations\nfixed   [  53% ] 1/3 VUs  16.0s/30s  25.00 iters/s\n\nrunning (17.0s), 0/3 VUs, 424 complete and 0 interrupted iterations\nfixed   [  57% ] 0/3 VUs  17.0s/30s  25.00 iters/s\n\nrunning (18.0s), 0/3 VUs, 449 complete and 0 interrupted iterations\nfixed   [  60% ] 0/3 VUs  18.0s/30s  25.00 iters/s\n\nrunning (19.0s), 0/3 VUs, 474 complete and 0 interrupted iterations\nfixed   [  63% ] 0/3 VUs  19.0s/30s  25.00 iters/s\n\nrunning (20.0s), 0/3 VUs, 499 complete and 0 interrupted iterations\nfixed   [  67% ] 0/3 VUs  20.0s/30s  25.00 iters/s\n\nrunning (21.0s), 0/3 VUs, 524 complete and 0 interrupted iterations\nfixed   [  70% ] 0/3 VUs  21.0s/30s  25.00 iters/s\n\nrunning (22.0s), 0/3 VUs, 549 complete and 0 interrupted iterations\nfixed   [  73% ] 0/3 VUs  22.0s/30s  25.00 iters/s\n\nrunning (23.0s), 0/3 VUs, 574 complete and 0 interrupted iterations\nfixed   [  77% ] 0/3 VUs  23.0s/30s  25.00 iters/s\n\nrunning (24.0s), 0/3 VUs, 599 complete and 0 interrupted iterations\nfixed   [  80% ] 0/3 VUs  24.0s/30s  25.00 iters/s\n\nrunning (25.0s), 0/3 VUs, 624 complete and 0 interrupted iterations\nfixed   [  83% ] 0/3 VUs  25.0s/30s  25.00 iters/s\n\nrunning (26.0s), 0/3 VUs, 649 complete and 0 interrupted iterations\nfixed   [  87% ] 0/3 VUs  26.0s/30s  25.00 iters/s\n\nrunning (27.0s), 0/3 VUs, 674 complete and 0 interrupted iterations\nfixed   [  90% ] 0/3 VUs  27.0s/30s  25.00 iters/s\n\nrunning (28.0s), 0/3 VUs, 699 complete and 0 interrupted iterations\nfixed   [  93% ] 0/3 VUs  28.0s/30s  25.00 iters/s\n\nrunning (29.0s), 0/3 VUs, 724 complete and 0 interrupted iterations\nfixed   [  97% ] 0/3 VUs  29.0s/30s  25.00 iters/s\n\nrunning (30.0s), 0/3 VUs, 749 complete and 0 interrupted iterations\nfixed   [ 100% ] 0/3 VUs  30.0s/30s  25.00 iters/s\n\n\n  \u2588 TOTAL RESULTS \n\n    CUSTOM\n    successful_requests............: 750    24.978675/s\n\n    HTTP\n    http_req_duration..............: avg=27.17ms p(95)=34.66ms p(99)=45.35ms max=127.3ms\n      { expected_response:true }...: avg=27.17ms p(95)=34.66ms p(99)=45.35ms max=127.3ms\n    http_req_failed................: 0.00%  0 out of 750\n    http_reqs......................: 750    24.978675/s\n\n    EXECUTION\n    dropped_iterations.............: 1      0.033305/s\n    iteration_duration.............: avg=28.1ms  p(95)=35.48ms p(99)=46.88ms max=127.9ms\n    iterations.....................: 750    24.978675/s\n    vus............................: 0      min=0        max=1\n    vus_max........................: 3      min=3        max=3\n\n    NETWORK\n    data_received..................: 176 kB 5.9 kB/s\n    data_sent......................: 56 kB  1.9 kB/s\n\n\n\n\nrunning (30.0s), 0/3 VUs, 750 complete and 0 interrupted iterations\nfixed \u2713 [ 100% ] 0/3 VUs  30s  25.00 iters/s\n",
+      "stderr": "time=\"2026-11-08T14:57:28+09:00\" level=warning msg=\"Insufficient VUs, reached 3 active VUs and cannot initialize more\" executor=constant-arrival-rate scenario=fixed\n"
+    },
+    {
+      "args": [
+        "docker",
+        "inspect",
+        "--format",
+        "{{json .State}}",
+        "infrafit-docker-8d2498b7fb-4"
+      ],
+      "exit_code": 0,
+      "min_host_gib": 3.548542022705078,
+      "stdout": "{\"Status\":\"running\",\"Running\":true,\"Paused\":false,\"Restarting\":false,\"OOMKilled\":false,\"Dead\":false,\"Pid\":1044656,\"ExitCode\":0,\"Error\":\"\",\"StartedAt\":\"2026-11-08T05:57:17.152533857Z\",\"FinishedAt\":\"0001-01-01T00:00:00Z\"}\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "docker",
+        "inspect",
+        "--format",
+        "{{.RestartCount}}",
+        "infrafit-docker-8d2498b7fb-4"
+      ],
+      "exit_code": 0,
+      "min_host_gib": 3.5395774841308594,
+      "stdout": "0\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "docker",
+        "stop",
+        "--time",
+        "2",
+        "infrafit-docker-8d2498b7fb-4"
+      ],
+      "exit_code": 0,
+      "min_host_gib": 3.528350830078125,
+      "stdout": "Flag --time has been deprecated, use --timeout instead\ninfrafit-docker-8d2498b7fb-4\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "docker",
+        "inspect",
+        "--format",
+        "{{index .Config.Labels \"infrafit.run\"}}",
+        "infrafit-docker-8d2498b7fb-1"
+      ],
+      "exit_code": 1,
+      "min_host_gib": 3.5473365783691406,
+      "stdout": "\n",
+      "stderr": "error: no such object: infrafit-docker-8d2498b7fb-1\n"
+    },
+    {
+      "args": [
+        "docker",
+        "inspect",
+        "--format",
+        "{{index .Config.Labels \"infrafit.run\"}}",
+        "infrafit-docker-8d2498b7fb-2"
+      ],
+      "exit_code": 1,
+      "min_host_gib": 3.540447235107422,
+      "stdout": "\n",
+      "stderr": "error: no such object: infrafit-docker-8d2498b7fb-2\n"
+    },
+    {
+      "args": [
+        "docker",
+        "inspect",
+        "--format",
+        "{{index .Config.Labels \"infrafit.run\"}}",
+        "infrafit-docker-8d2498b7fb-3"
+      ],
+      "exit_code": 1,
+      "min_host_gib": 3.5345001220703125,
+      "stdout": "\n",
+      "stderr": "error: no such object: infrafit-docker-8d2498b7fb-3\n"
+    },
+    {
+      "args": [
+        "docker",
+        "inspect",
+        "--format",
+        "{{index .Config.Labels \"infrafit.run\"}}",
+        "infrafit-docker-8d2498b7fb-4"
+      ],
+      "exit_code": 1,
+      "min_host_gib": 3.5400352478027344,
+      "stdout": "\n",
+      "stderr": "error: no such object: infrafit-docker-8d2498b7fb-4\n"
+    },
+    {
+      "args": [
+        "docker",
+        "network",
+        "inspect",
+        "--format",
+        "{{index .Labels \"infrafit.run\"}}",
+        "infrafit-docker-8d2498b7fb"
+      ],
+      "exit_code": 0,
+      "min_host_gib": 3.541919708251953,
+      "stdout": "infrafit-docker-8d2498b7fb\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "docker",
+        "network",
+        "rm",
+        "infrafit-docker-8d2498b7fb"
+      ],
+      "exit_code": 0,
+      "min_host_gib": 3.5376815795898438,
+      "stdout": "infrafit-docker-8d2498b7fb\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "docker",
+        "ps",
+        "-aq",
+        "--filter",
+        "label=infrafit.run=infrafit-docker-8d2498b7fb"
+      ],
+      "exit_code": 0,
+      "min_host_gib": 3.5475807189941406,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "docker",
+        "network",
+        "ls",
+        "-q",
+        "--filter",
+        "name=^infrafit-docker-8d2498b7fb$"
+      ],
+      "exit_code": 0,
+      "min_host_gib": 3.539569854736328,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "runs": [
+    {
+      "run": 1,
+      "cpu": "1.0",
+      "memory_limit_mib": 512,
+      "before": {
+        "cpu.stat": "usage_usec 446837\nuser_usec 325661\nsystem_usec 121176\nnr_periods 9\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0",
+        "cpu.max": "100000 100000",
+        "memory.current": "37740544",
+        "memory.peak": "37740544",
+        "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0"
+      },
+      "after": {
+        "cpu.stat": "usage_usec 19664746\nuser_usec 19084237\nsystem_usec 580509\nnr_periods 313\nnr_throttled 8\nthrottled_usec 512220\nnr_bursts 0\nburst_usec 0",
+        "cpu.max": "100000 100000",
+        "memory.current": "37621760",
+        "memory.peak": "38248448",
+        "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0"
+      },
+      "sample_interval_s": 30.459626900032163,
+      "oom_killed": false,
+      "restart_count": 0,
+      "k6": {
+        "root_group": {
+          "checks": {},
+          "name": "",
+          "path": "",
+          "id": "d41d8cd98f00b204e9800998ecf8427e",
+          "groups": {}
+        },
+        "metrics": {
+          "data_sent": {
+            "count": 56100,
+            "rate": 1869.9331623556668
+          },
+          "http_req_failed": {
+            "passes": 0,
+            "fails": 748,
+            "value": 0
+          },
+          "successful_requests": {
+            "count": 748,
+            "rate": 24.932442164742223
+          },
+          "http_req_receiving": {
+            "avg": 0.10073235294117648,
+            "p(95)": 0.6084299999999999,
+            "p(99)": 1.468596999999998,
+            "max": 11.8824
+          },
+          "vus_max": {
+            "value": 3,
+            "min": 3,
+            "max": 3
+          },
+          "http_reqs": {
+            "rate": 24.932442164742223,
+            "count": 748
+          },
+          "http_req_sending": {
+            "avg": 0.05071791443850268,
+            "p(95)": 0.53253,
+            "p(99)": 0.691819,
+            "max": 2.3526
+          },
+          "vus": {
+            "max": 1,
+            "value": 0,
+            "min": 0
+          },
+          "iteration_duration": {
+            "avg": 29.29052125668448,
+            "p(95)": 36.889655,
+            "p(99)": 75.88529499999991,
+            "max": 179.6773
+          },
+          "http_req_waiting": {
+            "p(99)": 74.09327599999989,
+            "max": 179.6768,
+            "avg": 28.110457887700537,
+            "p(95)": 35.590135
+          },
+          "http_req_tls_handshaking": {
+            "p(99)": 0,
+            "max": 0,
+            "avg": 0,
+            "p(95)": 0
+          },
+          "iterations": {
+            "count": 748,
+            "rate": 24.932442164742223
+          },
+          "data_received": {
+            "count": 175780,
+            "rate": 5859.123908714423
+          },
+          "dropped_iterations": {
+            "count": 2,
+            "rate": 0.06666428386294712
+          },
+          "http_req_duration{expected_response:true}": {
+            "avg": 28.261908155080228,
+            "p(95)": 35.859019999999994,
+            "p(99)": 74.09327599999989,
+            "max": 179.6768
+          },
+          "http_req_blocked": {
+            "avg": 0.9518910427807482,
+            "p(95)": 1.72963,
+            "p(99)": 3.264060999999997,
+            "max": 14.9415
+          },
+          "http_req_connecting": {
+            "avg": 0.9051184491978603,
+            "p(95)": 1.62302,
+            "p(99)": 3.134754999999996,
+            "max": 13.9297
+          },
+          "http_req_duration": {
+            "p(95)": 35.859019999999994,
+            "p(99)": 74.09327599999989,
+            "max": 179.6768,
+            "avg": 28.261908155080228
+          }
+        }
+      }
+    },
+    {
+      "run": 2,
+      "cpu": "0.5",
+      "memory_limit_mib": 512,
+      "before": {
+        "cpu.stat": "usage_usec 520504\nuser_usec 410710\nsystem_usec 109793\nnr_periods 13\nnr_throttled 9\nthrottled_usec 432160\nnr_bursts 0\nburst_usec 0",
+        "cpu.max": "50000 100000",
+        "memory.current": "17465344",
+        "memory.peak": "17465344",
+        "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0"
+      },
+      "after": {
+        "cpu.stat": "usage_usec 15597526\nuser_usec 15177108\nsystem_usec 420418\nnr_periods 317\nnr_throttled 309\nthrottled_usec 61604764\nnr_bursts 0\nburst_usec 0",
+        "cpu.max": "50000 100000",
+        "memory.current": "17055744",
+        "memory.peak": "18100224",
+        "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0"
+      },
+      "sample_interval_s": 30.513127299956977,
+      "oom_killed": false,
+      "restart_count": 0,
+      "k6": {
+        "metrics": {
+          "vus": {
+            "min": 0,
+            "max": 3,
+            "value": 2
+          },
+          "http_req_duration": {
+            "avg": 252.34252880258921,
+            "p(95)": 457.6312799999998,
+            "p(99)": 495.57162800000003,
+            "max": 546.5892
+          },
+          "http_req_receiving": {
+            "avg": 1.5696420711974108,
+            "p(95)": 1.4237599999999981,
+            "p(99)": 71.30422800000007,
+            "max": 83.1477
+          },
+          "data_received": {
+            "count": 72615,
+            "rate": 2415.4127462390056
+          },
+          "http_req_blocked": {
+            "avg": 1.386418446601942,
+            "p(95)": 3.2034599999999918,
+            "p(99)": 5.475284000000008,
+            "max": 9.3068
+          },
+          "data_sent": {
+            "count": 23175,
+            "rate": 770.8764083741506
+          },
+          "http_req_failed": {
+            "passes": 0,
+            "fails": 309,
+            "value": 0
+          },
+          "http_reqs": {
+            "count": 309,
+            "rate": 10.278352111655343
+          },
+          "vus_max": {
+            "value": 3,
+            "min": 3,
+            "max": 3
+          },
+          "iterations": {
+            "count": 309,
+            "rate": 10.278352111655343
+          },
+          "http_req_tls_handshaking": {
+            "avg": 0,
+            "p(95)": 0,
+            "p(99)": 0,
+            "max": 0
+          },
+          "http_req_sending": {
+            "avg": 0.0661514563106796,
+            "p(95)": 0.5756799999999999,
+            "p(99)": 0.8394280000000007,
+            "max": 3.4348
+          },
+          "dropped_iterations": {
+            "count": 441,
+            "rate": 14.669104470032382
+          },
+          "iteration_duration": {
+            "avg": 253.9356019417475,
+            "p(95)": 458.71395999999976,
+            "p(99)": 496.370312,
+            "max": 548.5725
+          },
+          "http_req_connecting": {
+            "p(95)": 2.7747399999999987,
+            "p(99)": 4.734704000000001,
+            "max": 9.3068,
+            "avg": 1.2811265372168288
+          },
+          "successful_requests": {
+            "count": 309,
+            "rate": 10.278352111655343
+          },
+          "http_req_duration{expected_response:true}": {
+            "avg": 252.34252880258921,
+            "p(95)": 457.6312799999998,
+            "p(99)": 495.57162800000003,
+            "max": 546.5892
+          },
+          "http_req_waiting": {
+            "p(95)": 457.0899199999998,
+            "p(99)": 494.93360800000005,
+            "max": 546.5892,
+            "avg": 250.70673527508092
+          }
+        },
+        "root_group": {
+          "groups": {},
+          "checks": {},
+          "name": "",
+          "path": "",
+          "id": "d41d8cd98f00b204e9800998ecf8427e"
+        }
+      }
+    },
+    {
+      "run": 3,
+      "cpu": "0.5",
+      "memory_limit_mib": 512,
+      "before": {
+        "cpu.stat": "usage_usec 448058\nuser_usec 358446\nsystem_usec 89611\nnr_periods 11\nnr_throttled 6\nthrottled_usec 299457\nnr_bursts 0\nburst_usec 0",
+        "cpu.max": "50000 100000",
+        "memory.current": "16961536",
+        "memory.peak": "17391616",
+        "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0"
+      },
+      "after": {
+        "cpu.stat": "usage_usec 15589786\nuser_usec 15139526\nsystem_usec 450259\nnr_periods 317\nnr_throttled 308\nthrottled_usec 61917624\nnr_bursts 0\nburst_usec 0",
+        "cpu.max": "50000 100000",
+        "memory.current": "17281024",
+        "memory.peak": "17887232",
+        "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0"
+      },
+      "sample_interval_s": 30.63955199997872,
+      "oom_killed": false,
+      "restart_count": 0,
+      "k6": {
+        "root_group": {
+          "name": "",
+          "path": "",
+          "id": "d41d8cd98f00b204e9800998ecf8427e",
+          "groups": {},
+          "checks": {}
+        },
+        "metrics": {
+          "http_req_duration{expected_response:true}": {
+            "avg": 243.16845851393177,
+            "p(95)": 386.66889,
+            "p(99)": 460.9497659999999,
+            "max": 484.1371
+          },
+          "http_req_duration": {
+            "avg": 243.16845851393177,
+            "p(95)": 386.66889,
+            "p(99)": 460.9497659999999,
+            "max": 484.1371
+          },
+          "http_req_tls_handshaking": {
+            "avg": 0,
+            "p(95)": 0,
+            "p(99)": 0,
+            "max": 0
+          },
+          "http_req_waiting": {
+            "p(99)": 460.83758799999987,
+            "max": 483.719,
+            "avg": 241.19918390092872,
+            "p(95)": 385.5621
+          },
+          "vus_max": {
+            "value": 3,
+            "min": 3,
+            "max": 3
+          },
+          "http_req_sending": {
+            "avg": 0.057239628482972135,
+            "p(95)": 0.55405,
+            "p(99)": 0.7461619999999984,
+            "max": 3.0855
+          },
+          "http_req_connecting": {
+            "p(99)": 5.462991999999992,
+            "max": 9.3504,
+            "avg": 1.216531578947368,
+            "p(95)": 2.7456799999999983
+          },
+          "iterations": {
+            "count": 323,
+            "rate": 10.689238915169065
+          },
+          "http_req_blocked": {
+            "avg": 1.3022003095975239,
+            "p(95)": 3.0317799999999977,
+            "p(99)": 5.983027999999994,
+            "max": 9.3504
+          },
+          "http_req_receiving": {
+            "p(95)": 1.5072399999999992,
+            "p(99)": 83.84135599999986,
+            "max": 96.1007,
+            "avg": 1.9120349845201239
+          },
+          "http_req_failed": {
+            "passes": 0,
+            "fails": 323,
+            "value": 0
+          },
+          "vus": {
+            "max": 3,
+            "value": 3,
+            "min": 2
+          },
+          "successful_requests": {
+            "count": 323,
+            "rate": 10.689238915169065
+          },
+          "dropped_iterations": {
+            "rate": 14.164068903072321,
+            "count": 428
+          },
+          "http_reqs": {
+            "count": 323,
+            "rate": 10.689238915169065
+          },
+          "data_received": {
+            "count": 75905,
+            "rate": 2511.97114506473
+          },
+          "iteration_duration": {
+            "avg": 244.7297609907123,
+            "p(95)": 390.2665799999999,
+            "p(99)": 467.9325139999997,
+            "max": 486.2255
+          },
+          "data_sent": {
+            "count": 24225,
+            "rate": 801.6929186376799
+          }
+        }
+      }
+    },
+    {
+      "run": 4,
+      "cpu": "1.0",
+      "memory_limit_mib": 512,
+      "before": {
+        "cpu.stat": "usage_usec 418934\nuser_usec 363076\nsystem_usec 55857\nnr_periods 7\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0",
+        "cpu.max": "100000 100000",
+        "memory.current": "16953344",
+        "memory.peak": "17137664",
+        "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0"
+      },
+      "after": {
+        "cpu.stat": "usage_usec 19381368\nuser_usec 18933983\nsystem_usec 447385\nnr_periods 311\nnr_throttled 4\nthrottled_usec 113431\nnr_bursts 0\nburst_usec 0",
+        "cpu.max": "100000 100000",
+        "memory.current": "17014784",
+        "memory.peak": "17960960",
+        "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0"
+      },
+      "sample_interval_s": 30.45882249996066,
+      "oom_killed": false,
+      "restart_count": 0,
+      "k6": {
+        "metrics": {
+          "vus": {
+            "value": 0,
+            "min": 0,
+            "max": 1
+          },
+          "http_reqs": {
+            "count": 750,
+            "rate": 24.978674539873833
+          },
+          "http_req_connecting": {
+            "avg": 0.7794147999999997,
+            "p(95)": 1.3492199999999999,
+            "p(99)": 2.702173999999997,
+            "max": 8.0275
+          },
+          "http_req_failed": {
+            "passes": 0,
+            "fails": 750,
+            "value": 0
+          },
+          "http_req_tls_handshaking": {
+            "avg": 0,
+            "p(95)": 0,
+            "p(99)": 0,
+            "max": 0
+          },
+          "http_req_waiting": {
+            "avg": 27.054653733333325,
+            "p(95)": 34.66163,
+            "p(99)": 45.01849,
+            "max": 120.9016
+          },
+          "http_req_duration{expected_response:true}": {
+            "avg": 27.1777156,
+            "p(95)": 34.66163,
+            "p(99)": 45.357715999999996,
+            "max": 127.3085
+          },
+          "dropped_iterations": {
+            "rate": 0.03330489938649844,
+            "count": 1
+          },
+          "iterations": {
+            "count": 750,
+            "rate": 24.978674539873833
+          },
+          "http_req_duration": {
+            "avg": 27.1777156,
+            "p(95)": 34.66163,
+            "p(99)": 45.357715999999996,
+            "max": 127.3085
+          },
+          "data_sent": {
+            "count": 56250,
+            "rate": 1873.4005904905373
+          },
+          "iteration_duration": {
+            "avg": 28.104215066666697,
+            "p(95)": 35.48155,
+            "p(99)": 46.885157,
+            "max": 127.9046
+          },
+          "http_req_sending": {
+            "p(99)": 0.5552009999999998,
+            "max": 6.4069,
+            "avg": 0.02305013333333333,
+            "p(95)": 0
+          },
+          "http_req_blocked": {
+            "avg": 0.8318275999999998,
+            "p(95)": 1.5054899999999969,
+            "p(99)": 2.8881309999999996,
+            "max": 8.5363
+          },
+          "successful_requests": {
+            "count": 750,
+            "rate": 24.978674539873833
+          },
+          "data_received": {
+            "count": 176250,
+            "rate": 5869.98851687035
+          },
+          "http_req_receiving": {
+            "avg": 0.10001173333333332,
+            "p(95)": 0.506465,
+            "p(99)": 1.1219949999999987,
+            "max": 32.4721
+          },
+          "vus_max": {
+            "value": 3,
+            "min": 3,
+            "max": 3
+          }
+        },
+        "root_group": {
+          "name": "",
+          "path": "",
+          "id": "d41d8cd98f00b204e9800998ecf8427e",
+          "groups": {},
+          "checks": {}
+        }
+      }
+    }
+  ],
+  "cleanup_verified": true
+}

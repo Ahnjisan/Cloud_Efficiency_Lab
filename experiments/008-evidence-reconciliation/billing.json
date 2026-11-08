@@ -1,0 +1,10 @@
+[
+  {"line_id":"a","resource":"i-orders","window":"peak-01","arrived":1,"amount":"100.00"},
+  {"line_id":"a2","resource":"i-orders","window":"peak-01","arrived":2,"amount":"20.00"},
+  {"line_id":"b","resource":"i-worker","window":"peak-01","arrived":1,"amount":"100.00"},
+  {"line_id":"c","resource":"i-conflict","window":"peak-01","arrived":1,"amount":"50.00"},
+  {"line_id":"c","resource":"i-conflict","window":"peak-01","arrived":2,"amount":"55.00"},
+  {"line_id":"missing","resource":null,"window":"peak-01","arrived":1,"amount":"60.00"},
+  {"line_id":"d","resource":"i-stale","window":"peak-01","arrived":1,"amount":"120.00"},
+  {"line_id":"old","resource":"i-orders","window":"peak-00","arrived":1,"amount":"90.00"}
+]
