@@ -1,5 +1,7 @@
 # Amazon ECR — 이미지 저장·전송·정리
 
+[AWS 서비스 목차](../README.md)
+
 ECR은 컨테이너 이미지를 보관하고 배포 환경에 전달하는 레지스트리다. [Docker 이미지 최적화](../../platforms/docker/image-optimization.md)의 크기 변경을 청구 항목과 연결한다.
 
 ## 비용과 삭제 순서

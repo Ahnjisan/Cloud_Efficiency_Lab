@@ -1,5 +1,7 @@
 # 002 — EBS 규칙 신규 반례 평가
 
+[실험 목차](../README.md) · [최종 연구 보고서](../../FINAL-REPORT.md)
+
 [사전에 고정한 정책과 가설](policy.md) · [합성 입력과 사후 정답 근거](cases.json) · [출력 원본](result.json) · [실행 로그](../infrafit-execution-log.json)
 
 Windows 11에서 Python 3.14.7 표준 라이브러리로 실행했다. 저장소 루트에서 `py -3 -B experiments/002-ebs-rule-robustness/evaluate.py`를 실행한다. 종료 코드 0이다. 001의 두 규칙을 그대로 호출하고 중복 ID 및 001과의 ID 중첩을 검사했다. 평가용 신규 볼륨 11건 중 9건은 사후 라벨이 확정됐고 2건은 미확정이다.

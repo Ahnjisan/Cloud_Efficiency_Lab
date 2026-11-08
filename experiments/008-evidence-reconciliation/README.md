@@ -1,5 +1,7 @@
 # 008 — 청구·변경·피크 관측 대사
 
+[실험 목차](../README.md) · [최종 연구 보고서](../../FINAL-REPORT.md) · [MVP에서 실행](../../infrafit/README.md)
+
 **합성 데이터 재현 PASS.** 007의 최종 판정 앞에 놓이는 데이터 연결을 검증한다. [가상 청구 행](billing.json), [Terraform 주소와 자원 ID 매핑 및 후보 비용](changes.json), [피크 관측](peaks.json)을 별도로 입력한다. 금액은 같은 가상 평가 구간의 USD다. Terraform CLI나 AWS API 없이 Python 표준 라이브러리로 실행한다.
 
 저장소 루트에서 `py -3 -B experiments/008-evidence-reconciliation/reconcile.py`를 실행한다. [결과 원본](result.json)

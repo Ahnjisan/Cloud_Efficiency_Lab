@@ -48,6 +48,6 @@ AWS 자원 생성·실행은 필수가 아닙니다. AWS 등 유료 자원을 �
 - [014 · AWS provider의 실제 EC2·EBS Plan](014-aws-provider-plan/README.md) — AWS API를 호출하지 않는 생성 계획과 필드 호환성
 - [015 · Kubernetes 반복 부하와 Deployment 롤백](015-kubernetes-rollback/README.md) — 전용 Minikube에서 CPU 축소·복원 반복
 
-[InfraFit 통합 연구 결과](infrafit-predevelopment-review.md)에 001 재실행과 전체 결과를 모았다. Docker와 Kubernetes 후속 실측의 결과 및 한계를 포함한다.
+[최종 연구 보고서](../FINAL-REPORT.md)에서 001~015와 [InfraFit MVP](../infrafit/README.md)의 검증 범위를 함께 볼 수 있다. [InfraFit 개발 전 연구 기록](infrafit-predevelopment-review.md)은 개별 실행과 후속 검증의 맥락을 보존한다.
 
 실제 실행한 실험만 문서의 상대 링크와 함께 이 목록에 등록합니다. 관련 [Studies](../studies/README.md) 학습 문서와 실험 문서를 상호 연결해 학습 근거와 재현 경로를 찾을 수 있도록 합니다.

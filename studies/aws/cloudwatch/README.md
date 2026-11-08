@@ -1,5 +1,7 @@
 # Amazon CloudWatch — 관측 범위와 비용
 
+[AWS 서비스 목차](../README.md) · [후보별 관측과 청구 연결](../../../experiments/008-evidence-reconciliation/README.md)
+
 관측이 있어야 [Rightsizing](../../methods/rightsizing.md)을 검증할 수 있지만 수집 설계 자체에도 비용이 든다.
 
 ## 분리할 사용량

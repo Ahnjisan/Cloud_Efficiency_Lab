@@ -1,5 +1,7 @@
 # Elastic Load Balancing — 시간료와 용량 단위
 
+[AWS 서비스 목차](../README.md)
+
 로드 밸런서를 통한 연결과 요청은 대상 서버의 CPU 비용과 별도다. [네트워크 흐름](../../foundations/network-and-data-flow.md)으로 과금 경계를 표시한다.
 
 ## ALB와 NLB

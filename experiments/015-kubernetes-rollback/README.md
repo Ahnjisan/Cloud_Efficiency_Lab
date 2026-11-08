@@ -1,5 +1,7 @@
 # 015 — Kubernetes 반복 부하와 Deployment 롤백
 
+[실험 목차](../README.md) · [최종 연구 보고서](../../FINAL-REPORT.md)
+
 **실측 및 정리 PASS · 품질 회복 재현 1/3.** 세 번의 기준·축소·복원 시퀀스와 총 아홉 구간을 완료했다. 전용 프로필과 Docker 자원 정리를 확인했고, 실행 전후 기존 컨테이너 86개의 ID·상태 목록이 같았다. 시작 여유는 2.95 GiB, 감시 명령 중 관측한 최저 여유는 2.18 GiB였다. [실측 기록](live-attempt-1.json) · [집계](result.json)
 
 기존 컨테이너 비교는 당시 실행을 감싼 스크립트가 양쪽에서 `docker ps -a --no-trunc --format "{{.ID}} {{.State}}"`를 읽어 집합을 비교한 결과다. 당시 출력은 `Existing container ID/state comparison: True counts: 86 86`이었다. 당시 목록과 해시는 저장되지 않아 원본 로그에서 독립적으로 재검산할 수 없다. 이후 실행기는 정렬한 ID·상태 행의 전후 SHA-256, 건수, 일치 여부를 기록한다.

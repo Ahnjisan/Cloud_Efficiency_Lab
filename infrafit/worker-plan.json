@@ -1,0 +1,19 @@
+{
+  "format_version": "1.2",
+  "resource_changes": [
+    {
+      "address": "aws_instance.worker",
+      "mode": "managed",
+      "type": "aws_instance",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": ["update"],
+        "before": {"instance_type": "model.large"},
+        "after": {"instance_type": "model.medium"},
+        "after_unknown": {},
+        "before_sensitive": {},
+        "after_sensitive": {}
+      }
+    }
+  ]
+}

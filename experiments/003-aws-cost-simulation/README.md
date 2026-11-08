@@ -1,5 +1,7 @@
 # 003 — EC2·EBS 비용·구성 시뮬레이션
 
+[실험 목차](../README.md) · [최종 연구 보고서](../../FINAL-REPORT.md)
+
 가설은 EC2 요율이나 운영시간을 줄여도 EBS 잔존 비용, 기존 약정, 업무량·품질 조건 때문에 의사결정이 달라진다는 것이다. [기존 가상 사례](../../studies/methods/ec2-ebs-case-study.md)와 [ADR](../../studies/methods/ec2-capacity-decision.md)을 기준으로, 별도의 [합성 시나리오](scenarios.json)를 실행했다. 단위는 가상 USD, 720시간, 가상 리전이다. 인스턴스 유형 이름과 단가는 모델용이다.
 
 ## 독립 기준선과 새 결과

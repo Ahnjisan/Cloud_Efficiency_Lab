@@ -1,5 +1,7 @@
 # VPC 비용 산정 01 — NAT Gateway·VPC Endpoint·데이터 전송
 
+[AWS 서비스 목차](../README.md)
+
 > 같은 프라이빗 서브넷에서 같은 양의 데이터를 읽고 쓸 때, 경로에 따라 어떤 비용이 달라지는가?
 
 커리큘럼 02. AWS Infrastructure & Pricing의 학습 노트입니다. [S3 비용 산정 01](../s3/README.md)에서 구분한 요청·조회·전송 비용에 VPC 경로의 시간료와 데이터 처리료를 더해 비교합니다.

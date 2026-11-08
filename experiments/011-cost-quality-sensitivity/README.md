@@ -1,5 +1,7 @@
 # 011 — 약정·피크 겹침·전환비에 따른 채택 민감도
 
+[실험 목차](../README.md) · [최종 연구 보고서](../../FINAL-REPORT.md)
+
 **가상 시나리오 재현 PASS.** [EC2 용량 ADR](../../studies/methods/ec2-capacity-decision.md)의 현행 A와 피크 확장 C를 비교한다. 보조 작업 시간, 피크 확장 시간, 두 시간의 가능한 최소·최대 겹침, 일회성 전환비, 품질 판정을 조합했다. 가상 720시간과 ADR의 할인 순서·단가를 그대로 사용했다.
 
 저장소 루트에서 `py -3 -B experiments/011-cost-quality-sensitivity/simulate.py`를 실행한다. [결과 원본](result.json)

@@ -1,5 +1,7 @@
 # Platforms
 
+[학습 목차](../README.md) · [최종 연구 보고서](../../FINAL-REPORT.md)
+
 AWS 서비스에 종속되지 않는 애플리케이션·컨테이너·오케스트레이션 실행 환경의 원리와 자원 효율을 공부하는 영역입니다. 세부 학습 계획은 [전체 커리큘럼](../curriculum.md)에서 관리합니다.
 
 ## Container & Application Efficiency

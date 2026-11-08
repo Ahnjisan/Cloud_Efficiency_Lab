@@ -1,5 +1,7 @@
 # RDS 비용 산정 01 — DB 인스턴스·스토리지·Multi-AZ
 
+[AWS 서비스 목차](../README.md)
+
 > 동일한 MySQL 데이터베이스라도 인스턴스 사양, 스토리지 구성, 고가용성 설정에 따라 비용은 어떻게 달라지며, 비용을 줄이기 전에 무엇을 확인해야 하는가?
 
 커리큘럼 02. AWS Infrastructure & Pricing의 학습 노트입니다. RDS for MySQL DB 인스턴스의 On-Demand 비용을 중심으로 비교합니다. Aurora의 구조와 과금은 별도 학습 주제로 남깁니다.

@@ -1,5 +1,7 @@
 # 014 — AWS provider의 실제 EC2·EBS Plan
 
+[실험 목차](../README.md) · [최종 연구 보고서](../../FINAL-REPORT.md)
+
 Terraform 1.13.5와 HashiCorp AWS provider 5.100.0으로 [구성](main.tf)의 생성 계획을 만들고, `terraform show -json` 출력을 004의 AWS 전용 추출기에 전달한다. 012가 검증한 내장 리소스의 공통 표현과 달리 이번 실험은 AWS provider가 만든 리소스별 필드와 마스크를 확인한다.
 
 **로컬 검증 PASS.** JSON 형식은 1.2였다. EC2의 `t3.micro`와 EBS의 `gp3`, 20 GiB, 3,000 IOPS, 125 MiB/s를 추출했다. 민감 표시된 EC2 인스턴스 유형과 아직 결정되지 않은 EBS 용량은 각각 `sensitive`, `unknown`으로 보류했다. 민감값 원문은 정제 결과에 없었고, Plan 단계에서 루프백 차단 서버가 수신한 요청은 0건이었다. [정제 결과](result.json)

@@ -1,4 +1,6 @@
-# 006 — Kubernetes 자원 효율 · 정적 검증
+# 006 — Kubernetes 자원 효율 · 정적 분석과 로컬 실측
+
+[실험 목차](../README.md) · [최종 연구 보고서](../../FINAL-REPORT.md) · [Deployment 반복 롤백](../015-kubernetes-rollback/README.md)
 
 **정적 검증 PASS · 실제 클러스터 검증 PASS.** 격리된 Minikube에서 큰·작은 Requests 배치를 비교하고, CPU Limits 1,000m와 500m에서 HTTP 부하를 완료했다. 초기 부분 실행과 최종 측정의 범위는 [실측 기록과 원본 로그](live.md)에 구분했다. [환경 기록](../infrafit-preflight-context.md)
 

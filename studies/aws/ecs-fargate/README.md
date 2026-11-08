@@ -1,5 +1,7 @@
 # Amazon ECS·AWS Fargate — 실행 방식과 태스크 비용
 
+[AWS 서비스 목차](../README.md)
+
 ECS는 태스크를 배치·운영한다. ECS on EC2는 인스턴스 풀을 운영하고 Fargate는 태스크가 요청한 자원 기준으로 실행 용량을 사용한다.
 
 ## 과금 대상과 확장

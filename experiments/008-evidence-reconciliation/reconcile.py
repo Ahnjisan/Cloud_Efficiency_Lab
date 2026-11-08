@@ -6,16 +6,34 @@ import math
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
+PEAK_P99_LIMIT_MS = 200
+
+
+def missing_candidate_cost(value):
+    return value is None or (isinstance(value, str) and not value.strip())
+
+
+def valid_billing_line_id(value):
+    return isinstance(value, str) and bool(value.strip())
 
 
 def reconcile(billing, changes, peaks, as_of, window):
     usage = defaultdict(dict)
     conflicts = set()
+    unidentified_resources = set()
+    unassigned_missing_id_rows = 0
     unresolved = []
     for row in billing:
         if row["arrived"] > as_of or row["window"] != window:
             continue
-        key = row["line_id"]
+        key = row.get("line_id")
+        if not valid_billing_line_id(key):
+            resource = row.get("resource")
+            if isinstance(resource, str) and resource.strip():
+                unidentified_resources.add(resource)
+            else:
+                unassigned_missing_id_rows += 1
+            continue
         previous = usage[key].get("row")
         if previous:
             fields = ("resource", "amount")
@@ -41,6 +59,7 @@ def reconcile(billing, changes, peaks, as_of, window):
             continue
         resource = change["resource"]
         config = change.get("candidate_config")
+        candidate_amount = change.get("candidate")
         baseline = totals.get(resource)
         samples = [row for row in peaks if row["resource"] == resource
                    and row.get("config") == config
@@ -48,12 +67,16 @@ def reconcile(billing, changes, peaks, as_of, window):
         reason = None
         if addresses[change["address"]] != 1:
             reason = "change-address-ambiguous"
+        elif resource in unidentified_resources:
+            reason = "billing-line-id-missing"
         elif resource in blocked:
             reason = "billing-conflict"
         elif baseline is None:
             reason = "billing-unmatched"
         elif not isinstance(config, str) or not config.strip():
             reason = "candidate-config-missing"
+        elif missing_candidate_cost(candidate_amount):
+            reason = "candidate-cost-missing"
         elif len(samples) != 1:
             reason = "peak-unmatched-or-ambiguous"
         else:
@@ -63,13 +86,16 @@ def reconcile(billing, changes, peaks, as_of, window):
         if reason:
             results[change["address"]] = {"decision": "hold", "reason": reason}
             continue
-        candidate = Decimal(change["candidate"])
-        decision = "candidate" if candidate < baseline and p99 <= 200 else "keep"
+        candidate = Decimal(candidate_amount)
+        decision = "candidate" if candidate < baseline and p99 <= PEAK_P99_LIMIT_MS else "keep"
         results[change["address"]] = {
             "decision": decision, "baseline": str(baseline), "candidate": str(candidate),
             "candidate_config": config, "p99_ms": p99,
         }
-    return {"unresolved_billing_lines": sorted(unresolved), "decisions": results}
+    report = {"unresolved_billing_lines": sorted(unresolved), "decisions": results}
+    if unassigned_missing_id_rows:
+        report["unassigned_missing_id_rows"] = unassigned_missing_id_rows
+    return report
 
 
 def main():

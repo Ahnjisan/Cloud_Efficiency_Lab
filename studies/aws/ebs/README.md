@@ -1,5 +1,7 @@
 # EBS 비용 산정 01 — 볼륨 유형·용량·IOPS·Throughput
 
+[AWS 서비스 목차](../README.md) · [EBS 탐지 실험](../../../experiments/001-ebs-waste-rules/README.md)
+
 ## 1. 학습 질문과 범위
 
 > Amazon EBS는 프로비저닝한 저장 용량과 성능 설정에 따라 어떻게 과금되며, 어떤 상황에서 불필요한 비용이 발생하는가?

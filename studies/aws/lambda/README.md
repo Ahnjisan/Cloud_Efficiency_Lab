@@ -1,5 +1,7 @@
 # Lambda 비용 산정 01 — 메모리·실행시간·요청 비용
 
+[AWS 서비스 목차](../README.md)
+
 > 메모리를 늘려 실행이 빨라지면 비용은 얼마나 달라지는가? 서비스가 요구하는 응답시간을 충족하는 구성은 어떻게 고르는가?
 
 커리큘럼 02. AWS Infrastructure & Pricing의 학습 노트입니다. [RDS Rightsizing](../rds/rightsizing.md)에 이어, 이번에는 AWS Lambda의 일반 On-Demand **Event Function** 한 개를 비교합니다.

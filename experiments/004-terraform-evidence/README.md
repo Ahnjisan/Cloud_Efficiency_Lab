@@ -1,5 +1,7 @@
 # 004 — Terraform 변경 근거 추출
 
+[실험 목차](../README.md) · [최종 연구 보고서](../../FINAL-REPORT.md) · [실제 AWS provider 생성 Plan](../014-aws-provider-plan/README.md)
+
 가설은 Plan JSON에서 EC2·EBS 비용 모델에 필요한 일부 변경 속성을 추출할 수 있지만, 값이 미확정·민감·중복이면 계산을 보류해야 한다는 것이다. 기준은 [HashiCorp JSON Output Format](https://developer.hashicorp.com/terraform/internals/json-format)의 변경 표현과 [show](https://developer.hashicorp.com/terraform/cli/commands/show)·[plan](https://developer.hashicorp.com/terraform/cli/commands/plan) 문서다. 입력은 공식 구조 일부를 따르는 [합성 Plan JSON](plan.json)이며 실제 State나 Plan에서 추출하지 않았다.
 
 Windows 11, Python 3.14.7에서 `py -3 -B experiments/004-terraform-evidence/analyze.py`를 실행했다. 종료 코드 0. [원본 JSON](result.json) · [실행 로그](../infrafit-execution-log.json)

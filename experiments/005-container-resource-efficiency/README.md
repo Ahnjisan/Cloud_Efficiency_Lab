@@ -1,5 +1,7 @@
 # 005 — Docker 워크로드 자원 효율 실측
 
+[실험 목차](../README.md) · [최종 연구 보고서](../../FINAL-REPORT.md) · [CPU 한도 롤백 실측](../013-peak-rollback/README.md)
+
 같은 HTTP 워크로드에서 CPU 한도 1.0과 0.5를 비교한다. 가설은 낮은 CPU 한도가 같은 부하에서 throttling을 늘리고 처리량이나 지연에 영향을 줄 수 있다는 것이다. 메모리 제한은 양쪽 512 MiB로 고정한다.
 
 ## 실행 조건

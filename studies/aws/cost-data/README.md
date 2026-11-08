@@ -1,5 +1,7 @@
 # AWS 비용 데이터 — 청구·내보내기·추천
 
+[AWS 서비스 목차](../README.md) · [청구 대사 실험](../../../experiments/008-evidence-reconciliation/README.md)
+
 비용 변화의 원인을 관측할 때 비용 뷰의 목적, 시간 기준, 단위를 정한다. [FinOps 비용 지표](../../foundations/finops-cost-metrics.md)와 연결한다.
 
 ## 도구와 식별자

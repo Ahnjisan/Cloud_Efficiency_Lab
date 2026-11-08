@@ -1,5 +1,7 @@
 # Amazon EKS — 클러스터 비용과 Pod 배분
 
+[AWS 서비스 목차](../README.md) · [로컬 Kubernetes 실험](../../../experiments/015-kubernetes-rollback/README.md)
+
 EKS는 Kubernetes 제어면을 제공한다. [Kubernetes 자원 관리](../../platforms/kubernetes/resource-management.md)에서 요청을 낮추는 결정과 청구 절감이 연결되는 조건을 살펴본다.
 
 ## 전체 비용의 범위

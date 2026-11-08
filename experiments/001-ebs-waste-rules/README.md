@@ -1,5 +1,7 @@
 # 로컬 검증 001 — EBS 낭비 탐지 규칙
 
+[실험 목차](../README.md) · [최종 연구 보고서](../../FINAL-REPORT.md)
+
 [탐지 평가 문서](../../studies/methods/ec2-ebs-waste-detection-evaluation.md)의 가상 볼륨 8개로 두 규칙의 판정과 집계를 재현했다. 기록이 충돌할 때 규칙 B가 보류를 우선하는지 별도 검사했다. 출력에는 판정, 이유, 다음 담당자를 포함한다. 팀의 실제 검토와 변경 승인 절차는 [EBS 권고 검토 흐름](../../studies/methods/ebs-waste-review-workflow.md)에 있다.
 
 ## 재현 방법

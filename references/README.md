@@ -1,5 +1,7 @@
 # References
 
+[프로젝트 README](../README.md) · [최종 연구 보고서](../FINAL-REPORT.md)
+
 공식 자료 및 학술 참고문헌의 위치와 참고 목적을 안내하는 공간입니다.
 
 ## 포함할 자료

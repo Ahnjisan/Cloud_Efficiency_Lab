@@ -1,5 +1,7 @@
 # Kubernetes — 제어면에서 워크로드 실행까지
 
+[플랫폼 목차](../README.md) · [Kubernetes 롤백 실측](../../../experiments/015-kubernetes-rollback/README.md)
+
 [Docker 구조](../docker/README.md)의 컨테이너 실행을 클러스터로 확장한다. Kubernetes는 선언한 상태와 관측 상태를 지속적으로 맞춘다.
 
 ## 역할과 요청 흐름

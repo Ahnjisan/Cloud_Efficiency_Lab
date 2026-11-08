@@ -1,5 +1,7 @@
 # EC2 비용 산정 01 — 인스턴스 실행 상태와 컴퓨팅 비용
 
+[AWS 서비스 목차](../README.md) · [EC2·EBS 비용 실험](../../../experiments/003-aws-cost-simulation/README.md)
+
 ## 1. 학습 질문
 
 > EC2 인스턴스를 중지하면 비용은 모두 사라지는가?

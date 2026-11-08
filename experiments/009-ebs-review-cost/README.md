@@ -1,5 +1,7 @@
 # 009 — EBS 기록 최신성과 보류 검토 비용
 
+[실험 목차](../README.md) · [최종 연구 보고서](../../FINAL-REPORT.md)
+
 **합성 데이터 재현 PASS.** [002의 라벨이 있는 11건](../002-ebs-rule-robustness/cases.json)에 [합성 기록 나이·검토 결과·소요 시간](evidence.json)을 추가하고 기존 규칙 B를 재사용했다. 만료됐거나 작성 시점을 확인할 수 없는 완료 기록은 보류로 보낸다. 검토에서 새 근거가 확보된 사례만 재판정한다. 사후 정답은 평가 집계에만 사용한다.
 
 저장소 루트에서 `py -3 -B experiments/009-ebs-review-cost/evaluate.py`를 실행한다. [결과 원본](result.json)

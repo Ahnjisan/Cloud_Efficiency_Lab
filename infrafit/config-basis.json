@@ -1,0 +1,16 @@
+{
+  "aws_instance.orders": {
+    "resource": "i-orders",
+    "window": "peak-01",
+    "candidate_config": "orders-small-v1",
+    "before": {"instance_type": "model.large"},
+    "after": {"instance_type": "model.medium"}
+  },
+  "aws_instance.worker": {
+    "resource": "i-worker",
+    "window": "peak-01",
+    "candidate_config": "worker-small-v1",
+    "before": {"instance_type": "model.large"},
+    "after": {"instance_type": "model.medium"}
+  }
+}

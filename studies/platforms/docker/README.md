@@ -1,5 +1,7 @@
 # Docker — 이미지에서 컨테이너까지
 
+[플랫폼 목차](../README.md) · [로컬 Docker CPU 실측](../../../experiments/005-container-resource-efficiency/README.md)
+
 [Linux 자원](../../foundations/linux-resources.md)의 격리와 자원 제어를 애플리케이션 배포에 적용한다. VM은 보통 별도 게스트 커널을 사용한다. Linux 컨테이너는 실행 환경의 커널을 공유하며 Docker Desktop에서는 그 커널이 VM 안에 있을 수 있다.
 
 ## 구성과 생명 주기

@@ -1,5 +1,7 @@
 # Amazon DynamoDB — 요청·프로비저닝 용량과 병목
 
+[AWS 서비스 목차](../README.md)
+
 DynamoDB의 비용은 데이터 크기와 읽기·쓰기 패턴의 영향을 받는다. [워크로드 성능](../../foundations/workload-performance.md)의 피크와 평균을 구분해 용량 모드를 선택한다.
 
 DynamoDB는 키-값과 문서 모델을 지원하는 NoSQL 데이터베이스다. 테이블의 기본 키로 항목을 찾고, 다른 조회 경로에 GSI를 사용할 수 있다. 저장 비용은 읽기·쓰기 단위와 분리해 테이블과 인덱스를 살핀다.
