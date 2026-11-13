@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 from runpy import run_path
 
+from ops_rules import REASONS as OPS_REASONS, assess_ops
 from workload_rules import REASONS as WORKLOAD_REASONS, assess_workloads
 
 HERE = Path(__file__).resolve().parent
@@ -123,6 +124,16 @@ def assess(billing, changes, peaks, plans, basis, as_of, window):
             "unassigned_missing_id_rows": joined.get("unassigned_missing_id_rows", 0), "decisions": decisions}
 
 
+def merge_workloads(documents):
+    """Concatenate list-valued sections of several workload files."""
+    merged = {}
+    for doc in documents:
+        for key, items in doc.items():
+            if isinstance(items, list):
+                merged.setdefault(key, []).extend(items)
+    return merged
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ("billing", "changes", "peaks"):
@@ -132,7 +143,8 @@ def main():
     parser.add_argument("--basis", type=Path, default=HERE / "config-basis.json")
     parser.add_argument("--window", default="peak-01")
     parser.add_argument("--as-of", type=int, default=2)
-    parser.add_argument("--workloads", type=Path, help="optional synthetic IoT/Firehose/Bedrock inputs")
+    parser.add_argument("--workloads", nargs="+", type=Path,
+                        help="optional synthetic workload inputs (IoT, Firehose, Bedrock, Athena, SageMaker, daily cost)")
     parser.add_argument("--thresholds", type=Path, default=HERE / "thresholds.json")
     parser.add_argument("--json", action="store_true", dest="as_json")
     args = parser.parse_args()
@@ -140,7 +152,11 @@ def main():
         report = assess(read(args.billing), read(args.changes), read(args.peaks), [read(p) for p in args.plan],
                         read(args.basis), args.as_of, args.window)
         if args.workloads:
-            report["workload_decisions"] = assess_workloads(read(args.workloads), read(args.thresholds))
+            workloads, thresholds = merge_workloads(read(p) for p in args.workloads), read(args.thresholds)
+            ops, queue, holds = assess_ops(workloads, thresholds)
+            report["workload_decisions"] = assess_workloads(workloads, thresholds) + ops
+            if queue is not None:
+                report["investigation_queue"], report["investigation_holds"] = queue, holds
     except (OSError, ValueError, InvalidOperation, KeyError, TypeError):
         parser.error("invalid or unreadable input; see the InfraFit input contract")
     if args.as_json:
@@ -159,9 +175,16 @@ def main():
         for row in report["workload_decisions"]:
             print(f"{row['rule']} {row['id']} | {row['label']}")
             for reason in row["reasons"]:
-                print(f"  - {WORKLOAD_REASONS[reason]}")
+                print(f"  - {WORKLOAD_REASONS.get(reason) or OPS_REASONS[reason]}")
             if row["expected_saving_usd"]:
                 print(f"  - 예상 절감 USD {row['expected_saving_usd']} ({row['saving_basis']})")
+    if "investigation_queue" in report:
+        print("비용 급증 조사 대기열 | 판정이 아니라 조사 대상")
+        for row in report["investigation_queue"]:
+            flag = " (잠정)" if row["estimated"] else ""
+            print(f"{row['service']} {row['date']} | USD {row['observed_usd']} > 기준 {row['threshold_usd']}{flag}")
+        for row in report["investigation_holds"]:
+            print(f"{row['service']} | 판단 보류 - {row['message']}")
     if report["unassigned_missing_id_rows"]:
         print(f"행 ID와 자원 ID를 확인할 수 없는 청구 행: {report['unassigned_missing_id_rows']}건 (비용 집계 제외)")
     print("실제 청구 대사: 미검증")
