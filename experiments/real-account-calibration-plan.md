@@ -105,6 +105,46 @@
 3. 조정 기간(최소 4주)이 끝나면 5장의 선택 규칙으로 기준값을 고른다. 평가 기간(최소 4주) 뒤에 판정 변화를 보고한다.
 4. 테스트를 모두 실행하고, InfraFit README·적용 메모·FINAL-REPORT를 갱신한다.
 
+## 8. 수집 방법 (collect.py · convert.py, 2026-11-14 추가)
+
+3장의 데이터를 실제로 모으는 명령이다. 실제 프로젝트 사용량이 계정에 쌓이기 전에는 실행하지 않는다. 실행할 때마다 드라이런 결과(호출 목록·최악 비용)를 먼저 보이고 승인받는다. 도구 설명은 [InfraFit README](../infrafit/README.md#읽기-전용-수집-명령-collectpy)에 있다.
+
+**흐름**
+
+1. **드라이런**: AWS를 부르지 않고 호출 목록과 최악 비용만 본다. 승인 요청에 그대로 붙인다.
+
+   ```powershell
+   py -3 -B infrafit/collect.py --out <원본 폴더>\collect-NN --start <조정 기간 시작> --end <끝> --glue-databases <DB> --dry-run
+   ```
+
+2. **무료 단계**: 같은 명령을 `--dry-run` 없이 실행한다. 목록·설정만 읽고 유료 계획(정확한 지표 수)을 출력한 뒤 멈춘다.
+3. **유료 단계**: 승인받은 상한으로 `--yes`를 붙여 다시 실행한다. 폴더는 새로 만든다.
+4. **변환**: `convert.py`에 수집 파일과 운영 정보 파일을 넣는다. 변환 결과와 운영 정보 파일은 원본 폴더에 둔다.
+5. **판정**: `cli.py --workloads <변환 결과> --report <원본 폴더>\report.html`
+6. **기록**: 저장소에는 `collect-summary.json`의 호출 수·예상 비용과 청구서의 실제 비용, 5장의 판정(유지·변경·보류)만 옮긴다.
+
+**규칙별 수집 파일과 사람 입력**
+
+| 규칙 | `collect.py --services` | 수집되는 파일 → `convert.py` 옵션 | 운영 정보 파일에 사람이 넣을 값 | 수집으로 채울 수 없는 것 |
+|---|---|---|---|---|
+| R-COST-1 | `cost` | `ce-page-NNN.json` → `--cost-explorer` | 없음 | 사고·배포 라벨(5장의 오탐·미탐 계산용) |
+| R-FH-2 | `firehose,cloudwatch` (+ `s3-inventory`) | `firehose-NNN.json` → `--firehose-describe`, `metric-queries/data-NNN.json` → `--metric-queries`·`--metric-data`, `inventory/manifest.json` → `--s3-inventory` | `allowed_freshness_s`, `active_partitions`, `s3_prefix` | Inventory는 승인 3(설정)과 버킷 읽기 권한 추가가 먼저 필요 |
+| R-ATH-1·2 | `athena` (+ `s3-inventory`) | `athena-queries-NNN.json` → `--athena-queries`, `glue-table-NNN.json` → `--glue-table` | 쿼리 → 테이블 연결(`athena.queries`), `conversion_billed_gb_month`, `compaction`, `s3_prefix` | 쿼리-테이블 연결은 쿼리 본문을 저장하지 않으므로 사람이 정한다 |
+| R-SM-1 | `sagemaker,cloudwatch` | `notebook-NNN.json` → `--sagemaker-notebook`, `endpoint(-config)-NNN.json` → `--sagemaker-endpoint`, 지표 파일 | `status_intervals`, `activity`(승인 5), `long_running_in_notebook`, `inservice_hours`, `always_on_required`, `cold_start_acceptable`, `serverless_memory_gb` | 노트북 GPU 사용 시간(CloudWatch에 노트북 GPU 지표 없음) |
+| R-BR-1·2 | (수집 안 함) | 애플리케이션의 Converse 사용량 로그(JSON Lines) → `--bedrock-usage` | `bedrock_models`(자동 판별이 틀릴 때) | 로그 형식은 [README 표](../infrafit/README.md#지원-형식-공식-필드-2026-11-14-확인)대로 애플리케이션이 남겨야 한다(승인 4) |
+| R-IOT-1 | (수집 안 함) | — | — | 토픽별 발행 수·페이로드 크기는 API에 없다. 디바이스·규칙 쪽 기록이 필요 |
+| R-FH-1 | (수집 안 함) | — | — | 스트림별 청구 GB는 Cost Explorer에 없다. CUR 2.0(승인 2)의 자원별 행이 필요 |
+
+**기간별 예상 비용** (기본 상한, 2026-11-13·14 확인 요율)
+
+| 항목 | 한 번 실행 | 28일 조정 + 28일 평가를 주 1회 수집 |
+|---|---:|---:|
+| Cost Explorer (페이지 1~3건) | 0.01~0.03 USD | 최대 0.24 USD |
+| GetMetricData (스트림 10개·엔드포인트 변형 5개 = 지표 20개) | 0.0002 USD | 0.0016 USD |
+| Glue 카탈로그 요청 | 무료 범위(월 100만 건) 안 | 무료 범위 안 |
+
+실제로 수집하면 `collect-summary.json`의 예상 비용과 다음 달 청구서의 실제 비용을 함께 기록한다.
+
 ## 근거와 확인 범위
 
 확인일은 **2026-11-13**이다.

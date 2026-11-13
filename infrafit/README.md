@@ -2,7 +2,7 @@
 
 로컬 합성 청구 행, Terraform Plan JSON, 후보별 피크 관측을 연결해 **변경 검토 후보·유지·판단 보류**와 이유를 출력한다. Python 표준 라이브러리를 사용하고 입력 파일은 읽기만 한다. 실제 청구 대사는 미검증이다.
 
-[최종 연구 보고서](../FINAL-REPORT.md)에서 실험 001~022, 종단 간 테스트 11개, 워크로드 규칙 테스트 19개, 운영 규칙 테스트 24개의 최종 검증 범위와 실제 청구 자료가 필요한 다음 단계를 확인할 수 있다.
+[최종 연구 보고서](../FINAL-REPORT.md)에서 실험 001~022, 종단 간 테스트 11개, 워크로드 규칙 테스트 19개, 운영 규칙 테스트 28개의 최종 검증 범위와 실제 청구 자료가 필요한 다음 단계를 확인할 수 있다.
 
 ```powershell
 py -3 -B infrafit/cli.py
@@ -120,7 +120,7 @@ py -3 -B infrafit/test_ops_rules.py -v
 
 `sensor_csv_archive`(쿼리 하루 1회)는 형식 변환 요금이 절감보다 커서 **유지**가 나온다. Parquet 변환이 언제나 이득은 아니라는 사례다.
 
-[test_ops_rules.py](test_ops_rules.py) 24개가 확인하는 것:
+[test_ops_rules.py](test_ops_rules.py) 28개(처음 24개, 024 보완 때 4개 추가)가 확인하는 것:
 - 경계: 버퍼 크기/시간 경계, 1 MiB 경계, 10 MB 최소 과금 경계, 성공 DML만 집계, GPU 사용 비율 10% 경계, 이력 28일 경계
 - 021 폭주와 상한
 - 보류 사유별 동작, 한 항목 오류 격리, 추가 필드(`RoleArn`, `Query`) 미출력, 새 기준값의 근거 표기
@@ -282,3 +282,26 @@ py -3 -B infrafit/test_report.py -v
 - `--report`가 화면 출력을 바꾸지 않는지
 - 워크로드 없이도 동작하는지, 잘못된 확장자 거부
 - 실제 입력일 때 머리글과 "혼합" 표시
+
+## Terraform 주소 ↔ 자원 ID 연결 후보 (tf_links.py, 설계 단계)
+
+[tf_links.py](tf_links.py)는 `terraform show -json` 출력(또는 Plan JSON의 `prior_state`)에서 관리 자원의 주소·유형·`values.id`만 읽어 `config-basis.json`의 연결 후보를 만든다. 다른 속성값은 읽지도 출력하지도 않는다. `sensitive_values.id`가 참인 자원과 데이터 소스는 제외한다. `--changes`를 주면 변경 기록의 자원 ID와 비교해 `match`·`mismatch`·`address-not-in-state`·`state-only`로 표시한다. `cli.py`에는 아직 연결하지 않았다. 규칙과 남은 확인 사항은 [설계 문서](../experiments/terraform-state-linking-plan.md)에 있다.
+
+```powershell
+py -3 -B infrafit/tf_links.py <저장소 밖>\state.json --changes experiments/008-evidence-reconciliation/changes.json
+py -3 -B infrafit/test_tf_links.py -v
+```
+
+## 테스트 전체 (2026-11-14, Windows 11, Python 3.14)
+
+| 파일 | 개수 | 결과 |
+|---|---:|---|
+| test_cli.py | 11 | 통과 |
+| test_workload_rules.py | 19 | 통과 |
+| test_ops_rules.py | 28 | 통과 |
+| test_convert.py | 21 | 통과 |
+| test_collect.py | 13 | 통과(가짜 aws, 실제 AWS 호출 없음) |
+| test_report.py | 10 | 통과 |
+| test_tf_links.py | 7 | 통과 |
+
+옵션 없는 기본 출력, `--json`, `--json --as-of 1`, `--workloads` 두 가지(텍스트·JSON), 운영 규칙 포함 두 가지는 이번 변경 전에 저장한 출력과 바이트 단위로 같다.

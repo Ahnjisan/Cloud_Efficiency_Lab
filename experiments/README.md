@@ -80,6 +80,9 @@ AWS 자원 생성·실행은 필수가 아닙니다. AWS 등 유료 자원을 �
 
 [최종 연구 보고서](../FINAL-REPORT.md)에서 001~015와 [InfraFit MVP](../infrafit/README.md)의 검증 범위를 함께 볼 수 있다. [InfraFit 개발 전 연구 기록](infrafit-predevelopment-review.md)은 개별 실행과 후속 검증의 맥락을 보존한다.
 
-미확인 과금 규칙을 작은 테스트 파이프라인으로 확인하는 [025 계획](025-billing-rule-probe/README.md)은 승인 대기 중이다. 실제 계정 데이터로 InfraFit 기준값을 다시 정하는 [수집·재설정 계획](real-account-calibration-plan.md)은 승인 대기 중이며, 아직 데이터를 수집하지 않았다.
+미확인 과금 규칙을 작은 테스트 파이프라인으로 확인하는 [025](025-billing-rule-probe/README.md)는 실행을 마쳤다. 청구 사용량이 Cost Explorer에 반영되기를 기다리는 중이다(첫 조회에서는 아직 비어 있었다). 판정과 자원 정리는 반영 후에 한다. 실제 계정 데이터로 InfraFit 기준값을 다시 정하는 [수집·재설정 계획](real-account-calibration-plan.md)은 승인됐다. 하지만 실제 프로젝트 사용량이 없어 아직 데이터를 수집하지 않았다. 계획의 8장에 수집·변환 명령을 구체적으로 적었다.
+
+- [InfraFit 실제 AWS 출력 변환·수집·보고서](../infrafit/README.md#실제-aws-출력-변환기-convertpy) — `convert.py`(AWS 응답 → 입력 형식), `collect.py`(읽기 전용 수집, 드라이런·가짜 aws 테스트만), `--report`(HTML·Markdown). 모두 합성 응답으로만 검증했다
+- [Terraform 주소 ↔ 실제 자원 ID 자동 연결 설계](terraform-state-linking-plan.md) — `terraform show -json`에서 주소와 ID만 읽는 규칙과 합성 state 테스트. 실제 state로는 미확인
 
 실제 실행한 실험만 문서의 상대 링크와 함께 이 목록에 등록합니다. 관련 [Studies](../studies/README.md) 학습 문서와 실험 문서를 상호 연결해 학습 근거와 재현 경로를 찾을 수 있도록 합니다.

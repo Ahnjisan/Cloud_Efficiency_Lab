@@ -1,0 +1,41 @@
+{
+  "format_version": "1.0",
+  "terraform_version": "1.17.1",
+  "values": {
+    "outputs": {"db_password": {"sensitive": true, "value": "do-not-print-output"}},
+    "root_module": {
+      "resources": [
+        {"address": "aws_instance.orders", "mode": "managed", "type": "aws_instance", "name": "orders",
+         "provider_name": "registry.terraform.io/hashicorp/aws", "schema_version": 1,
+         "values": {"id": "i-orders", "instance_type": "model.large",
+                    "arn": "arn:aws:ec2:ap-northeast-2:123456789012:instance/i-orders",
+                    "user_data": "do-not-print-user-data"},
+         "sensitive_values": {}},
+        {"address": "aws_instance.worker", "mode": "managed", "type": "aws_instance", "name": "worker",
+         "provider_name": "registry.terraform.io/hashicorp/aws", "schema_version": 1,
+         "values": {"id": "i-worker", "instance_type": "model.large"}, "sensitive_values": {}},
+        {"address": "aws_instance.conflict", "mode": "managed", "type": "aws_instance", "name": "conflict",
+         "provider_name": "registry.terraform.io/hashicorp/aws", "schema_version": 1,
+         "values": {"id": "i-conflict-replaced", "instance_type": "model.large"}, "sensitive_values": {}},
+        {"address": "data.aws_ami.base", "mode": "data", "type": "aws_ami", "name": "base",
+         "provider_name": "registry.terraform.io/hashicorp/aws", "schema_version": 0,
+         "values": {"id": "ami-data-source"}, "sensitive_values": {}},
+        {"address": "aws_db_instance.main", "mode": "managed", "type": "aws_db_instance", "name": "main",
+         "provider_name": "registry.terraform.io/hashicorp/aws", "schema_version": 2,
+         "values": {"id": "db-hidden-id", "password": "do-not-print-password"},
+         "sensitive_values": {"id": true, "password": true}},
+        {"address": "aws_ebs_volume.pending", "mode": "managed", "type": "aws_ebs_volume", "name": "pending",
+         "provider_name": "registry.terraform.io/hashicorp/aws", "schema_version": 0,
+         "values": {"size": 20}, "sensitive_values": {}}
+      ],
+      "child_modules": [
+        {"address": "module.batch",
+         "resources": [
+           {"address": "module.batch.aws_instance.job[0]", "mode": "managed", "type": "aws_instance", "name": "job",
+            "index": 0, "provider_name": "registry.terraform.io/hashicorp/aws", "schema_version": 1,
+            "values": {"id": "i-batch-0", "instance_type": "model.medium"}, "sensitive_values": {}}
+         ]}
+      ]
+    }
+  }
+}
