@@ -1,0 +1,66 @@
+{
+  "StartTime": "2026-01-01T00:00:00Z",
+  "EndTime": "2026-01-31T00:00:00Z",
+  "MetricDataQueries": [
+    {
+      "Id": "fh0",
+      "MetricStat": {
+        "Metric": {
+          "Namespace": "AWS/Firehose",
+          "MetricName": "IncomingBytes",
+          "Dimensions": [
+            {
+              "Name": "DeliveryStreamName",
+              "Value": "sensor-raw-60s"
+            }
+          ]
+        },
+        "Period": 86400,
+        "Stat": "Sum"
+      }
+    },
+    {
+      "Id": "ep0",
+      "MetricStat": {
+        "Metric": {
+          "Namespace": "AWS/SageMaker",
+          "MetricName": "Invocations",
+          "Dimensions": [
+            {
+              "Name": "EndpointName",
+              "Value": "anomaly-scorer"
+            },
+            {
+              "Name": "VariantName",
+              "Value": "AllTraffic"
+            }
+          ]
+        },
+        "Period": 86400,
+        "Stat": "Sum"
+      }
+    },
+    {
+      "Id": "ep1",
+      "MetricStat": {
+        "Metric": {
+          "Namespace": "AWS/SageMaker",
+          "MetricName": "ModelLatency",
+          "Dimensions": [
+            {
+              "Name": "EndpointName",
+              "Value": "anomaly-scorer"
+            },
+            {
+              "Name": "VariantName",
+              "Value": "AllTraffic"
+            }
+          ]
+        },
+        "Period": 86400,
+        "Stat": "Average"
+      }
+    }
+  ],
+  "ScanBy": "TimestampDescending"
+}

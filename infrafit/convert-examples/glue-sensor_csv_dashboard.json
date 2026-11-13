@@ -1,0 +1,21 @@
+{
+  "Table": {
+    "Name": "sensor_csv_dashboard",
+    "DatabaseName": "sensors",
+    "CatalogId": "123456789012",
+    "StorageDescriptor": {
+      "InputFormat": "org.apache.hadoop.mapred.TextInputFormat",
+      "SerdeInfo": {
+        "SerializationLibrary": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe"
+      },
+      "Compressed": false,
+      "Location": "s3://example-sensor-bucket/tables/sensor_csv/"
+    },
+    "PartitionKeys": [
+      {
+        "Name": "dt"
+      }
+    ],
+    "TableType": "EXTERNAL_TABLE"
+  }
+}

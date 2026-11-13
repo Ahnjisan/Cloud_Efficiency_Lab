@@ -127,3 +127,66 @@ py -3 -B infrafit/test_ops_rules.py -v
 - 여러 파일 결합과 대기열 출력
 
 기준값 일부(1 MiB, 50%, 10%, 10건, 객체 수 허용 오차 50%, 연속 경보 상한)는 임시값이다. 첫 실제 계정 데이터로 다시 정해야 한다.
+
+## 실제 AWS 출력 변환기 (convert.py)
+
+[convert.py](convert.py)는 AWS가 내보낸 파일을 그대로 읽어 `--workloads` 입력 형식으로 바꾼다. 판정 코드와 분리되어 있고, 표준 라이브러리만 쓰며, AWS를 호출하지 않는다. 변환 결과는 저장소 밖에 두고 `cli.py --workloads`에 넘긴다.
+
+```powershell
+py -3 -B infrafit/convert.py --cost-explorer ce1.json ce2.json --athena-queries q.json --glue-table t1.json `
+  --metric-queries mq.json --metric-data md.json --firehose-describe fh.json --s3-inventory manifest.json `
+  --sagemaker-notebook nb.json --sagemaker-endpoint ep.json epc.json --bedrock-usage calls.jsonl `
+  --ops-info ops-info.json --out <저장소 밖>\workloads-real.json
+py -3 -B infrafit/cli.py --workloads <저장소 밖>\workloads-real.json
+py -3 -B infrafit/test_convert.py -v
+```
+
+### 지원 형식 (공식 필드 2026-11-14 확인)
+
+| 옵션 | 읽는 파일 | 만드는 항목 | 변환 규칙 |
+|---|---|---|---|
+| `--cost-explorer` | [GetCostAndUsage](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetCostAndUsage.html) 응답(여러 페이지) | `daily_costs` | `GroupDefinitions`에서 `SERVICE` 위치를 찾아 서비스별 `NetUnblendedCost`를 합친다(USAGE_TYPE 등으로 더 나뉘어 있어도 합산). 묶지 않은 응답은 `(total)` 하나. 그날 응답에 없는 서비스는 0. 빠지거나 겹친 날짜는 고치지 않고 넘겨 InfraFit이 보류하게 둔다. 023 `build_series`를 옮겨 확장했다 |
+| `--athena-queries` + `--glue-table` | [BatchGetQueryExecution](https://docs.aws.amazon.com/athena/latest/APIReference/API_BatchGetQueryExecution.html) 응답 + Glue `GetTable` 응답 | `athena_tables` | 쿼리 → 테이블 연결은 운영 정보 파일에서 받는다(`QueryExecution`에 테이블 필드가 없음). `observed_days`는 제출 시각의 첫날~마지막 날(UTC). 테이블 크기·파일 수는 S3 Inventory의 테이블 접두사에서 계산한다. `UnprocessedQueryExecutionIds`는 경고 |
+| `--metric-queries` + `--metric-data` | [GetMetricData](https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html) 요청(`MetricDataQueries`)과 응답 | Firehose `IncomingBytes_daily_sum`, 엔드포인트 `Invocations_sum`·`ModelLatency_avg_us` | 응답에는 `Id`와 값만 있어 요청의 `MetricStat`(네임스페이스·지표·차원)과 `Id`로 짝짓는다. `StatusCode`가 `Complete`가 아니면 건너뛴다. 일 합계는 요청 기간의 합 ÷ 일수, 지연 평균은 같은 시각의 호출 수로 가중 평균 |
+| `--firehose-describe` | `DescribeDeliveryStream` 응답 | `firehose_buffers` | `ExtendedS3DestinationDescription`의 [BufferingHints](https://docs.aws.amazon.com/firehose/latest/APIReference/API_BufferingHints.html), [DynamicPartitioningConfiguration](https://docs.aws.amazon.com/firehose/latest/APIReference/API_DynamicPartitioningConfiguration.html)`.Enabled`(없으면 미사용). S3 외 대상은 건너뛴다 |
+| `--s3-inventory` | [Inventory](https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-inventory-location.html) `manifest.json` + 같은 폴더의 CSV(.gz) | `s3_objects_daily`, Athena `files`·`table_size_bytes` | CSV에는 머리글이 없어 `fileSchema`로 열을 읽는다(`Key`·`Size`·`LastModifiedDate` 필요). 하루 객체 수는 Inventory를 만든 날(덜 찬 날)을 뺀 기간의 `LastModifiedDate` UTC 날짜별 평균. ORC·Parquet 형식은 건너뛴다 |
+| `--sagemaker-notebook` | `DescribeNotebookInstance` 응답 | `sagemaker_notebooks` | 상태 기간·GPU 활동은 응답에 없어 운영 정보 파일에서 받는다 |
+| `--sagemaker-endpoint` | `DescribeEndpoint` + `DescribeEndpointConfig` 응답 | `sagemaker_endpoints` | `EndpointConfigName`으로 짝짓고 변형(variant)마다 한 항목. 유형은 설정의 `InstanceType`, 대수는 [CurrentInstanceCount](https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ProductionVariantSummary.html). 인스턴스가 없는(서버리스) 변형은 건너뛴다 |
+| `--bedrock-usage` | 애플리케이션이 남긴 Converse 사용량 로그(JSON Lines) | `bedrock_calls` | 줄마다 `timestamp`, `run_id`, `modelId`, `prefix_hash`, `prefix_tokens`, `usage`([TokenUsage](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_TokenUsage.html) 그대로), 선택 `call_id`·`cache_ttl`. `inputTokens`는 캐시 읽기·쓰기를 뺀 토큰이라 InfraFit `input_tokens`와 뜻이 같다([prompt caching](https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-caching.html)). TTL은 `cache_ttl`, 없으면 `cacheDetails[].ttl`. `modelId`의 `global.` → global, `us.`·`eu.`·`apac.` 등 → geographic, 접두사 없음 → in-region. 프롬프트·메시지 필드가 있으면 버리고 경고 |
+
+**지원하지 않는 것.** IoT 토픽별 발행 수(R-IOT-1)와 Firehose 스트림별 청구 GB(R-FH-1)는 위 API 어디에도 없다. Cost Explorer는 계정 합계만 준다. 두 규칙의 입력은 지금처럼 사람이 만든다.
+
+### 운영 정보 파일 (`--ops-info`, 저장소 밖)
+
+사람이 넣는 값과 연결 정보다. 원래 이름을 키로 쓴다. 비어 있는 값은 결과에서도 비어 있고, InfraFit은 그 항목만 보류한다. 형식은 [예제](convert-examples/ops-info.json)를 따른다.
+
+| 키 | 내용 |
+|---|---|
+| `firehose.<스트림>` | `allowed_freshness_s`, `active_partitions`(동적 파티셔닝일 때), `s3_prefix`(Inventory에서 이 스트림의 객체를 고르는 접두사) |
+| `athena.queries` | `QueryExecutionId` → 테이블 이름 |
+| `athena.tables.<테이블>` | `s3_prefix`, `conversion_billed_gb_month`, `compaction`, 선택 `observed_days`·`table_size_bytes` |
+| `sagemaker_notebooks.<노트북>` | `status_intervals`, `activity`, `long_running_in_notebook`, `proposed_cpu_notebook_hours`, `training_volume_gb`, `s3_artifact_gb` |
+| `sagemaker_endpoints.<엔드포인트>` | `inservice_hours`, `always_on_required`, `cold_start_acceptable`, `serverless_memory_gb` |
+| `bedrock_models.<modelId>` | 자동 판별이 틀릴 때 `model`·`profile` 직접 지정 |
+
+### 경고와 민감값
+
+- **경고**는 결과 파일의 `conversion.warnings`에 쌓인다. 최상위 목록이 아니라 객체 안에 있어 InfraFit 판정에 섞이지 않는다. 필드가 없거나 형식이 다르면 변환을 멈추지 않고 그 항목만 건너뛰거나(`skipped-item`), 비운 채 내보낸다(`left-null`).
+
+  ```json
+  {"source": "athena", "file": "q.json", "item": "q-lost", "code": "unprocessed-query", "field": "UnprocessedQueryExecutionIds", "action": "skipped-item"}
+  ```
+
+- **복사하지 않는 값**: 결과는 허용한 필드만으로 새로 만든다. 그래서 ARN, 계정 ID, 버킷 이름, S3 경로, 역할, 쿼리 본문, 프롬프트는 옵션과 관계없이 나오지 않는다. 경고의 파일 이름에는 경로를 빼고 이름만 남긴다.
+- **`--hash-names --hash-salt <비밀값>`**: 자원·테이블·쿼리·실행 ID를 `h-` + 소금값을 섞은 SHA-256 앞 12자로 바꾼다. Athena 제출 시각을 빼고, Bedrock 시각은 첫 호출 기준 상대 초로 바꾼다. Cost Explorer의 날짜와 금액은 규칙(월 일수 보정)에 필요해 그대로 남기고 `dates-and-amounts-kept` 경고를 낸다. 실제 비용 결과는 이름을 가려도 저장소에 넣지 않는다.
+
+### 예제와 테스트
+
+[convert-examples/](convert-examples/)의 응답은 실제 API 구조를 본뜬 합성 값이다. [make_examples.py](convert-examples/make_examples.py)가 기존 예제(`workloads*.json`)에서 만든다. 가짜 계정 ID·ARN·버킷 이름을 일부러 넣어, 결과에 나오지 않는지 확인한다.
+
+[test_convert.py](test_convert.py) 21개가 확인하는 것:
+- **원래 판정과 같은지**: 변환한 항목이 원래 예제와 같은 판정·이유·근거·예상 절감을 내는지 본다. 대상은 `sensor-raw-60s`(017, 1,440→96), `sensor_csv_dashboard`·`sensor_parquet_daily`(018), `gpu-always-on`(022), `anomaly-scorer`, `agent-planner`(020, 10회 0.007350 USD), `cached-dense`. 일별 비용 대기열은 021과 같다(AWS IoT 경보 14건).
+- **오류 격리**: 필드 누락, 처리 안 된 쿼리, `PartialData` 지표, 사람 입력 누락, 연결 안 된 쿼리, 날짜 빠짐, SERVICE로 묶지 않은 페이지, Parquet Inventory, 서버리스 변형, 읽을 수 없는 파일. 각각 그 항목만 건너뛰거나 보류되는지 본다.
+- **민감값**: 민감값이 나오지 않는지, 이름 가리기와 소금값, 프롬프트 필드 제거, 경고 형식, 기존 입력 파일을 바꾸지 않는지 본다.
+
+**한계.** Inventory는 지금 남아 있는 객체만 보여 준다. 수명 주기로 지운 객체는 하루 객체 수에서 빠진다. 지표와 Inventory의 기간이 다르면 R-FH-2의 객체 수 비교가 틀어질 수 있다. 실제 AWS 응답으로는 아직 변환해 보지 않았다(계정에 해당 서비스 사용량이 없음).

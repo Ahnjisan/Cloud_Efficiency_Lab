@@ -1,0 +1,11 @@
+{
+  "EndpointConfigName": "anomaly-scorer-config",
+  "ProductionVariants": [
+    {
+      "VariantName": "AllTraffic",
+      "ModelName": "anomaly-model",
+      "InstanceType": "ml.m5.large",
+      "InitialInstanceCount": 1
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "DeliveryStreamDescription": {
+    "DeliveryStreamName": "sensor-raw-60s",
+    "DeliveryStreamARN": "arn:aws:firehose:ap-northeast-2:123456789012:deliverystream/sensor-raw-60s",
+    "DeliveryStreamStatus": "ACTIVE",
+    "DeliveryStreamType": "DirectPut",
+    "Destinations": [
+      {
+        "DestinationId": "destinationId-000000000001",
+        "ExtendedS3DestinationDescription": {
+          "RoleARN": "arn:aws:iam::123456789012:role/example-firehose-delivery",
+          "BucketARN": "arn:aws:s3:::example-sensor-bucket",
+          "Prefix": "raw/",
+          "BufferingHints": {
+            "SizeInMBs": 5,
+            "IntervalInSeconds": 60
+          },
+          "CompressionFormat": "UNCOMPRESSED",
+          "EncryptionConfiguration": {
+            "NoEncryptionConfig": "NoEncryption"
+          },
+          "DynamicPartitioningConfiguration": {
+            "Enabled": false
+          }
+        }
+      }
+    ],
+    "HasMoreDestinations": false
+  }
+}

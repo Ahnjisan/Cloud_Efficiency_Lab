@@ -1,0 +1,4845 @@
+{
+  "QueryExecutions": [
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0000",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:00:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0001",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:01:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0002",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:02:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0003",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:03:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0004",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:04:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0005",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:05:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0006",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:06:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0007",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:07:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0008",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:08:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0009",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:09:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0010",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:10:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0011",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:11:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0012",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:12:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0013",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:13:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0014",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:14:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0015",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:15:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0016",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:16:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0017",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:17:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0018",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:18:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0019",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:19:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0020",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:20:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0021",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:21:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0022",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:22:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0023",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:23:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0024",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:24:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0025",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:25:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0026",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:26:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0027",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:27:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0028",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:28:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0029",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:29:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0030",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:30:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0031",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:31:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0032",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:32:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0033",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:33:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0034",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:34:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0035",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:35:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0036",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:36:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0037",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:37:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0038",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:38:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0039",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:39:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0040",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:40:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0041",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:41:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0042",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:42:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0043",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:43:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0044",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:44:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0045",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:45:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0046",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:46:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0047",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:47:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0048",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:48:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0049",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:49:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0050",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:50:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0051",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:51:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0052",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:52:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0053",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:53:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0054",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:54:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0055",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:55:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0056",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:56:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0057",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:57:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0058",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:58:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0059",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:59:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0060",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:00:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0061",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:01:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0062",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:02:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0063",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:03:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0064",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:04:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0065",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:05:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0066",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:06:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0067",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:07:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0068",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:08:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0069",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:09:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0070",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:10:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0071",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:11:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0072",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:12:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0073",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:13:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0074",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:14:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0075",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:15:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0076",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:16:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0077",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:17:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0078",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:18:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0079",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:19:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0080",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:20:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0081",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:21:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0082",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:22:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0083",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:23:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0084",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:24:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0085",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:25:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0086",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:26:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0087",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:27:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0088",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:28:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0089",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:29:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0090",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:30:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0091",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:31:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0092",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:32:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0093",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:33:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0094",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:34:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0095",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:35:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0096",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:36:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0097",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:37:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0098",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:38:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0099",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:39:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0100",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:40:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0101",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:41:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0102",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:42:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0103",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:43:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0104",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:44:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0105",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:45:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0106",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:46:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0107",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:47:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0108",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:48:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0109",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:49:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0110",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:50:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0111",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:51:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0112",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:52:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0113",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:53:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0114",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:54:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0115",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:55:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0116",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:56:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0117",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:57:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0118",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:58:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0119",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T01:59:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0120",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:00:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0121",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:01:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0122",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:02:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0123",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:03:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0124",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:04:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0125",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:05:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0126",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:06:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0127",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:07:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0128",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:08:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0129",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:09:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0130",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:10:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0131",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:11:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0132",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:12:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0133",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:13:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0134",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:14:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0135",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:15:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0136",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:16:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0137",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:17:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0138",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:18:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0139",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:19:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0140",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:20:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0141",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:21:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0142",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:22:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0143",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:23:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0144",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:24:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0145",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:25:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0146",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:26:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0147",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:27:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0148",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:28:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0149",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:29:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0150",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:30:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0151",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:31:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0152",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:32:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0153",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:33:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0154",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:34:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0155",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:35:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0156",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:36:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0157",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:37:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0158",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:38:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0159",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:39:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0160",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:40:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0161",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:41:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0162",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:42:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0163",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:43:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0164",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:44:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0165",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:45:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0166",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:46:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0167",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:47:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0168",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:48:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0169",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:49:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0170",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:50:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0171",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:51:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0172",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:52:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0173",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:53:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0174",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:54:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0175",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:55:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0176",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:56:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0177",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:57:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0178",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:58:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0179",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T02:59:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0180",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T03:00:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0181",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T03:01:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0182",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T03:02:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0183",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T03:03:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0184",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T03:04:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0185",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T03:05:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0186",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T03:06:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0187",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T03:07:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0188",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T03:08:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0189",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T03:09:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0190",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T03:10:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0191",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T03:11:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0192",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T03:12:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0193",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T03:13:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0194",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T03:14:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0195",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T03:15:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0196",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T03:16:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0197",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T03:17:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0198",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T03:18:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0199",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T03:19:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0200",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T03:20:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0201",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T03:21:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0202",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T03:22:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0203",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T03:23:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0204",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T03:24:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0205",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T03:25:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0206",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T03:26:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0207",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T03:27:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0208",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T03:28:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0209",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T03:29:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0210",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T03:30:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_csv_dashboard-0211",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T03:31:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 261230663
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_parquet_daily-0000",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-01T00:00:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 273141
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_parquet_daily-0001",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-02T00:00:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 306032
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_parquet_daily-0002",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-03T00:00:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 4678231
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_parquet_daily-0003",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-04T00:00:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 732439
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_parquet_daily-0004",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-05T00:00:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 216350
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_parquet_daily-0005",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-06T00:00:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 273141
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_parquet_daily-0006",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-07T00:00:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 306032
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_parquet_daily-0007",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-08T00:00:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 4678231
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_parquet_daily-0008",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-09T00:00:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 732439
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_parquet_daily-0009",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-10T00:00:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 216350
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_parquet_daily-0010",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-11T00:00:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 273141
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_parquet_daily-0011",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-12T00:00:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 306032
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_parquet_daily-0012",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-13T00:00:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 4678231
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_parquet_daily-0013",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-14T00:00:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 732439
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_parquet_daily-0014",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-15T00:00:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 216350
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_parquet_daily-0015",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-16T00:00:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 273141
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_parquet_daily-0016",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-17T00:00:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 306032
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_parquet_daily-0017",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-18T00:00:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 4678231
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_parquet_daily-0018",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-19T00:00:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 732439
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_parquet_daily-0019",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-20T00:00:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 216350
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_parquet_daily-0020",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-21T00:00:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 273141
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_parquet_daily-0021",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-22T00:00:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 306032
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_parquet_daily-0022",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-23T00:00:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 4678231
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_parquet_daily-0023",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-24T00:00:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 732439
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_parquet_daily-0024",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-25T00:00:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 216350
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_parquet_daily-0025",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-26T00:00:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 273141
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_parquet_daily-0026",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-27T00:00:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 306032
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_parquet_daily-0027",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-28T00:00:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 4678231
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_parquet_daily-0028",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-29T00:00:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 732439
+      },
+      "WorkGroup": "primary"
+    },
+    {
+      "QueryExecutionId": "sensor_parquet_daily-0029",
+      "Query": "SELECT * FROM secret_table WHERE x = 1",
+      "StatementType": "DML",
+      "ResultConfiguration": {
+        "OutputLocation": "s3://example-sensor-bucket/athena-results/"
+      },
+      "QueryExecutionContext": {
+        "Database": "sensors",
+        "Catalog": "AwsDataCatalog"
+      },
+      "Status": {
+        "State": "SUCCEEDED",
+        "SubmissionDateTime": "2026-01-30T00:00:00Z"
+      },
+      "Statistics": {
+        "DataScannedInBytes": 216350
+      },
+      "WorkGroup": "primary"
+    }
+  ],
+  "UnprocessedQueryExecutionIds": []
+}

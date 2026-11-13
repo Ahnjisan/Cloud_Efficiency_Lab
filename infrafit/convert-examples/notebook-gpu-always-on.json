@@ -1,0 +1,8 @@
+{
+  "NotebookInstanceArn": "arn:aws:sagemaker:ap-northeast-2:123456789012:notebook-instance/gpu-always-on",
+  "NotebookInstanceName": "gpu-always-on",
+  "NotebookInstanceStatus": "InService",
+  "InstanceType": "ml.g4dn.xlarge",
+  "RoleArn": "arn:aws:iam::123456789012:role/example-firehose-delivery",
+  "VolumeSizeInGB": 50
+}

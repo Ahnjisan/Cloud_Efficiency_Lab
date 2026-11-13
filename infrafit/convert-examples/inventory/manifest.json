@@ -1,0 +1,15 @@
+{
+  "sourceBucket": "example-sensor-bucket",
+  "destinationBucket": "arn:aws:s3:::example-inventory-destination",
+  "version": "2016-11-30",
+  "creationTimestamp": "1767398400000",
+  "fileFormat": "CSV",
+  "fileSchema": "Bucket, Key, Size, LastModifiedDate",
+  "files": [
+    {
+      "key": "inventory/example-sensor-bucket/data/data-0.csv.gz",
+      "size": 1,
+      "MD5checksum": "synthetic"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "Table": {
+    "Name": "sensor_parquet_daily",
+    "DatabaseName": "sensors",
+    "CatalogId": "123456789012",
+    "StorageDescriptor": {
+      "InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+      "SerdeInfo": {
+        "SerializationLibrary": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe"
+      },
+      "Compressed": false,
+      "Location": "s3://example-sensor-bucket/tables/sensor_parquet/"
+    },
+    "PartitionKeys": [
+      {
+        "Name": "dt"
+      }
+    ],
+    "TableType": "EXTERNAL_TABLE"
+  }
+}

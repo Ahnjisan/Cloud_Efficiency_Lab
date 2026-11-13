@@ -1,0 +1,13 @@
+{
+  "EndpointName": "anomaly-scorer",
+  "EndpointConfigName": "anomaly-scorer-config",
+  "EndpointArn": "arn:aws:sagemaker:ap-northeast-2:123456789012:endpoint/anomaly-scorer",
+  "EndpointStatus": "InService",
+  "ProductionVariants": [
+    {
+      "VariantName": "AllTraffic",
+      "CurrentInstanceCount": 1,
+      "DesiredInstanceCount": 1
+    }
+  ]
+}

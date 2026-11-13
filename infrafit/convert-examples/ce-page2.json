@@ -1,0 +1,2235 @@
+{
+  "GroupDefinitions": [
+    {
+      "Type": "DIMENSION",
+      "Key": "SERVICE"
+    },
+    {
+      "Type": "DIMENSION",
+      "Key": "USAGE_TYPE"
+    }
+  ],
+  "ResultsByTime": [
+    {
+      "TimePeriod": {
+        "Start": "2026-01-31",
+        "End": "2026-02-01"
+      },
+      "Total": {},
+      "Groups": [
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "19.39",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "9.69",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        }
+      ],
+      "Estimated": false
+    },
+    {
+      "TimePeriod": {
+        "Start": "2026-02-01",
+        "End": "2026-02-02"
+      },
+      "Total": {},
+      "Groups": [
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "19.99",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "9.99",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        }
+      ],
+      "Estimated": false
+    },
+    {
+      "TimePeriod": {
+        "Start": "2026-02-02",
+        "End": "2026-02-03"
+      },
+      "Total": {},
+      "Groups": [
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "20.59",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "10.29",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        }
+      ],
+      "Estimated": false
+    },
+    {
+      "TimePeriod": {
+        "Start": "2026-02-03",
+        "End": "2026-02-04"
+      },
+      "Total": {},
+      "Groups": [
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "19.69",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "9.84",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        }
+      ],
+      "Estimated": false
+    },
+    {
+      "TimePeriod": {
+        "Start": "2026-02-04",
+        "End": "2026-02-05"
+      },
+      "Total": {},
+      "Groups": [
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "20.29",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "10.14",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        }
+      ],
+      "Estimated": false
+    },
+    {
+      "TimePeriod": {
+        "Start": "2026-02-05",
+        "End": "2026-02-06"
+      },
+      "Total": {},
+      "Groups": [
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "19.39",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "19.39",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        }
+      ],
+      "Estimated": false
+    },
+    {
+      "TimePeriod": {
+        "Start": "2026-02-06",
+        "End": "2026-02-07"
+      },
+      "Total": {},
+      "Groups": [
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "19.99",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "19.99",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        }
+      ],
+      "Estimated": false
+    },
+    {
+      "TimePeriod": {
+        "Start": "2026-02-07",
+        "End": "2026-02-08"
+      },
+      "Total": {},
+      "Groups": [
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "20.59",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "20.59",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        }
+      ],
+      "Estimated": false
+    },
+    {
+      "TimePeriod": {
+        "Start": "2026-02-08",
+        "End": "2026-02-09"
+      },
+      "Total": {},
+      "Groups": [
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "19.69",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "19.69",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        }
+      ],
+      "Estimated": false
+    },
+    {
+      "TimePeriod": {
+        "Start": "2026-02-09",
+        "End": "2026-02-10"
+      },
+      "Total": {},
+      "Groups": [
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "20.29",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "20.29",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        }
+      ],
+      "Estimated": false
+    },
+    {
+      "TimePeriod": {
+        "Start": "2026-02-10",
+        "End": "2026-02-11"
+      },
+      "Total": {},
+      "Groups": [
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "19.39",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "19.39",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        }
+      ],
+      "Estimated": false
+    },
+    {
+      "TimePeriod": {
+        "Start": "2026-02-11",
+        "End": "2026-02-12"
+      },
+      "Total": {},
+      "Groups": [
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "19.99",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "19.99",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        }
+      ],
+      "Estimated": false
+    },
+    {
+      "TimePeriod": {
+        "Start": "2026-02-12",
+        "End": "2026-02-13"
+      },
+      "Total": {},
+      "Groups": [
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "20.59",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "20.59",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        }
+      ],
+      "Estimated": false
+    },
+    {
+      "TimePeriod": {
+        "Start": "2026-02-13",
+        "End": "2026-02-14"
+      },
+      "Total": {},
+      "Groups": [
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "19.69",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "19.69",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        }
+      ],
+      "Estimated": false
+    },
+    {
+      "TimePeriod": {
+        "Start": "2026-02-14",
+        "End": "2026-02-15"
+      },
+      "Total": {},
+      "Groups": [
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "20.29",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "20.29",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        }
+      ],
+      "Estimated": false
+    },
+    {
+      "TimePeriod": {
+        "Start": "2026-02-15",
+        "End": "2026-02-16"
+      },
+      "Total": {},
+      "Groups": [
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "19.39",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "19.39",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        }
+      ],
+      "Estimated": false
+    },
+    {
+      "TimePeriod": {
+        "Start": "2026-02-16",
+        "End": "2026-02-17"
+      },
+      "Total": {},
+      "Groups": [
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "19.99",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "19.99",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        }
+      ],
+      "Estimated": false
+    },
+    {
+      "TimePeriod": {
+        "Start": "2026-02-17",
+        "End": "2026-02-18"
+      },
+      "Total": {},
+      "Groups": [
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "20.59",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "20.59",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        }
+      ],
+      "Estimated": false
+    },
+    {
+      "TimePeriod": {
+        "Start": "2026-02-18",
+        "End": "2026-02-19"
+      },
+      "Total": {},
+      "Groups": [
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "19.69",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "19.69",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        }
+      ],
+      "Estimated": false
+    },
+    {
+      "TimePeriod": {
+        "Start": "2026-02-19",
+        "End": "2026-02-20"
+      },
+      "Total": {},
+      "Groups": [
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "20.29",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "20.29",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        }
+      ],
+      "Estimated": false
+    },
+    {
+      "TimePeriod": {
+        "Start": "2026-02-20",
+        "End": "2026-02-21"
+      },
+      "Total": {},
+      "Groups": [
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "59.99",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "19.39",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        }
+      ],
+      "Estimated": false
+    },
+    {
+      "TimePeriod": {
+        "Start": "2026-02-21",
+        "End": "2026-02-22"
+      },
+      "Total": {},
+      "Groups": [
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "19.99",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "19.99",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        }
+      ],
+      "Estimated": false
+    },
+    {
+      "TimePeriod": {
+        "Start": "2026-02-22",
+        "End": "2026-02-23"
+      },
+      "Total": {},
+      "Groups": [
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "20.59",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "20.59",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        }
+      ],
+      "Estimated": false
+    },
+    {
+      "TimePeriod": {
+        "Start": "2026-02-23",
+        "End": "2026-02-24"
+      },
+      "Total": {},
+      "Groups": [
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "19.69",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "19.69",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        }
+      ],
+      "Estimated": false
+    },
+    {
+      "TimePeriod": {
+        "Start": "2026-02-24",
+        "End": "2026-02-25"
+      },
+      "Total": {},
+      "Groups": [
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "20.29",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "20.29",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        }
+      ],
+      "Estimated": false
+    },
+    {
+      "TimePeriod": {
+        "Start": "2026-02-25",
+        "End": "2026-02-26"
+      },
+      "Total": {},
+      "Groups": [
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "19.39",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "19.39",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        }
+      ],
+      "Estimated": false
+    },
+    {
+      "TimePeriod": {
+        "Start": "2026-02-26",
+        "End": "2026-02-27"
+      },
+      "Total": {},
+      "Groups": [
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "19.99",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "19.99",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        }
+      ],
+      "Estimated": false
+    },
+    {
+      "TimePeriod": {
+        "Start": "2026-02-27",
+        "End": "2026-02-28"
+      },
+      "Total": {},
+      "Groups": [
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "20.59",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "20.59",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        }
+      ],
+      "Estimated": false
+    },
+    {
+      "TimePeriod": {
+        "Start": "2026-02-28",
+        "End": "2026-03-01"
+      },
+      "Total": {},
+      "Groups": [
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "19.69",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "19.69",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        }
+      ],
+      "Estimated": false
+    },
+    {
+      "TimePeriod": {
+        "Start": "2026-03-01",
+        "End": "2026-03-02"
+      },
+      "Total": {},
+      "Groups": [
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "44.99",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Bedrock",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageA"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "20.29",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS IoT",
+            "APN2-UsageB"
+          ],
+          "Metrics": {
+            "NetUnblendedCost": {
+              "Amount": "0.01",
+              "Unit": "USD"
+            },
+            "UsageQuantity": {
+              "Amount": "1",
+              "Unit": "N/A"
+            }
+          }
+        }
+      ],
+      "Estimated": true
+    }
+  ],
+  "DimensionValueAttributes": []
+}
