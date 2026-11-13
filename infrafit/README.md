@@ -246,3 +246,39 @@ py -3 -B infrafit/test_collect.py -v
 - aws 오류 메시지의 ARN·계정 ID 가림과 다른 서비스 계속 진행
 - 요약에 자원 이름 없음, Inventory 내려받기
 - 수집 결과를 변환기에 넣었을 때 경고 없이 원래 예제와 같은 판정
+
+## 보고서 (`--report`)
+
+`--report 경로.html` 또는 `경로.md`를 주면 판정 결과를 사람이 읽기 쉬운 파일 하나로 함께 쓴다([report.py](report.py)). 화면 출력(텍스트·`--json`)은 바뀌지 않는다.
+
+```powershell
+py -3 -B infrafit/cli.py --workloads infrafit/workloads.json infrafit/workloads-ops.json --report infrafit/reports/example-report.html
+py -3 -B infrafit/test_report.py -v
+```
+
+| 절 | 내용 |
+|---|---|
+| 머리말 | 입력 데이터 종류(파일별 `data_kind`: 합성·실제, 섞이면 "혼합"), 평가 기간·시점, "예상 절감은 실제 청구 절감이 아님"·"실제 청구 대사: 미검증" |
+| 요약 | EC2·EBS 판정과 워크로드 규칙 각각의 후보·유지·보류 수 |
+| 규칙별 | 규칙마다 후보·유지·보류 수와 예상 절감. 계산 기준(`saving_basis`)이 같은 항목끼리만 더하고, 기준이 다르면 줄을 나눈다(예: R-SM-1 노트북과 엔드포인트) |
+| 항목별 | 판정, 이유 문구, 근거 값(`evidence`), 예상 절감과 계산 기준, 사용한 기준값(값·근거 수준) |
+| 판단 보류 사유 | 보류 이유별로 해당 항목을 묶는다. 무엇을 채우면 판정되는지 보인다 |
+| 비용 급증 조사 대기열 | 판정과 섞지 않고 따로. 잠정(`Estimated`) 날짜 표시, 서비스별 보류 |
+| 사용한 기준값 | `thresholds.json`의 값, 근거 수준(실험 확인·공식 자료·임시값, 실측이 생기면 실측), 출처 |
+
+- 보고서는 판정 결과와 `thresholds.json`만으로 만든다. 그래서 입력의 다른 필드(계정 ID, ARN, 쿼리 본문)는 나오지 않는다. 모든 값은 HTML 이스케이프 처리를 한다.
+- HTML은 파일 하나에 CSS만 넣고, JavaScript·외부 파일이 없다. 밝은·어두운 화면을 지원하고, 휴대폰 폭에서는 표만 가로로 스크롤된다.
+- 생성 시각을 쓰지 않아 같은 입력이면 같은 파일이 나온다.
+- 워크로드 파일 중 하나라도 `data_kind: "real"`이면 텍스트 출력 머리글이 "가상 입력"에서 "실제 입력"으로 바뀐다. 합성 예제의 출력은 그대로다.
+- 예제 [example-report.html](reports/example-report.html)·[example-report.md](reports/example-report.md)는 합성 입력으로만 만들었다.
+
+[test_report.py](test_report.py) 10개가 확인하는 것:
+- 요약 수가 JSON 판정 수와 같은지
+- 필수 절, 두 안내 문구, 근거 수준 표시
+- 계산 기준이 다른 절감을 더하지 않는지
+- 추가 필드(ARN·계정 ID·쿼리)가 나오지 않는지, `<script>` 이스케이프
+- 외부 의존성이 없는지
+- 같은 입력이면 같은 결과인지, 저장소 예제가 최신인지
+- `--report`가 화면 출력을 바꾸지 않는지
+- 워크로드 없이도 동작하는지, 잘못된 확장자 거부
+- 실제 입력일 때 머리글과 "혼합" 표시

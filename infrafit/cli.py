@@ -7,6 +7,7 @@ from pathlib import Path
 from runpy import run_path
 
 from ops_rules import REASONS as OPS_REASONS, assess_ops
+from report import render as render_report
 from workload_rules import REASONS as WORKLOAD_REASONS, assess_workloads
 
 HERE = Path(__file__).resolve().parent
@@ -147,18 +148,32 @@ def main():
                         help="optional synthetic workload inputs (IoT, Firehose, Bedrock, Athena, SageMaker, daily cost)")
     parser.add_argument("--thresholds", type=Path, default=HERE / "thresholds.json")
     parser.add_argument("--json", action="store_true", dest="as_json")
+    parser.add_argument("--report", type=Path, help="also write a readable report (.html or .md)")
     args = parser.parse_args()
+    if args.report and args.report.suffix.lower() not in (".html", ".md"):
+        parser.error("--report must end with .html or .md")
+    docs = []
     try:
         report = assess(read(args.billing), read(args.changes), read(args.peaks), [read(p) for p in args.plan],
                         read(args.basis), args.as_of, args.window)
         if args.workloads:
-            workloads, thresholds = merge_workloads(read(p) for p in args.workloads), read(args.thresholds)
+            docs = [read(p) for p in args.workloads]
+            workloads, thresholds = merge_workloads(docs), read(args.thresholds)
             ops, queue, holds = assess_ops(workloads, thresholds)
             report["workload_decisions"] = assess_workloads(workloads, thresholds) + ops
             if queue is not None:
                 report["investigation_queue"], report["investigation_holds"] = queue, holds
     except (OSError, ValueError, InvalidOperation, KeyError, TypeError):
         parser.error("invalid or unreadable input; see the InfraFit input contract")
+    if args.report:
+        kinds = [("EC2·EBS 기본 입력", report["data_kind"])]
+        kinds += [(p.name, doc.get("data_kind", "synthetic")) for p, doc in zip(args.workloads or [], docs)]
+        try:
+            text = render_report(report, read(args.thresholds), kinds, {**REASONS, **WORKLOAD_REASONS, **OPS_REASONS},
+                                 "html" if args.report.suffix.lower() == ".html" else "md")
+            args.report.write_text(text, encoding="utf-8")
+        except (OSError, ValueError, KeyError, TypeError):
+            parser.error("could not write the report")
     if args.as_json:
         print(json.dumps(report, indent=2))
         return
@@ -171,7 +186,8 @@ def main():
             costs = row["modeled_usd"]
             print(f"  - 가상 USD {costs['baseline']} → {costs['candidate']} | p99 {row['peak_p99_ms']} ms")
     if args.workloads:
-        print("워크로드 규칙 | 가상 입력 | 예상 절감은 실제 청구 절감이 아님")
+        kind = "실제 입력" if any(doc.get("data_kind") == "real" for doc in docs) else "가상 입력"
+        print(f"워크로드 규칙 | {kind} | 예상 절감은 실제 청구 절감이 아님")
         for row in report["workload_decisions"]:
             print(f"{row['rule']} {row['id']} | {row['label']}")
             for reason in row["reasons"]:
