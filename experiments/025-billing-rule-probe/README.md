@@ -82,6 +82,7 @@ CloudShell 자체의 요금과 Firehose 스트림의 대기 요금 유무는 실
 | P2 투입 | 200 B 레코드 500건짜리 `put-record-batch` | **계획과 다름: 4회 실행되어 2,000건.** 터미널 포커스가 빠진 상태에서 입력한 명령이 버퍼에 남았다가, 다시 입력한 명령과 함께 실행됐다. 실패 0건. 판정 기준은 아래와 같이 2,000건으로 바꾼다 |
 | P3 | 726 B CSV 업로드, Glue 데이터베이스·테이블 생성(DDL 2회), SELECT 5회 | DDL 스캔 0 B, SELECT 각 726 B(엔진 기준) |
 | 결과 조회 1차 (실행 약 15시간 뒤) | 읽기 전용 프로필로 `GetCostAndUsage` 1건(DAILY, 실행 UTC 날짜, `GroupBy=SERVICE,USAGE_TYPE`, `UsageQuantity`·`NetUnblendedCost`), 0.01 USD | **아직 미반영.** 그날 응답은 Secrets Manager 한 행뿐이고 `Estimated=true`. IoT·Firehose·Athena 행 없음. 판정·기준값 수정·정리는 하지 않고 다음 날 다시 조회한다. 원본은 저장소 밖 |
+| 결과 조회 2차 (실행 약 22시간 뒤) | 1차와 같은 조건으로 `GetCostAndUsage` 1건, 0.01 USD | **아직 미반영.** 1차와 같은 Secrets Manager 한 행뿐이고 `Estimated=true`. 하루 더 기다려 다시 조회한다. 지금까지 조회 2건, 0.02 USD. 원본은 저장소 밖 |
 
 **P2 판정 기준 (2,000건 기준으로 갱신)**
 
