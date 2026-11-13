@@ -1,0 +1,21 @@
+{
+  "note": "Thresholds for workload rules R-IOT-1, R-FH-1, R-BR-1, R-BR-2. Every value carries its evidence level: '실험 확인' (reproduced in this repository's synthetic experiments), '공식 자료' (AWS documentation or price list, checked 2026-11-13), '임시값' (provisional; re-derive from real account data).",
+  "rates_snapshot": "references/aws-price-list-apn2-2026-11-13.json",
+  "iot": {
+    "kb_definitions_bytes": {"value": [5000, 5120], "evidence": "공식 자료", "source": "AWS IoT Core pricing: messages metered in 5 KB increments; byte definition unconfirmed, so both are evaluated (experiment 016)"},
+    "payload_max_bytes": {"value": 1024, "evidence": "임시값", "source": "experiments/infrafit-pipeline-ai-rules.md R-IOT-1"},
+    "batch_size_limit_bytes": {"value": 4750, "evidence": "임시값", "source": "5% margin under the 5,000 B boundary (experiment 016 H3)"},
+    "metering_tolerance": {"value": 0.01, "evidence": "임시값", "source": "allowed relative gap between metered and expected metered messages"}
+  },
+  "firehose": {
+    "record_unit_bytes": {"value": 5120, "evidence": "공식 자료", "source": "Amazon Data Firehose pricing: billed per GB ingested in 5KB increments"},
+    "ratio_keep_below": {"value": 1.5, "evidence": "임시값", "source": "experiments/infrafit-pipeline-ai-rules.md R-FH-1"},
+    "ratio_candidate_at": {"value": 3.0, "evidence": "임시값", "source": "experiments/infrafit-pipeline-ai-rules.md R-FH-1"}
+  },
+  "bedrock": {
+    "supported_profiles": {"value": ["global"], "evidence": "공식 자료", "source": "Only Global cross-Region rates for Claude were found in the Seoul price list"},
+    "ttl_seconds": {"value": {"5m": 300, "1h": 3600}, "evidence": "공식 자료", "source": "Amazon Bedrock prompt caching: 5 minute TTL, 1 hour option"},
+    "min_cache_tokens": {"value": {"Claude Haiku 5.5": 512, "Claude Sonnet 5.5": 512, "Claude Haiku 4.5": 4096, "Claude Sonnet 4.5": null}, "evidence": "공식 자료", "source": "Bedrock prompt caching supported-models table; Sonnet 4.5 not listed (null = unknown)"},
+    "min_observed_cache_writes": {"value": 20, "evidence": "임시값", "source": "minimum cache-write calls before judging a hit ratio"}
+  }
+}

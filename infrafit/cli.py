@@ -6,6 +6,8 @@ import json
 from pathlib import Path
 from runpy import run_path
 
+from workload_rules import REASONS as WORKLOAD_REASONS, assess_workloads
+
 HERE = Path(__file__).resolve().parent
 EXPERIMENTS = HERE.parent / "experiments"
 RECONCILIATION = EXPERIMENTS / "008-evidence-reconciliation"
@@ -130,11 +132,15 @@ def main():
     parser.add_argument("--basis", type=Path, default=HERE / "config-basis.json")
     parser.add_argument("--window", default="peak-01")
     parser.add_argument("--as-of", type=int, default=2)
+    parser.add_argument("--workloads", type=Path, help="optional synthetic IoT/Firehose/Bedrock inputs")
+    parser.add_argument("--thresholds", type=Path, default=HERE / "thresholds.json")
     parser.add_argument("--json", action="store_true", dest="as_json")
     args = parser.parse_args()
     try:
         report = assess(read(args.billing), read(args.changes), read(args.peaks), [read(p) for p in args.plan],
                         read(args.basis), args.as_of, args.window)
+        if args.workloads:
+            report["workload_decisions"] = assess_workloads(read(args.workloads), read(args.thresholds))
     except (OSError, ValueError, InvalidOperation, KeyError, TypeError):
         parser.error("invalid or unreadable input; see the InfraFit input contract")
     if args.as_json:
@@ -148,6 +154,14 @@ def main():
         if row["modeled_usd"]:
             costs = row["modeled_usd"]
             print(f"  - 가상 USD {costs['baseline']} → {costs['candidate']} | p99 {row['peak_p99_ms']} ms")
+    if args.workloads:
+        print("워크로드 규칙 | 가상 입력 | 예상 절감은 실제 청구 절감이 아님")
+        for row in report["workload_decisions"]:
+            print(f"{row['rule']} {row['id']} | {row['label']}")
+            for reason in row["reasons"]:
+                print(f"  - {WORKLOAD_REASONS[reason]}")
+            if row["expected_saving_usd"]:
+                print(f"  - 예상 절감 USD {row['expected_saving_usd']} ({row['saving_basis']})")
     if report["unassigned_missing_id_rows"]:
         print(f"행 ID와 자원 ID를 확인할 수 없는 청구 행: {report['unassigned_missing_id_rows']}건 (비용 집계 제외)")
     print("실제 청구 대사: 미검증")
