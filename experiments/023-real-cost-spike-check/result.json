@@ -1,0 +1,514 @@
+{
+ "series_days": 410,
+ "estimated_days": 14,
+ "series": {
+  "AWS Secrets Manager": {
+   "days": 410,
+   "nonzero_days": 409,
+   "hold": null,
+   "alerts": 14,
+   "alert_details": [
+    {
+     "day_index": 123,
+     "month_first_day": true,
+     "month_last_day": false,
+     "estimated": false,
+     "observed_to_median": 1.0,
+     "median_is_zero": false,
+     "consecutive_alert_days": 1
+    },
+    {
+     "day_index": 124,
+     "month_first_day": false,
+     "month_last_day": false,
+     "estimated": false,
+     "observed_to_median": 1.0,
+     "median_is_zero": false,
+     "consecutive_alert_days": 2
+    },
+    {
+     "day_index": 125,
+     "month_first_day": false,
+     "month_last_day": false,
+     "estimated": false,
+     "observed_to_median": 1.0,
+     "median_is_zero": false,
+     "consecutive_alert_days": 3
+    },
+    {
+     "day_index": 126,
+     "month_first_day": false,
+     "month_last_day": false,
+     "estimated": false,
+     "observed_to_median": 1.0,
+     "median_is_zero": false,
+     "consecutive_alert_days": 4
+    },
+    {
+     "day_index": 127,
+     "month_first_day": false,
+     "month_last_day": false,
+     "estimated": false,
+     "observed_to_median": 1.0,
+     "median_is_zero": false,
+     "consecutive_alert_days": 5
+    },
+    {
+     "day_index": 128,
+     "month_first_day": false,
+     "month_last_day": false,
+     "estimated": false,
+     "observed_to_median": 1.0,
+     "median_is_zero": false,
+     "consecutive_alert_days": 6
+    },
+    {
+     "day_index": 129,
+     "month_first_day": false,
+     "month_last_day": false,
+     "estimated": false,
+     "observed_to_median": 1.0,
+     "median_is_zero": false,
+     "consecutive_alert_days": 7
+    },
+    {
+     "day_index": 130,
+     "month_first_day": false,
+     "month_last_day": false,
+     "estimated": false,
+     "observed_to_median": 1.0,
+     "median_is_zero": false,
+     "consecutive_alert_days": 8
+    },
+    {
+     "day_index": 131,
+     "month_first_day": false,
+     "month_last_day": false,
+     "estimated": false,
+     "observed_to_median": 1.0,
+     "median_is_zero": false,
+     "consecutive_alert_days": 9
+    },
+    {
+     "day_index": 132,
+     "month_first_day": false,
+     "month_last_day": false,
+     "estimated": false,
+     "observed_to_median": 1.0,
+     "median_is_zero": false,
+     "consecutive_alert_days": 10
+    },
+    {
+     "day_index": 133,
+     "month_first_day": false,
+     "month_last_day": false,
+     "estimated": false,
+     "observed_to_median": 1.0,
+     "median_is_zero": false,
+     "consecutive_alert_days": 11
+    },
+    {
+     "day_index": 134,
+     "month_first_day": false,
+     "month_last_day": false,
+     "estimated": false,
+     "observed_to_median": 1.0,
+     "median_is_zero": false,
+     "consecutive_alert_days": 12
+    },
+    {
+     "day_index": 135,
+     "month_first_day": false,
+     "month_last_day": false,
+     "estimated": false,
+     "observed_to_median": 1.0,
+     "median_is_zero": false,
+     "consecutive_alert_days": 13
+    },
+    {
+     "day_index": 136,
+     "month_first_day": false,
+     "month_last_day": false,
+     "estimated": false,
+     "observed_to_median": 1.0,
+     "median_is_zero": false,
+     "consecutive_alert_days": 14
+    }
+   ]
+  },
+  "Amazon Simple Storage Service": {
+   "days": 410,
+   "nonzero_days": 0,
+   "hold": null,
+   "alerts": 0,
+   "alert_details": []
+  },
+  "Tax": {
+   "days": 410,
+   "nonzero_days": 14,
+   "hold": null,
+   "alerts": 13,
+   "alert_details": [
+    {
+     "day_index": 31,
+     "month_first_day": true,
+     "month_last_day": false,
+     "estimated": false,
+     "observed_to_median": null,
+     "median_is_zero": true,
+     "consecutive_alert_days": 1
+    },
+    {
+     "day_index": 61,
+     "month_first_day": true,
+     "month_last_day": false,
+     "estimated": false,
+     "observed_to_median": null,
+     "median_is_zero": true,
+     "consecutive_alert_days": 1
+    },
+    {
+     "day_index": 92,
+     "month_first_day": true,
+     "month_last_day": false,
+     "estimated": false,
+     "observed_to_median": null,
+     "median_is_zero": true,
+     "consecutive_alert_days": 1
+    },
+    {
+     "day_index": 123,
+     "month_first_day": true,
+     "month_last_day": false,
+     "estimated": false,
+     "observed_to_median": null,
+     "median_is_zero": true,
+     "consecutive_alert_days": 1
+    },
+    {
+     "day_index": 151,
+     "month_first_day": true,
+     "month_last_day": false,
+     "estimated": false,
+     "observed_to_median": null,
+     "median_is_zero": true,
+     "consecutive_alert_days": 1
+    },
+    {
+     "day_index": 182,
+     "month_first_day": true,
+     "month_last_day": false,
+     "estimated": false,
+     "observed_to_median": null,
+     "median_is_zero": true,
+     "consecutive_alert_days": 1
+    },
+    {
+     "day_index": 212,
+     "month_first_day": true,
+     "month_last_day": false,
+     "estimated": false,
+     "observed_to_median": null,
+     "median_is_zero": true,
+     "consecutive_alert_days": 1
+    },
+    {
+     "day_index": 243,
+     "month_first_day": true,
+     "month_last_day": false,
+     "estimated": false,
+     "observed_to_median": null,
+     "median_is_zero": true,
+     "consecutive_alert_days": 1
+    },
+    {
+     "day_index": 273,
+     "month_first_day": true,
+     "month_last_day": false,
+     "estimated": false,
+     "observed_to_median": null,
+     "median_is_zero": true,
+     "consecutive_alert_days": 1
+    },
+    {
+     "day_index": 304,
+     "month_first_day": true,
+     "month_last_day": false,
+     "estimated": false,
+     "observed_to_median": null,
+     "median_is_zero": true,
+     "consecutive_alert_days": 1
+    },
+    {
+     "day_index": 335,
+     "month_first_day": true,
+     "month_last_day": false,
+     "estimated": false,
+     "observed_to_median": null,
+     "median_is_zero": true,
+     "consecutive_alert_days": 1
+    },
+    {
+     "day_index": 365,
+     "month_first_day": true,
+     "month_last_day": false,
+     "estimated": false,
+     "observed_to_median": null,
+     "median_is_zero": true,
+     "consecutive_alert_days": 1
+    },
+    {
+     "day_index": 396,
+     "month_first_day": true,
+     "month_last_day": false,
+     "estimated": true,
+     "observed_to_median": null,
+     "median_is_zero": true,
+     "consecutive_alert_days": 1
+    }
+   ]
+  },
+  "(total)": {
+   "days": 410,
+   "nonzero_days": 409,
+   "hold": null,
+   "alerts": 26,
+   "alert_details": [
+    {
+     "day_index": 31,
+     "month_first_day": true,
+     "month_last_day": false,
+     "estimated": false,
+     "observed_to_median": 5.0,
+     "median_is_zero": false,
+     "consecutive_alert_days": 1
+    },
+    {
+     "day_index": 61,
+     "month_first_day": true,
+     "month_last_day": false,
+     "estimated": false,
+     "observed_to_median": 5.0,
+     "median_is_zero": false,
+     "consecutive_alert_days": 1
+    },
+    {
+     "day_index": 92,
+     "month_first_day": true,
+     "month_last_day": false,
+     "estimated": false,
+     "observed_to_median": 5.0,
+     "median_is_zero": false,
+     "consecutive_alert_days": 1
+    },
+    {
+     "day_index": 123,
+     "month_first_day": true,
+     "month_last_day": false,
+     "estimated": false,
+     "observed_to_median": 5.0,
+     "median_is_zero": false,
+     "consecutive_alert_days": 1
+    },
+    {
+     "day_index": 124,
+     "month_first_day": false,
+     "month_last_day": false,
+     "estimated": false,
+     "observed_to_median": 1.0,
+     "median_is_zero": false,
+     "consecutive_alert_days": 2
+    },
+    {
+     "day_index": 125,
+     "month_first_day": false,
+     "month_last_day": false,
+     "estimated": false,
+     "observed_to_median": 1.0,
+     "median_is_zero": false,
+     "consecutive_alert_days": 3
+    },
+    {
+     "day_index": 126,
+     "month_first_day": false,
+     "month_last_day": false,
+     "estimated": false,
+     "observed_to_median": 1.0,
+     "median_is_zero": false,
+     "consecutive_alert_days": 4
+    },
+    {
+     "day_index": 127,
+     "month_first_day": false,
+     "month_last_day": false,
+     "estimated": false,
+     "observed_to_median": 1.0,
+     "median_is_zero": false,
+     "consecutive_alert_days": 5
+    },
+    {
+     "day_index": 128,
+     "month_first_day": false,
+     "month_last_day": false,
+     "estimated": false,
+     "observed_to_median": 1.0,
+     "median_is_zero": false,
+     "consecutive_alert_days": 6
+    },
+    {
+     "day_index": 129,
+     "month_first_day": false,
+     "month_last_day": false,
+     "estimated": false,
+     "observed_to_median": 1.0,
+     "median_is_zero": false,
+     "consecutive_alert_days": 7
+    },
+    {
+     "day_index": 130,
+     "month_first_day": false,
+     "month_last_day": false,
+     "estimated": false,
+     "observed_to_median": 1.0,
+     "median_is_zero": false,
+     "consecutive_alert_days": 8
+    },
+    {
+     "day_index": 131,
+     "month_first_day": false,
+     "month_last_day": false,
+     "estimated": false,
+     "observed_to_median": 1.0,
+     "median_is_zero": false,
+     "consecutive_alert_days": 9
+    },
+    {
+     "day_index": 132,
+     "month_first_day": false,
+     "month_last_day": false,
+     "estimated": false,
+     "observed_to_median": 1.0,
+     "median_is_zero": false,
+     "consecutive_alert_days": 10
+    },
+    {
+     "day_index": 133,
+     "month_first_day": false,
+     "month_last_day": false,
+     "estimated": false,
+     "observed_to_median": 1.0,
+     "median_is_zero": false,
+     "consecutive_alert_days": 11
+    },
+    {
+     "day_index": 134,
+     "month_first_day": false,
+     "month_last_day": false,
+     "estimated": false,
+     "observed_to_median": 1.0,
+     "median_is_zero": false,
+     "consecutive_alert_days": 12
+    },
+    {
+     "day_index": 135,
+     "month_first_day": false,
+     "month_last_day": false,
+     "estimated": false,
+     "observed_to_median": 1.0,
+     "median_is_zero": false,
+     "consecutive_alert_days": 13
+    },
+    {
+     "day_index": 136,
+     "month_first_day": false,
+     "month_last_day": false,
+     "estimated": false,
+     "observed_to_median": 1.0,
+     "median_is_zero": false,
+     "consecutive_alert_days": 14
+    },
+    {
+     "day_index": 151,
+     "month_first_day": true,
+     "month_last_day": false,
+     "estimated": false,
+     "observed_to_median": 5.0,
+     "median_is_zero": false,
+     "consecutive_alert_days": 1
+    },
+    {
+     "day_index": 182,
+     "month_first_day": true,
+     "month_last_day": false,
+     "estimated": false,
+     "observed_to_median": 5.0,
+     "median_is_zero": false,
+     "consecutive_alert_days": 1
+    },
+    {
+     "day_index": 212,
+     "month_first_day": true,
+     "month_last_day": false,
+     "estimated": false,
+     "observed_to_median": 5.0,
+     "median_is_zero": false,
+     "consecutive_alert_days": 1
+    },
+    {
+     "day_index": 243,
+     "month_first_day": true,
+     "month_last_day": false,
+     "estimated": false,
+     "observed_to_median": 5.0,
+     "median_is_zero": false,
+     "consecutive_alert_days": 1
+    },
+    {
+     "day_index": 273,
+     "month_first_day": true,
+     "month_last_day": false,
+     "estimated": false,
+     "observed_to_median": 5.0,
+     "median_is_zero": false,
+     "consecutive_alert_days": 1
+    },
+    {
+     "day_index": 304,
+     "month_first_day": true,
+     "month_last_day": false,
+     "estimated": false,
+     "observed_to_median": 5.0,
+     "median_is_zero": false,
+     "consecutive_alert_days": 1
+    },
+    {
+     "day_index": 335,
+     "month_first_day": true,
+     "month_last_day": false,
+     "estimated": false,
+     "observed_to_median": 5.0,
+     "median_is_zero": false,
+     "consecutive_alert_days": 1
+    },
+    {
+     "day_index": 365,
+     "month_first_day": true,
+     "month_last_day": false,
+     "estimated": false,
+     "observed_to_median": 5.0,
+     "median_is_zero": false,
+     "consecutive_alert_days": 1
+    },
+    {
+     "day_index": 396,
+     "month_first_day": true,
+     "month_last_day": false,
+     "estimated": true,
+     "observed_to_median": 3.0,
+     "median_is_zero": false,
+     "consecutive_alert_days": 1
+    }
+   ]
+  }
+ }
+}

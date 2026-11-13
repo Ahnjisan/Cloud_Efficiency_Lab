@@ -1,0 +1,61 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CostRead",
+      "Effect": "Allow",
+      "Action": ["ce:GetCostAndUsage"],
+      "Resource": "*"
+    },
+    {
+      "Sid": "MetricsRead",
+      "Effect": "Allow",
+      "Action": ["cloudwatch:GetMetricData", "cloudwatch:ListMetrics"],
+      "Resource": "*"
+    },
+    {
+      "Sid": "PipelineConfigRead",
+      "Effect": "Allow",
+      "Action": [
+        "firehose:ListDeliveryStreams",
+        "firehose:DescribeDeliveryStream",
+        "iot:ListTopicRules",
+        "iot:GetTopicRule"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "AthenaGlueRead",
+      "Effect": "Allow",
+      "Action": [
+        "athena:ListWorkGroups",
+        "athena:ListQueryExecutions",
+        "athena:BatchGetQueryExecution",
+        "glue:GetTables",
+        "glue:GetTable",
+        "glue:GetPartitions"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SageMakerRead",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:ListNotebookInstances",
+        "sagemaker:DescribeNotebookInstance",
+        "sagemaker:ListEndpoints",
+        "sagemaker:DescribeEndpoint",
+        "sagemaker:DescribeEndpointConfig",
+        "sagemaker:ListTrainingJobs",
+        "sagemaker:DescribeTrainingJob"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "BedrockLoggingConfigRead",
+      "Effect": "Allow",
+      "Action": ["bedrock:GetModelInvocationLoggingConfiguration"],
+      "Resource": "*"
+    }
+  ]
+}

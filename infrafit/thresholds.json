@@ -145,22 +145,26 @@
     "window_days": {
       "value": 28,
       "evidence": "실험 확인",
-      "source": "experiment 021 rule R2"
+      "source": "experiment 021 rule R2",
+      "real_account_check": "실제 계정 점검(experiment 023): 보류 - 2월 효과가 창 길이의 절반(14일) 동안 지속"
     },
     "mad_k": {
       "value": 3.0,
       "evidence": "실험 확인",
-      "source": "experiment 021: selected on tuning seeds, test spike recall 97.8%, 0.040 false alarms per 30 normal days"
+      "source": "experiment 021: selected on tuning seeds, test spike recall 97.8%, 0.040 false alarms per 30 normal days",
+      "real_account_check": "실제 계정 점검(experiment 023): 보류 - 경보가 모두 MAD=0 시계열에서 발생해 k가 관여하지 않음"
     },
     "min_relative_increase": {
       "value": 0.1,
       "evidence": "임시값",
-      "source": "10% floor over the median (experiment 021)"
+      "source": "10% floor over the median (experiment 021)",
+      "real_account_check": "실제 계정 점검(experiment 023): 보류 - 월 고정 요금의 2월 일수 효과(+10.7%)가 하한을 넘어 14일 연속 오탐"
     },
     "exclude_alerts": {
       "value": false,
       "evidence": "실험 확인",
-      "source": "experiment 021: excluding alert days ran away after a level shift (0.040 -> 0.50 false alarms per 30 days)"
+      "source": "experiment 021: excluding alert days ran away after a level shift (0.040 -> 0.50 false alarms per 30 days)",
+      "real_account_check": "실제 계정 점검(experiment 023): 유지 - 기본값으로 실행"
     },
     "consecutive_cap_days": {
       "value": null,
