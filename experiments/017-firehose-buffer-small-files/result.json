@@ -1,0 +1,2176 @@
+{
+ "model": "1-second Bernoulli arrivals; buffers opened during one simulated day are counted and scaled x30; arrivals continue for a tail so the last buffers close normally; each partition is simulated with the same seed and multiplied by the partition count",
+ "s3_rates": {
+  "put": 4.5e-06,
+  "get": 3.5e-07
+ },
+ "seeds": [
+  1,
+  2,
+  3
+ ],
+ "workloads": {
+  "A_100x10s": {
+   "sensors": 100,
+   "period_s": 10,
+   "record_bytes": 200
+  },
+  "B_1000x1s": {
+   "sensors": 1000,
+   "period_s": 1,
+   "record_bytes": 200
+  }
+ },
+ "hypotheses": {
+  "H1_A_interval_always_triggers_first": {
+   "result": false,
+   "exceptions": [
+    {
+     "size_mib": 1,
+     "interval_s": 900,
+     "size_triggered_share": 1.0
+    }
+   ],
+   "holds_for_size_ge_5mib": true
+  },
+  "H2_A_put_cost_gap_60_vs_900_lt_1usd": {
+   "result": true,
+   "gap_usd": 0.1814
+  },
+  "H3_A_day_query_objects_ratio_60_vs_900_is_15": {
+   "result": true,
+   "ratio": 15.0
+  },
+  "H4_B_size_triggers_first_at_5mib": {
+   "result": true,
+   "objects_per_day": [
+    [
+     3200,
+     3200
+    ],
+    [
+     3200,
+     3200
+    ],
+    [
+     3200,
+     3200
+    ]
+   ]
+  }
+ },
+ "rows": [
+  {
+   "workload": "A_100x10s",
+   "partitions": 1,
+   "size_mib": 1,
+   "interval_s": 60,
+   "objects_per_day_range": [
+    1440,
+    1440
+   ],
+   "objects_per_month_mean": 43200,
+   "mean_object_kib": 117.2,
+   "size_triggered_share": 0.0,
+   "mean_record_wait_s": 30.49,
+   "max_record_wait_s": 60,
+   "s3_put_usd_month": 0.1944,
+   "get_requests_to_read_one_day": 1440,
+   "get_usd_per_one_day_query": 0.000504,
+   "seeds": [
+    {
+     "seed": 1,
+     "objects_per_day": 1440,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 117.3,
+     "mean_record_wait_s": 30.52,
+     "max_record_wait_s": 60
+    },
+    {
+     "seed": 2,
+     "objects_per_day": 1440,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 117.17,
+     "mean_record_wait_s": 30.45,
+     "max_record_wait_s": 60
+    },
+    {
+     "seed": 3,
+     "objects_per_day": 1440,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 117.13,
+     "mean_record_wait_s": 30.49,
+     "max_record_wait_s": 60
+    }
+   ]
+  },
+  {
+   "workload": "A_100x10s",
+   "partitions": 1,
+   "size_mib": 1,
+   "interval_s": 300,
+   "objects_per_day_range": [
+    288,
+    288
+   ],
+   "objects_per_month_mean": 8640,
+   "mean_object_kib": 586.0,
+   "size_triggered_share": 0.0,
+   "mean_record_wait_s": 150.4,
+   "max_record_wait_s": 300,
+   "s3_put_usd_month": 0.0389,
+   "get_requests_to_read_one_day": 288,
+   "get_usd_per_one_day_query": 0.0001008,
+   "seeds": [
+    {
+     "seed": 1,
+     "objects_per_day": 288,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 586.48,
+     "mean_record_wait_s": 150.42,
+     "max_record_wait_s": 300
+    },
+    {
+     "seed": 2,
+     "objects_per_day": 288,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 585.85,
+     "mean_record_wait_s": 150.47,
+     "max_record_wait_s": 300
+    },
+    {
+     "seed": 3,
+     "objects_per_day": 288,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 585.66,
+     "mean_record_wait_s": 150.3,
+     "max_record_wait_s": 300
+    }
+   ]
+  },
+  {
+   "workload": "A_100x10s",
+   "partitions": 1,
+   "size_mib": 1,
+   "interval_s": 900,
+   "objects_per_day_range": [
+    165,
+    165
+   ],
+   "objects_per_month_mean": 4950,
+   "mean_object_kib": 1025.01,
+   "size_triggered_share": 1.0,
+   "mean_record_wait_s": 261.82,
+   "max_record_wait_s": 544,
+   "s3_put_usd_month": 0.0223,
+   "get_requests_to_read_one_day": 165,
+   "get_usd_per_one_day_query": 5.77e-05,
+   "seeds": [
+    {
+     "seed": 1,
+     "objects_per_day": 165,
+     "size_triggered_share": 1.0,
+     "mean_object_kib": 1025.02,
+     "mean_record_wait_s": 261.39,
+     "max_record_wait_s": 542
+    },
+    {
+     "seed": 2,
+     "objects_per_day": 165,
+     "size_triggered_share": 1.0,
+     "mean_object_kib": 1024.97,
+     "mean_record_wait_s": 262.04,
+     "max_record_wait_s": 544
+    },
+    {
+     "seed": 3,
+     "objects_per_day": 165,
+     "size_triggered_share": 1.0,
+     "mean_object_kib": 1025.03,
+     "mean_record_wait_s": 262.04,
+     "max_record_wait_s": 544
+    }
+   ]
+  },
+  {
+   "workload": "A_100x10s",
+   "partitions": 1,
+   "size_mib": 5,
+   "interval_s": 60,
+   "objects_per_day_range": [
+    1440,
+    1440
+   ],
+   "objects_per_month_mean": 43200,
+   "mean_object_kib": 117.2,
+   "size_triggered_share": 0.0,
+   "mean_record_wait_s": 30.49,
+   "max_record_wait_s": 60,
+   "s3_put_usd_month": 0.1944,
+   "get_requests_to_read_one_day": 1440,
+   "get_usd_per_one_day_query": 0.000504,
+   "seeds": [
+    {
+     "seed": 1,
+     "objects_per_day": 1440,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 117.3,
+     "mean_record_wait_s": 30.52,
+     "max_record_wait_s": 60
+    },
+    {
+     "seed": 2,
+     "objects_per_day": 1440,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 117.17,
+     "mean_record_wait_s": 30.45,
+     "max_record_wait_s": 60
+    },
+    {
+     "seed": 3,
+     "objects_per_day": 1440,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 117.13,
+     "mean_record_wait_s": 30.49,
+     "max_record_wait_s": 60
+    }
+   ]
+  },
+  {
+   "workload": "A_100x10s",
+   "partitions": 1,
+   "size_mib": 5,
+   "interval_s": 300,
+   "objects_per_day_range": [
+    288,
+    288
+   ],
+   "objects_per_month_mean": 8640,
+   "mean_object_kib": 586.0,
+   "size_triggered_share": 0.0,
+   "mean_record_wait_s": 150.4,
+   "max_record_wait_s": 300,
+   "s3_put_usd_month": 0.0389,
+   "get_requests_to_read_one_day": 288,
+   "get_usd_per_one_day_query": 0.0001008,
+   "seeds": [
+    {
+     "seed": 1,
+     "objects_per_day": 288,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 586.48,
+     "mean_record_wait_s": 150.42,
+     "max_record_wait_s": 300
+    },
+    {
+     "seed": 2,
+     "objects_per_day": 288,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 585.85,
+     "mean_record_wait_s": 150.47,
+     "max_record_wait_s": 300
+    },
+    {
+     "seed": 3,
+     "objects_per_day": 288,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 585.66,
+     "mean_record_wait_s": 150.3,
+     "max_record_wait_s": 300
+    }
+   ]
+  },
+  {
+   "workload": "A_100x10s",
+   "partitions": 1,
+   "size_mib": 5,
+   "interval_s": 900,
+   "objects_per_day_range": [
+    96,
+    96
+   ],
+   "objects_per_month_mean": 2880,
+   "mean_object_kib": 1757.98,
+   "size_triggered_share": 0.0,
+   "mean_record_wait_s": 450.31,
+   "max_record_wait_s": 900,
+   "s3_put_usd_month": 0.013,
+   "get_requests_to_read_one_day": 96,
+   "get_usd_per_one_day_query": 3.36e-05,
+   "seeds": [
+    {
+     "seed": 1,
+     "objects_per_day": 96,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 1759.41,
+     "mean_record_wait_s": 450.43,
+     "max_record_wait_s": 900
+    },
+    {
+     "seed": 2,
+     "objects_per_day": 96,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 1757.54,
+     "mean_record_wait_s": 450.34,
+     "max_record_wait_s": 900
+    },
+    {
+     "seed": 3,
+     "objects_per_day": 96,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 1756.99,
+     "mean_record_wait_s": 450.16,
+     "max_record_wait_s": 900
+    }
+   ]
+  },
+  {
+   "workload": "A_100x10s",
+   "partitions": 1,
+   "size_mib": 64,
+   "interval_s": 60,
+   "objects_per_day_range": [
+    1440,
+    1440
+   ],
+   "objects_per_month_mean": 43200,
+   "mean_object_kib": 117.2,
+   "size_triggered_share": 0.0,
+   "mean_record_wait_s": 30.49,
+   "max_record_wait_s": 60,
+   "s3_put_usd_month": 0.1944,
+   "get_requests_to_read_one_day": 1440,
+   "get_usd_per_one_day_query": 0.000504,
+   "seeds": [
+    {
+     "seed": 1,
+     "objects_per_day": 1440,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 117.3,
+     "mean_record_wait_s": 30.52,
+     "max_record_wait_s": 60
+    },
+    {
+     "seed": 2,
+     "objects_per_day": 1440,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 117.17,
+     "mean_record_wait_s": 30.45,
+     "max_record_wait_s": 60
+    },
+    {
+     "seed": 3,
+     "objects_per_day": 1440,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 117.13,
+     "mean_record_wait_s": 30.49,
+     "max_record_wait_s": 60
+    }
+   ]
+  },
+  {
+   "workload": "A_100x10s",
+   "partitions": 1,
+   "size_mib": 64,
+   "interval_s": 300,
+   "objects_per_day_range": [
+    288,
+    288
+   ],
+   "objects_per_month_mean": 8640,
+   "mean_object_kib": 586.0,
+   "size_triggered_share": 0.0,
+   "mean_record_wait_s": 150.4,
+   "max_record_wait_s": 300,
+   "s3_put_usd_month": 0.0389,
+   "get_requests_to_read_one_day": 288,
+   "get_usd_per_one_day_query": 0.0001008,
+   "seeds": [
+    {
+     "seed": 1,
+     "objects_per_day": 288,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 586.48,
+     "mean_record_wait_s": 150.42,
+     "max_record_wait_s": 300
+    },
+    {
+     "seed": 2,
+     "objects_per_day": 288,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 585.85,
+     "mean_record_wait_s": 150.47,
+     "max_record_wait_s": 300
+    },
+    {
+     "seed": 3,
+     "objects_per_day": 288,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 585.66,
+     "mean_record_wait_s": 150.3,
+     "max_record_wait_s": 300
+    }
+   ]
+  },
+  {
+   "workload": "A_100x10s",
+   "partitions": 1,
+   "size_mib": 64,
+   "interval_s": 900,
+   "objects_per_day_range": [
+    96,
+    96
+   ],
+   "objects_per_month_mean": 2880,
+   "mean_object_kib": 1757.98,
+   "size_triggered_share": 0.0,
+   "mean_record_wait_s": 450.31,
+   "max_record_wait_s": 900,
+   "s3_put_usd_month": 0.013,
+   "get_requests_to_read_one_day": 96,
+   "get_usd_per_one_day_query": 3.36e-05,
+   "seeds": [
+    {
+     "seed": 1,
+     "objects_per_day": 96,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 1759.41,
+     "mean_record_wait_s": 450.43,
+     "max_record_wait_s": 900
+    },
+    {
+     "seed": 2,
+     "objects_per_day": 96,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 1757.54,
+     "mean_record_wait_s": 450.34,
+     "max_record_wait_s": 900
+    },
+    {
+     "seed": 3,
+     "objects_per_day": 96,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 1756.99,
+     "mean_record_wait_s": 450.16,
+     "max_record_wait_s": 900
+    }
+   ]
+  },
+  {
+   "workload": "A_100x10s",
+   "partitions": 1,
+   "size_mib": 128,
+   "interval_s": 60,
+   "objects_per_day_range": [
+    1440,
+    1440
+   ],
+   "objects_per_month_mean": 43200,
+   "mean_object_kib": 117.2,
+   "size_triggered_share": 0.0,
+   "mean_record_wait_s": 30.49,
+   "max_record_wait_s": 60,
+   "s3_put_usd_month": 0.1944,
+   "get_requests_to_read_one_day": 1440,
+   "get_usd_per_one_day_query": 0.000504,
+   "seeds": [
+    {
+     "seed": 1,
+     "objects_per_day": 1440,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 117.3,
+     "mean_record_wait_s": 30.52,
+     "max_record_wait_s": 60
+    },
+    {
+     "seed": 2,
+     "objects_per_day": 1440,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 117.17,
+     "mean_record_wait_s": 30.45,
+     "max_record_wait_s": 60
+    },
+    {
+     "seed": 3,
+     "objects_per_day": 1440,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 117.13,
+     "mean_record_wait_s": 30.49,
+     "max_record_wait_s": 60
+    }
+   ]
+  },
+  {
+   "workload": "A_100x10s",
+   "partitions": 1,
+   "size_mib": 128,
+   "interval_s": 300,
+   "objects_per_day_range": [
+    288,
+    288
+   ],
+   "objects_per_month_mean": 8640,
+   "mean_object_kib": 586.0,
+   "size_triggered_share": 0.0,
+   "mean_record_wait_s": 150.4,
+   "max_record_wait_s": 300,
+   "s3_put_usd_month": 0.0389,
+   "get_requests_to_read_one_day": 288,
+   "get_usd_per_one_day_query": 0.0001008,
+   "seeds": [
+    {
+     "seed": 1,
+     "objects_per_day": 288,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 586.48,
+     "mean_record_wait_s": 150.42,
+     "max_record_wait_s": 300
+    },
+    {
+     "seed": 2,
+     "objects_per_day": 288,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 585.85,
+     "mean_record_wait_s": 150.47,
+     "max_record_wait_s": 300
+    },
+    {
+     "seed": 3,
+     "objects_per_day": 288,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 585.66,
+     "mean_record_wait_s": 150.3,
+     "max_record_wait_s": 300
+    }
+   ]
+  },
+  {
+   "workload": "A_100x10s",
+   "partitions": 1,
+   "size_mib": 128,
+   "interval_s": 900,
+   "objects_per_day_range": [
+    96,
+    96
+   ],
+   "objects_per_month_mean": 2880,
+   "mean_object_kib": 1757.98,
+   "size_triggered_share": 0.0,
+   "mean_record_wait_s": 450.31,
+   "max_record_wait_s": 900,
+   "s3_put_usd_month": 0.013,
+   "get_requests_to_read_one_day": 96,
+   "get_usd_per_one_day_query": 3.36e-05,
+   "seeds": [
+    {
+     "seed": 1,
+     "objects_per_day": 96,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 1759.41,
+     "mean_record_wait_s": 450.43,
+     "max_record_wait_s": 900
+    },
+    {
+     "seed": 2,
+     "objects_per_day": 96,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 1757.54,
+     "mean_record_wait_s": 450.34,
+     "max_record_wait_s": 900
+    },
+    {
+     "seed": 3,
+     "objects_per_day": 96,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 1756.99,
+     "mean_record_wait_s": 450.16,
+     "max_record_wait_s": 900
+    }
+   ]
+  },
+  {
+   "workload": "A_100x10s",
+   "partitions": 10,
+   "size_mib": 1,
+   "interval_s": 60,
+   "objects_per_day_range": [
+    14270,
+    14280
+   ],
+   "objects_per_month_mean": 428300,
+   "mean_object_kib": 11.83,
+   "size_triggered_share": 0.0,
+   "mean_record_wait_s": 30.73,
+   "max_record_wait_s": 60,
+   "s3_put_usd_month": 1.9274,
+   "get_requests_to_read_one_day": 14277,
+   "get_usd_per_one_day_query": 0.0049968,
+   "seeds": [
+    {
+     "seed": 1,
+     "objects_per_day": 14280,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 11.85,
+     "mean_record_wait_s": 30.68,
+     "max_record_wait_s": 60
+    },
+    {
+     "seed": 2,
+     "objects_per_day": 14270,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 11.81,
+     "mean_record_wait_s": 30.76,
+     "max_record_wait_s": 60
+    },
+    {
+     "seed": 3,
+     "objects_per_day": 14280,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 11.83,
+     "mean_record_wait_s": 30.75,
+     "max_record_wait_s": 60
+    }
+   ]
+  },
+  {
+   "workload": "A_100x10s",
+   "partitions": 10,
+   "size_mib": 1,
+   "interval_s": 300,
+   "objects_per_day_range": [
+    2880,
+    2880
+   ],
+   "objects_per_month_mean": 86400,
+   "mean_object_kib": 58.74,
+   "size_triggered_share": 0.0,
+   "mean_record_wait_s": 150.82,
+   "max_record_wait_s": 300,
+   "s3_put_usd_month": 0.3888,
+   "get_requests_to_read_one_day": 2880,
+   "get_usd_per_one_day_query": 0.001008,
+   "seeds": [
+    {
+     "seed": 1,
+     "objects_per_day": 2880,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 58.84,
+     "mean_record_wait_s": 150.88,
+     "max_record_wait_s": 300
+    },
+    {
+     "seed": 2,
+     "objects_per_day": 2880,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 58.64,
+     "mean_record_wait_s": 150.9,
+     "max_record_wait_s": 300
+    },
+    {
+     "seed": 3,
+     "objects_per_day": 2880,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 58.75,
+     "mean_record_wait_s": 150.69,
+     "max_record_wait_s": 300
+    }
+   ]
+  },
+  {
+   "workload": "A_100x10s",
+   "partitions": 10,
+   "size_mib": 1,
+   "interval_s": 900,
+   "objects_per_day_range": [
+    960,
+    960
+   ],
+   "objects_per_month_mean": 28800,
+   "mean_object_kib": 176.01,
+   "size_triggered_share": 0.0,
+   "mean_record_wait_s": 450.11,
+   "max_record_wait_s": 900,
+   "s3_put_usd_month": 0.1296,
+   "get_requests_to_read_one_day": 960,
+   "get_usd_per_one_day_query": 0.000336,
+   "seeds": [
+    {
+     "seed": 1,
+     "objects_per_day": 960,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 176.35,
+     "mean_record_wait_s": 450.44,
+     "max_record_wait_s": 900
+    },
+    {
+     "seed": 2,
+     "objects_per_day": 960,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 175.71,
+     "mean_record_wait_s": 449.68,
+     "max_record_wait_s": 900
+    },
+    {
+     "seed": 3,
+     "objects_per_day": 960,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 175.98,
+     "mean_record_wait_s": 450.21,
+     "max_record_wait_s": 900
+    }
+   ]
+  },
+  {
+   "workload": "A_100x10s",
+   "partitions": 10,
+   "size_mib": 5,
+   "interval_s": 60,
+   "objects_per_day_range": [
+    14270,
+    14280
+   ],
+   "objects_per_month_mean": 428300,
+   "mean_object_kib": 11.83,
+   "size_triggered_share": 0.0,
+   "mean_record_wait_s": 30.73,
+   "max_record_wait_s": 60,
+   "s3_put_usd_month": 1.9274,
+   "get_requests_to_read_one_day": 14277,
+   "get_usd_per_one_day_query": 0.0049968,
+   "seeds": [
+    {
+     "seed": 1,
+     "objects_per_day": 14280,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 11.85,
+     "mean_record_wait_s": 30.68,
+     "max_record_wait_s": 60
+    },
+    {
+     "seed": 2,
+     "objects_per_day": 14270,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 11.81,
+     "mean_record_wait_s": 30.76,
+     "max_record_wait_s": 60
+    },
+    {
+     "seed": 3,
+     "objects_per_day": 14280,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 11.83,
+     "mean_record_wait_s": 30.75,
+     "max_record_wait_s": 60
+    }
+   ]
+  },
+  {
+   "workload": "A_100x10s",
+   "partitions": 10,
+   "size_mib": 5,
+   "interval_s": 300,
+   "objects_per_day_range": [
+    2880,
+    2880
+   ],
+   "objects_per_month_mean": 86400,
+   "mean_object_kib": 58.74,
+   "size_triggered_share": 0.0,
+   "mean_record_wait_s": 150.82,
+   "max_record_wait_s": 300,
+   "s3_put_usd_month": 0.3888,
+   "get_requests_to_read_one_day": 2880,
+   "get_usd_per_one_day_query": 0.001008,
+   "seeds": [
+    {
+     "seed": 1,
+     "objects_per_day": 2880,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 58.84,
+     "mean_record_wait_s": 150.88,
+     "max_record_wait_s": 300
+    },
+    {
+     "seed": 2,
+     "objects_per_day": 2880,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 58.64,
+     "mean_record_wait_s": 150.9,
+     "max_record_wait_s": 300
+    },
+    {
+     "seed": 3,
+     "objects_per_day": 2880,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 58.75,
+     "mean_record_wait_s": 150.69,
+     "max_record_wait_s": 300
+    }
+   ]
+  },
+  {
+   "workload": "A_100x10s",
+   "partitions": 10,
+   "size_mib": 5,
+   "interval_s": 900,
+   "objects_per_day_range": [
+    960,
+    960
+   ],
+   "objects_per_month_mean": 28800,
+   "mean_object_kib": 176.01,
+   "size_triggered_share": 0.0,
+   "mean_record_wait_s": 450.11,
+   "max_record_wait_s": 900,
+   "s3_put_usd_month": 0.1296,
+   "get_requests_to_read_one_day": 960,
+   "get_usd_per_one_day_query": 0.000336,
+   "seeds": [
+    {
+     "seed": 1,
+     "objects_per_day": 960,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 176.35,
+     "mean_record_wait_s": 450.44,
+     "max_record_wait_s": 900
+    },
+    {
+     "seed": 2,
+     "objects_per_day": 960,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 175.71,
+     "mean_record_wait_s": 449.68,
+     "max_record_wait_s": 900
+    },
+    {
+     "seed": 3,
+     "objects_per_day": 960,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 175.98,
+     "mean_record_wait_s": 450.21,
+     "max_record_wait_s": 900
+    }
+   ]
+  },
+  {
+   "workload": "A_100x10s",
+   "partitions": 10,
+   "size_mib": 64,
+   "interval_s": 60,
+   "objects_per_day_range": [
+    14270,
+    14280
+   ],
+   "objects_per_month_mean": 428300,
+   "mean_object_kib": 11.83,
+   "size_triggered_share": 0.0,
+   "mean_record_wait_s": 30.73,
+   "max_record_wait_s": 60,
+   "s3_put_usd_month": 1.9274,
+   "get_requests_to_read_one_day": 14277,
+   "get_usd_per_one_day_query": 0.0049968,
+   "seeds": [
+    {
+     "seed": 1,
+     "objects_per_day": 14280,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 11.85,
+     "mean_record_wait_s": 30.68,
+     "max_record_wait_s": 60
+    },
+    {
+     "seed": 2,
+     "objects_per_day": 14270,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 11.81,
+     "mean_record_wait_s": 30.76,
+     "max_record_wait_s": 60
+    },
+    {
+     "seed": 3,
+     "objects_per_day": 14280,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 11.83,
+     "mean_record_wait_s": 30.75,
+     "max_record_wait_s": 60
+    }
+   ]
+  },
+  {
+   "workload": "A_100x10s",
+   "partitions": 10,
+   "size_mib": 64,
+   "interval_s": 300,
+   "objects_per_day_range": [
+    2880,
+    2880
+   ],
+   "objects_per_month_mean": 86400,
+   "mean_object_kib": 58.74,
+   "size_triggered_share": 0.0,
+   "mean_record_wait_s": 150.82,
+   "max_record_wait_s": 300,
+   "s3_put_usd_month": 0.3888,
+   "get_requests_to_read_one_day": 2880,
+   "get_usd_per_one_day_query": 0.001008,
+   "seeds": [
+    {
+     "seed": 1,
+     "objects_per_day": 2880,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 58.84,
+     "mean_record_wait_s": 150.88,
+     "max_record_wait_s": 300
+    },
+    {
+     "seed": 2,
+     "objects_per_day": 2880,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 58.64,
+     "mean_record_wait_s": 150.9,
+     "max_record_wait_s": 300
+    },
+    {
+     "seed": 3,
+     "objects_per_day": 2880,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 58.75,
+     "mean_record_wait_s": 150.69,
+     "max_record_wait_s": 300
+    }
+   ]
+  },
+  {
+   "workload": "A_100x10s",
+   "partitions": 10,
+   "size_mib": 64,
+   "interval_s": 900,
+   "objects_per_day_range": [
+    960,
+    960
+   ],
+   "objects_per_month_mean": 28800,
+   "mean_object_kib": 176.01,
+   "size_triggered_share": 0.0,
+   "mean_record_wait_s": 450.11,
+   "max_record_wait_s": 900,
+   "s3_put_usd_month": 0.1296,
+   "get_requests_to_read_one_day": 960,
+   "get_usd_per_one_day_query": 0.000336,
+   "seeds": [
+    {
+     "seed": 1,
+     "objects_per_day": 960,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 176.35,
+     "mean_record_wait_s": 450.44,
+     "max_record_wait_s": 900
+    },
+    {
+     "seed": 2,
+     "objects_per_day": 960,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 175.71,
+     "mean_record_wait_s": 449.68,
+     "max_record_wait_s": 900
+    },
+    {
+     "seed": 3,
+     "objects_per_day": 960,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 175.98,
+     "mean_record_wait_s": 450.21,
+     "max_record_wait_s": 900
+    }
+   ]
+  },
+  {
+   "workload": "A_100x10s",
+   "partitions": 10,
+   "size_mib": 128,
+   "interval_s": 60,
+   "objects_per_day_range": [
+    14270,
+    14280
+   ],
+   "objects_per_month_mean": 428300,
+   "mean_object_kib": 11.83,
+   "size_triggered_share": 0.0,
+   "mean_record_wait_s": 30.73,
+   "max_record_wait_s": 60,
+   "s3_put_usd_month": 1.9274,
+   "get_requests_to_read_one_day": 14277,
+   "get_usd_per_one_day_query": 0.0049968,
+   "seeds": [
+    {
+     "seed": 1,
+     "objects_per_day": 14280,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 11.85,
+     "mean_record_wait_s": 30.68,
+     "max_record_wait_s": 60
+    },
+    {
+     "seed": 2,
+     "objects_per_day": 14270,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 11.81,
+     "mean_record_wait_s": 30.76,
+     "max_record_wait_s": 60
+    },
+    {
+     "seed": 3,
+     "objects_per_day": 14280,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 11.83,
+     "mean_record_wait_s": 30.75,
+     "max_record_wait_s": 60
+    }
+   ]
+  },
+  {
+   "workload": "A_100x10s",
+   "partitions": 10,
+   "size_mib": 128,
+   "interval_s": 300,
+   "objects_per_day_range": [
+    2880,
+    2880
+   ],
+   "objects_per_month_mean": 86400,
+   "mean_object_kib": 58.74,
+   "size_triggered_share": 0.0,
+   "mean_record_wait_s": 150.82,
+   "max_record_wait_s": 300,
+   "s3_put_usd_month": 0.3888,
+   "get_requests_to_read_one_day": 2880,
+   "get_usd_per_one_day_query": 0.001008,
+   "seeds": [
+    {
+     "seed": 1,
+     "objects_per_day": 2880,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 58.84,
+     "mean_record_wait_s": 150.88,
+     "max_record_wait_s": 300
+    },
+    {
+     "seed": 2,
+     "objects_per_day": 2880,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 58.64,
+     "mean_record_wait_s": 150.9,
+     "max_record_wait_s": 300
+    },
+    {
+     "seed": 3,
+     "objects_per_day": 2880,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 58.75,
+     "mean_record_wait_s": 150.69,
+     "max_record_wait_s": 300
+    }
+   ]
+  },
+  {
+   "workload": "A_100x10s",
+   "partitions": 10,
+   "size_mib": 128,
+   "interval_s": 900,
+   "objects_per_day_range": [
+    960,
+    960
+   ],
+   "objects_per_month_mean": 28800,
+   "mean_object_kib": 176.01,
+   "size_triggered_share": 0.0,
+   "mean_record_wait_s": 450.11,
+   "max_record_wait_s": 900,
+   "s3_put_usd_month": 0.1296,
+   "get_requests_to_read_one_day": 960,
+   "get_usd_per_one_day_query": 0.000336,
+   "seeds": [
+    {
+     "seed": 1,
+     "objects_per_day": 960,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 176.35,
+     "mean_record_wait_s": 450.44,
+     "max_record_wait_s": 900
+    },
+    {
+     "seed": 2,
+     "objects_per_day": 960,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 175.71,
+     "mean_record_wait_s": 449.68,
+     "max_record_wait_s": 900
+    },
+    {
+     "seed": 3,
+     "objects_per_day": 960,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 175.98,
+     "mean_record_wait_s": 450.21,
+     "max_record_wait_s": 900
+    }
+   ]
+  },
+  {
+   "workload": "B_1000x1s",
+   "partitions": 1,
+   "size_mib": 1,
+   "interval_s": 60,
+   "objects_per_day_range": [
+    14400,
+    14400
+   ],
+   "objects_per_month_mean": 432000,
+   "mean_object_kib": 1171.88,
+   "size_triggered_share": 1.0,
+   "mean_record_wait_s": 2.5,
+   "max_record_wait_s": 5,
+   "s3_put_usd_month": 1.944,
+   "get_requests_to_read_one_day": 14400,
+   "get_usd_per_one_day_query": 0.00504,
+   "seeds": [
+    {
+     "seed": 1,
+     "objects_per_day": 14400,
+     "size_triggered_share": 1.0,
+     "mean_object_kib": 1171.88,
+     "mean_record_wait_s": 2.5,
+     "max_record_wait_s": 5
+    },
+    {
+     "seed": 2,
+     "objects_per_day": 14400,
+     "size_triggered_share": 1.0,
+     "mean_object_kib": 1171.88,
+     "mean_record_wait_s": 2.5,
+     "max_record_wait_s": 5
+    },
+    {
+     "seed": 3,
+     "objects_per_day": 14400,
+     "size_triggered_share": 1.0,
+     "mean_object_kib": 1171.88,
+     "mean_record_wait_s": 2.5,
+     "max_record_wait_s": 5
+    }
+   ]
+  },
+  {
+   "workload": "B_1000x1s",
+   "partitions": 1,
+   "size_mib": 1,
+   "interval_s": 300,
+   "objects_per_day_range": [
+    14400,
+    14400
+   ],
+   "objects_per_month_mean": 432000,
+   "mean_object_kib": 1171.88,
+   "size_triggered_share": 1.0,
+   "mean_record_wait_s": 2.5,
+   "max_record_wait_s": 5,
+   "s3_put_usd_month": 1.944,
+   "get_requests_to_read_one_day": 14400,
+   "get_usd_per_one_day_query": 0.00504,
+   "seeds": [
+    {
+     "seed": 1,
+     "objects_per_day": 14400,
+     "size_triggered_share": 1.0,
+     "mean_object_kib": 1171.88,
+     "mean_record_wait_s": 2.5,
+     "max_record_wait_s": 5
+    },
+    {
+     "seed": 2,
+     "objects_per_day": 14400,
+     "size_triggered_share": 1.0,
+     "mean_object_kib": 1171.88,
+     "mean_record_wait_s": 2.5,
+     "max_record_wait_s": 5
+    },
+    {
+     "seed": 3,
+     "objects_per_day": 14400,
+     "size_triggered_share": 1.0,
+     "mean_object_kib": 1171.88,
+     "mean_record_wait_s": 2.5,
+     "max_record_wait_s": 5
+    }
+   ]
+  },
+  {
+   "workload": "B_1000x1s",
+   "partitions": 1,
+   "size_mib": 1,
+   "interval_s": 900,
+   "objects_per_day_range": [
+    14400,
+    14400
+   ],
+   "objects_per_month_mean": 432000,
+   "mean_object_kib": 1171.88,
+   "size_triggered_share": 1.0,
+   "mean_record_wait_s": 2.5,
+   "max_record_wait_s": 5,
+   "s3_put_usd_month": 1.944,
+   "get_requests_to_read_one_day": 14400,
+   "get_usd_per_one_day_query": 0.00504,
+   "seeds": [
+    {
+     "seed": 1,
+     "objects_per_day": 14400,
+     "size_triggered_share": 1.0,
+     "mean_object_kib": 1171.88,
+     "mean_record_wait_s": 2.5,
+     "max_record_wait_s": 5
+    },
+    {
+     "seed": 2,
+     "objects_per_day": 14400,
+     "size_triggered_share": 1.0,
+     "mean_object_kib": 1171.88,
+     "mean_record_wait_s": 2.5,
+     "max_record_wait_s": 5
+    },
+    {
+     "seed": 3,
+     "objects_per_day": 14400,
+     "size_triggered_share": 1.0,
+     "mean_object_kib": 1171.88,
+     "mean_record_wait_s": 2.5,
+     "max_record_wait_s": 5
+    }
+   ]
+  },
+  {
+   "workload": "B_1000x1s",
+   "partitions": 1,
+   "size_mib": 5,
+   "interval_s": 60,
+   "objects_per_day_range": [
+    3200,
+    3200
+   ],
+   "objects_per_month_mean": 96000,
+   "mean_object_kib": 5273.44,
+   "size_triggered_share": 1.0,
+   "mean_record_wait_s": 13.0,
+   "max_record_wait_s": 26,
+   "s3_put_usd_month": 0.432,
+   "get_requests_to_read_one_day": 3200,
+   "get_usd_per_one_day_query": 0.00112,
+   "seeds": [
+    {
+     "seed": 1,
+     "objects_per_day": 3200,
+     "size_triggered_share": 1.0,
+     "mean_object_kib": 5273.44,
+     "mean_record_wait_s": 13.0,
+     "max_record_wait_s": 26
+    },
+    {
+     "seed": 2,
+     "objects_per_day": 3200,
+     "size_triggered_share": 1.0,
+     "mean_object_kib": 5273.44,
+     "mean_record_wait_s": 13.0,
+     "max_record_wait_s": 26
+    },
+    {
+     "seed": 3,
+     "objects_per_day": 3200,
+     "size_triggered_share": 1.0,
+     "mean_object_kib": 5273.44,
+     "mean_record_wait_s": 13.0,
+     "max_record_wait_s": 26
+    }
+   ]
+  },
+  {
+   "workload": "B_1000x1s",
+   "partitions": 1,
+   "size_mib": 5,
+   "interval_s": 300,
+   "objects_per_day_range": [
+    3200,
+    3200
+   ],
+   "objects_per_month_mean": 96000,
+   "mean_object_kib": 5273.44,
+   "size_triggered_share": 1.0,
+   "mean_record_wait_s": 13.0,
+   "max_record_wait_s": 26,
+   "s3_put_usd_month": 0.432,
+   "get_requests_to_read_one_day": 3200,
+   "get_usd_per_one_day_query": 0.00112,
+   "seeds": [
+    {
+     "seed": 1,
+     "objects_per_day": 3200,
+     "size_triggered_share": 1.0,
+     "mean_object_kib": 5273.44,
+     "mean_record_wait_s": 13.0,
+     "max_record_wait_s": 26
+    },
+    {
+     "seed": 2,
+     "objects_per_day": 3200,
+     "size_triggered_share": 1.0,
+     "mean_object_kib": 5273.44,
+     "mean_record_wait_s": 13.0,
+     "max_record_wait_s": 26
+    },
+    {
+     "seed": 3,
+     "objects_per_day": 3200,
+     "size_triggered_share": 1.0,
+     "mean_object_kib": 5273.44,
+     "mean_record_wait_s": 13.0,
+     "max_record_wait_s": 26
+    }
+   ]
+  },
+  {
+   "workload": "B_1000x1s",
+   "partitions": 1,
+   "size_mib": 5,
+   "interval_s": 900,
+   "objects_per_day_range": [
+    3200,
+    3200
+   ],
+   "objects_per_month_mean": 96000,
+   "mean_object_kib": 5273.44,
+   "size_triggered_share": 1.0,
+   "mean_record_wait_s": 13.0,
+   "max_record_wait_s": 26,
+   "s3_put_usd_month": 0.432,
+   "get_requests_to_read_one_day": 3200,
+   "get_usd_per_one_day_query": 0.00112,
+   "seeds": [
+    {
+     "seed": 1,
+     "objects_per_day": 3200,
+     "size_triggered_share": 1.0,
+     "mean_object_kib": 5273.44,
+     "mean_record_wait_s": 13.0,
+     "max_record_wait_s": 26
+    },
+    {
+     "seed": 2,
+     "objects_per_day": 3200,
+     "size_triggered_share": 1.0,
+     "mean_object_kib": 5273.44,
+     "mean_record_wait_s": 13.0,
+     "max_record_wait_s": 26
+    },
+    {
+     "seed": 3,
+     "objects_per_day": 3200,
+     "size_triggered_share": 1.0,
+     "mean_object_kib": 5273.44,
+     "mean_record_wait_s": 13.0,
+     "max_record_wait_s": 26
+    }
+   ]
+  },
+  {
+   "workload": "B_1000x1s",
+   "partitions": 1,
+   "size_mib": 64,
+   "interval_s": 60,
+   "objects_per_day_range": [
+    1440,
+    1440
+   ],
+   "objects_per_month_mean": 43200,
+   "mean_object_kib": 11718.75,
+   "size_triggered_share": 0.0,
+   "mean_record_wait_s": 30.5,
+   "max_record_wait_s": 60,
+   "s3_put_usd_month": 0.1944,
+   "get_requests_to_read_one_day": 1440,
+   "get_usd_per_one_day_query": 0.000504,
+   "seeds": [
+    {
+     "seed": 1,
+     "objects_per_day": 1440,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 11718.75,
+     "mean_record_wait_s": 30.5,
+     "max_record_wait_s": 60
+    },
+    {
+     "seed": 2,
+     "objects_per_day": 1440,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 11718.75,
+     "mean_record_wait_s": 30.5,
+     "max_record_wait_s": 60
+    },
+    {
+     "seed": 3,
+     "objects_per_day": 1440,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 11718.75,
+     "mean_record_wait_s": 30.5,
+     "max_record_wait_s": 60
+    }
+   ]
+  },
+  {
+   "workload": "B_1000x1s",
+   "partitions": 1,
+   "size_mib": 64,
+   "interval_s": 300,
+   "objects_per_day_range": [
+    288,
+    288
+   ],
+   "objects_per_month_mean": 8640,
+   "mean_object_kib": 58593.75,
+   "size_triggered_share": 0.0,
+   "mean_record_wait_s": 150.5,
+   "max_record_wait_s": 300,
+   "s3_put_usd_month": 0.0389,
+   "get_requests_to_read_one_day": 288,
+   "get_usd_per_one_day_query": 0.0001008,
+   "seeds": [
+    {
+     "seed": 1,
+     "objects_per_day": 288,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 58593.75,
+     "mean_record_wait_s": 150.5,
+     "max_record_wait_s": 300
+    },
+    {
+     "seed": 2,
+     "objects_per_day": 288,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 58593.75,
+     "mean_record_wait_s": 150.5,
+     "max_record_wait_s": 300
+    },
+    {
+     "seed": 3,
+     "objects_per_day": 288,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 58593.75,
+     "mean_record_wait_s": 150.5,
+     "max_record_wait_s": 300
+    }
+   ]
+  },
+  {
+   "workload": "B_1000x1s",
+   "partitions": 1,
+   "size_mib": 64,
+   "interval_s": 900,
+   "objects_per_day_range": [
+    258,
+    258
+   ],
+   "objects_per_month_mean": 7740,
+   "mean_object_kib": 65625.0,
+   "size_triggered_share": 1.0,
+   "mean_record_wait_s": 167.5,
+   "max_record_wait_s": 335,
+   "s3_put_usd_month": 0.0348,
+   "get_requests_to_read_one_day": 258,
+   "get_usd_per_one_day_query": 9.03e-05,
+   "seeds": [
+    {
+     "seed": 1,
+     "objects_per_day": 258,
+     "size_triggered_share": 1.0,
+     "mean_object_kib": 65625.0,
+     "mean_record_wait_s": 167.5,
+     "max_record_wait_s": 335
+    },
+    {
+     "seed": 2,
+     "objects_per_day": 258,
+     "size_triggered_share": 1.0,
+     "mean_object_kib": 65625.0,
+     "mean_record_wait_s": 167.5,
+     "max_record_wait_s": 335
+    },
+    {
+     "seed": 3,
+     "objects_per_day": 258,
+     "size_triggered_share": 1.0,
+     "mean_object_kib": 65625.0,
+     "mean_record_wait_s": 167.5,
+     "max_record_wait_s": 335
+    }
+   ]
+  },
+  {
+   "workload": "B_1000x1s",
+   "partitions": 1,
+   "size_mib": 128,
+   "interval_s": 60,
+   "objects_per_day_range": [
+    1440,
+    1440
+   ],
+   "objects_per_month_mean": 43200,
+   "mean_object_kib": 11718.75,
+   "size_triggered_share": 0.0,
+   "mean_record_wait_s": 30.5,
+   "max_record_wait_s": 60,
+   "s3_put_usd_month": 0.1944,
+   "get_requests_to_read_one_day": 1440,
+   "get_usd_per_one_day_query": 0.000504,
+   "seeds": [
+    {
+     "seed": 1,
+     "objects_per_day": 1440,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 11718.75,
+     "mean_record_wait_s": 30.5,
+     "max_record_wait_s": 60
+    },
+    {
+     "seed": 2,
+     "objects_per_day": 1440,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 11718.75,
+     "mean_record_wait_s": 30.5,
+     "max_record_wait_s": 60
+    },
+    {
+     "seed": 3,
+     "objects_per_day": 1440,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 11718.75,
+     "mean_record_wait_s": 30.5,
+     "max_record_wait_s": 60
+    }
+   ]
+  },
+  {
+   "workload": "B_1000x1s",
+   "partitions": 1,
+   "size_mib": 128,
+   "interval_s": 300,
+   "objects_per_day_range": [
+    288,
+    288
+   ],
+   "objects_per_month_mean": 8640,
+   "mean_object_kib": 58593.75,
+   "size_triggered_share": 0.0,
+   "mean_record_wait_s": 150.5,
+   "max_record_wait_s": 300,
+   "s3_put_usd_month": 0.0389,
+   "get_requests_to_read_one_day": 288,
+   "get_usd_per_one_day_query": 0.0001008,
+   "seeds": [
+    {
+     "seed": 1,
+     "objects_per_day": 288,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 58593.75,
+     "mean_record_wait_s": 150.5,
+     "max_record_wait_s": 300
+    },
+    {
+     "seed": 2,
+     "objects_per_day": 288,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 58593.75,
+     "mean_record_wait_s": 150.5,
+     "max_record_wait_s": 300
+    },
+    {
+     "seed": 3,
+     "objects_per_day": 288,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 58593.75,
+     "mean_record_wait_s": 150.5,
+     "max_record_wait_s": 300
+    }
+   ]
+  },
+  {
+   "workload": "B_1000x1s",
+   "partitions": 1,
+   "size_mib": 128,
+   "interval_s": 900,
+   "objects_per_day_range": [
+    129,
+    129
+   ],
+   "objects_per_month_mean": 3870,
+   "mean_object_kib": 131250.0,
+   "size_triggered_share": 1.0,
+   "mean_record_wait_s": 335.5,
+   "max_record_wait_s": 671,
+   "s3_put_usd_month": 0.0174,
+   "get_requests_to_read_one_day": 129,
+   "get_usd_per_one_day_query": 4.51e-05,
+   "seeds": [
+    {
+     "seed": 1,
+     "objects_per_day": 129,
+     "size_triggered_share": 1.0,
+     "mean_object_kib": 131250.0,
+     "mean_record_wait_s": 335.5,
+     "max_record_wait_s": 671
+    },
+    {
+     "seed": 2,
+     "objects_per_day": 129,
+     "size_triggered_share": 1.0,
+     "mean_object_kib": 131250.0,
+     "mean_record_wait_s": 335.5,
+     "max_record_wait_s": 671
+    },
+    {
+     "seed": 3,
+     "objects_per_day": 129,
+     "size_triggered_share": 1.0,
+     "mean_object_kib": 131250.0,
+     "mean_record_wait_s": 335.5,
+     "max_record_wait_s": 671
+    }
+   ]
+  },
+  {
+   "workload": "B_1000x1s",
+   "partitions": 10,
+   "size_mib": 1,
+   "interval_s": 60,
+   "objects_per_day_range": [
+    16310,
+    16310
+   ],
+   "objects_per_month_mean": 489300,
+   "mean_object_kib": 1035.16,
+   "size_triggered_share": 1.0,
+   "mean_record_wait_s": 26.0,
+   "max_record_wait_s": 52,
+   "s3_put_usd_month": 2.2018,
+   "get_requests_to_read_one_day": 16310,
+   "get_usd_per_one_day_query": 0.0057085,
+   "seeds": [
+    {
+     "seed": 1,
+     "objects_per_day": 16310,
+     "size_triggered_share": 1.0,
+     "mean_object_kib": 1035.16,
+     "mean_record_wait_s": 26.0,
+     "max_record_wait_s": 52
+    },
+    {
+     "seed": 2,
+     "objects_per_day": 16310,
+     "size_triggered_share": 1.0,
+     "mean_object_kib": 1035.16,
+     "mean_record_wait_s": 26.0,
+     "max_record_wait_s": 52
+    },
+    {
+     "seed": 3,
+     "objects_per_day": 16310,
+     "size_triggered_share": 1.0,
+     "mean_object_kib": 1035.16,
+     "mean_record_wait_s": 26.0,
+     "max_record_wait_s": 52
+    }
+   ]
+  },
+  {
+   "workload": "B_1000x1s",
+   "partitions": 10,
+   "size_mib": 1,
+   "interval_s": 300,
+   "objects_per_day_range": [
+    16310,
+    16310
+   ],
+   "objects_per_month_mean": 489300,
+   "mean_object_kib": 1035.16,
+   "size_triggered_share": 1.0,
+   "mean_record_wait_s": 26.0,
+   "max_record_wait_s": 52,
+   "s3_put_usd_month": 2.2018,
+   "get_requests_to_read_one_day": 16310,
+   "get_usd_per_one_day_query": 0.0057085,
+   "seeds": [
+    {
+     "seed": 1,
+     "objects_per_day": 16310,
+     "size_triggered_share": 1.0,
+     "mean_object_kib": 1035.16,
+     "mean_record_wait_s": 26.0,
+     "max_record_wait_s": 52
+    },
+    {
+     "seed": 2,
+     "objects_per_day": 16310,
+     "size_triggered_share": 1.0,
+     "mean_object_kib": 1035.16,
+     "mean_record_wait_s": 26.0,
+     "max_record_wait_s": 52
+    },
+    {
+     "seed": 3,
+     "objects_per_day": 16310,
+     "size_triggered_share": 1.0,
+     "mean_object_kib": 1035.16,
+     "mean_record_wait_s": 26.0,
+     "max_record_wait_s": 52
+    }
+   ]
+  },
+  {
+   "workload": "B_1000x1s",
+   "partitions": 10,
+   "size_mib": 1,
+   "interval_s": 900,
+   "objects_per_day_range": [
+    16310,
+    16310
+   ],
+   "objects_per_month_mean": 489300,
+   "mean_object_kib": 1035.16,
+   "size_triggered_share": 1.0,
+   "mean_record_wait_s": 26.0,
+   "max_record_wait_s": 52,
+   "s3_put_usd_month": 2.2018,
+   "get_requests_to_read_one_day": 16310,
+   "get_usd_per_one_day_query": 0.0057085,
+   "seeds": [
+    {
+     "seed": 1,
+     "objects_per_day": 16310,
+     "size_triggered_share": 1.0,
+     "mean_object_kib": 1035.16,
+     "mean_record_wait_s": 26.0,
+     "max_record_wait_s": 52
+    },
+    {
+     "seed": 2,
+     "objects_per_day": 16310,
+     "size_triggered_share": 1.0,
+     "mean_object_kib": 1035.16,
+     "mean_record_wait_s": 26.0,
+     "max_record_wait_s": 52
+    },
+    {
+     "seed": 3,
+     "objects_per_day": 16310,
+     "size_triggered_share": 1.0,
+     "mean_object_kib": 1035.16,
+     "mean_record_wait_s": 26.0,
+     "max_record_wait_s": 52
+    }
+   ]
+  },
+  {
+   "workload": "B_1000x1s",
+   "partitions": 10,
+   "size_mib": 5,
+   "interval_s": 60,
+   "objects_per_day_range": [
+    14400,
+    14400
+   ],
+   "objects_per_month_mean": 432000,
+   "mean_object_kib": 1171.88,
+   "size_triggered_share": 0.0,
+   "mean_record_wait_s": 30.5,
+   "max_record_wait_s": 60,
+   "s3_put_usd_month": 1.944,
+   "get_requests_to_read_one_day": 14400,
+   "get_usd_per_one_day_query": 0.00504,
+   "seeds": [
+    {
+     "seed": 1,
+     "objects_per_day": 14400,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 1171.88,
+     "mean_record_wait_s": 30.5,
+     "max_record_wait_s": 60
+    },
+    {
+     "seed": 2,
+     "objects_per_day": 14400,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 1171.88,
+     "mean_record_wait_s": 30.5,
+     "max_record_wait_s": 60
+    },
+    {
+     "seed": 3,
+     "objects_per_day": 14400,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 1171.88,
+     "mean_record_wait_s": 30.5,
+     "max_record_wait_s": 60
+    }
+   ]
+  },
+  {
+   "workload": "B_1000x1s",
+   "partitions": 10,
+   "size_mib": 5,
+   "interval_s": 300,
+   "objects_per_day_range": [
+    3290,
+    3290
+   ],
+   "objects_per_month_mean": 98700,
+   "mean_object_kib": 5136.72,
+   "size_triggered_share": 1.0,
+   "mean_record_wait_s": 131.0,
+   "max_record_wait_s": 262,
+   "s3_put_usd_month": 0.4441,
+   "get_requests_to_read_one_day": 3290,
+   "get_usd_per_one_day_query": 0.0011515,
+   "seeds": [
+    {
+     "seed": 1,
+     "objects_per_day": 3290,
+     "size_triggered_share": 1.0,
+     "mean_object_kib": 5136.72,
+     "mean_record_wait_s": 131.0,
+     "max_record_wait_s": 262
+    },
+    {
+     "seed": 2,
+     "objects_per_day": 3290,
+     "size_triggered_share": 1.0,
+     "mean_object_kib": 5136.72,
+     "mean_record_wait_s": 131.0,
+     "max_record_wait_s": 262
+    },
+    {
+     "seed": 3,
+     "objects_per_day": 3290,
+     "size_triggered_share": 1.0,
+     "mean_object_kib": 5136.72,
+     "mean_record_wait_s": 131.0,
+     "max_record_wait_s": 262
+    }
+   ]
+  },
+  {
+   "workload": "B_1000x1s",
+   "partitions": 10,
+   "size_mib": 5,
+   "interval_s": 900,
+   "objects_per_day_range": [
+    3290,
+    3290
+   ],
+   "objects_per_month_mean": 98700,
+   "mean_object_kib": 5136.72,
+   "size_triggered_share": 1.0,
+   "mean_record_wait_s": 131.0,
+   "max_record_wait_s": 262,
+   "s3_put_usd_month": 0.4441,
+   "get_requests_to_read_one_day": 3290,
+   "get_usd_per_one_day_query": 0.0011515,
+   "seeds": [
+    {
+     "seed": 1,
+     "objects_per_day": 3290,
+     "size_triggered_share": 1.0,
+     "mean_object_kib": 5136.72,
+     "mean_record_wait_s": 131.0,
+     "max_record_wait_s": 262
+    },
+    {
+     "seed": 2,
+     "objects_per_day": 3290,
+     "size_triggered_share": 1.0,
+     "mean_object_kib": 5136.72,
+     "mean_record_wait_s": 131.0,
+     "max_record_wait_s": 262
+    },
+    {
+     "seed": 3,
+     "objects_per_day": 3290,
+     "size_triggered_share": 1.0,
+     "mean_object_kib": 5136.72,
+     "mean_record_wait_s": 131.0,
+     "max_record_wait_s": 262
+    }
+   ]
+  },
+  {
+   "workload": "B_1000x1s",
+   "partitions": 10,
+   "size_mib": 64,
+   "interval_s": 60,
+   "objects_per_day_range": [
+    14400,
+    14400
+   ],
+   "objects_per_month_mean": 432000,
+   "mean_object_kib": 1171.88,
+   "size_triggered_share": 0.0,
+   "mean_record_wait_s": 30.5,
+   "max_record_wait_s": 60,
+   "s3_put_usd_month": 1.944,
+   "get_requests_to_read_one_day": 14400,
+   "get_usd_per_one_day_query": 0.00504,
+   "seeds": [
+    {
+     "seed": 1,
+     "objects_per_day": 14400,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 1171.88,
+     "mean_record_wait_s": 30.5,
+     "max_record_wait_s": 60
+    },
+    {
+     "seed": 2,
+     "objects_per_day": 14400,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 1171.88,
+     "mean_record_wait_s": 30.5,
+     "max_record_wait_s": 60
+    },
+    {
+     "seed": 3,
+     "objects_per_day": 14400,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 1171.88,
+     "mean_record_wait_s": 30.5,
+     "max_record_wait_s": 60
+    }
+   ]
+  },
+  {
+   "workload": "B_1000x1s",
+   "partitions": 10,
+   "size_mib": 64,
+   "interval_s": 300,
+   "objects_per_day_range": [
+    2880,
+    2880
+   ],
+   "objects_per_month_mean": 86400,
+   "mean_object_kib": 5859.38,
+   "size_triggered_share": 0.0,
+   "mean_record_wait_s": 150.5,
+   "max_record_wait_s": 300,
+   "s3_put_usd_month": 0.3888,
+   "get_requests_to_read_one_day": 2880,
+   "get_usd_per_one_day_query": 0.001008,
+   "seeds": [
+    {
+     "seed": 1,
+     "objects_per_day": 2880,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 5859.38,
+     "mean_record_wait_s": 150.5,
+     "max_record_wait_s": 300
+    },
+    {
+     "seed": 2,
+     "objects_per_day": 2880,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 5859.38,
+     "mean_record_wait_s": 150.5,
+     "max_record_wait_s": 300
+    },
+    {
+     "seed": 3,
+     "objects_per_day": 2880,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 5859.38,
+     "mean_record_wait_s": 150.5,
+     "max_record_wait_s": 300
+    }
+   ]
+  },
+  {
+   "workload": "B_1000x1s",
+   "partitions": 10,
+   "size_mib": 64,
+   "interval_s": 900,
+   "objects_per_day_range": [
+    960,
+    960
+   ],
+   "objects_per_month_mean": 28800,
+   "mean_object_kib": 17578.12,
+   "size_triggered_share": 0.0,
+   "mean_record_wait_s": 450.5,
+   "max_record_wait_s": 900,
+   "s3_put_usd_month": 0.1296,
+   "get_requests_to_read_one_day": 960,
+   "get_usd_per_one_day_query": 0.000336,
+   "seeds": [
+    {
+     "seed": 1,
+     "objects_per_day": 960,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 17578.12,
+     "mean_record_wait_s": 450.5,
+     "max_record_wait_s": 900
+    },
+    {
+     "seed": 2,
+     "objects_per_day": 960,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 17578.12,
+     "mean_record_wait_s": 450.5,
+     "max_record_wait_s": 900
+    },
+    {
+     "seed": 3,
+     "objects_per_day": 960,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 17578.12,
+     "mean_record_wait_s": 450.5,
+     "max_record_wait_s": 900
+    }
+   ]
+  },
+  {
+   "workload": "B_1000x1s",
+   "partitions": 10,
+   "size_mib": 128,
+   "interval_s": 60,
+   "objects_per_day_range": [
+    14400,
+    14400
+   ],
+   "objects_per_month_mean": 432000,
+   "mean_object_kib": 1171.88,
+   "size_triggered_share": 0.0,
+   "mean_record_wait_s": 30.5,
+   "max_record_wait_s": 60,
+   "s3_put_usd_month": 1.944,
+   "get_requests_to_read_one_day": 14400,
+   "get_usd_per_one_day_query": 0.00504,
+   "seeds": [
+    {
+     "seed": 1,
+     "objects_per_day": 14400,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 1171.88,
+     "mean_record_wait_s": 30.5,
+     "max_record_wait_s": 60
+    },
+    {
+     "seed": 2,
+     "objects_per_day": 14400,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 1171.88,
+     "mean_record_wait_s": 30.5,
+     "max_record_wait_s": 60
+    },
+    {
+     "seed": 3,
+     "objects_per_day": 14400,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 1171.88,
+     "mean_record_wait_s": 30.5,
+     "max_record_wait_s": 60
+    }
+   ]
+  },
+  {
+   "workload": "B_1000x1s",
+   "partitions": 10,
+   "size_mib": 128,
+   "interval_s": 300,
+   "objects_per_day_range": [
+    2880,
+    2880
+   ],
+   "objects_per_month_mean": 86400,
+   "mean_object_kib": 5859.38,
+   "size_triggered_share": 0.0,
+   "mean_record_wait_s": 150.5,
+   "max_record_wait_s": 300,
+   "s3_put_usd_month": 0.3888,
+   "get_requests_to_read_one_day": 2880,
+   "get_usd_per_one_day_query": 0.001008,
+   "seeds": [
+    {
+     "seed": 1,
+     "objects_per_day": 2880,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 5859.38,
+     "mean_record_wait_s": 150.5,
+     "max_record_wait_s": 300
+    },
+    {
+     "seed": 2,
+     "objects_per_day": 2880,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 5859.38,
+     "mean_record_wait_s": 150.5,
+     "max_record_wait_s": 300
+    },
+    {
+     "seed": 3,
+     "objects_per_day": 2880,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 5859.38,
+     "mean_record_wait_s": 150.5,
+     "max_record_wait_s": 300
+    }
+   ]
+  },
+  {
+   "workload": "B_1000x1s",
+   "partitions": 10,
+   "size_mib": 128,
+   "interval_s": 900,
+   "objects_per_day_range": [
+    960,
+    960
+   ],
+   "objects_per_month_mean": 28800,
+   "mean_object_kib": 17578.12,
+   "size_triggered_share": 0.0,
+   "mean_record_wait_s": 450.5,
+   "max_record_wait_s": 900,
+   "s3_put_usd_month": 0.1296,
+   "get_requests_to_read_one_day": 960,
+   "get_usd_per_one_day_query": 0.000336,
+   "seeds": [
+    {
+     "seed": 1,
+     "objects_per_day": 960,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 17578.12,
+     "mean_record_wait_s": 450.5,
+     "max_record_wait_s": 900
+    },
+    {
+     "seed": 2,
+     "objects_per_day": 960,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 17578.12,
+     "mean_record_wait_s": 450.5,
+     "max_record_wait_s": 900
+    },
+    {
+     "seed": 3,
+     "objects_per_day": 960,
+     "size_triggered_share": 0.0,
+     "mean_object_kib": 17578.12,
+     "mean_record_wait_s": 450.5,
+     "max_record_wait_s": 900
+    }
+   ]
+  }
+ ]
+}

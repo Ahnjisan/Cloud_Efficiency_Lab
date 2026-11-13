@@ -1,0 +1,221 @@
+{
+ "readings_per_month": 25920000,
+ "rates": {
+  "firehose_gb": 0.036,
+  "conversion_gb": 0.022,
+  "s3_gb_month": 0.025,
+  "athena_tb": 5.0,
+  "crawler_dpu_h": 0.44
+ },
+ "query_mix_per_day": {
+  "Q1": 100,
+  "Q2": 100,
+  "Q3": 1,
+  "Q4": 10,
+  "Q5": 1
+ },
+ "query_scales": [
+  0,
+  0.1,
+  1,
+  10
+ ],
+ "crawler_assumption": {
+  "dpu": 2,
+  "minutes_per_day": 10
+ },
+ "row_scale_from_018": 6.0,
+ "hypotheses": {
+  "H1_iot_messaging_is_largest_and_gt_50pct_of_baseline": {
+   "result": false,
+   "largest": "athena",
+   "iot_share": 0.4288,
+   "by_scale": {
+    "0": [
+     "iot_core",
+     0.8181
+    ],
+    "0.1": [
+     "iot_core",
+     0.75
+    ],
+    "1": [
+     "athena",
+     0.4288
+    ],
+    "10": [
+     "athena",
+     0.0812
+    ]
+   }
+  },
+  "H2_improved_le_20pct_of_baseline": {
+   "result": true,
+   "ratio_by_query_scale": {
+    "0": 0.057,
+    "0.1": 0.0529,
+    "1": 0.0334,
+    "10": 0.0124
+   }
+  },
+  "H3_freshness_max_60s_to_about_490s": {
+   "result": true,
+   "baseline_s": 60,
+   "improved_s": 490
+  }
+ },
+ "configs": {
+  "baseline": {
+   "layout": "csv",
+   "firehose_billed_gb": 123.596,
+   "stored_gb": 1.46,
+   "freshness_max_s": 60,
+   "freshness_mean_s": 30.5,
+   "per_query_bytes_scaled": {
+    "Q1": 1567399590,
+    "Q2": 1567399590,
+    "Q3": 1567399590,
+    "Q4": 1567399590,
+    "Q5": 1567399590
+   },
+   "by_query_scale": {
+    "0": {
+     "components_usd": {
+      "iot_core": 40.8499,
+      "firehose_ingest": 4.4495,
+      "firehose_format_conversion": 0.0,
+      "s3_put": 0.1944,
+      "s3_storage_one_month_retained": 0.0365,
+      "glue_crawler": 4.4,
+      "athena": 0.0
+     },
+     "total_usd": 49.9303,
+     "usd_per_1000_readings": 0.001926,
+     "largest_component": "iot_core",
+     "iot_share": 0.8181
+    },
+    "0.1": {
+     "components_usd": {
+      "iot_core": 40.8499,
+      "firehose_ingest": 4.4495,
+      "firehose_format_conversion": 0.0,
+      "s3_put": 0.1944,
+      "s3_storage_one_month_retained": 0.0365,
+      "glue_crawler": 4.4,
+      "athena": 4.5339
+     },
+     "total_usd": 54.4641,
+     "usd_per_1000_readings": 0.002101,
+     "largest_component": "iot_core",
+     "iot_share": 0.75
+    },
+    "1": {
+     "components_usd": {
+      "iot_core": 40.8499,
+      "firehose_ingest": 4.4495,
+      "firehose_format_conversion": 0.0,
+      "s3_put": 0.1944,
+      "s3_storage_one_month_retained": 0.0365,
+      "glue_crawler": 4.4,
+      "athena": 45.3386
+     },
+     "total_usd": 95.2689,
+     "usd_per_1000_readings": 0.003675,
+     "largest_component": "athena",
+     "iot_share": 0.4288
+    },
+    "10": {
+     "components_usd": {
+      "iot_core": 40.8499,
+      "firehose_ingest": 4.4495,
+      "firehose_format_conversion": 0.0,
+      "s3_put": 0.1944,
+      "s3_storage_one_month_retained": 0.0365,
+      "glue_crawler": 4.4,
+      "athena": 453.3863
+     },
+     "total_usd": 503.3166,
+     "usd_per_1000_readings": 0.019418,
+     "largest_component": "athena",
+     "iot_share": 0.0812
+    }
+   }
+  },
+  "improved": {
+   "layout": "parquet_dt_5min",
+   "firehose_billed_gb": 6.18,
+   "stored_gb": 0.463,
+   "freshness_max_s": 490,
+   "freshness_mean_s": 245.4,
+   "per_query_bytes_scaled": {
+    "Q1": 6896292,
+    "Q2": 3173130,
+    "Q3": 135886500,
+    "Q4": 16570926,
+    "Q5": 92450238
+   },
+   "by_query_scale": {
+    "0": {
+     "components_usd": {
+      "iot_core": 2.4365,
+      "firehose_ingest": 0.2225,
+      "firehose_format_conversion": 0.136,
+      "s3_put": 0.0389,
+      "s3_storage_one_month_retained": 0.0116,
+      "glue_crawler": 0.0,
+      "athena": 0.0
+     },
+     "total_usd": 2.8454,
+     "usd_per_1000_readings": 0.00011,
+     "largest_component": "iot_core",
+     "iot_share": 0.8563
+    },
+    "0.1": {
+     "components_usd": {
+      "iot_core": 2.4365,
+      "firehose_ingest": 0.2225,
+      "firehose_format_conversion": 0.136,
+      "s3_put": 0.0389,
+      "s3_storage_one_month_retained": 0.0116,
+      "glue_crawler": 0.0,
+      "athena": 0.034
+     },
+     "total_usd": 2.8794,
+     "usd_per_1000_readings": 0.000111,
+     "largest_component": "iot_core",
+     "iot_share": 0.8462
+    },
+    "1": {
+     "components_usd": {
+      "iot_core": 2.4365,
+      "firehose_ingest": 0.2225,
+      "firehose_format_conversion": 0.136,
+      "s3_put": 0.0389,
+      "s3_storage_one_month_retained": 0.0116,
+      "glue_crawler": 0.0,
+      "athena": 0.3403
+     },
+     "total_usd": 3.1857,
+     "usd_per_1000_readings": 0.000123,
+     "largest_component": "iot_core",
+     "iot_share": 0.7648
+    },
+    "10": {
+     "components_usd": {
+      "iot_core": 2.4365,
+      "firehose_ingest": 0.2225,
+      "firehose_format_conversion": 0.136,
+      "s3_put": 0.0389,
+      "s3_storage_one_month_retained": 0.0116,
+      "glue_crawler": 0.0,
+      "athena": 3.4032
+     },
+     "total_usd": 6.2486,
+     "usd_per_1000_readings": 0.000241,
+     "largest_component": "athena",
+     "iot_share": 0.3899
+    }
+   }
+  }
+ }
+}

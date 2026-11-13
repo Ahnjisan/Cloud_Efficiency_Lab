@@ -1,0 +1,912 @@
+{
+ "rate_usd_per_tb": 5.0,
+ "queries": [
+  {
+   "id": "Q1",
+   "sql": "SELECT avg(temperature) FROM t WHERE dt='2026-01-16' AND zone='z03'"
+  },
+  {
+   "id": "Q2",
+   "sql": "SELECT sensor_id, max(vibration) FROM t WHERE ts >= <last hour> GROUP BY sensor_id"
+  },
+  {
+   "id": "Q3",
+   "sql": "SELECT dt, avg(humidity) FROM t GROUP BY dt"
+  },
+  {
+   "id": "Q4",
+   "sql": "SELECT * FROM t WHERE dt='2026-01-16' AND sensor_id='s013'"
+  },
+  {
+   "id": "Q5",
+   "sql": "SELECT zone, count(*) FROM t WHERE status='warn' GROUP BY zone"
+  }
+ ],
+ "config": {
+  "sensors": 100,
+  "zones": 10,
+  "days": 30,
+  "period_s": 60,
+  "seeds": [
+   1,
+   2,
+   3
+  ],
+  "parquet_compression": "snappy",
+  "gzip_level": 6
+ },
+ "per_seed": [
+  {
+   "seed": 1,
+   "rows_in_table": 4320000,
+   "storage_bytes": {
+    "csv": 261230663,
+    "csv_gz": 49552169,
+    "parquet": 20305188,
+    "parquet_dt_5min": 82839889,
+    "parquet_dt_zone": 28454794
+   },
+   "answers": {
+    "Q1_rows_match": true,
+    "Q1_mean_match": true,
+    "Q4_rows_match": true
+   },
+   "scans": [
+    {
+     "query": "Q1",
+     "layout": "csv",
+     "bytes": 261230663,
+     "files_opened": 30,
+     "billed_mb": 250,
+     "usd": 0.0011920928955078125
+    },
+    {
+     "query": "Q1",
+     "layout": "csv_gz",
+     "bytes": 49552169,
+     "files_opened": 30,
+     "billed_mb": 48,
+     "usd": 0.0002288818359375
+    },
+    {
+     "query": "Q1",
+     "layout": "parquet",
+     "bytes": 267950,
+     "files_opened": 30,
+     "billed_mb": 10,
+     "usd": 4.76837158203125e-05
+    },
+    {
+     "query": "Q1",
+     "layout": "parquet_dt_5min",
+     "bytes": 1147920,
+     "files_opened": 288,
+     "billed_mb": 10,
+     "usd": 4.76837158203125e-05
+    },
+    {
+     "query": "Q1",
+     "layout": "parquet_dt_zone",
+     "bytes": 23239,
+     "files_opened": 1,
+     "billed_mb": 10,
+     "usd": 4.76837158203125e-05
+    },
+    {
+     "query": "Q2",
+     "layout": "csv",
+     "bytes": 261230663,
+     "files_opened": 30,
+     "billed_mb": 250,
+     "usd": 0.0011920928955078125
+    },
+    {
+     "query": "Q2",
+     "layout": "csv_gz",
+     "bytes": 49552169,
+     "files_opened": 30,
+     "billed_mb": 48,
+     "usd": 0.0002288818359375
+    },
+    {
+     "query": "Q2",
+     "layout": "parquet",
+     "bytes": 306031,
+     "files_opened": 30,
+     "billed_mb": 10,
+     "usd": 4.76837158203125e-05
+    },
+    {
+     "query": "Q2",
+     "layout": "parquet_dt_5min",
+     "bytes": 528855,
+     "files_opened": 288,
+     "billed_mb": 10,
+     "usd": 4.76837158203125e-05
+    },
+    {
+     "query": "Q2",
+     "layout": "parquet_dt_zone",
+     "bytes": 457085,
+     "files_opened": 10,
+     "billed_mb": 10,
+     "usd": 4.76837158203125e-05
+    },
+    {
+     "query": "Q3",
+     "layout": "csv",
+     "bytes": 261230663,
+     "files_opened": 30,
+     "billed_mb": 250,
+     "usd": 0.0011920928955078125
+    },
+    {
+     "query": "Q3",
+     "layout": "csv_gz",
+     "bytes": 49552169,
+     "files_opened": 30,
+     "billed_mb": 48,
+     "usd": 0.0002288818359375
+    },
+    {
+     "query": "Q3",
+     "layout": "parquet",
+     "bytes": 4677990,
+     "files_opened": 30,
+     "billed_mb": 10,
+     "usd": 4.76837158203125e-05
+    },
+    {
+     "query": "Q3",
+     "layout": "parquet_dt_5min",
+     "bytes": 22647750,
+     "files_opened": 8640,
+     "billed_mb": 22,
+     "usd": 0.0001049041748046875
+    },
+    {
+     "query": "Q3",
+     "layout": "parquet_dt_zone",
+     "bytes": 5705765,
+     "files_opened": 300,
+     "billed_mb": 10,
+     "usd": 4.76837158203125e-05
+    },
+    {
+     "query": "Q4",
+     "layout": "csv",
+     "bytes": 261230663,
+     "files_opened": 30,
+     "billed_mb": 250,
+     "usd": 0.0011920928955078125
+    },
+    {
+     "query": "Q4",
+     "layout": "csv_gz",
+     "bytes": 49552169,
+     "files_opened": 30,
+     "billed_mb": 48,
+     "usd": 0.0002288818359375
+    },
+    {
+     "query": "Q4",
+     "layout": "parquet",
+     "bytes": 727393,
+     "files_opened": 30,
+     "billed_mb": 10,
+     "usd": 4.76837158203125e-05
+    },
+    {
+     "query": "Q4",
+     "layout": "parquet_dt_5min",
+     "bytes": 2761821,
+     "files_opened": 288,
+     "billed_mb": 10,
+     "usd": 4.76837158203125e-05
+    },
+    {
+     "query": "Q4",
+     "layout": "parquet_dt_zone",
+     "bytes": 947730,
+     "files_opened": 10,
+     "billed_mb": 10,
+     "usd": 4.76837158203125e-05
+    },
+    {
+     "query": "Q5",
+     "layout": "csv",
+     "bytes": 261230663,
+     "files_opened": 30,
+     "billed_mb": 250,
+     "usd": 0.0011920928955078125
+    },
+    {
+     "query": "Q5",
+     "layout": "csv_gz",
+     "bytes": 49552169,
+     "files_opened": 30,
+     "billed_mb": 48,
+     "usd": 0.0002288818359375
+    },
+    {
+     "query": "Q5",
+     "layout": "parquet",
+     "bytes": 215555,
+     "files_opened": 30,
+     "billed_mb": 10,
+     "usd": 4.76837158203125e-05
+    },
+    {
+     "query": "Q5",
+     "layout": "parquet_dt_5min",
+     "bytes": 15407151,
+     "files_opened": 8640,
+     "billed_mb": 15,
+     "usd": 7.152557373046875e-05
+    },
+    {
+     "query": "Q5",
+     "layout": "parquet_dt_zone",
+     "bytes": 651569,
+     "files_opened": 300,
+     "billed_mb": 10,
+     "usd": 4.76837158203125e-05
+    }
+   ],
+   "file_counts": {
+    "csv": 30,
+    "csv_gz": 30,
+    "parquet": 30,
+    "parquet_dt_5min": 8640,
+    "parquet_dt_zone": 300
+   }
+  },
+  {
+   "seed": 2,
+   "rows_in_table": 4320000,
+   "storage_bytes": {
+    "csv": 261230111,
+    "csv_gz": 49521294,
+    "parquet": 20469022,
+    "parquet_dt_5min": 82863383,
+    "parquet_dt_zone": 28425259
+   },
+   "answers": {
+    "Q1_rows_match": true,
+    "Q1_mean_match": true,
+    "Q4_rows_match": true
+   },
+   "scans": [
+    {
+     "query": "Q1",
+     "layout": "csv",
+     "bytes": 261230111,
+     "files_opened": 30,
+     "billed_mb": 250,
+     "usd": 0.0011920928955078125
+    },
+    {
+     "query": "Q1",
+     "layout": "csv_gz",
+     "bytes": 49521294,
+     "files_opened": 30,
+     "billed_mb": 48,
+     "usd": 0.0002288818359375
+    },
+    {
+     "query": "Q1",
+     "layout": "parquet",
+     "bytes": 273141,
+     "files_opened": 30,
+     "billed_mb": 10,
+     "usd": 4.76837158203125e-05
+    },
+    {
+     "query": "Q1",
+     "layout": "parquet_dt_5min",
+     "bytes": 1149382,
+     "files_opened": 288,
+     "billed_mb": 10,
+     "usd": 4.76837158203125e-05
+    },
+    {
+     "query": "Q1",
+     "layout": "parquet_dt_zone",
+     "bytes": 23179,
+     "files_opened": 1,
+     "billed_mb": 10,
+     "usd": 4.76837158203125e-05
+    },
+    {
+     "query": "Q2",
+     "layout": "csv",
+     "bytes": 261230111,
+     "files_opened": 30,
+     "billed_mb": 250,
+     "usd": 0.0011920928955078125
+    },
+    {
+     "query": "Q2",
+     "layout": "csv_gz",
+     "bytes": 49521294,
+     "files_opened": 30,
+     "billed_mb": 48,
+     "usd": 0.0002288818359375
+    },
+    {
+     "query": "Q2",
+     "layout": "parquet",
+     "bytes": 306032,
+     "files_opened": 30,
+     "billed_mb": 10,
+     "usd": 4.76837158203125e-05
+    },
+    {
+     "query": "Q2",
+     "layout": "parquet_dt_5min",
+     "bytes": 528779,
+     "files_opened": 288,
+     "billed_mb": 10,
+     "usd": 4.76837158203125e-05
+    },
+    {
+     "query": "Q2",
+     "layout": "parquet_dt_zone",
+     "bytes": 457229,
+     "files_opened": 10,
+     "billed_mb": 10,
+     "usd": 4.76837158203125e-05
+    },
+    {
+     "query": "Q3",
+     "layout": "csv",
+     "bytes": 261230111,
+     "files_opened": 30,
+     "billed_mb": 250,
+     "usd": 0.0011920928955078125
+    },
+    {
+     "query": "Q3",
+     "layout": "csv_gz",
+     "bytes": 49521294,
+     "files_opened": 30,
+     "billed_mb": 48,
+     "usd": 0.0002288818359375
+    },
+    {
+     "query": "Q3",
+     "layout": "parquet",
+     "bytes": 4678231,
+     "files_opened": 30,
+     "billed_mb": 10,
+     "usd": 4.76837158203125e-05
+    },
+    {
+     "query": "Q3",
+     "layout": "parquet_dt_5min",
+     "bytes": 22645684,
+     "files_opened": 8640,
+     "billed_mb": 22,
+     "usd": 0.0001049041748046875
+    },
+    {
+     "query": "Q3",
+     "layout": "parquet_dt_zone",
+     "bytes": 5705944,
+     "files_opened": 300,
+     "billed_mb": 10,
+     "usd": 4.76837158203125e-05
+    },
+    {
+     "query": "Q4",
+     "layout": "csv",
+     "bytes": 261230111,
+     "files_opened": 30,
+     "billed_mb": 250,
+     "usd": 0.0011920928955078125
+    },
+    {
+     "query": "Q4",
+     "layout": "csv_gz",
+     "bytes": 49521294,
+     "files_opened": 30,
+     "billed_mb": 48,
+     "usd": 0.0002288818359375
+    },
+    {
+     "query": "Q4",
+     "layout": "parquet",
+     "bytes": 732439,
+     "files_opened": 30,
+     "billed_mb": 10,
+     "usd": 4.76837158203125e-05
+    },
+    {
+     "query": "Q4",
+     "layout": "parquet_dt_5min",
+     "bytes": 2761290,
+     "files_opened": 288,
+     "billed_mb": 10,
+     "usd": 4.76837158203125e-05
+    },
+    {
+     "query": "Q4",
+     "layout": "parquet_dt_zone",
+     "bytes": 947781,
+     "files_opened": 10,
+     "billed_mb": 10,
+     "usd": 4.76837158203125e-05
+    },
+    {
+     "query": "Q5",
+     "layout": "csv",
+     "bytes": 261230111,
+     "files_opened": 30,
+     "billed_mb": 250,
+     "usd": 0.0011920928955078125
+    },
+    {
+     "query": "Q5",
+     "layout": "csv_gz",
+     "bytes": 49521294,
+     "files_opened": 30,
+     "billed_mb": 48,
+     "usd": 0.0002288818359375
+    },
+    {
+     "query": "Q5",
+     "layout": "parquet",
+     "bytes": 215154,
+     "files_opened": 30,
+     "billed_mb": 10,
+     "usd": 4.76837158203125e-05
+    },
+    {
+     "query": "Q5",
+     "layout": "parquet_dt_5min",
+     "bytes": 15406439,
+     "files_opened": 8640,
+     "billed_mb": 15,
+     "usd": 7.152557373046875e-05
+    },
+    {
+     "query": "Q5",
+     "layout": "parquet_dt_zone",
+     "bytes": 651553,
+     "files_opened": 300,
+     "billed_mb": 10,
+     "usd": 4.76837158203125e-05
+    }
+   ],
+   "file_counts": {
+    "csv": 30,
+    "csv_gz": 30,
+    "parquet": 30,
+    "parquet_dt_5min": 8640,
+    "parquet_dt_zone": 300
+   }
+  },
+  {
+   "seed": 3,
+   "rows_in_table": 4320000,
+   "storage_bytes": {
+    "csv": 261233265,
+    "csv_gz": 49476381,
+    "parquet": 20301308,
+    "parquet_dt_5min": 82540442,
+    "parquet_dt_zone": 28437510
+   },
+   "answers": {
+    "Q1_rows_match": true,
+    "Q1_mean_match": true,
+    "Q4_rows_match": true
+   },
+   "scans": [
+    {
+     "query": "Q1",
+     "layout": "csv",
+     "bytes": 261233265,
+     "files_opened": 30,
+     "billed_mb": 250,
+     "usd": 0.0011920928955078125
+    },
+    {
+     "query": "Q1",
+     "layout": "csv_gz",
+     "bytes": 49476381,
+     "files_opened": 30,
+     "billed_mb": 48,
+     "usd": 0.0002288818359375
+    },
+    {
+     "query": "Q1",
+     "layout": "parquet",
+     "bytes": 267936,
+     "files_opened": 30,
+     "billed_mb": 10,
+     "usd": 4.76837158203125e-05
+    },
+    {
+     "query": "Q1",
+     "layout": "parquet_dt_5min",
+     "bytes": 1140201,
+     "files_opened": 288,
+     "billed_mb": 10,
+     "usd": 4.76837158203125e-05
+    },
+    {
+     "query": "Q1",
+     "layout": "parquet_dt_zone",
+     "bytes": 23226,
+     "files_opened": 1,
+     "billed_mb": 10,
+     "usd": 4.76837158203125e-05
+    },
+    {
+     "query": "Q2",
+     "layout": "csv",
+     "bytes": 261233265,
+     "files_opened": 30,
+     "billed_mb": 250,
+     "usd": 0.0011920928955078125
+    },
+    {
+     "query": "Q2",
+     "layout": "csv_gz",
+     "bytes": 49476381,
+     "files_opened": 30,
+     "billed_mb": 48,
+     "usd": 0.0002288818359375
+    },
+    {
+     "query": "Q2",
+     "layout": "parquet",
+     "bytes": 305986,
+     "files_opened": 30,
+     "billed_mb": 10,
+     "usd": 4.76837158203125e-05
+    },
+    {
+     "query": "Q2",
+     "layout": "parquet_dt_5min",
+     "bytes": 528849,
+     "files_opened": 288,
+     "billed_mb": 10,
+     "usd": 4.76837158203125e-05
+    },
+    {
+     "query": "Q2",
+     "layout": "parquet_dt_zone",
+     "bytes": 457344,
+     "files_opened": 10,
+     "billed_mb": 10,
+     "usd": 4.76837158203125e-05
+    },
+    {
+     "query": "Q3",
+     "layout": "csv",
+     "bytes": 261233265,
+     "files_opened": 30,
+     "billed_mb": 250,
+     "usd": 0.0011920928955078125
+    },
+    {
+     "query": "Q3",
+     "layout": "csv_gz",
+     "bytes": 49476381,
+     "files_opened": 30,
+     "billed_mb": 48,
+     "usd": 0.0002288818359375
+    },
+    {
+     "query": "Q3",
+     "layout": "parquet",
+     "bytes": 4678158,
+     "files_opened": 30,
+     "billed_mb": 10,
+     "usd": 4.76837158203125e-05
+    },
+    {
+     "query": "Q3",
+     "layout": "parquet_dt_5min",
+     "bytes": 22645885,
+     "files_opened": 8640,
+     "billed_mb": 22,
+     "usd": 0.0001049041748046875
+    },
+    {
+     "query": "Q3",
+     "layout": "parquet_dt_zone",
+     "bytes": 5705731,
+     "files_opened": 300,
+     "billed_mb": 10,
+     "usd": 4.76837158203125e-05
+    },
+    {
+     "query": "Q4",
+     "layout": "csv",
+     "bytes": 261233265,
+     "files_opened": 30,
+     "billed_mb": 250,
+     "usd": 0.0011920928955078125
+    },
+    {
+     "query": "Q4",
+     "layout": "csv_gz",
+     "bytes": 49476381,
+     "files_opened": 30,
+     "billed_mb": 48,
+     "usd": 0.0002288818359375
+    },
+    {
+     "query": "Q4",
+     "layout": "parquet",
+     "bytes": 727771,
+     "files_opened": 30,
+     "billed_mb": 10,
+     "usd": 4.76837158203125e-05
+    },
+    {
+     "query": "Q4",
+     "layout": "parquet_dt_5min",
+     "bytes": 2751953,
+     "files_opened": 288,
+     "billed_mb": 10,
+     "usd": 4.76837158203125e-05
+    },
+    {
+     "query": "Q4",
+     "layout": "parquet_dt_zone",
+     "bytes": 948485,
+     "files_opened": 10,
+     "billed_mb": 10,
+     "usd": 4.76837158203125e-05
+    },
+    {
+     "query": "Q5",
+     "layout": "csv",
+     "bytes": 261233265,
+     "files_opened": 30,
+     "billed_mb": 250,
+     "usd": 0.0011920928955078125
+    },
+    {
+     "query": "Q5",
+     "layout": "csv_gz",
+     "bytes": 49476381,
+     "files_opened": 30,
+     "billed_mb": 48,
+     "usd": 0.0002288818359375
+    },
+    {
+     "query": "Q5",
+     "layout": "parquet",
+     "bytes": 216350,
+     "files_opened": 30,
+     "billed_mb": 10,
+     "usd": 4.76837158203125e-05
+    },
+    {
+     "query": "Q5",
+     "layout": "parquet_dt_5min",
+     "bytes": 15408373,
+     "files_opened": 8640,
+     "billed_mb": 15,
+     "usd": 7.152557373046875e-05
+    },
+    {
+     "query": "Q5",
+     "layout": "parquet_dt_zone",
+     "bytes": 652571,
+     "files_opened": 300,
+     "billed_mb": 10,
+     "usd": 4.76837158203125e-05
+    }
+   ],
+   "file_counts": {
+    "csv": 30,
+    "csv_gz": 30,
+    "parquet": 30,
+    "parquet_dt_5min": 8640,
+    "parquet_dt_zone": 300
+   }
+  }
+ ],
+ "summary": {
+  "Q1": {
+   "csv": {
+    "bytes_min": 261230111,
+    "bytes_max": 261233265,
+    "files_opened": 30,
+    "billed_mb_max": 250
+   },
+   "csv_gz": {
+    "bytes_min": 49476381,
+    "bytes_max": 49552169,
+    "files_opened": 30,
+    "billed_mb_max": 48,
+    "reduction_vs_csv_min": 0.8103
+   },
+   "parquet": {
+    "bytes_min": 267936,
+    "bytes_max": 273141,
+    "files_opened": 30,
+    "billed_mb_max": 10,
+    "reduction_vs_csv_min": 0.999
+   },
+   "parquet_dt_5min": {
+    "bytes_min": 1140201,
+    "bytes_max": 1149382,
+    "files_opened": 288,
+    "billed_mb_max": 10,
+    "reduction_vs_csv_min": 0.9956
+   },
+   "parquet_dt_zone": {
+    "bytes_min": 23179,
+    "bytes_max": 23239,
+    "files_opened": 1,
+    "billed_mb_max": 10,
+    "reduction_vs_csv_min": 0.9999
+   }
+  },
+  "Q2": {
+   "csv": {
+    "bytes_min": 261230111,
+    "bytes_max": 261233265,
+    "files_opened": 30,
+    "billed_mb_max": 250
+   },
+   "csv_gz": {
+    "bytes_min": 49476381,
+    "bytes_max": 49552169,
+    "files_opened": 30,
+    "billed_mb_max": 48,
+    "reduction_vs_csv_min": 0.8103
+   },
+   "parquet": {
+    "bytes_min": 305986,
+    "bytes_max": 306032,
+    "files_opened": 30,
+    "billed_mb_max": 10,
+    "reduction_vs_csv_min": 0.9988
+   },
+   "parquet_dt_5min": {
+    "bytes_min": 528779,
+    "bytes_max": 528855,
+    "files_opened": 288,
+    "billed_mb_max": 10,
+    "reduction_vs_csv_min": 0.998
+   },
+   "parquet_dt_zone": {
+    "bytes_min": 457085,
+    "bytes_max": 457344,
+    "files_opened": 10,
+    "billed_mb_max": 10,
+    "reduction_vs_csv_min": 0.9982
+   }
+  },
+  "Q3": {
+   "csv": {
+    "bytes_min": 261230111,
+    "bytes_max": 261233265,
+    "files_opened": 30,
+    "billed_mb_max": 250
+   },
+   "csv_gz": {
+    "bytes_min": 49476381,
+    "bytes_max": 49552169,
+    "files_opened": 30,
+    "billed_mb_max": 48,
+    "reduction_vs_csv_min": 0.8103
+   },
+   "parquet": {
+    "bytes_min": 4677990,
+    "bytes_max": 4678231,
+    "files_opened": 30,
+    "billed_mb_max": 10,
+    "reduction_vs_csv_min": 0.9821
+   },
+   "parquet_dt_5min": {
+    "bytes_min": 22645684,
+    "bytes_max": 22647750,
+    "files_opened": 8640,
+    "billed_mb_max": 22,
+    "reduction_vs_csv_min": 0.9133
+   },
+   "parquet_dt_zone": {
+    "bytes_min": 5705731,
+    "bytes_max": 5705944,
+    "files_opened": 300,
+    "billed_mb_max": 10,
+    "reduction_vs_csv_min": 0.9782
+   }
+  },
+  "Q4": {
+   "csv": {
+    "bytes_min": 261230111,
+    "bytes_max": 261233265,
+    "files_opened": 30,
+    "billed_mb_max": 250
+   },
+   "csv_gz": {
+    "bytes_min": 49476381,
+    "bytes_max": 49552169,
+    "files_opened": 30,
+    "billed_mb_max": 48,
+    "reduction_vs_csv_min": 0.8103
+   },
+   "parquet": {
+    "bytes_min": 727393,
+    "bytes_max": 732439,
+    "files_opened": 30,
+    "billed_mb_max": 10,
+    "reduction_vs_csv_min": 0.9972
+   },
+   "parquet_dt_5min": {
+    "bytes_min": 2751953,
+    "bytes_max": 2761821,
+    "files_opened": 288,
+    "billed_mb_max": 10,
+    "reduction_vs_csv_min": 0.9894
+   },
+   "parquet_dt_zone": {
+    "bytes_min": 947730,
+    "bytes_max": 948485,
+    "files_opened": 10,
+    "billed_mb_max": 10,
+    "reduction_vs_csv_min": 0.9964
+   }
+  },
+  "Q5": {
+   "csv": {
+    "bytes_min": 261230111,
+    "bytes_max": 261233265,
+    "files_opened": 30,
+    "billed_mb_max": 250
+   },
+   "csv_gz": {
+    "bytes_min": 49476381,
+    "bytes_max": 49552169,
+    "files_opened": 30,
+    "billed_mb_max": 48,
+    "reduction_vs_csv_min": 0.8103
+   },
+   "parquet": {
+    "bytes_min": 215154,
+    "bytes_max": 216350,
+    "files_opened": 30,
+    "billed_mb_max": 10,
+    "reduction_vs_csv_min": 0.9992
+   },
+   "parquet_dt_5min": {
+    "bytes_min": 15406439,
+    "bytes_max": 15408373,
+    "files_opened": 8640,
+    "billed_mb_max": 15,
+    "reduction_vs_csv_min": 0.941
+   },
+   "parquet_dt_zone": {
+    "bytes_min": 651553,
+    "bytes_max": 652571,
+    "files_opened": 300,
+    "billed_mb_max": 10,
+    "reduction_vs_csv_min": 0.9975
+   }
+  }
+ },
+ "hypotheses": {
+  "H1_Q1_partitioned_parquet_reduces_ge_90pct": {
+   "result": true,
+   "reduction": 0.9999
+  },
+  "H2_Q4_reduction_smaller_than_Q1": {
+   "result": true,
+   "Q4": 0.9964,
+   "Q1": 0.9999
+  },
+  "H3_all_parquet_queries_billed_at_10MB_minimum": {
+   "result": true,
+   "above_minimum": []
+  }
+ }
+}

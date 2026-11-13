@@ -10,7 +10,7 @@ AWS 서비스별 과금 구조와 실제 자원 사용의 관계를 이해하고
 
 ## 학습 범위와 영역 구분
 
-EC2·EBS·S3·RDS 및 Aurora·Lambda·VPC와 네트워크 비용을 핵심 학습 후보로 둡니다. AWS 비용 데이터와 비용 관리 기능도 이 영역에서 다룹니다. ECS·Fargate·ECR·EKS 등은 연구 질문에 따라 확장하며 AWS 고유의 서비스 구성과 과금을 기록합니다.
+EC2·EBS·S3·RDS 및 Aurora·Lambda·VPC와 네트워크 비용을 핵심 학습 후보로 둡니다. 실제 프로젝트의 IoT 센서 파이프라인과 생성형 AI·모델 학습을 위해 IoT Core·Firehose·Athena·Glue·Bedrock·SageMaker를 추가했습니다. AWS 비용 데이터와 비용 관리 기능도 이 영역에서 다룹니다. ECS·Fargate·ECR·EKS 등은 연구 질문에 따라 확장하며 AWS 고유의 서비스 구성과 과금을 기록합니다.
 
 Docker·Kubernetes 자체의 구조와 자원 관리는 [Platforms](../platforms/README.md), 여러 환경에서 재사용할 분석·예측·비용 배분·최적화 방법은 [Methods](../methods/README.md)에서 다룹니다. 세부 계획은 [전체 커리큘럼](../curriculum.md)을 참고합니다.
 
@@ -49,6 +49,14 @@ Docker·Kubernetes 자체의 구조와 자원 관리는 [Platforms](../platforms
 - [Aurora](aurora/README.md)
 - [EKS](eks/README.md)
 - [AWS 비용 데이터](cost-data/README.md)
+
+### 데이터 파이프라인·생성형 AI·ML 학습 (서울 리전 공개 요율, 2026-11-13 확인)
+
+- [IoT Core 비용 산정 01 — 메시지 계량·연결 시간·Rules Engine](iot-core/README.md)
+- [Kinesis Data Firehose 비용 산정 01 — 수집량 올림·버퍼·형식 변환](kinesis-firehose/README.md)
+- [Athena·Glue 비용 산정 01 — 스캔량·열 기반 형식·파티션·크롤러](athena-glue/README.md)
+- [Bedrock 비용 산정 01 — 토큰 과금·프롬프트 캐싱·에이전트 호출 증폭](bedrock/README.md)
+- [SageMaker 비용 산정 01 — 학습·노트북·엔드포인트와 유휴 비용](sagemaker/README.md)
 
 자료가 준비되어 있으며 사용자 학습 완료 여부는 미확인입니다.
 

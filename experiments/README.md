@@ -48,6 +48,32 @@ AWS 자원 생성·실행은 필수가 아닙니다. AWS 등 유료 자원을 �
 - [014 · AWS provider의 실제 EC2·EBS Plan](014-aws-provider-plan/README.md) — AWS API를 호출하지 않는 생성 계획과 필드 호환성
 - [015 · Kubernetes 반복 부하와 Deployment 롤백](015-kubernetes-rollback/README.md) — 전용 Minikube에서 CPU 축소·복원 반복
 
+### IoT 파이프라인·생성형 AI·모델 학습 (로컬·합성·계산, AWS 호출 없음)
+
+서울 리전 요율은 [Price List 사본](../references/aws-price-list-apn2-2026-11-13.json)에서 읽는다. 실제 프로젝트의 비용 구조를 미리 확인하기 위한 묶음이며, 실제 계정 데이터로 다시 확인할 점은 [InfraFit 적용 메모](infrafit-pipeline-ai-rules.md)에 정리했다.
+
+- [016 · IoT Core 메시지 묶음](016-iot-message-batching/README.md) — 5 KB 계량 단위와 묶음 크기·지연의 교환
+- [017 · Firehose 버퍼와 작은 파일](017-firehose-buffer-small-files/README.md) — 버퍼 설정별 S3 객체 수·신선도 시뮬레이션
+- [018 · 저장 형식·파티션별 스캔량](018-format-partition-scan/README.md) — CSV·Parquet·파티션의 읽은 바이트 대리 측정
+- [019 · 파이프라인 단위 비용](019-pipeline-unit-cost/README.md) — 센서 1,000건당 비용과 데이터 신선도
+- [020 · Bedrock 토큰·캐싱](020-bedrock-token-caching/README.md) — 에이전트 호출 증폭과 캐싱 손익분기
+- [021 · 일별 비용 급증 탐지](021-daily-cost-spike-detection/README.md) — 단순 규칙 3개의 오탐·미탐·지연
+- [022 · GPU 학습 유휴 비용 (선택)](022-gpu-training-idle-cost/README.md) — 상시 실행·스케줄·학습 작업 분리와 잔존 비용
+
+#### 016~022 테스트 기록 (2026-11-13, Windows 11, Python 3.14.7, pyarrow 26.0.1)
+
+| 실험 | 단위 테스트 | `result.json` 재현 |
+|---|---|---|
+| 016 | 8개 통과 | 테스트 안에서 재실행·일치 |
+| 017 | 6개 통과 | 테스트 안에서 재실행·일치 |
+| 018 | 8개 통과(소형 데이터) | **전체 재실행 미실시**(약 31분). 소형 데이터로 결정성만 테스트 |
+| 019 | 4개 통과 | 테스트 안에서 재실행·일치 |
+| 020 | 8개 통과 | 테스트 밖에서 전체 재실행(약 1.5분), 저장 결과와 일치 |
+| 021 | 7개 통과 | 테스트 안에서 재실행·일치 |
+| 022 | 5개 통과 | 테스트 안에서 재실행·일치 |
+
+같은 시점에 기존 [InfraFit 종단 간 테스트](../infrafit/test_cli.py) 11개와 010 테스트 2개도 다시 실행해 통과했다. 001~015의 다른 실험 스크립트와 Docker·Kubernetes 실측은 이번에 다시 실행하지 않았다.
+
 [최종 연구 보고서](../FINAL-REPORT.md)에서 001~015와 [InfraFit MVP](../infrafit/README.md)의 검증 범위를 함께 볼 수 있다. [InfraFit 개발 전 연구 기록](infrafit-predevelopment-review.md)은 개별 실행과 후속 검증의 맥락을 보존한다.
 
 실제 실행한 실험만 문서의 상대 링크와 함께 이 목록에 등록합니다. 관련 [Studies](../studies/README.md) 학습 문서와 실험 문서를 상호 연결해 학습 근거와 재현 경로를 찾을 수 있도록 합니다.

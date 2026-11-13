@@ -58,6 +58,14 @@ AWS 서비스별 작동 원리, 과금 항목과 비용 산정, 자원 구성과
 - [EKS](aws/eks/README.md)
 - [AWS 비용 데이터](aws/cost-data/README.md)
 
+### AWS 확장 — 데이터 파이프라인·생성형 AI·ML 학습 (서울 리전 공개 요율, 2026-11-13 확인)
+
+- [IoT Core 비용 산정 01 — 메시지 계량·연결 시간·Rules Engine](aws/iot-core/README.md)
+- [Kinesis Data Firehose 비용 산정 01 — 수집량 올림·버퍼·형식 변환](aws/kinesis-firehose/README.md)
+- [Athena·Glue 비용 산정 01 — 스캔량·열 기반 형식·파티션·크롤러](aws/athena-glue/README.md)
+- [Bedrock 비용 산정 01 — 토큰 과금·프롬프트 캐싱·에이전트 호출 증폭](aws/bedrock/README.md)
+- [SageMaker 비용 산정 01 — 학습·노트북·엔드포인트와 유휴 비용](aws/sagemaker/README.md)
+
 ### Docker
 
 - [Docker 구조](platforms/docker/README.md)
@@ -75,7 +83,7 @@ AWS 서비스별 작동 원리, 과금 항목과 비용 산정, 자원 구성과
 
 - [Rightsizing](methods/rightsizing.md)
 - [예측](methods/forecasting.md)
-- [이상탐지](methods/anomaly-detection.md)
+- [이상탐지](methods/anomaly-detection.md) — 일별 비용 급증 탐지 절 포함
 - [구성 최적화](methods/configuration-optimization.md)
 - [비용 배분](methods/cost-allocation.md)
 - [서비스 간 분석](methods/cross-service-analysis.md)

@@ -1,0 +1,735 @@
+{
+ "region": "ap-northeast-2",
+ "retrieved": "2026-11-13",
+ "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/{offer}/current/ap-northeast-2/index.json",
+ "note": "On-Demand public rates only. No free tier, discounts, tax. Extracted verbatim from AWS Price List Bulk API.",
+ "offers": {
+  "AWSIoT": {
+   "publicationDate": "2026-10-03T05:31:20Z",
+   "rows": [
+    {
+     "usagetype": "APN2-ActionsExecuted",
+     "operation": "",
+     "description": "$0.18 per million actions executed",
+     "unit": "ActionsExecuted",
+     "usd": "0.0000001800",
+     "begin": "0",
+     "end": "Inf"
+    },
+    {
+     "usagetype": "APN2-ConnectionMinutes",
+     "operation": "",
+     "description": "$0.096 per million minutes of connection",
+     "unit": "Minutes",
+     "usd": "0.0000000960",
+     "begin": "0",
+     "end": "Inf"
+    },
+    {
+     "usagetype": "APN2-Messages",
+     "operation": "",
+     "description": "$1.20 per million messages - first 1 billion messages/month",
+     "unit": "Messages",
+     "usd": "0.0000012000",
+     "begin": "0",
+     "end": "1000000000"
+    },
+    {
+     "usagetype": "APN2-Messages",
+     "operation": "",
+     "description": "$0.96 per million messages - next 4 billion messages/month",
+     "unit": "Messages",
+     "usd": "0.0000009600",
+     "begin": "1000000000",
+     "end": "5000000000"
+    },
+    {
+     "usagetype": "APN2-Messages",
+     "operation": "",
+     "description": "$0.84 per million messages - over 5 billion messages/month",
+     "unit": "Messages",
+     "usd": "0.0000008400",
+     "begin": "5000000000",
+     "end": "Inf"
+    },
+    {
+     "usagetype": "APN2-RegistryAndShadowOperations",
+     "operation": "",
+     "description": "$1.50 per million Device Shadow and Device Registry Operations",
+     "unit": "Operations",
+     "usd": "0.0000015000",
+     "begin": "0",
+     "end": "Inf"
+    },
+    {
+     "usagetype": "APN2-RulesTriggered",
+     "operation": "",
+     "description": "$0.18 per million rules triggered",
+     "unit": "RulesTriggered",
+     "usd": "0.0000001800",
+     "begin": "0",
+     "end": "Inf"
+    }
+   ]
+  },
+  "AmazonKinesisFirehose": {
+   "publicationDate": "2026-11-04T21:34:42Z",
+   "rows": [
+    {
+     "usagetype": "APN2-BilledBytes",
+     "operation": "PutRecord",
+     "description": "Tier 1 $0.036 per GB of data ingested",
+     "unit": "GB",
+     "usd": "0.0360000000",
+     "begin": "0",
+     "end": "512000"
+    },
+    {
+     "usagetype": "APN2-BilledBytes",
+     "operation": "PutRecord",
+     "description": "Tier 2 $0.031 per GB of data ingested",
+     "unit": "GB",
+     "usd": "0.0310000000",
+     "begin": "512000",
+     "end": "2048000"
+    },
+    {
+     "usagetype": "APN2-BilledBytes",
+     "operation": "PutRecord",
+     "description": "Tier 3 $0.025 per GB of data ingested",
+     "unit": "GB",
+     "usd": "0.0250000000",
+     "begin": "2048000",
+     "end": "Inf"
+    },
+    {
+     "usagetype": "APN2-BilledBytes",
+     "operation": "PutRecordBatch",
+     "description": "Tier 1 $0.036 per GB of data ingested",
+     "unit": "GB",
+     "usd": "0.0360000000",
+     "begin": "0",
+     "end": "512000"
+    },
+    {
+     "usagetype": "APN2-BilledBytes",
+     "operation": "PutRecordBatch",
+     "description": "Tier 2 $0.031 per GB of data ingested",
+     "unit": "GB",
+     "usd": "0.0310000000",
+     "begin": "512000",
+     "end": "2048000"
+    },
+    {
+     "usagetype": "APN2-BilledBytes",
+     "operation": "PutRecordBatch",
+     "description": "Tier 3 $0.025 per GB of data ingested",
+     "unit": "GB",
+     "usd": "0.0250000000",
+     "begin": "2048000",
+     "end": "Inf"
+    },
+    {
+     "usagetype": "APN2-DFCBilledBytes",
+     "operation": "DataFormatConversion",
+     "description": "$0.022 per GB of data format conversion",
+     "unit": "GB",
+     "usd": "0.0220000000",
+     "begin": "0",
+     "end": "Inf"
+    },
+    {
+     "usagetype": "APN2-DPBytesDelivered",
+     "operation": "DynamicPartitioning",
+     "description": "$0.027 per GB of data processed through dynamic partitioning",
+     "unit": "GB",
+     "usd": "0.0270000000",
+     "begin": "0",
+     "end": "Inf"
+    },
+    {
+     "usagetype": "APN2-DirectPUT-no-rounding-BilledBytes",
+     "operation": "PutRecord",
+     "description": "Per GB of data ingested or delivered",
+     "unit": "GB",
+     "usd": "0.0993000000",
+     "begin": "0",
+     "end": "Inf"
+    },
+    {
+     "usagetype": "APN2-DirectPUT-no-rounding-BilledBytes",
+     "operation": "PutRecordBatch",
+     "description": "Per GB of data",
+     "unit": "GB",
+     "usd": "0.0993000000",
+     "begin": "0",
+     "end": "Inf"
+    },
+    {
+     "usagetype": "APN2-MetadataProcessingDuration",
+     "operation": "DynamicPartitioning",
+     "description": "$0.092 per JQ processing hour",
+     "unit": "hours",
+     "usd": "0.0920000000",
+     "begin": "0",
+     "end": "Inf"
+    },
+    {
+     "usagetype": "APN2-S3DeliveryObjectCount",
+     "operation": "DynamicPartitioning",
+     "description": "$0.0066 per thousand dynamically partitioned objects",
+     "unit": "Objects",
+     "usd": "0.0000066000",
+     "begin": "0",
+     "end": "Inf"
+    }
+   ]
+  },
+  "AmazonAthena": {
+   "publicationDate": "2026-09-11T12:44:08Z",
+   "rows": [
+    {
+     "usagetype": "APN2-DataScannedInTB",
+     "operation": "",
+     "description": "5.00 USD per Terabytes for DataScannedInTB in Asia Pacific (Seoul)",
+     "unit": "Terabytes",
+     "usd": "5.0000000000",
+     "begin": "0",
+     "end": "Inf"
+    }
+   ]
+  },
+  "AWSGlue": {
+   "publicationDate": "2026-11-08T17:23:58Z",
+   "rows": [
+    {
+     "usagetype": "APN2-Catalog-Request",
+     "operation": "Request",
+     "description": "$1 per 1,000,000 requests for AWS Glue Data Catalog request",
+     "unit": "Request",
+     "usd": "0.0000010000",
+     "begin": "0",
+     "end": "Inf"
+    },
+    {
+     "usagetype": "APN2-Catalog-Storage",
+     "operation": "Storage",
+     "description": "$1 per 100,000 objects per month for AWS Glue Data Catalog storage",
+     "unit": "Obj-Month",
+     "usd": "0.0000100000",
+     "begin": "0",
+     "end": "Inf"
+    },
+    {
+     "usagetype": "APN2-Crawler-DPU-Hour",
+     "operation": "CrawlerRun",
+     "description": "$0.44 per Data Processing Unit-Hour for AWS Glue crawler",
+     "unit": "DPU-Hour",
+     "usd": "0.4400000000",
+     "begin": "0",
+     "end": "Inf"
+    },
+    {
+     "usagetype": "APN2-ETL-DPU-Hour",
+     "operation": "Jobrun",
+     "description": "$0.44 per Data Processing Unit-Hour for AWS Glue ETL job",
+     "unit": "DPU-Hour",
+     "usd": "0.4400000000",
+     "begin": "0",
+     "end": "Inf"
+    },
+    {
+     "usagetype": "APN2-ETL-DPU-Hour-Gen2",
+     "operation": "Jobrun",
+     "description": "$0.308 per Data Processing Unit-Hour for AWS Glue ETL Job Run Glue 6.0+",
+     "unit": "DPU-Hour",
+     "usd": "0.3080000000",
+     "begin": "0",
+     "end": "Inf"
+    },
+    {
+     "usagetype": "APN2-ETL-Flex-DPU-Hour",
+     "operation": "FlexJobrun",
+     "description": "$0.29 per Data Processing Unit-Hour for AWS Glue Flex ETL job",
+     "unit": "DPU-Hour",
+     "usd": "0.2900000000",
+     "begin": "0",
+     "end": "Inf"
+    }
+   ]
+  },
+  "AmazonS3": {
+   "publicationDate": "2026-11-09T15:43:10Z",
+   "rows": [
+    {
+     "usagetype": "APN2-Requests-Tier1",
+     "operation": "",
+     "description": "$0.0045 per 1,000 PUT, COPY, POST, or LIST requests",
+     "unit": "Requests",
+     "usd": "0.0000045000",
+     "begin": "0",
+     "end": "Inf"
+    },
+    {
+     "usagetype": "APN2-Requests-Tier2",
+     "operation": "",
+     "description": "$0.0035 per 10,000 GET and all other requests",
+     "unit": "Requests",
+     "usd": "0.0000003500",
+     "begin": "0",
+     "end": "Inf"
+    },
+    {
+     "usagetype": "APN2-TimedStorage-ByteHrs",
+     "operation": "",
+     "description": "$0.025 per GB - first 50 TB / month of storage used",
+     "unit": "GB-Mo",
+     "usd": "0.0250000000",
+     "begin": "0",
+     "end": "51200"
+    },
+    {
+     "usagetype": "APN2-TimedStorage-ByteHrs",
+     "operation": "",
+     "description": "$0.024 per GB - next 450 TB / month of storage used",
+     "unit": "GB-Mo",
+     "usd": "0.0240000000",
+     "begin": "51200",
+     "end": "512000"
+    },
+    {
+     "usagetype": "APN2-TimedStorage-ByteHrs",
+     "operation": "",
+     "description": "$0.023 per GB - storage used / month over 500 TB",
+     "unit": "GB-Mo",
+     "usd": "0.0230000000",
+     "begin": "512000",
+     "end": "Inf"
+    }
+   ]
+  },
+  "AmazonSageMaker": {
+   "publicationDate": "2026-11-13T02:54:43Z",
+   "rows": [
+    {
+     "usagetype": "APN2-Host:VolumeUsage.gp2",
+     "operation": "CreateVolume-Gp2",
+     "description": "$0.1596 per GB-Mo of Endpoint ML storage",
+     "unit": "GB-Mo",
+     "usd": "0.1596000000",
+     "begin": "0",
+     "end": "Inf"
+    },
+    {
+     "usagetype": "APN2-Host:ml.g4dn.xlarge",
+     "operation": "RunInstance",
+     "description": "$0.906 for Endpoint ml.g4dn.xlarge",
+     "unit": "Hrs",
+     "usd": "0.9060000000",
+     "begin": "0",
+     "end": "Inf"
+    },
+    {
+     "usagetype": "APN2-Host:ml.m5.large",
+     "operation": "RunInstance",
+     "description": "$0.142 per Hosting ml.m5.large hour in Asia Pacific (Seoul)",
+     "unit": "Hrs",
+     "usd": "0.1420000000",
+     "begin": "0",
+     "end": "Inf"
+    },
+    {
+     "usagetype": "APN2-Hst:Data-Bytes-In",
+     "operation": "Invoke-Endpoint",
+     "description": "$0.016 per GB for Endpoint Data IN",
+     "unit": "GB",
+     "usd": "0.0160000000",
+     "begin": "0",
+     "end": "Inf"
+    },
+    {
+     "usagetype": "APN2-Hst:Data-Bytes-Out",
+     "operation": "Invoke-Endpoint",
+     "description": "$0.016 per GB for Endpoint Data OUT",
+     "unit": "GB",
+     "usd": "0.0160000000",
+     "begin": "0",
+     "end": "Inf"
+    },
+    {
+     "usagetype": "APN2-Notebk:VolumeUsage.gp2",
+     "operation": "CreateVolume-Gp2",
+     "description": "$0.1596 per GB-Mo of Notebook Instance ML storage",
+     "unit": "GB-Mo",
+     "usd": "0.1596000000",
+     "begin": "0",
+     "end": "Inf"
+    },
+    {
+     "usagetype": "APN2-Notebk:ml.g4dn.xlarge",
+     "operation": "RunInstance",
+     "description": "$0.906 per Notebook ml.g4dn.xlarge hour in Asia Pacific (Seoul)",
+     "unit": "Hrs",
+     "usd": "0.9060000000",
+     "begin": "0",
+     "end": "Inf"
+    },
+    {
+     "usagetype": "APN2-Notebk:ml.t3.medium",
+     "operation": "RunInstance",
+     "description": "$0.062 per Notebook ml.t3.medium hour in Asia Pacific (Seoul)",
+     "unit": "Hrs",
+     "usd": "0.0620000000",
+     "begin": "0",
+     "end": "Inf"
+    },
+    {
+     "usagetype": "APN2-ServerlessInf:Mem-1GB",
+     "operation": "Serverless",
+     "description": "$0.00002 per sec for Serverless Inference Mem-1GB Asia Pacific (Seoul)",
+     "unit": "seconds",
+     "usd": "0.0000200000",
+     "begin": "0",
+     "end": "Inf"
+    },
+    {
+     "usagetype": "APN2-ServerlessInf:Mem-2GB",
+     "operation": "Serverless",
+     "description": "$0.00004 per sec for Serverless Inference Mem-2GB Asia Pacific (Seoul)",
+     "unit": "seconds",
+     "usd": "0.0000400000",
+     "begin": "0",
+     "end": "Inf"
+    },
+    {
+     "usagetype": "APN2-ServerlessInf:Mem-4GB",
+     "operation": "Serverless",
+     "description": "$0.00008 per sec for Serverless Inference Mem-4GB Asia Pacific (Seoul)",
+     "unit": "seconds",
+     "usd": "0.0000800000",
+     "begin": "0",
+     "end": "Inf"
+    },
+    {
+     "usagetype": "APN2-Train:VolumeUsage.gp2",
+     "operation": "CreateVolume-Gp2",
+     "description": "$0.1596 per GB-Mo of Training Job ML storage",
+     "unit": "GB-Mo",
+     "usd": "0.1596000000",
+     "begin": "0",
+     "end": "Inf"
+    },
+    {
+     "usagetype": "APN2-Train:ml.g4dn.xlarge",
+     "operation": "RunInstance",
+     "description": "$0.906 for Training job ml.g4dn.xlarge per hour in Asia Pacific (Seoul)",
+     "unit": "Hrs",
+     "usd": "0.9060000000",
+     "begin": "0",
+     "end": "Inf"
+    },
+    {
+     "usagetype": "APN2-Train:ml.g5.xlarge",
+     "operation": "RunInstance",
+     "description": "$1.54625 per Training ml.g5.xlarge hour in Asia Pacific (Seoul)",
+     "unit": "Hrs",
+     "usd": "1.5462500000",
+     "begin": "0",
+     "end": "Inf"
+    },
+    {
+     "usagetype": "APN2-Train:ml.m5.xlarge",
+     "operation": "RunInstance",
+     "description": "$0.283 per Training ml.m5.xlarge hour in Asia Pacific (Seoul)",
+     "unit": "Hrs",
+     "usd": "0.2830000000",
+     "begin": "0",
+     "end": "Inf"
+    }
+   ]
+  },
+  "AmazonBedrockFoundationModels": {
+   "publicationDate": "2026-11-09T22:43:12Z",
+   "rows": [
+    {
+     "model": "Claude Haiku 4.5",
+     "usagetype": "APN2-MP:APN2_CacheReadInputTokenCount_Global-Units",
+     "description": "AWS Marketplace software usage|ap-northeast-2|Million Cache Read Input Tokens Global",
+     "unit": "1M tokens",
+     "usd": "0.1000000000"
+    },
+    {
+     "model": "Claude Haiku 4.5",
+     "usagetype": "APN2-MP:APN2_CacheWrite1hInputTokenCount_Global-Units",
+     "description": "AWS Marketplace software usage|ap-northeast-2|Million 1 hour Cache Write Input Tokens Global",
+     "unit": "1M tokens",
+     "usd": "2.0000000000"
+    },
+    {
+     "model": "Claude Haiku 4.5",
+     "usagetype": "APN2-MP:APN2_CacheWriteInputTokenCount_Global-Units",
+     "description": "AWS Marketplace software usage|ap-northeast-2|Million Cache Write Input Tokens Global",
+     "unit": "1M tokens",
+     "usd": "1.2500000000"
+    },
+    {
+     "model": "Claude Haiku 4.5",
+     "usagetype": "APN2-MP:APN2_InputTokenCount_Global-Units",
+     "description": "AWS Marketplace software usage|ap-northeast-2|Million Input Tokens Global",
+     "unit": "1M tokens",
+     "usd": "1.0000000000"
+    },
+    {
+     "model": "Claude Haiku 4.5",
+     "usagetype": "APN2-MP:APN2_InputTokenCount_Global_Batch-Units",
+     "description": "AWS Marketplace software usage|ap-northeast-2|Million Batch Input Tokens Global",
+     "unit": "1M tokens",
+     "usd": "0.5000000000"
+    },
+    {
+     "model": "Claude Haiku 4.5",
+     "usagetype": "APN2-MP:APN2_OutputTokenCount_Global-Units",
+     "description": "AWS Marketplace software usage|ap-northeast-2|Million Response Tokens Global",
+     "unit": "1M tokens",
+     "usd": "5.0000000000"
+    },
+    {
+     "model": "Claude Haiku 4.5",
+     "usagetype": "APN2-MP:APN2_OutputTokenCount_Global_Batch-Units",
+     "description": "AWS Marketplace software usage|ap-northeast-2|Million Batch Response Tokens Global",
+     "unit": "1M tokens",
+     "usd": "2.5000000000"
+    },
+    {
+     "model": "Claude Haiku 5.5",
+     "usagetype": "APN2-MP:APN2_cache_read_tokens_global_standard-Units",
+     "description": "AWS Marketplace software usage|ap-northeast-2|Cache Read Tokens - Standard, Global",
+     "unit": "1M tokens",
+     "usd": "0.0100000000"
+    },
+    {
+     "model": "Claude Haiku 5.5",
+     "usagetype": "APN2-MP:APN2_cache_read_tokens_long_ctx_global_standard-Units",
+     "description": "AWS Marketplace software usage|ap-northeast-2|Cache Read Tokens - Standard, Long Context, Global",
+     "unit": "1M tokens",
+     "usd": "0.0500000000"
+    },
+    {
+     "model": "Claude Haiku 5.5",
+     "usagetype": "APN2-MP:APN2_cache_write_tokens_1h_global_standard-Units",
+     "description": "AWS Marketplace software usage|ap-northeast-2|Cache Write Tokens (1h TTL) - Standard, Global",
+     "unit": "1M tokens",
+     "usd": "0.2000000000"
+    },
+    {
+     "model": "Claude Haiku 5.5",
+     "usagetype": "APN2-MP:APN2_cache_write_tokens_1h_long_ctx_global_standard-Units",
+     "description": "AWS Marketplace software usage|ap-northeast-2|Cache Write Tokens (1h TTL) - Standard, Long Context, Global",
+     "unit": "1M tokens",
+     "usd": "1.0000000000"
+    },
+    {
+     "model": "Claude Haiku 5.5",
+     "usagetype": "APN2-MP:APN2_cache_write_tokens_global_standard-Units",
+     "description": "AWS Marketplace software usage|ap-northeast-2|Cache Write Tokens - Standard, Global",
+     "unit": "1M tokens",
+     "usd": "0.1250000000"
+    },
+    {
+     "model": "Claude Haiku 5.5",
+     "usagetype": "APN2-MP:APN2_cache_write_tokens_long_ctx_global_standard-Units",
+     "description": "AWS Marketplace software usage|ap-northeast-2|Cache Write Tokens - Standard, Long Context, Global",
+     "unit": "1M tokens",
+     "usd": "0.6250000000"
+    },
+    {
+     "model": "Claude Haiku 5.5",
+     "usagetype": "APN2-MP:APN2_input_tokens_global_standard-Units",
+     "description": "AWS Marketplace software usage|ap-northeast-2|Input Tokens - Standard, Global",
+     "unit": "1M tokens",
+     "usd": "0.1000000000"
+    },
+    {
+     "model": "Claude Haiku 5.5",
+     "usagetype": "APN2-MP:APN2_input_tokens_long_ctx_global_standard-Units",
+     "description": "AWS Marketplace software usage|ap-northeast-2|Input Tokens - Standard, Long Context, Global",
+     "unit": "1M tokens",
+     "usd": "0.5000000000"
+    },
+    {
+     "model": "Claude Haiku 5.5",
+     "usagetype": "APN2-MP:APN2_output_tokens_global_standard-Units",
+     "description": "AWS Marketplace software usage|ap-northeast-2|Output Tokens - Standard, Global",
+     "unit": "1M tokens",
+     "usd": "0.5000000000"
+    },
+    {
+     "model": "Claude Haiku 5.5",
+     "usagetype": "APN2-MP:APN2_output_tokens_long_ctx_global_standard-Units",
+     "description": "AWS Marketplace software usage|ap-northeast-2|Output Tokens - Standard, Long Context, Global",
+     "unit": "1M tokens",
+     "usd": "2.5000000000"
+    },
+    {
+     "model": "Claude Sonnet 4.5",
+     "usagetype": "APN2-MP:APN2_CacheReadInputTokenCount_Global-Units",
+     "description": "AWS Marketplace software usage|ap-northeast-2|Million Cache Read Input Tokens Global",
+     "unit": "1M tokens",
+     "usd": "0.3000000000"
+    },
+    {
+     "model": "Claude Sonnet 4.5",
+     "usagetype": "APN2-MP:APN2_CacheWrite1hInputTokenCount_Global-Units",
+     "description": "AWS Marketplace software usage|ap-northeast-2|Million 1 hour Cache Write Input Tokens Global",
+     "unit": "1M tokens",
+     "usd": "6.0000000000"
+    },
+    {
+     "model": "Claude Sonnet 4.5",
+     "usagetype": "APN2-MP:APN2_CacheWriteInputTokenCount_Global-Units",
+     "description": "AWS Marketplace software usage|ap-northeast-2|Million Cache Write Input Tokens Global",
+     "unit": "1M tokens",
+     "usd": "3.7500000000"
+    },
+    {
+     "model": "Claude Sonnet 4.5",
+     "usagetype": "APN2-MP:APN2_InputTokenCount_Global-Units",
+     "description": "AWS Marketplace software usage|ap-northeast-2|Million Input Tokens Global",
+     "unit": "1M tokens",
+     "usd": "3.0000000000"
+    },
+    {
+     "model": "Claude Sonnet 4.5",
+     "usagetype": "APN2-MP:APN2_InputTokenCount_Global_Batch-Units",
+     "description": "AWS Marketplace software usage|ap-northeast-2|Million Batch Input Tokens Global",
+     "unit": "1M tokens",
+     "usd": "1.5000000000"
+    },
+    {
+     "model": "Claude Sonnet 4.5",
+     "usagetype": "APN2-MP:APN2_OutputTokenCount_Global-Units",
+     "description": "AWS Marketplace software usage|ap-northeast-2|Million Response Tokens Global",
+     "unit": "1M tokens",
+     "usd": "15.0000000000"
+    },
+    {
+     "model": "Claude Sonnet 4.5",
+     "usagetype": "APN2-MP:APN2_OutputTokenCount_Global_Batch-Units",
+     "description": "AWS Marketplace software usage|ap-northeast-2|Million Batch Response Tokens Global",
+     "unit": "1M tokens",
+     "usd": "7.5000000000"
+    },
+    {
+     "model": "Claude Sonnet 5.5",
+     "usagetype": "APN2-MP:APN2_cache_read_tokens_global_standard-Units",
+     "description": "AWS Marketplace software usage|ap-northeast-2|Cache Read Tokens - Standard, Global",
+     "unit": "1M tokens",
+     "usd": "0.1000000000"
+    },
+    {
+     "model": "Claude Sonnet 5.5",
+     "usagetype": "APN2-MP:APN2_cache_write_tokens_1h_global_standard-Units",
+     "description": "AWS Marketplace software usage|ap-northeast-2|Cache Write Tokens (1h TTL) - Standard, Global",
+     "unit": "1M tokens",
+     "usd": "4.0000000000"
+    },
+    {
+     "model": "Claude Sonnet 5.5",
+     "usagetype": "APN2-MP:APN2_cache_write_tokens_global_standard-Units",
+     "description": "AWS Marketplace software usage|ap-northeast-2|Cache Write Tokens - Standard, Global",
+     "unit": "1M tokens",
+     "usd": "2.5000000000"
+    },
+    {
+     "model": "Claude Sonnet 5.5",
+     "usagetype": "APN2-MP:APN2_input_tokens_global_standard-Units",
+     "description": "AWS Marketplace software usage|ap-northeast-2|Input Tokens - Standard, Global",
+     "unit": "1M tokens",
+     "usd": "2.0000000000"
+    },
+    {
+     "model": "Claude Sonnet 5.5",
+     "usagetype": "APN2-MP:APN2_output_tokens_global_standard-Units",
+     "description": "AWS Marketplace software usage|ap-northeast-2|Output Tokens - Standard, Global",
+     "unit": "1M tokens",
+     "usd": "10.0000000000"
+    }
+   ]
+  },
+  "AmazonBedrock": {
+   "publicationDate": "2026-11-11T01:30:37Z",
+   "rows": [
+    {
+     "model": "Nova Lite",
+     "usagetype": "APN2-NovaLite-cache-read-input-token-count",
+     "description": "$0.00001775 per 1K tokens for APN2-NovaLite-cache-read-input-token-count in Asia Pacific (Seoul)",
+     "unit": "1K tokens",
+     "usd": "0.0000177500"
+    },
+    {
+     "model": "Nova Lite",
+     "usagetype": "APN2-NovaLite-input-tokens",
+     "description": "$0.000071 per 1K tokens for APN2-NovaLite-input-tokens in Asia Pacific (Seoul)",
+     "unit": "1K tokens",
+     "usd": "0.0000710000"
+    },
+    {
+     "model": "Nova Lite",
+     "usagetype": "APN2-NovaLite-input-tokens-batch",
+     "description": "$0.0000355 per 1K tokens for APN2-NovaLite-input-tokens-batch in Asia Pacific (Seoul)",
+     "unit": "1K tokens",
+     "usd": "0.0000355000"
+    },
+    {
+     "model": "Nova Lite",
+     "usagetype": "APN2-NovaLite-output-tokens",
+     "description": "$0.000284 per 1K tokens for APN2-NovaLite-output-tokens in Asia Pacific (Seoul)",
+     "unit": "1K tokens",
+     "usd": "0.0002840000"
+    },
+    {
+     "model": "Nova Lite",
+     "usagetype": "APN2-NovaLite-output-tokens-batch",
+     "description": "$0.000142 per 1K tokens for APN2-NovaLite-output-tokens-batch in Asia Pacific (Seoul)",
+     "unit": "1K tokens",
+     "usd": "0.0001420000"
+    },
+    {
+     "model": "Nova Micro",
+     "usagetype": "APN2-NovaMicro-cache-read-input-token-count",
+     "description": "$0.00001025 per 1K tokens for APN2-NovaMicro-cache-read-input-token-count in Asia Pacific (Seoul)",
+     "unit": "1K tokens",
+     "usd": "0.0000102500"
+    },
+    {
+     "model": "Nova Micro",
+     "usagetype": "APN2-NovaMicro-input-tokens",
+     "description": "$0.000041 per 1K tokens for APN2-NovaMicro-input-tokens in Asia Pacific (Seoul)",
+     "unit": "1K tokens",
+     "usd": "0.0000410000"
+    },
+    {
+     "model": "Nova Micro",
+     "usagetype": "APN2-NovaMicro-input-tokens-batch",
+     "description": "$0.0000205 per 1K tokens for APN2-NovaMicro-input-tokens-batch in Asia Pacific (Seoul)",
+     "unit": "1K tokens",
+     "usd": "0.0000205000"
+    },
+    {
+     "model": "Nova Micro",
+     "usagetype": "APN2-NovaMicro-output-tokens",
+     "description": "$0.000164 per 1K tokens for APN2-NovaMicro-output-tokens in Asia Pacific (Seoul)",
+     "unit": "1K tokens",
+     "usd": "0.0001640000"
+    },
+    {
+     "model": "Nova Micro",
+     "usagetype": "APN2-NovaMicro-output-tokens-batch",
+     "description": "$0.000082 per 1K tokens for APN2-NovaMicro-output-tokens-batch in Asia Pacific (Seoul)",
+     "unit": "1K tokens",
+     "usd": "0.0000820000"
+    }
+   ]
+  }
+ }
+}

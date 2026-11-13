@@ -1,0 +1,480 @@
+{
+ "rates": {
+  "nb_cpu": 0.062,
+  "nb_g4dn": 0.906,
+  "train_g4dn": 0.906,
+  "train_g5": 1.54625,
+  "nb_storage": 0.1596,
+  "train_storage": 0.1596,
+  "s3": 0.025
+ },
+ "month_hours": 720,
+ "work_hours": 176,
+ "assumptions": {
+  "artifact_gb_s3": 20,
+  "training_volume_gb": 50
+ },
+ "break_even_train_h_scheduled_gpu_notebook_vs_jobs": 164.0,
+ "hypotheses": {
+  "H1_always_on_ge_10x_training_jobs_at_16h": {
+   "result": true,
+   "ratio": 19.4,
+   "ratio_by_train_h": {
+    "4": 28.66,
+    "16": 19.4,
+    "40": 11.78,
+    "80": 7.12,
+    "160": 3.98
+   }
+  },
+  "H2_residual_after_stop_is_storage_only_and_positive": {
+   "result": true,
+   "residual_usd": {
+    "20": 3.692,
+    "50": 8.48
+   }
+  }
+ },
+ "rows": [
+  {
+   "scenario": "gpu_notebook_always_on",
+   "train_h": 4,
+   "gpu": "g4dn",
+   "notebook_gb": 20,
+   "compute_usd": 652.32,
+   "storage_usd": 3.692,
+   "total_usd": 656.012,
+   "residual_after_stop_usd": 3.692,
+   "gpu_busy_share_of_billed_gpu_hours": 0.0056
+  },
+  {
+   "scenario": "gpu_notebook_always_on",
+   "train_h": 4,
+   "gpu": "g4dn",
+   "notebook_gb": 50,
+   "compute_usd": 652.32,
+   "storage_usd": 8.48,
+   "total_usd": 660.8,
+   "residual_after_stop_usd": 8.48,
+   "gpu_busy_share_of_billed_gpu_hours": 0.0056
+  },
+  {
+   "scenario": "gpu_notebook_always_on",
+   "train_h": 16,
+   "gpu": "g4dn",
+   "notebook_gb": 20,
+   "compute_usd": 652.32,
+   "storage_usd": 3.692,
+   "total_usd": 656.012,
+   "residual_after_stop_usd": 3.692,
+   "gpu_busy_share_of_billed_gpu_hours": 0.0222
+  },
+  {
+   "scenario": "gpu_notebook_always_on",
+   "train_h": 16,
+   "gpu": "g4dn",
+   "notebook_gb": 50,
+   "compute_usd": 652.32,
+   "storage_usd": 8.48,
+   "total_usd": 660.8,
+   "residual_after_stop_usd": 8.48,
+   "gpu_busy_share_of_billed_gpu_hours": 0.0222
+  },
+  {
+   "scenario": "gpu_notebook_always_on",
+   "train_h": 40,
+   "gpu": "g4dn",
+   "notebook_gb": 20,
+   "compute_usd": 652.32,
+   "storage_usd": 3.692,
+   "total_usd": 656.012,
+   "residual_after_stop_usd": 3.692,
+   "gpu_busy_share_of_billed_gpu_hours": 0.0556
+  },
+  {
+   "scenario": "gpu_notebook_always_on",
+   "train_h": 40,
+   "gpu": "g4dn",
+   "notebook_gb": 50,
+   "compute_usd": 652.32,
+   "storage_usd": 8.48,
+   "total_usd": 660.8,
+   "residual_after_stop_usd": 8.48,
+   "gpu_busy_share_of_billed_gpu_hours": 0.0556
+  },
+  {
+   "scenario": "gpu_notebook_always_on",
+   "train_h": 80,
+   "gpu": "g4dn",
+   "notebook_gb": 20,
+   "compute_usd": 652.32,
+   "storage_usd": 3.692,
+   "total_usd": 656.012,
+   "residual_after_stop_usd": 3.692,
+   "gpu_busy_share_of_billed_gpu_hours": 0.1111
+  },
+  {
+   "scenario": "gpu_notebook_always_on",
+   "train_h": 80,
+   "gpu": "g4dn",
+   "notebook_gb": 50,
+   "compute_usd": 652.32,
+   "storage_usd": 8.48,
+   "total_usd": 660.8,
+   "residual_after_stop_usd": 8.48,
+   "gpu_busy_share_of_billed_gpu_hours": 0.1111
+  },
+  {
+   "scenario": "gpu_notebook_always_on",
+   "train_h": 160,
+   "gpu": "g4dn",
+   "notebook_gb": 20,
+   "compute_usd": 652.32,
+   "storage_usd": 3.692,
+   "total_usd": 656.012,
+   "residual_after_stop_usd": 3.692,
+   "gpu_busy_share_of_billed_gpu_hours": 0.2222
+  },
+  {
+   "scenario": "gpu_notebook_always_on",
+   "train_h": 160,
+   "gpu": "g4dn",
+   "notebook_gb": 50,
+   "compute_usd": 652.32,
+   "storage_usd": 8.48,
+   "total_usd": 660.8,
+   "residual_after_stop_usd": 8.48,
+   "gpu_busy_share_of_billed_gpu_hours": 0.2222
+  },
+  {
+   "scenario": "gpu_notebook_scheduled",
+   "train_h": 4,
+   "gpu": "g4dn",
+   "notebook_gb": 20,
+   "compute_usd": 159.456,
+   "storage_usd": 3.692,
+   "total_usd": 163.148,
+   "residual_after_stop_usd": 3.692,
+   "gpu_busy_share_of_billed_gpu_hours": 0.0227
+  },
+  {
+   "scenario": "gpu_notebook_scheduled",
+   "train_h": 4,
+   "gpu": "g4dn",
+   "notebook_gb": 50,
+   "compute_usd": 159.456,
+   "storage_usd": 8.48,
+   "total_usd": 167.936,
+   "residual_after_stop_usd": 8.48,
+   "gpu_busy_share_of_billed_gpu_hours": 0.0227
+  },
+  {
+   "scenario": "gpu_notebook_scheduled",
+   "train_h": 16,
+   "gpu": "g4dn",
+   "notebook_gb": 20,
+   "compute_usd": 159.456,
+   "storage_usd": 3.692,
+   "total_usd": 163.148,
+   "residual_after_stop_usd": 3.692,
+   "gpu_busy_share_of_billed_gpu_hours": 0.0909
+  },
+  {
+   "scenario": "gpu_notebook_scheduled",
+   "train_h": 16,
+   "gpu": "g4dn",
+   "notebook_gb": 50,
+   "compute_usd": 159.456,
+   "storage_usd": 8.48,
+   "total_usd": 167.936,
+   "residual_after_stop_usd": 8.48,
+   "gpu_busy_share_of_billed_gpu_hours": 0.0909
+  },
+  {
+   "scenario": "gpu_notebook_scheduled",
+   "train_h": 40,
+   "gpu": "g4dn",
+   "notebook_gb": 20,
+   "compute_usd": 159.456,
+   "storage_usd": 3.692,
+   "total_usd": 163.148,
+   "residual_after_stop_usd": 3.692,
+   "gpu_busy_share_of_billed_gpu_hours": 0.2273
+  },
+  {
+   "scenario": "gpu_notebook_scheduled",
+   "train_h": 40,
+   "gpu": "g4dn",
+   "notebook_gb": 50,
+   "compute_usd": 159.456,
+   "storage_usd": 8.48,
+   "total_usd": 167.936,
+   "residual_after_stop_usd": 8.48,
+   "gpu_busy_share_of_billed_gpu_hours": 0.2273
+  },
+  {
+   "scenario": "gpu_notebook_scheduled",
+   "train_h": 80,
+   "gpu": "g4dn",
+   "notebook_gb": 20,
+   "compute_usd": 159.456,
+   "storage_usd": 3.692,
+   "total_usd": 163.148,
+   "residual_after_stop_usd": 3.692,
+   "gpu_busy_share_of_billed_gpu_hours": 0.4545
+  },
+  {
+   "scenario": "gpu_notebook_scheduled",
+   "train_h": 80,
+   "gpu": "g4dn",
+   "notebook_gb": 50,
+   "compute_usd": 159.456,
+   "storage_usd": 8.48,
+   "total_usd": 167.936,
+   "residual_after_stop_usd": 8.48,
+   "gpu_busy_share_of_billed_gpu_hours": 0.4545
+  },
+  {
+   "scenario": "gpu_notebook_scheduled",
+   "train_h": 160,
+   "gpu": "g4dn",
+   "notebook_gb": 20,
+   "compute_usd": 159.456,
+   "storage_usd": 3.692,
+   "total_usd": 163.148,
+   "residual_after_stop_usd": 3.692,
+   "gpu_busy_share_of_billed_gpu_hours": 0.9091
+  },
+  {
+   "scenario": "gpu_notebook_scheduled",
+   "train_h": 160,
+   "gpu": "g4dn",
+   "notebook_gb": 50,
+   "compute_usd": 159.456,
+   "storage_usd": 8.48,
+   "total_usd": 167.936,
+   "residual_after_stop_usd": 8.48,
+   "gpu_busy_share_of_billed_gpu_hours": 0.9091
+  },
+  {
+   "scenario": "cpu_notebook_scheduled_plus_training_jobs",
+   "train_h": 4,
+   "gpu": "g4dn",
+   "notebook_gb": 20,
+   "compute_usd": 14.536,
+   "storage_usd": 3.7363,
+   "total_usd": 18.2723,
+   "residual_after_stop_usd": 3.692,
+   "gpu_busy_share_of_billed_gpu_hours": 1.0
+  },
+  {
+   "scenario": "cpu_notebook_scheduled_plus_training_jobs",
+   "train_h": 4,
+   "gpu": "g5",
+   "notebook_gb": 20,
+   "compute_usd": 17.097,
+   "storage_usd": 3.7363,
+   "total_usd": 20.8333,
+   "residual_after_stop_usd": 3.692,
+   "gpu_busy_share_of_billed_gpu_hours": 1.0
+  },
+  {
+   "scenario": "cpu_notebook_scheduled_plus_training_jobs",
+   "train_h": 4,
+   "gpu": "g4dn",
+   "notebook_gb": 50,
+   "compute_usd": 14.536,
+   "storage_usd": 8.5243,
+   "total_usd": 23.0603,
+   "residual_after_stop_usd": 8.48,
+   "gpu_busy_share_of_billed_gpu_hours": 1.0
+  },
+  {
+   "scenario": "cpu_notebook_scheduled_plus_training_jobs",
+   "train_h": 4,
+   "gpu": "g5",
+   "notebook_gb": 50,
+   "compute_usd": 17.097,
+   "storage_usd": 8.5243,
+   "total_usd": 25.6213,
+   "residual_after_stop_usd": 8.48,
+   "gpu_busy_share_of_billed_gpu_hours": 1.0
+  },
+  {
+   "scenario": "cpu_notebook_scheduled_plus_training_jobs",
+   "train_h": 16,
+   "gpu": "g4dn",
+   "notebook_gb": 20,
+   "compute_usd": 25.408,
+   "storage_usd": 3.8693,
+   "total_usd": 29.2773,
+   "residual_after_stop_usd": 3.692,
+   "gpu_busy_share_of_billed_gpu_hours": 1.0
+  },
+  {
+   "scenario": "cpu_notebook_scheduled_plus_training_jobs",
+   "train_h": 16,
+   "gpu": "g5",
+   "notebook_gb": 20,
+   "compute_usd": 35.652,
+   "storage_usd": 3.8693,
+   "total_usd": 39.5213,
+   "residual_after_stop_usd": 3.692,
+   "gpu_busy_share_of_billed_gpu_hours": 1.0
+  },
+  {
+   "scenario": "cpu_notebook_scheduled_plus_training_jobs",
+   "train_h": 16,
+   "gpu": "g4dn",
+   "notebook_gb": 50,
+   "compute_usd": 25.408,
+   "storage_usd": 8.6573,
+   "total_usd": 34.0653,
+   "residual_after_stop_usd": 8.48,
+   "gpu_busy_share_of_billed_gpu_hours": 1.0
+  },
+  {
+   "scenario": "cpu_notebook_scheduled_plus_training_jobs",
+   "train_h": 16,
+   "gpu": "g5",
+   "notebook_gb": 50,
+   "compute_usd": 35.652,
+   "storage_usd": 8.6573,
+   "total_usd": 44.3093,
+   "residual_after_stop_usd": 8.48,
+   "gpu_busy_share_of_billed_gpu_hours": 1.0
+  },
+  {
+   "scenario": "cpu_notebook_scheduled_plus_training_jobs",
+   "train_h": 40,
+   "gpu": "g4dn",
+   "notebook_gb": 20,
+   "compute_usd": 47.152,
+   "storage_usd": 4.1353,
+   "total_usd": 51.2873,
+   "residual_after_stop_usd": 3.692,
+   "gpu_busy_share_of_billed_gpu_hours": 1.0
+  },
+  {
+   "scenario": "cpu_notebook_scheduled_plus_training_jobs",
+   "train_h": 40,
+   "gpu": "g5",
+   "notebook_gb": 20,
+   "compute_usd": 72.762,
+   "storage_usd": 4.1353,
+   "total_usd": 76.8973,
+   "residual_after_stop_usd": 3.692,
+   "gpu_busy_share_of_billed_gpu_hours": 1.0
+  },
+  {
+   "scenario": "cpu_notebook_scheduled_plus_training_jobs",
+   "train_h": 40,
+   "gpu": "g4dn",
+   "notebook_gb": 50,
+   "compute_usd": 47.152,
+   "storage_usd": 8.9233,
+   "total_usd": 56.0753,
+   "residual_after_stop_usd": 8.48,
+   "gpu_busy_share_of_billed_gpu_hours": 1.0
+  },
+  {
+   "scenario": "cpu_notebook_scheduled_plus_training_jobs",
+   "train_h": 40,
+   "gpu": "g5",
+   "notebook_gb": 50,
+   "compute_usd": 72.762,
+   "storage_usd": 8.9233,
+   "total_usd": 81.6853,
+   "residual_after_stop_usd": 8.48,
+   "gpu_busy_share_of_billed_gpu_hours": 1.0
+  },
+  {
+   "scenario": "cpu_notebook_scheduled_plus_training_jobs",
+   "train_h": 80,
+   "gpu": "g4dn",
+   "notebook_gb": 20,
+   "compute_usd": 83.392,
+   "storage_usd": 4.5787,
+   "total_usd": 87.9707,
+   "residual_after_stop_usd": 3.692,
+   "gpu_busy_share_of_billed_gpu_hours": 1.0
+  },
+  {
+   "scenario": "cpu_notebook_scheduled_plus_training_jobs",
+   "train_h": 80,
+   "gpu": "g5",
+   "notebook_gb": 20,
+   "compute_usd": 134.612,
+   "storage_usd": 4.5787,
+   "total_usd": 139.1907,
+   "residual_after_stop_usd": 3.692,
+   "gpu_busy_share_of_billed_gpu_hours": 1.0
+  },
+  {
+   "scenario": "cpu_notebook_scheduled_plus_training_jobs",
+   "train_h": 80,
+   "gpu": "g4dn",
+   "notebook_gb": 50,
+   "compute_usd": 83.392,
+   "storage_usd": 9.3667,
+   "total_usd": 92.7587,
+   "residual_after_stop_usd": 8.48,
+   "gpu_busy_share_of_billed_gpu_hours": 1.0
+  },
+  {
+   "scenario": "cpu_notebook_scheduled_plus_training_jobs",
+   "train_h": 80,
+   "gpu": "g5",
+   "notebook_gb": 50,
+   "compute_usd": 134.612,
+   "storage_usd": 9.3667,
+   "total_usd": 143.9787,
+   "residual_after_stop_usd": 8.48,
+   "gpu_busy_share_of_billed_gpu_hours": 1.0
+  },
+  {
+   "scenario": "cpu_notebook_scheduled_plus_training_jobs",
+   "train_h": 160,
+   "gpu": "g4dn",
+   "notebook_gb": 20,
+   "compute_usd": 155.872,
+   "storage_usd": 5.4653,
+   "total_usd": 161.3373,
+   "residual_after_stop_usd": 3.692,
+   "gpu_busy_share_of_billed_gpu_hours": 1.0
+  },
+  {
+   "scenario": "cpu_notebook_scheduled_plus_training_jobs",
+   "train_h": 160,
+   "gpu": "g5",
+   "notebook_gb": 20,
+   "compute_usd": 258.312,
+   "storage_usd": 5.4653,
+   "total_usd": 263.7773,
+   "residual_after_stop_usd": 3.692,
+   "gpu_busy_share_of_billed_gpu_hours": 1.0
+  },
+  {
+   "scenario": "cpu_notebook_scheduled_plus_training_jobs",
+   "train_h": 160,
+   "gpu": "g4dn",
+   "notebook_gb": 50,
+   "compute_usd": 155.872,
+   "storage_usd": 10.2533,
+   "total_usd": 166.1253,
+   "residual_after_stop_usd": 8.48,
+   "gpu_busy_share_of_billed_gpu_hours": 1.0
+  },
+  {
+   "scenario": "cpu_notebook_scheduled_plus_training_jobs",
+   "train_h": 160,
+   "gpu": "g5",
+   "notebook_gb": 50,
+   "compute_usd": 258.312,
+   "storage_usd": 10.2533,
+   "total_usd": 268.5653,
+   "residual_after_stop_usd": 8.48,
+   "gpu_busy_share_of_billed_gpu_hours": 1.0
+  }
+ ]
+}

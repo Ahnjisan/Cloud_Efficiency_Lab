@@ -13,6 +13,20 @@
 
 Docker는 구조, multi-stage 빌드, CPU·메모리 제한을 확인했다. Kubernetes는 구성요소, 자원 요청·제한, 오토스케일링 역할을 확인했다. 배포 시에는 사용하는 버전의 문서와 기능 상태를 적용한다.
 
+## 데이터 파이프라인·생성형 AI·ML 학습 (2026-11-13 확인)
+
+서울 리전(ap-northeast-2) 요율은 [AWS Price List Bulk API](https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/index.json)의 리전별 오퍼 파일에서 확인했다. 사용한 요율만 추린 사본은 [aws-price-list-apn2-2026-11-13.json](aws-price-list-apn2-2026-11-13.json)에 오퍼별 게시일과 함께 저장했다. 무료 제공량·할인·세금은 포함하지 않는다.
+
+| AWS 원문 | 확인 범위 |
+|---|---|
+| [AWS IoT Core pricing](https://aws.amazon.com/iot-core/pricing/) · [Basic Ingest](https://docs.aws.amazon.com/iot/latest/developerguide/iot-basic-ingest.html) | 5 KB 메시지 계량, 1분 연결 계량, 규칙·액션 계량, 메시지 요금 없는 예약 토픽 |
+| [Amazon Data Firehose pricing](https://aws.amazon.com/firehose/pricing/) · [BufferingHints](https://docs.aws.amazon.com/firehose/latest/APIReference/API_BufferingHints.html) · [Record format conversion](https://docs.aws.amazon.com/firehose/latest/dev/record-format-conversion.html) | 레코드당 5 KB 올림, 형식 변환·동적 파티셔닝, 버퍼 범위·기본값 |
+| [Amazon Athena pricing](https://aws.amazon.com/athena/pricing/) · [Columnar storage](https://docs.aws.amazon.com/athena/latest/ug/columnar-storage.html) · [Partitions](https://docs.aws.amazon.com/athena/latest/ug/partitions.html) | TB당 스캔 과금, 열 기반 형식·술어 푸시다운, 파티션 |
+| [AWS Glue pricing](https://aws.amazon.com/glue/pricing/) · [Spark job properties](https://docs.aws.amazon.com/glue/latest/dg/add-job.html) | DPU-시간 초 단위 과금, Data Catalog 무료 제공량, Athena 10 MB 최소 문장, 워커 DPU |
+| [Amazon Bedrock pricing](https://aws.amazon.com/bedrock/pricing/) · [Prompt caching](https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-caching.html) · [Cross-Region inference](https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html) · [How Agents works](https://docs.aws.amazon.com/bedrock/latest/userguide/agents-how.html) | 토큰·캐시 과금, 캐시 최소 토큰·TTL, Global·Geographic 처리 위치, 에이전트 오케스트레이션 |
+| [Amazon SageMaker AI pricing](https://aws.amazon.com/sagemaker/ai/pricing/) | 노트북·학습·엔드포인트·서버리스·배치 변환 과금 방식 |
+| [AWS Cost Anomaly Detection](https://docs.aws.amazon.com/cost-management/latest/userguide/manage-ad.html) | 실행 빈도, 데이터 지연, 신규 서비스 이력 요건 |
+
 ## 이해도 확인
 
 같은 이름의 비용 지표라도 가격표와 비용 내보내기의 시간 단위가 다르면 어떻게 대조하는가?

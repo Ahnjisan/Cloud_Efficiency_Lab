@@ -76,7 +76,7 @@ Linux 공식 문서의 프로세스·메모리·자원 제어 설명, 네트워�
 
 ## 과정 02. AWS Infrastructure & Pricing
 
-학습 자료 — [기존 AWS 자료](aws/README.md) · [EC2 Rightsizing·Auto Scaling](aws/ec2/rightsizing-and-autoscaling.md) · [ELB](aws/elb/README.md) · [CloudWatch](aws/cloudwatch/README.md) · [ECR](aws/ecr/README.md) · [ECS·Fargate](aws/ecs-fargate/README.md) · [DynamoDB](aws/dynamodb/README.md) · [Aurora](aws/aurora/README.md) · [EKS](aws/eks/README.md) · [AWS 비용 데이터](aws/cost-data/README.md)
+학습 자료 — [기존 AWS 자료](aws/README.md) · [EC2 Rightsizing·Auto Scaling](aws/ec2/rightsizing-and-autoscaling.md) · [ELB](aws/elb/README.md) · [CloudWatch](aws/cloudwatch/README.md) · [ECR](aws/ecr/README.md) · [ECS·Fargate](aws/ecs-fargate/README.md) · [DynamoDB](aws/dynamodb/README.md) · [Aurora](aws/aurora/README.md) · [EKS](aws/eks/README.md) · [AWS 비용 데이터](aws/cost-data/README.md) · [IoT Core](aws/iot-core/README.md) · [Firehose](aws/kinesis-firehose/README.md) · [Athena·Glue](aws/athena-glue/README.md) · [Bedrock](aws/bedrock/README.md) · [SageMaker](aws/sagemaker/README.md)
 
 ### 목적과 필요성
 
@@ -93,6 +93,7 @@ AWS 서비스별 자원 구조와 과금 방식을 이해하고 비용 발생 �
 | Lambda | Invocation·Duration·Memory·Concurrency, 비용·실행시간 관계, Memory Tuning, 이벤트·요청 패턴 |
 | 네트워크 | VPC, NAT Gateway, VPC Endpoint, Load Balancer, AZ·리전 간 전송, Internet Egress, 서비스 간 호출 비용 |
 | 필요에 따른 확장 | ECS·Fargate·ECR·CloudWatch·DynamoDB·EKS의 자원 구성과 비용; 핵심 서비스 이후 질문에 따라 선택 |
+| 데이터 파이프라인·AI | IoT Core 메시지 계량, Firehose 수집 올림·버퍼, Athena 스캔량·Glue DPU, Bedrock 토큰·캐싱, SageMaker 학습·추론의 유휴 비용 |
 
 ### 핵심 질문
 
