@@ -13,7 +13,7 @@
      "month_first_day": true,
      "month_last_day": false,
      "estimated": false,
-     "observed_to_median": 1.0,
+     "observed_to_median": 1.11,
      "median_is_zero": false,
      "consecutive_alert_days": 1
     },
@@ -22,7 +22,7 @@
      "month_first_day": false,
      "month_last_day": false,
      "estimated": false,
-     "observed_to_median": 1.0,
+     "observed_to_median": 1.11,
      "median_is_zero": false,
      "consecutive_alert_days": 2
     },
@@ -31,7 +31,7 @@
      "month_first_day": false,
      "month_last_day": false,
      "estimated": false,
-     "observed_to_median": 1.0,
+     "observed_to_median": 1.11,
      "median_is_zero": false,
      "consecutive_alert_days": 3
     },
@@ -40,7 +40,7 @@
      "month_first_day": false,
      "month_last_day": false,
      "estimated": false,
-     "observed_to_median": 1.0,
+     "observed_to_median": 1.11,
      "median_is_zero": false,
      "consecutive_alert_days": 4
     },
@@ -49,7 +49,7 @@
      "month_first_day": false,
      "month_last_day": false,
      "estimated": false,
-     "observed_to_median": 1.0,
+     "observed_to_median": 1.11,
      "median_is_zero": false,
      "consecutive_alert_days": 5
     },
@@ -58,7 +58,7 @@
      "month_first_day": false,
      "month_last_day": false,
      "estimated": false,
-     "observed_to_median": 1.0,
+     "observed_to_median": 1.11,
      "median_is_zero": false,
      "consecutive_alert_days": 6
     },
@@ -67,7 +67,7 @@
      "month_first_day": false,
      "month_last_day": false,
      "estimated": false,
-     "observed_to_median": 1.0,
+     "observed_to_median": 1.11,
      "median_is_zero": false,
      "consecutive_alert_days": 7
     },
@@ -76,7 +76,7 @@
      "month_first_day": false,
      "month_last_day": false,
      "estimated": false,
-     "observed_to_median": 1.0,
+     "observed_to_median": 1.11,
      "median_is_zero": false,
      "consecutive_alert_days": 8
     },
@@ -85,7 +85,7 @@
      "month_first_day": false,
      "month_last_day": false,
      "estimated": false,
-     "observed_to_median": 1.0,
+     "observed_to_median": 1.11,
      "median_is_zero": false,
      "consecutive_alert_days": 9
     },
@@ -94,7 +94,7 @@
      "month_first_day": false,
      "month_last_day": false,
      "estimated": false,
-     "observed_to_median": 1.0,
+     "observed_to_median": 1.11,
      "median_is_zero": false,
      "consecutive_alert_days": 10
     },
@@ -103,7 +103,7 @@
      "month_first_day": false,
      "month_last_day": false,
      "estimated": false,
-     "observed_to_median": 1.0,
+     "observed_to_median": 1.11,
      "median_is_zero": false,
      "consecutive_alert_days": 11
     },
@@ -112,7 +112,7 @@
      "month_first_day": false,
      "month_last_day": false,
      "estimated": false,
-     "observed_to_median": 1.0,
+     "observed_to_median": 1.11,
      "median_is_zero": false,
      "consecutive_alert_days": 12
     },
@@ -121,7 +121,7 @@
      "month_first_day": false,
      "month_last_day": false,
      "estimated": false,
-     "observed_to_median": 1.0,
+     "observed_to_median": 1.11,
      "median_is_zero": false,
      "consecutive_alert_days": 13
     },
@@ -130,7 +130,7 @@
      "month_first_day": false,
      "month_last_day": false,
      "estimated": false,
-     "observed_to_median": 1.0,
+     "observed_to_median": 1.11,
      "median_is_zero": false,
      "consecutive_alert_days": 14
     }
@@ -279,7 +279,7 @@
      "month_first_day": true,
      "month_last_day": false,
      "estimated": false,
-     "observed_to_median": 5.0,
+     "observed_to_median": 4.13,
      "median_is_zero": false,
      "consecutive_alert_days": 1
     },
@@ -288,7 +288,7 @@
      "month_first_day": true,
      "month_last_day": false,
      "estimated": false,
-     "observed_to_median": 5.0,
+     "observed_to_median": 3.98,
      "median_is_zero": false,
      "consecutive_alert_days": 1
     },
@@ -297,7 +297,7 @@
      "month_first_day": true,
      "month_last_day": false,
      "estimated": false,
-     "observed_to_median": 5.0,
+     "observed_to_median": 4.1,
      "median_is_zero": false,
      "consecutive_alert_days": 1
     },
@@ -306,7 +306,7 @@
      "month_first_day": true,
      "month_last_day": false,
      "estimated": false,
-     "observed_to_median": 5.0,
+     "observed_to_median": 4.21,
      "median_is_zero": false,
      "consecutive_alert_days": 1
     },
@@ -315,7 +315,7 @@
      "month_first_day": false,
      "month_last_day": false,
      "estimated": false,
-     "observed_to_median": 1.0,
+     "observed_to_median": 1.11,
      "median_is_zero": false,
      "consecutive_alert_days": 2
     },
@@ -324,7 +324,7 @@
      "month_first_day": false,
      "month_last_day": false,
      "estimated": false,
-     "observed_to_median": 1.0,
+     "observed_to_median": 1.11,
      "median_is_zero": false,
      "consecutive_alert_days": 3
     },
@@ -333,7 +333,7 @@
      "month_first_day": false,
      "month_last_day": false,
      "estimated": false,
-     "observed_to_median": 1.0,
+     "observed_to_median": 1.11,
      "median_is_zero": false,
      "consecutive_alert_days": 4
     },
@@ -342,7 +342,7 @@
      "month_first_day": false,
      "month_last_day": false,
      "estimated": false,
-     "observed_to_median": 1.0,
+     "observed_to_median": 1.11,
      "median_is_zero": false,
      "consecutive_alert_days": 5
     },
@@ -351,7 +351,7 @@
      "month_first_day": false,
      "month_last_day": false,
      "estimated": false,
-     "observed_to_median": 1.0,
+     "observed_to_median": 1.11,
      "median_is_zero": false,
      "consecutive_alert_days": 6
     },
@@ -360,7 +360,7 @@
      "month_first_day": false,
      "month_last_day": false,
      "estimated": false,
-     "observed_to_median": 1.0,
+     "observed_to_median": 1.11,
      "median_is_zero": false,
      "consecutive_alert_days": 7
     },
@@ -369,7 +369,7 @@
      "month_first_day": false,
      "month_last_day": false,
      "estimated": false,
-     "observed_to_median": 1.0,
+     "observed_to_median": 1.11,
      "median_is_zero": false,
      "consecutive_alert_days": 8
     },
@@ -378,7 +378,7 @@
      "month_first_day": false,
      "month_last_day": false,
      "estimated": false,
-     "observed_to_median": 1.0,
+     "observed_to_median": 1.11,
      "median_is_zero": false,
      "consecutive_alert_days": 9
     },
@@ -387,7 +387,7 @@
      "month_first_day": false,
      "month_last_day": false,
      "estimated": false,
-     "observed_to_median": 1.0,
+     "observed_to_median": 1.11,
      "median_is_zero": false,
      "consecutive_alert_days": 10
     },
@@ -396,7 +396,7 @@
      "month_first_day": false,
      "month_last_day": false,
      "estimated": false,
-     "observed_to_median": 1.0,
+     "observed_to_median": 1.11,
      "median_is_zero": false,
      "consecutive_alert_days": 11
     },
@@ -405,7 +405,7 @@
      "month_first_day": false,
      "month_last_day": false,
      "estimated": false,
-     "observed_to_median": 1.0,
+     "observed_to_median": 1.11,
      "median_is_zero": false,
      "consecutive_alert_days": 12
     },
@@ -414,7 +414,7 @@
      "month_first_day": false,
      "month_last_day": false,
      "estimated": false,
-     "observed_to_median": 1.0,
+     "observed_to_median": 1.11,
      "median_is_zero": false,
      "consecutive_alert_days": 13
     },
@@ -423,7 +423,7 @@
      "month_first_day": false,
      "month_last_day": false,
      "estimated": false,
-     "observed_to_median": 1.0,
+     "observed_to_median": 1.11,
      "median_is_zero": false,
      "consecutive_alert_days": 14
     },
@@ -432,7 +432,7 @@
      "month_first_day": true,
      "month_last_day": false,
      "estimated": false,
-     "observed_to_median": 5.0,
+     "observed_to_median": 3.7,
      "median_is_zero": false,
      "consecutive_alert_days": 1
     },
@@ -441,7 +441,7 @@
      "month_first_day": true,
      "month_last_day": false,
      "estimated": false,
-     "observed_to_median": 5.0,
+     "observed_to_median": 4.13,
      "median_is_zero": false,
      "consecutive_alert_days": 1
     },
@@ -450,7 +450,7 @@
      "month_first_day": true,
      "month_last_day": false,
      "estimated": false,
-     "observed_to_median": 5.0,
+     "observed_to_median": 3.98,
      "median_is_zero": false,
      "consecutive_alert_days": 1
     },
@@ -459,7 +459,7 @@
      "month_first_day": true,
      "month_last_day": false,
      "estimated": false,
-     "observed_to_median": 5.0,
+     "observed_to_median": 4.13,
      "median_is_zero": false,
      "consecutive_alert_days": 1
     },
@@ -468,7 +468,7 @@
      "month_first_day": true,
      "month_last_day": false,
      "estimated": false,
-     "observed_to_median": 5.0,
+     "observed_to_median": 3.98,
      "median_is_zero": false,
      "consecutive_alert_days": 1
     },
@@ -477,7 +477,7 @@
      "month_first_day": true,
      "month_last_day": false,
      "estimated": false,
-     "observed_to_median": 5.0,
+     "observed_to_median": 4.1,
      "median_is_zero": false,
      "consecutive_alert_days": 1
     },
@@ -486,7 +486,7 @@
      "month_first_day": true,
      "month_last_day": false,
      "estimated": false,
-     "observed_to_median": 5.0,
+     "observed_to_median": 4.13,
      "median_is_zero": false,
      "consecutive_alert_days": 1
     },
@@ -495,7 +495,7 @@
      "month_first_day": true,
      "month_last_day": false,
      "estimated": false,
-     "observed_to_median": 5.0,
+     "observed_to_median": 3.98,
      "median_is_zero": false,
      "consecutive_alert_days": 1
     },
@@ -504,7 +504,7 @@
      "month_first_day": true,
      "month_last_day": false,
      "estimated": true,
-     "observed_to_median": 3.0,
+     "observed_to_median": 2.58,
      "median_is_zero": false,
      "consecutive_alert_days": 1
     }

@@ -85,6 +85,13 @@ py -3 -B infrafit/test_ops_rules.py -v
 `daily_costs`가 있을 때만 보고서에 `investigation_queue`와 `investigation_holds`가 생긴다. 판정(후보·유지·보류)과 섞지 않는다.
 
 - **기본 규칙**: 28일 중앙값 + 3 × 1.4826 × MAD이고, 중앙값보다 10% 이상 높을 때 대기열에 넣는다(021의 R2). 경보일은 기준선에 그대로 남긴다.
+- **실제 데이터로 보완한 점** ([023](../experiments/023-real-cost-spike-check/README.md)·[024](../experiments/024-cost-spike-rule-fixes/README.md)):
+  - 세금(`Tax`)은 판정하지 않습니다(`cost.excluded_services`).
+  - 중앙값보다 최소 0.50 USD/일 높아야 합니다(`cost.min_abs_increase_usd`, 임시값).
+  - 짧은 달에는 월 고정 요금이 하루 단위로 커지는 만큼 하한을 넓힙니다(`cost.calendar_allowance`).
+  - 이 세 가지로 실제 계정의 오탐이 27건에서 0건으로 줄었고, 합성 급증 탐지 성능은 그대로였습니다.
+  - 대기열 금액은 소수 넷째 자리까지 표시합니다.
+  - +10~30% 수준의 작은 급증은 21.5%만 잡습니다. 이 규칙은 큰 급증용입니다.
 - **잠정 표시**: `Estimated=true`인 날의 항목은 `estimated: true`, 텍스트에서는 "(잠정)"으로 표시한다.
 - **보류**: 이력이 28일 이하이거나, 날짜가 빠지거나 겹치면 그 서비스를 `investigation_holds`로 보낸다.
 - **경보일 제외 설정**:

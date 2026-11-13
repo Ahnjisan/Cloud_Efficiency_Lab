@@ -4,10 +4,11 @@ import json
 import unittest
 from pathlib import Path
 
-from check import build_series, summarize
+from check import build_series, pre_024, summarize
 
 ROOT = Path(__file__).resolve().parents[2]
-THRESHOLDS = json.loads((ROOT / "infrafit" / "thresholds.json").read_text(encoding="utf-8"))
+CURRENT = json.loads((ROOT / "infrafit" / "thresholds.json").read_text(encoding="utf-8"))
+THRESHOLDS = pre_024(CURRENT)  # the rule 023 evaluated
 
 
 def page(start, days, fee_per_month=None, tax_on_first=None):
@@ -53,6 +54,14 @@ class CheckTest(unittest.TestCase):
         self.assertNotIn("2026-", text)
         self.assertNotIn("0.04", text)
         self.assertNotIn("_usd", text)
+
+
+class CurrentRuleTest(unittest.TestCase):
+    def test_024_defaults_remove_both_false_alarm_patterns(self):
+        series, est = build_series([page(date(2025, 10, 1), 200, fee_per_month=0.40, tax_on_first=0.04)])
+        out = summarize(series, est, CURRENT)["series"]
+        self.assertEqual(out["Fixed Fee Service"]["alerts"], 0)
+        self.assertEqual(out["Tax"]["hold"], "cost-service-excluded")
 
 
 if __name__ == "__main__":

@@ -19,6 +19,15 @@ sys.path.insert(0, str(ROOT / "infrafit"))
 from ops_rules import cost_series  # noqa: E402
 
 METRIC = "NetUnblendedCost"
+PRE_024_OFF = {"excluded_services": [], "min_abs_increase_usd": 0.0, "calendar_allowance": False}
+
+
+def pre_024(thresholds):
+    """Return thresholds with the experiment-024 fixes switched off (the rule 023 evaluated)."""
+    t = json.loads(json.dumps(thresholds))
+    for key, val in PRE_024_OFF.items():
+        t["cost"][key] = {"value": val, "evidence": "임시값", "source": "pinned to the pre-024 rule"}
+    return t
 
 
 def build_series(pages):
@@ -77,9 +86,13 @@ def main(argv=None):
     parser = argparse.ArgumentParser()
     parser.add_argument("pages", nargs="+", type=Path, help="GetCostAndUsage JSON files (outside the repository)")
     parser.add_argument("--thresholds", type=Path, default=ROOT / "infrafit" / "thresholds.json")
+    parser.add_argument("--current-rule", action="store_true",
+                        help="use the current defaults instead of the pre-024 rule that produced result.json")
     args = parser.parse_args(argv)
     pages = [json.loads(p.read_text(encoding="utf-8")) for p in args.pages]
     thresholds = json.loads(args.thresholds.read_text(encoding="utf-8"))
+    if not args.current_rule:
+        thresholds = pre_024(thresholds)
     series, estimated = build_series(pages)
     print(json.dumps(summarize(series, estimated, thresholds), indent=1, ensure_ascii=False))
     return 0

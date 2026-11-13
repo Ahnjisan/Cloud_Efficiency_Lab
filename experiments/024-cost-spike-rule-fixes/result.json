@@ -1,0 +1,274 @@
+{
+ "design": {
+  "variants": {
+   "V0": {},
+   "V1": {
+    "excluded_services": [
+     "Tax"
+    ]
+   },
+   "V2": {
+    "min_abs_increase_usd": 0.5
+   },
+   "V3": {
+    "calendar_allowance": true
+   },
+   "V4": {
+    "excluded_services": [
+     "Tax"
+    ],
+    "min_abs_increase_usd": 0.5,
+    "calendar_allowance": true
+   }
+  },
+  "big_spike_seeds": [
+   101,
+   120
+  ],
+  "small_spike_seeds": [
+   201,
+   220
+  ],
+  "small_spike_range": [
+   0.1,
+   0.3
+  ],
+  "synthetic_start_date": "2025-01-01"
+ },
+ "synthetic_big": {
+  "V0": {
+   "spike_recall": 0.9778,
+   "spike_events": 90,
+   "growth_recall": 0.4412,
+   "fp_per_30_normal_days": 0.04,
+   "mean_delay_days": 0.045
+  },
+  "V1": {
+   "spike_recall": 0.9778,
+   "spike_events": 90,
+   "growth_recall": 0.4412,
+   "fp_per_30_normal_days": 0.04,
+   "mean_delay_days": 0.045
+  },
+  "V2": {
+   "spike_recall": 0.9778,
+   "spike_events": 90,
+   "growth_recall": 0.4412,
+   "fp_per_30_normal_days": 0.04,
+   "mean_delay_days": 0.045
+  },
+  "V3": {
+   "spike_recall": 0.9778,
+   "spike_events": 90,
+   "growth_recall": 0.4412,
+   "fp_per_30_normal_days": 0.04,
+   "mean_delay_days": 0.045
+  },
+  "V4": {
+   "spike_recall": 0.9778,
+   "spike_events": 90,
+   "growth_recall": 0.4412,
+   "fp_per_30_normal_days": 0.04,
+   "mean_delay_days": 0.045
+  }
+ },
+ "synthetic_small": {
+  "V0": {
+   "spike_recall": 0.2151,
+   "spike_events": 93,
+   "growth_recall": 0.4444,
+   "fp_per_30_normal_days": 0.0384,
+   "mean_delay_days": 0.45
+  },
+  "V1": {
+   "spike_recall": 0.2151,
+   "spike_events": 93,
+   "growth_recall": 0.4444,
+   "fp_per_30_normal_days": 0.0384,
+   "mean_delay_days": 0.45
+  },
+  "V2": {
+   "spike_recall": 0.2151,
+   "spike_events": 93,
+   "growth_recall": 0.4444,
+   "fp_per_30_normal_days": 0.0384,
+   "mean_delay_days": 0.45
+  },
+  "V3": {
+   "spike_recall": 0.2151,
+   "spike_events": 93,
+   "growth_recall": 0.4444,
+   "fp_per_30_normal_days": 0.0384,
+   "mean_delay_days": 0.45
+  },
+  "V4": {
+   "spike_recall": 0.2151,
+   "spike_events": 93,
+   "growth_recall": 0.4444,
+   "fp_per_30_normal_days": 0.0384,
+   "mean_delay_days": 0.45
+  }
+ },
+ "real": {
+  "V0": {
+   "per_service_alerts": 27,
+   "total_series_alerts": 26,
+   "series": {
+    "AWS Secrets Manager": {
+     "alerts": 14,
+     "hold": null,
+     "alerts_starting_on_month_first_day": 1
+    },
+    "Amazon Simple Storage Service": {
+     "alerts": 0,
+     "hold": null,
+     "alerts_starting_on_month_first_day": 0
+    },
+    "Tax": {
+     "alerts": 13,
+     "hold": null,
+     "alerts_starting_on_month_first_day": 13
+    },
+    "(total)": {
+     "alerts": 26,
+     "hold": null,
+     "alerts_starting_on_month_first_day": 13
+    }
+   }
+  },
+  "V1": {
+   "per_service_alerts": 14,
+   "total_series_alerts": 14,
+   "series": {
+    "AWS Secrets Manager": {
+     "alerts": 14,
+     "hold": null,
+     "alerts_starting_on_month_first_day": 1
+    },
+    "Amazon Simple Storage Service": {
+     "alerts": 0,
+     "hold": null,
+     "alerts_starting_on_month_first_day": 0
+    },
+    "Tax": {
+     "alerts": 0,
+     "hold": "cost-service-excluded",
+     "alerts_starting_on_month_first_day": 0
+    },
+    "(total)": {
+     "alerts": 14,
+     "hold": null,
+     "alerts_starting_on_month_first_day": 1
+    }
+   }
+  },
+  "V2": {
+   "per_service_alerts": 0,
+   "total_series_alerts": 0,
+   "series": {
+    "AWS Secrets Manager": {
+     "alerts": 0,
+     "hold": null,
+     "alerts_starting_on_month_first_day": 0
+    },
+    "Amazon Simple Storage Service": {
+     "alerts": 0,
+     "hold": null,
+     "alerts_starting_on_month_first_day": 0
+    },
+    "Tax": {
+     "alerts": 0,
+     "hold": null,
+     "alerts_starting_on_month_first_day": 0
+    },
+    "(total)": {
+     "alerts": 0,
+     "hold": null,
+     "alerts_starting_on_month_first_day": 0
+    }
+   }
+  },
+  "V3": {
+   "per_service_alerts": 13,
+   "total_series_alerts": 13,
+   "series": {
+    "AWS Secrets Manager": {
+     "alerts": 0,
+     "hold": null,
+     "alerts_starting_on_month_first_day": 0
+    },
+    "Amazon Simple Storage Service": {
+     "alerts": 0,
+     "hold": null,
+     "alerts_starting_on_month_first_day": 0
+    },
+    "Tax": {
+     "alerts": 13,
+     "hold": null,
+     "alerts_starting_on_month_first_day": 13
+    },
+    "(total)": {
+     "alerts": 13,
+     "hold": null,
+     "alerts_starting_on_month_first_day": 13
+    }
+   }
+  },
+  "V4": {
+   "per_service_alerts": 0,
+   "total_series_alerts": 0,
+   "series": {
+    "AWS Secrets Manager": {
+     "alerts": 0,
+     "hold": null,
+     "alerts_starting_on_month_first_day": 0
+    },
+    "Amazon Simple Storage Service": {
+     "alerts": 0,
+     "hold": null,
+     "alerts_starting_on_month_first_day": 0
+    },
+    "Tax": {
+     "alerts": 0,
+     "hold": "cost-service-excluded",
+     "alerts_starting_on_month_first_day": 0
+    },
+    "(total)": {
+     "alerts": 0,
+     "hold": null,
+     "alerts_starting_on_month_first_day": 0
+    }
+   }
+  }
+ },
+ "hypotheses": {
+  "H2_V4_keeps_big_spike_performance": {
+   "result": true,
+   "V0": {
+    "spike_recall": 0.9778,
+    "spike_events": 90,
+    "growth_recall": 0.4412,
+    "fp_per_30_normal_days": 0.04,
+    "mean_delay_days": 0.045
+   },
+   "V4": {
+    "spike_recall": 0.9778,
+    "spike_events": 90,
+    "growth_recall": 0.4412,
+    "fp_per_30_normal_days": 0.04,
+    "mean_delay_days": 0.045
+   }
+  },
+  "H3_V0_small_spike_recall_below_50pct": {
+   "result": true,
+   "V0": 0.2151,
+   "V4": 0.2151
+  },
+  "H1_V4_removes_real_false_alarms": {
+   "result": true,
+   "V0": 27,
+   "V4": 0
+  },
+  "adopt_V4_as_default": true
+ }
+}

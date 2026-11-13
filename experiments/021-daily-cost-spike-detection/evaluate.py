@@ -17,7 +17,7 @@ TEST_SEEDS = tuple(range(101, 121))
 FP_BUDGET_PER_30 = 1.0  # pre-registered selection constraint
 
 
-def make_series(seed):
+def make_series(seed, spike_range=(0.5, 3.0)):
     rng = random.Random(seed)
     n = WARMUP + DAYS
     base = rng.uniform(10, 50)
@@ -42,7 +42,7 @@ def make_series(seed):
         start, length = rng.randrange(WARMUP, n - 3), rng.randint(1, 3)
         if any(labels[d] for d in range(start - 3, min(n, start + length + 3))):
             continue
-        mag = rng.uniform(0.5, 3.0)
+        mag = rng.uniform(*spike_range)
         for d in range(start, start + length):
             labels[d] = ("spike", len(events))
         events.append({"type": "spike", "start": start, "length": length, "magnitude": round(mag, 3)})

@@ -200,6 +200,44 @@ class CostQueueTest(unittest.TestCase):
         self.assertEqual(assess_ops({"firehose_buffers": []}, THRESHOLDS)[1:], (None, None))
 
 
+def fee_series(start, days, fee_per_month, service="Fixed Fee", spike=None):
+    rows = []
+    for i in range(days):
+        d = start + timedelta(days=i)
+        month_days = ((d.replace(day=28) + timedelta(days=4)).replace(day=1) - timedelta(days=1)).day
+        amount = fee_per_month / month_days * (spike if spike and spike[0] == i else (1, 1))[1]
+        rows.append({"TimePeriod": {"Start": d.isoformat()}, "Metrics": {"NetUnblendedCost": {"Amount": f"{amount:.6f}"}}})
+    return {"service": service, "ResultsByTime": rows}
+
+
+class CostRuleFixesTest(unittest.TestCase):
+    OFF = dict(cost__excluded_services=[], cost__min_abs_increase_usd=0.0, cost__calendar_allowance=False)
+
+    def test_calendar_allowance_removes_february_proration_alerts(self):
+        series = fee_series(date(2025, 12, 1), 120, 3000.0)       # large fee: +0.107 x daily > 0.50 USD
+        self.assertEqual(len(cost_series(series, with_thresholds(**self.OFF))[0]), 14)
+        no_calendar = with_thresholds(**{**self.OFF, "cost__min_abs_increase_usd": 0.5})
+        self.assertEqual(len(cost_series(series, no_calendar)[0]), 14)  # the floor alone is not enough at scale
+        self.assertEqual(len(cost_series(series, THRESHOLDS)[0]), 0)
+
+    def test_minimum_increase_blocks_tiny_amounts_but_not_real_spikes(self):
+        tiny = fee_series(date(2025, 12, 1), 60, 0.40, spike=(45, 1.5))
+        self.assertEqual(len(cost_series(tiny, with_thresholds(**self.OFF))[0]), 1)
+        self.assertEqual(len(cost_series(tiny, THRESHOLDS)[0]), 0)
+        big = fee_series(date(2025, 12, 1), 60, 600.0, spike=(45, 1.5))
+        self.assertEqual(len(cost_series(big, THRESHOLDS)[0]), 1)
+
+    def test_tax_is_excluded_by_default(self):
+        tax = fee_series(date(2025, 12, 1), 60, 1.0, service="Tax")
+        self.assertEqual(cost_series(tax, THRESHOLDS)[1]["reason"], "cost-service-excluded")
+
+    def test_queue_amounts_keep_four_decimals(self):
+        tiny = fee_series(date(2025, 12, 1), 60, 0.40, spike=(45, 1.5))
+        (item,) = cost_series(tiny, with_thresholds(**self.OFF))[0]
+        self.assertNotEqual(item["observed_usd"], item["baseline_median_usd"])
+        self.assertEqual(len(item["observed_usd"].split(".")[1]), 4)
+
+
 class ReportTest(unittest.TestCase):
     env = {**os.environ, "PYTHONIOENCODING": "utf-8"}
 

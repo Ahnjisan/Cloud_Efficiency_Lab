@@ -170,6 +170,23 @@
       "value": null,
       "evidence": "임시값",
       "source": "required when exclude_alerts is true; after this many consecutive alert days, alert days rejoin the baseline"
+    },
+    "excluded_services": {
+      "value": [
+        "Tax"
+      ],
+      "evidence": "실험 확인",
+      "source": "experiment 023/024: monthly Tax posted on the first day with a zero median raised an alert every month; excluded from per-service and total series"
+    },
+    "min_abs_increase_usd": {
+      "value": 0.5,
+      "evidence": "임시값",
+      "source": "experiment 024: minimum daily increase over the median before an alert; chosen before evaluation, re-derive from real project data"
+    },
+    "calendar_allowance": {
+      "value": true,
+      "evidence": "실험 확인",
+      "source": "experiment 024: relative floor multiplied by (median month length in the baseline window / days in the current month) so prorated fixed monthly fees do not alert in short months; removed 14 real false alarms, synthetic recall unchanged"
     }
   }
 }

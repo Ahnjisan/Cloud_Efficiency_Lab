@@ -57,6 +57,7 @@ REASONS = {
     "cost-history-short": "기준선 계산에 필요한 이력이 부족합니다.",
     "cost-series-gap": "일별 비용 시계열에 빠진 날짜나 중복 날짜가 있습니다.",
     "cost-exclusion-without-cap": "경보일 제외 설정에 연속 경보 상한이 없습니다.",
+    "cost-service-excluded": "설정에서 판정 대상에서 뺀 서비스입니다(예: 세금).",
 }
 
 
@@ -322,6 +323,16 @@ def assess_endpoint(e, thresholds, rates):
 
 
 # ---------------------------------------------------------------- R-COST-1 (investigation queue)
+def _opt(thresholds, section, key, default):
+    entry = thresholds.get(section, {}).get(key)
+    return default if entry is None else entry["value"]
+
+
+def _days_in_month(d):
+    nxt = (d.replace(day=28) + timedelta(days=4)).replace(day=1)
+    return (nxt - timedelta(days=1)).day
+
+
 def cost_series(series, thresholds):
     """Return (queue_items, hold_or_None) for one service's daily cost series."""
     service = series.get("service")
@@ -330,11 +341,16 @@ def cost_series(series, thresholds):
     floor = value(thresholds, "cost", "min_relative_increase")
     exclude = value(thresholds, "cost", "exclude_alerts")
     cap = value(thresholds, "cost", "consecutive_cap_days")
+    min_abs = _opt(thresholds, "cost", "min_abs_increase_usd", 0.0)
+    calendar = _opt(thresholds, "cost", "calendar_allowance", False)
+    excluded_services = _opt(thresholds, "cost", "excluded_services", [])
     hold = lambda reason: {"rule": "R-COST-1", "service": service, "reason": reason, "message": REASONS[reason]}
     rows = series.get("ResultsByTime")
     metric = series.get("metric", "NetUnblendedCost")
     if not isinstance(service, str) or not isinstance(rows, list):
         return [], hold("input-invalid")
+    if service in excluded_services:
+        return [], hold("cost-service-excluded")
     if exclude and not is_count(cap, True):
         return [], hold("cost-exclusion-without-cap")
     days = []
@@ -354,20 +370,26 @@ def cost_series(series, thresholds):
         return [], hold("cost-history-short")
     excluded, queue, streak = set(), [], 0
     for i in range(window, len(days)):
-        history = [days[j][1] for j in range(i - 1, -1, -1) if j not in excluded][:window]
-        if len(history) < window:
+        idx = [j for j in range(i - 1, -1, -1) if j not in excluded][:window]
+        if len(idx) < window:
             continue
+        history = [days[j][1] for j in idx]
         m = statistics.median(history)
         mad = statistics.median(abs(v - m) for v in history)
-        threshold = max(m + k * 1.4826 * mad, m * (1 + floor))
+        allowance = 1.0
+        if calendar:  # fixed monthly fees are spread over fewer days in short months
+            base_days = statistics.median(_days_in_month(days[j][0]) for j in idx)
+            allowance = max(1.0, base_days / _days_in_month(days[i][0]))
+        relative = m * ((1 + floor) * allowance - 1)
+        threshold = max(m + k * 1.4826 * mad, m + relative, m + min_abs)
         x = days[i][1]
-        if x > threshold and x - m > floor * m:
+        if x > threshold:
             streak += 1
             if exclude and streak <= cap:
                 excluded.add(i)
             queue.append({"rule": "R-COST-1", "service": service, "date": days[i][0].isoformat(),
-                          "observed_usd": f"{x:.2f}", "baseline_median_usd": f"{m:.2f}",
-                          "threshold_usd": f"{threshold:.2f}", "estimated": days[i][2],
+                          "observed_usd": f"{x:.4f}", "baseline_median_usd": f"{m:.4f}",
+                          "threshold_usd": f"{threshold:.4f}", "estimated": days[i][2],
                           "consecutive_alert_days": streak})
         else:
             streak = 0
