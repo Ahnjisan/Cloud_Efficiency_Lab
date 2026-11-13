@@ -190,3 +190,59 @@ py -3 -B infrafit/test_convert.py -v
 - **민감값**: 민감값이 나오지 않는지, 이름 가리기와 소금값, 프롬프트 필드 제거, 경고 형식, 기존 입력 파일을 바꾸지 않는지 본다.
 
 **한계.** Inventory는 지금 남아 있는 객체만 보여 준다. 수명 주기로 지운 객체는 하루 객체 수에서 빠진다. 지표와 Inventory의 기간이 다르면 R-FH-2의 객체 수 비교가 틀어질 수 있다. 실제 AWS 응답으로는 아직 변환해 보지 않았다(계정에 해당 서비스 사용량이 없음).
+
+## 읽기 전용 수집 명령 (collect.py)
+
+[collect.py](collect.py)는 변환기가 읽는 파일을 `cel-readonly` 프로필의 aws CLI로 모아 **저장소 밖 폴더**에 저장한다. 자원을 만들거나 바꾸거나 지우지 않는다. [읽기 전용 정책](../experiments/real-account/cel-readonly-policy.json)에 있는 작업과, 사람이 지정한 S3 Inventory의 `s3 cp`만 부른다. **실제 계정에서는 아직 실행하지 않았다.** 드라이런과 가짜 aws 명령 테스트만 했다. 지금 계정에는 실제 프로젝트 사용량이 거의 없다(Secrets Manager 정도). 그래서 실행해도 판정할 거리가 거의 없다.
+
+```powershell
+# 1) 드라이런: AWS를 한 번도 부르지 않고 호출 목록과 최악 비용만 출력
+py -3 -B infrafit/collect.py --out <저장소 밖 새 폴더> --days 14 --glue-databases <DB> --dry-run
+# 2) 무료 단계만 실행하고 유료 계획을 출력한 뒤 멈춤
+py -3 -B infrafit/collect.py --out <저장소 밖 새 폴더> --days 14 --glue-databases <DB>
+# 3) 승인 후: 상한 안에서 유료 호출까지
+py -3 -B infrafit/collect.py --out <저장소 밖 새 폴더> --days 14 --glue-databases <DB> --yes
+py -3 -B infrafit/test_collect.py -v
+```
+
+| 옵션 | 뜻 |
+|---|---|
+| `--start`·`--end` 또는 `--days` | UTC 기간. `--end`는 그날을 포함하지 않는다(기본 오늘) |
+| `--services` | `cost`, `firehose`, `athena`, `sagemaker`, `cloudwatch`, `s3-inventory`. 기본은 `s3-inventory`를 뺀 전부 |
+| `--out` | 저장 폴더. 저장소 안이거나 비어 있지 않으면 거부한다 |
+| `--glue-databases` | Glue 데이터베이스 이름. 정책에 `glue:GetDatabases`가 없어 직접 받는다 |
+| `--inventory-manifest` | `s3://…/manifest.json`. 그 버킷의 `s3:GetObject` 권한을 따로 추가해야 해서 기본에서 뺐다 |
+| `--max-ce-requests` (기본 3) | Cost Explorer 요청 상한. 넘으면 남은 페이지를 받지 않고 경고를 남긴다 |
+| `--max-metrics` (기본 500) | GetMetricData 지표 수 상한. 넘으면 유료 호출 전에 멈춘다(종료 코드 1) |
+| `--max-athena-queries` (기본 5,000), `--max-inventory-files` (기본 20) | 목록 조회와 Inventory 내려받기 상한 |
+| `--dry-run` | 호출 0건. 호출할 API, 상한, 최악 비용만 출력 |
+| `--yes` | 유료 단계 실행 허용. 없으면 무료 단계 뒤에 멈춘다 |
+
+**단계와 요금** (2026-11-14 확인)
+
+| 단계 | 부르는 API | 요금 |
+|---|---|---|
+| 무료 | Firehose `ListDeliveryStreams`·`DescribeDeliveryStream`, Athena `ListWorkGroups`·`ListQueryExecutions`·`BatchGetQueryExecution`(50건씩), SageMaker 노트북·엔드포인트·엔드포인트 설정의 List·Describe | 요금 페이지에서 API 요금 항목을 찾지 못했다(무료로 확인한 것은 아님). 호출 수는 요약에 기록한다 |
+| 무료 범위 안 | Glue `GetTables` | Data Catalog 요청은 매달 처음 100만 건 무료, 그 뒤 100만 건당 1 USD(요율 사본·Glue 요금 페이지) |
+| 유료 | Cost Explorer `GetCostAndUsage`(DAILY, SERVICE, `NetUnblendedCost`·`UsageQuantity`, us-east-1) | 요청당 0.01 USD |
+| 유료 | CloudWatch `GetMetricData`(스트림별 `IncomingBytes` 일 합계, 엔드포인트 변형별 `Invocations` 합계·`ModelLatency` 평균) | 지표 1,000개당 0.01 USD. 무료 API 범위에 들지 않는다 |
+| 유료(선택) | `s3 cp`로 Inventory manifest와 데이터 파일 | GET 1만 건당 0.0035 USD. 이 PC로의 전송 요금은 요율 사본에 없어 미포함 |
+
+**저장하는 것** (모두 `--out` 안):
+- 응답 원본: `firehose-NNN.json`, `athena-queries-NNN.json`, `glue-table-NNN.json`, `notebook-NNN.json`, `endpoint(-config)-NNN.json`, `ce-page-NNN.json`, `metric-queries-NNN.json`·`metric-data-NNN.json`, `inventory/`
+  - 파일 이름에는 자원 이름 대신 일련번호를 쓴다.
+  - Athena 응답은 기간 밖 쿼리를 빼고 저장한다. 뺀 건수는 요약에 남긴다.
+- `requests.log`: 실행한 명령. 자원 이름은 들어가고, 자격 증명은 들어가지 않는다.
+- `collect-summary.json`: 상태, API별 호출 수, 유료 단위와 예상 비용, 사용한 요율과 출처, 자원 종류별 개수, 경고. **자원 이름은 넣지 않는다.** aws 오류 메시지의 ARN·12자리 계정 ID는 가린다.
+
+저장소에는 요약의 비식별 숫자(호출 수, 예상·실제 비용, 자원 개수)만 옮겨 적는다. 수집한 파일은 그대로 `convert.py`에 넣는다.
+
+[test_collect.py](test_collect.py) 13개는 가짜 aws 명령([fake_aws.py](convert-examples/fake_aws.py))으로 확인한다:
+- 드라이런 호출 0건
+- `--yes` 없이 유료 호출 없음
+- 지표 상한 초과 시 유료 호출 전에 멈춤, Cost Explorer 상한에서 페이지 자르기
+- 저장소 안·비어 있지 않은 `--out` 거부
+- 50건씩 나누기, 기간 필터
+- aws 오류 메시지의 ARN·계정 ID 가림과 다른 서비스 계속 진행
+- 요약에 자원 이름 없음, Inventory 내려받기
+- 수집 결과를 변환기에 넣었을 때 경고 없이 원래 예제와 같은 판정
