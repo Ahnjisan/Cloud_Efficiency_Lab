@@ -72,7 +72,7 @@
 
 | 항목 | 내용 |
 |---|---|
-| 판정 입력 | 호출별 로그: 모델 ID, 추론 프로필(Global/Geographic), `inputTokens`, `cacheReadInputTokens`, `cacheWriteInputTokens`, 출력 토큰, 요청 시각, 실행(세션) ID, 앞부분 해시(지시문·도구 스키마) |
+| 판정 입력 | 호출별 로그: 모델 ID, 추론 프로필(Global/Geographic), `inputTokens`, `cacheReadInputTokens`, `cacheWriteInputTokens`, 출력 토큰, 요청 시각, 실행(세션) ID, 앞부분 해시(지시문·도구 스키마). 교차 확인: CloudWatch 런타임 지표의 모델별 입력·출력·캐시 토큰 합계(2026-11-15 추가, [Bedrock 노트 7절](../studies/aws/bedrock/README.md#7-사용량은-어디서-측정하는가-2026-11-15-추가)) |
 | 변경 검토 후보 | 캐싱을 쓰지 않음 **이고** 같은 앞부분 해시가 실행당 2회 이상 반복되며 앞부분 ≥ 모델 최소 길이(Claude 5.5: 512) |
 | 유지 | 앞부분이 최소 길이 미만, 또는 같은 앞부분 요청이 대부분 TTL보다 긴 간격으로 단발 호출 |
 | 판단 보류 | 호출별 로그 없이 월 청구 합계만 있음, 앞부분 해시를 구할 수 없음 |

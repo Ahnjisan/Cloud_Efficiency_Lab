@@ -53,7 +53,9 @@
 
 ### 3-4. Bedrock 데이터에 대한 주의
 
-- 모델 호출 로깅의 로그 항목은 `inputTokenCount`·`outputTokenCount`만 정의하고, 캐시 읽기·쓰기 토큰 필드는 문서의 로그 항목 표에 없다. R-BR-1·2에 필요한 캐시 토큰은 Converse 응답의 사용량 필드를 애플리케이션에서 기록하는 방식(승인 4)으로 모은다.
+- ~~모델 호출 로깅의 로그 항목은 `inputTokenCount`·`outputTokenCount`만 정의하고, 캐시 읽기·쓰기 토큰 필드는 문서의 로그 항목 표에 없다.~~ **정정(2026-11-15):** 틀린 내용이었다. 호출 로그의 `input`에는 `cacheReadInputTokenCount`·`cacheWriteInputTokenCount`가 있다([Bedrock 노트 7절](../studies/aws/bedrock/README.md#7-사용량은-어디서-측정하는가-2026-11-15-추가)). 결론(승인 4로 모으고 승인 6은 쓰지 않음)은 그대로다. 근거는 "캐시 필드가 없어서"가 아니라 **호출 로그에는 에이전트 단계·상위 요청 구조가 없고, 요청·응답 본문 전체가 기록되기 때문**이다.
+- R-BR-1·2에 필요한 캐시 토큰과 실행 구조는 Converse 응답의 사용량 필드를 애플리케이션에서 기록하는 방식(승인 4)으로 모은다. 지표로 낼 때는 세션·요청 ID를 차원에 넣지 않는다(차원 조합마다 별도 과금).
+- **교차 확인용 런타임 지표(설정·승인 불필요):** CloudWatch `AWS/Bedrock`의 모델별 `InputTokenCount`·`OutputTokenCount`·`CacheReadInputTokenCount`·`CacheWriteInputTokenCount`·`Invocations`. 애플리케이션 기록의 모델·일별 합계와 비교해 기록 누락을 찾는다. `Invocations`가 성공 호출만 세는 차이와 교차 리전 추론의 모델 ID 표기 차이는 누락으로 보지 않는다. 조회는 `GetMetricData` 요금이 든다.
 - 모델 호출 로깅은 요청·응답 본문 전체, 계정 ID, 호출자 ARN을 기록한다. 실제 프로젝트의 프롬프트에 민감 정보가 있을 수 있으므로 승인 6은 기본적으로 쓰지 않는다.
 
 ## 4. 기준값보다 먼저 확인할 과금 규칙
@@ -158,4 +160,6 @@
 | [S3 Inventory](https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-inventory.html) | 보고서 필드, 첫 보고서 최대 48시간 |
 | [Bedrock model invocation logging](https://docs.aws.amazon.com/bedrock/latest/userguide/model-invocation-logging.html) | 기본 비활성, 요청·응답 본문·계정 ID·호출자 ARN 기록, 로그 항목의 토큰 필드 |
 | [Bedrock prompt caching](https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-caching.html) | Converse 응답의 `cacheReadInputTokens`·`cacheWriteInputTokens` |
+| [Bedrock runtime CloudWatch metrics](https://docs.aws.eu/bedrock/latest/userguide/monitoring-runtime-metrics.html) | 런타임 지표의 캐시 읽기·쓰기 토큰. 2026-11-15 추가 확인 |
+| [AWS Observability — GenAI 대시보드](https://aws-observability.github.io/observability-best-practices/guides/genai/custom-dashboards-for-genai-telemetry/) | 호출 로그의 캐시 토큰 필드(3-4절 정정 근거). 2026-11-15 추가 확인 |
 | [SageMaker CloudWatch 지표](https://docs.aws.amazon.com/sagemaker/latest/dg/monitoring-cloudwatch.html) | 엔드포인트·학습 작업 지표, 노트북 GPU 지표 부재 |

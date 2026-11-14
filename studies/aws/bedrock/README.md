@@ -106,6 +106,23 @@ Price List에서 서울 리전 토큰·캐시 요율을, Bedrock 문서에서 �
 
 > 다음 질문: 실제 에이전트의 호출 간격 분포가 주어지면, 5분과 1시간 TTL 중 어느 쪽이 싼가?
 
+## 7. 사용량은 어디서 측정하는가 (2026-11-15 추가)
+
+같은 호출의 토큰 수를 세 곳에서 볼 수 있다. 용도와 한계가 다르다.
+
+| 출처 | 켜는 방법 | 담기는 것 | 담기지 않는 것 | 용도 |
+|---|---|---|---|---|
+| **런타임 지표** (CloudWatch `AWS/Bedrock`, 차원 `ModelId`) | 설정 없음 | 모델별 `Invocations`, `InputTokenCount`, `OutputTokenCount`, `CacheReadInputTokenCount`, `CacheWriteInputTokenCount`, 지연, 오류, 제한 | 에이전트·사용자 요청·세션 구분 | 모델별 합계, 앱 기록의 교차 확인 |
+| **모델 호출 로깅** (CloudWatch Logs 또는 S3) | 계정·리전 설정에서 켬(기본 꺼짐) | 호출별 `input.inputTokenCount`, `input.cacheReadInputTokenCount`, `input.cacheWriteInputTokenCount`, 출력 토큰, 요청·응답 본문 전체, 호출자 ARN, 요청 메타데이터(`requestMetadata`) | 에이전트 단계 구조(상위 요청), 품질 결과 | 프롬프트 디버깅 |
+| **애플리케이션 기록** (Converse 응답의 `usage`) | 앱 코드에서 기록 | `inputTokens`, `outputTokens`, `cacheReadInputTokens`, `cacheWriteInputTokens` + 앱이 붙이는 에이전트 이름·요청 ID·상위 요청 ID | 앱이 기록하지 않은 호출 | 요청 1건당 비용 분해, 호출 증폭 |
+
+- **정정:** 이전 수집 계획([3-4절](../../../experiments/real-account-calibration-plan.md#3-4-bedrock-데이터에-대한-주의))은 "모델 호출 로깅에 캐시 토큰 필드가 없다"고 적었으나 틀렸다. 실제 로그 예시와 AWS 관측성 가이드의 쿼리에 `input.cacheReadInputTokenCount`·`input.cacheWriteInputTokenCount`가 있다. 그래도 운영 중 비용 분석에는 쓰지 않는다. 본문 전체가 기록되고, 요청 메타데이터도 호출 로깅을 켠 리전에서만 남기 때문이다.
+- **입력 토큰의 뜻이 출처마다 다르다.** 런타임 지표의 `InputTokenCount`와 Converse `inputTokens`는 캐시 토큰을 **뺀** 입력이다. 할당량 소모는 `InputTokenCount + CacheWriteInputTokenCount`로 계산하고, 캐시 읽기는 할당량에 포함되지 않는다. OpenTelemetry를 받는 도구 중에는 캐시 읽기를 입력 토큰의 일부로 다루는 곳이 있다. 출처를 섞어 더하면 캐시 토큰이 두 번 계산될 수 있으므로, 기록할 때 "입력 토큰에 캐시 포함 여부"를 명시한다.
+- **`Invocations`는 성공한 호출만 센다.** 제한(throttle)된 요청은 `InvocationThrottles`로 따로 나온다. 앱이 실패·제한 호출까지 기록하면 합계가 다른 것이 정상이다.
+- **교차 리전 추론 프로필**을 쓰면 지표의 모델 ID 차원과 앱이 기록한 모델 ID 표기가 다를 수 있다. 비교할 때 매핑표가 필요하다.
+- **OpenTelemetry 표준 이름:** 캐시 토큰은 `gen_ai.usage.cache_read.input_tokens`(캐시에서 읽음), `gen_ai.usage.cache_creation.input_tokens`(캐시에 씀)다. "write"가 아니라 "creation"이다. 생성형 AI 규약은 아직 Development 단계라 이름이 바뀔 수 있으므로 기록에 규약 버전을 함께 남긴다.
+- **앱 기록을 CloudWatch 지표로 낼 때의 비용:** 사용자 정의 지표는 차원 값 조합마다 별도 지표로 과금된다. 세션 ID·요청 ID를 차원으로 넣으면 세션 수만큼 지표가 늘어난다. 차원은 값 종류가 적은 것(에이전트 이름, 모델, 환경)만 쓰고, 세션·요청 ID는 로그에만 남긴다. 임베디드 지표 형식(EMF)을 쓰면 로그 한 줄에서 지정한 필드만 지표로 뽑힌다. 자세한 내용은 [CloudWatch 노트](../cloudwatch/README.md#사용자-정의-지표의-차원과-비용-2026-11-15-추가).
+
 ## 공식 참고 자료
 
 확인일은 **2026-11-13**입니다.
@@ -117,6 +134,11 @@ Price List에서 서울 리전 토큰·캐시 요율을, Bedrock 문서에서 �
 | [Prompt caching for faster model inference](https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-caching.html) | 과금 구분, 최소 토큰, 체크포인트, TTL, 적중 비보장, 배치 미지원, 토큰 필드 |
 | [Cross-Region inference](https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html) | Global·Geographic 처리 위치, 약 10% 차이, 호출 리전 기준 가격 |
 | [How Amazon Bedrock Agents works](https://docs.aws.amazon.com/bedrock/latest/userguide/agents-how.html) | 오케스트레이션 반복, 기본 프롬프트 구성, Agents Classic 상태 |
+| [Monitor bedrock-runtime inference using CloudWatch metrics](https://docs.aws.eu/bedrock/latest/userguide/monitoring-runtime-metrics.html) | 런타임 지표 목록(`CacheReadInputTokenCount`·`CacheWriteInputTokenCount` 포함). 2026-11-15 확인 |
+| [How tokens are counted in Amazon Bedrock](https://docs.aws.eu/bedrock/latest/userguide/quotas-token-burndown.html) | `InputTokenCount`는 캐시 토큰 제외, 할당량 = 입력 + 캐시 쓰기 + 출력 × 소진율, 캐시 읽기 미포함. 2026-11-15 확인 |
+| [Cost management with request metadata](https://docs.aws.amazon.com/bedrock/latest/userguide/cost-mgmt-request-metadata.html) | 요청 메타데이터는 호출 로깅을 켠 리전에서만 기록. 2026-11-15 확인 |
+| [Creating Custom Dashboards for GenAI Telemetry (AWS Observability)](https://aws-observability.github.io/observability-best-practices/guides/genai/custom-dashboards-for-genai-telemetry/) | 호출 로그의 `input.cacheReadInputTokenCount`·`input.cacheWriteInputTokenCount` 집계 쿼리. 2026-11-15 확인 |
+| [OpenTelemetry — Semantic conventions for generative client AI spans](https://opentelemetry.io/docs/specs/semconv/gen-ai/gen-ai-spans/) | 캐시 토큰 속성 이름, Development 상태. 2026-11-15 확인 |
 
 ## 확인 문제 정답과 해설
 
