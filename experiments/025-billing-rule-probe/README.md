@@ -2,7 +2,7 @@
 
 [실험 목차](../README.md) · [수집·재설정 계획](../real-account-calibration-plan.md) · [IoT 학습 노트](../../studies/aws/iot-core/README.md) · [Firehose 학습 노트](../../studies/aws/kinesis-firehose/README.md) · [Athena·Glue 학습 노트](../../studies/aws/athena-glue/README.md)
 
-**상태: 실행 완료, 청구 사용량 확인 대기.** 계정 소유자의 승인을 받아 실행했다. 사용량이 Cost Explorer에 반영되면(실행 후 하루~이틀) 판정하고, 판정이 끝나면 자원을 모두 지운다. 실험용 자원은 아직 남아 있다.
+**상태: 실행 완료, 청구 사용량 반영 대기(실행 후 24시간 시점까지 4회 조회, 미반영).** 계정 소유자의 승인을 받아 실행했다. 사용량이 Cost Explorer에 반영되면(실행 후 하루~이틀) 판정하고, 판정이 끝나면 자원을 모두 지운다. 실험용 자원은 아직 남아 있다.
 
 ## 확인할 과금 규칙
 
@@ -83,6 +83,8 @@ CloudShell 자체의 요금과 Firehose 스트림의 대기 요금 유무는 실
 | P3 | 726 B CSV 업로드, Glue 데이터베이스·테이블 생성(DDL 2회), SELECT 5회 | DDL 스캔 0 B, SELECT 각 726 B(엔진 기준) |
 | 결과 조회 1차 (실행 약 15시간 뒤) | 읽기 전용 프로필로 `GetCostAndUsage` 1건(DAILY, 실행 UTC 날짜, `GroupBy=SERVICE,USAGE_TYPE`, `UsageQuantity`·`NetUnblendedCost`), 0.01 USD | **아직 미반영.** 그날 응답은 Secrets Manager 한 행뿐이고 `Estimated=true`. IoT·Firehose·Athena 행 없음. 판정·기준값 수정·정리는 하지 않고 다음 날 다시 조회한다. 원본은 저장소 밖 |
 | 결과 조회 2차 (실행 약 22시간 뒤) | 1차와 같은 조건으로 `GetCostAndUsage` 1건, 0.01 USD | **아직 미반영.** 1차와 같은 Secrets Manager 한 행뿐이고 `Estimated=true`. 하루 더 기다려 다시 조회한다. 지금까지 조회 2건, 0.02 USD. 원본은 저장소 밖 |
+| 결과 조회 3차 (실행 약 24시간 뒤) | 같은 조건으로 `GetCostAndUsage` 1건, 0.01 USD | **아직 미반영.** 실행 UTC 날짜에는 Secrets Manager 한 행뿐이고 `Estimated=true` |
+| 결과 조회 4차 (3차 직후, 범위 확대) | 실행 전날부터 다음 날까지 3일 범위로 1건, 0.01 USD. 사용량이 다른 날짜에 잡혔는지 확인 | **아직 미반영.** 세 날짜 모두 IoT·Firehose·Athena 행이 없다(Secrets Manager와 S3 무료 구간 행만 있음). 누적 조회 4건, 0.04 USD. 판정은 "반영 대기"로 두고 다음 기회에 다시 조회한다 |
 
 **P2 판정 기준 (2,000건 기준으로 갱신)**
 
@@ -107,3 +109,14 @@ DDL이 과금되는지도 함께 본다.
 1. **결과 조회** (실행 다음 날부터): 읽기 전용 프로필로 Cost Explorer `GetCostAndUsage`(DAILY, 실행 UTC 날짜, `GroupBy=USAGE_TYPE`, `Metrics=UsageQuantity,NetUnblendedCost`)를 IoT·Firehose·Athena에 대해 조회한다. 하루 뒤에 사용량이 비어 있으면 하루 더 기다린다.
 2. **판정 기록**: 위 기준표로 P1·P1b·P2·P3를 판정하고, `thresholds.json`과 학습 노트를 고친다.
 3. **정리**: Firehose 스트림 → Glue 테이블·데이터베이스 → S3 버킷(비우고 삭제) → 전달 역할의 인라인 정책과 역할 순서로 지우고, 남은 것이 없는지 확인한다. CloudShell 홈의 임시 파일(`probe.env`, `records.json` 등)도 지운다.
+
+## 자원 삭제 대상과 순서 (승인 대기)
+
+판정이 끝나면, 또는 계정 소유자가 판정 전에 지우기로 하면 아래 순서로 삭제한다. 삭제는 계정 소유자의 승인을 받은 뒤에만 한다. 이 자원들은 대기 요금이 없지만(Firehose Direct PUT → S3, S3 저장 1 MB 미만), 잊지 않도록 목록을 남긴다.
+
+1. Firehose 전송 스트림 1개 (먼저 지워서 S3 쓰기를 멈춘다)
+2. Glue 테이블 1개 → Glue 데이터베이스 1개 (Athena DDL `DROP TABLE`, `DROP DATABASE`)
+3. 실험용 S3 버킷 1개: 객체(Firehose 출력, CSV, Athena 결과) 모두 삭제 → 버킷 삭제
+4. Firehose 전달 역할의 인라인 정책 → 역할 삭제
+5. CloudShell 홈의 임시 파일(`probe.env`, `records.json`, `p1.bin`, `p1b.bin`, `tiny.csv`, `trust.json`, `s3pol.json`)
+6. 확인: S3·Firehose·Glue·IAM 화면과 CLI 목록에서 남은 것이 없는지 확인하고 이 문서에 기록한다
