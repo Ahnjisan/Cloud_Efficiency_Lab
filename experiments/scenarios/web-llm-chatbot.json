@@ -1,0 +1,18 @@
+{
+ "name": "web-llm-chatbot",
+ "title": "웹 서비스 + 사내 LLM 챗봇",
+ "synthetic": true,
+ "period": {"days": 30, "hours": 730},
+ "web": {"api": "http", "requests_per_month": 3000000, "avg_ms_per_request": 120,
+         "service": {"runtime": "ecs_fargate", "tasks": 2, "vcpu": 0.5, "mem_gb": 1},
+         "db": {"engine": "PostgreSQL", "class": "db.t4g.medium", "multi_az": false, "storage_gb": 100},
+         "cache": {"mode": "serverless", "engine": "Valkey", "data_gb": 0.05, "requests_per_month": 10000000}},
+ "chatbot": {"questions_per_month": 50000, "question_chars": 200, "answer_chars": 1500,
+             "input_tokens": 1500, "output_tokens": 400, "model": "Claude Haiku 4.5",
+             "guardrail_policies": ["ContentPolicy", "TopicPolicy"],
+             "vector_store": "opensearch_serverless_classic", "kb_source_gb": 2},
+ "network": {"azs": 2, "nat_gateways": 1,
+             "monthly_gb_via_nat": {"ecr": 30, "cloudwatch_logs": 50, "s3": 200, "bedrock_runtime": 5, "internet_other": 20}},
+ "schedule": {"environment": "dev", "weekday_hours": 10, "weekdays_per_month": 22},
+ "observability": {"log_gb_per_month": 50, "retention_days": null}
+}

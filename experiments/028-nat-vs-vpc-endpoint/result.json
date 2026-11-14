@@ -1,0 +1,110 @@
+{
+ "snapshot": "2026-11-15",
+ "rates": {
+  "nat_hour": "0.0590000000",
+  "nat_gb": "0.0590000000",
+  "ep_hour": "0.0130000000",
+  "ep_gb": "0.0100000000"
+ },
+ "break_even_gb_per_month": {
+  "1_endpoints": {
+   "1_az": "193.7",
+   "2_az": "387.3",
+   "3_az": "581.0"
+  },
+  "2_endpoints": {
+   "1_az": "387.3",
+   "2_az": "774.7",
+   "3_az": "1162.0"
+  },
+  "3_endpoints": {
+   "1_az": "581.0",
+   "2_az": "1162.0",
+   "3_az": "1743.1"
+  }
+ },
+ "scenario": {
+  "azs": 2,
+  "nat_gateways": 1,
+  "per_service": {
+   "ecr": {
+    "gb": 30,
+    "endpoints": 2,
+    "break_even_gb": "774.7",
+    "usd": {
+     "nat": "1.77",
+     "interface_endpoint": "38.26"
+    },
+    "cheapest": "nat"
+   },
+   "cloudwatch_logs": {
+    "gb": 50,
+    "endpoints": 1,
+    "break_even_gb": "387.3",
+    "usd": {
+     "nat": "2.95",
+     "interface_endpoint": "19.48"
+    },
+    "cheapest": "nat"
+   },
+   "s3": {
+    "gb": 200,
+    "endpoints": 1,
+    "break_even_gb": "387.3",
+    "usd": {
+     "nat": "11.80",
+     "interface_endpoint": "20.98",
+     "gateway_endpoint": "0.00"
+    },
+    "cheapest": "gateway_endpoint"
+   },
+   "bedrock_runtime": {
+    "gb": 5,
+    "endpoints": 1,
+    "break_even_gb": "387.3",
+    "usd": {
+     "nat": "0.30",
+     "interface_endpoint": "19.03"
+    },
+    "cheapest": "nat"
+   }
+  },
+  "nat_fixed_usd": "43.07",
+  "internet_other_usd": "1.18",
+  "totals_usd": {
+   "nat_only": "61.06",
+   "all_interface_endpoints": "142.00",
+   "cheapest_per_service": "49.26"
+  }
+ },
+ "hypotheses": {
+  "H1_interface_endpoints_below_break_even_cost_more": {
+   "result": true,
+   "services_below_break_even": [
+    "ecr",
+    "cloudwatch_logs",
+    "bedrock_runtime"
+   ]
+  },
+  "H2_s3_gateway_endpoint_is_largest_single_saving": {
+   "result": true,
+   "saving_usd": {
+    "ecr": "0.00",
+    "cloudwatch_logs": "0.00",
+    "s3": "11.80",
+    "bedrock_runtime": "0.00"
+   },
+   "s3_saving_usd": "11.80"
+  },
+  "H3_all_interface_endpoints_cost_more_than_nat_only": {
+   "result": true
+  }
+ },
+ "variant_no_internet_traffic": {
+  "nat_plus_s3_gateway_usd": "48.08",
+  "endpoints_only_no_nat_usd": "76.77",
+  "interface_endpoints": 4,
+  "cheaper": "nat_plus_s3_gateway",
+  "nat_removal_needs_interface_gb_at_least": "571.2"
+ }
+}

@@ -1,0 +1,100 @@
+{
+ "snapshot": "2026-11-15",
+ "designs": {
+  "D0_duplicated": {
+   "design": {
+    "rules": 2,
+    "actions_per_rule": 1,
+    "log_bytes_per_reading": 500,
+    "agent_downloads_last_day_via_nat": true
+   },
+   "volumes": {
+    "readings": 25920000,
+    "raw_gb": "4.8280",
+    "iot_messages": 25920000,
+    "rules_triggered": 51840000,
+    "actions_executed": 51840000,
+    "firehose_billed_gb": "123.5962",
+    "lambda_invocations": 25920000,
+    "lambda_gb_s": "648000.0000",
+    "log_gb": "12.0699",
+    "athena_billed_tb": "0.2861",
+    "nat_gb": "482.7976"
+   },
+   "byte_metered_gb_total": "911.43",
+   "byte_metered_multiple_of_raw": "188.78",
+   "per_hop_multiple_of_raw": {
+    "firehose": "25.60",
+    "logs": "2.50",
+    "athena": "60.68",
+    "nat": "100.00"
+   },
+   "costs_usd": {
+    "iot_messages": "31.10",
+    "iot_rules": "9.33",
+    "iot_actions": "9.33",
+    "firehose_ingest": "4.45",
+    "lambda": "15.98",
+    "logs_ingest": "9.17",
+    "logs_storage_first_month": "0.38",
+    "athena": "1.43",
+    "nat_processing": "28.49"
+   },
+   "total_usd": "109.67"
+  },
+  "D1_deduplicated": {
+   "design": {
+    "rules": 1,
+    "actions_per_rule": 2,
+    "log_bytes_per_reading": null,
+    "log_bytes_per_invoke": 100,
+    "agent_downloads_last_day_via_nat": false
+   },
+   "volumes": {
+    "readings": 25920000,
+    "raw_gb": "4.8280",
+    "iot_messages": 25920000,
+    "rules_triggered": 25920000,
+    "actions_executed": 51840000,
+    "firehose_billed_gb": "123.5962",
+    "lambda_invocations": 25920000,
+    "lambda_gb_s": "648000.0000",
+    "log_gb": "2.4140",
+    "athena_billed_tb": "0.2861",
+    "nat_gb": "0.0000"
+   },
+   "byte_metered_gb_total": "418.98",
+   "byte_metered_multiple_of_raw": "86.78",
+   "per_hop_multiple_of_raw": {
+    "firehose": "25.60",
+    "logs": "0.50",
+    "athena": "60.68",
+    "nat": "0.00"
+   },
+   "costs_usd": {
+    "iot_messages": "31.10",
+    "iot_rules": "4.67",
+    "iot_actions": "9.33",
+    "firehose_ingest": "4.45",
+    "lambda": "15.98",
+    "logs_ingest": "1.83",
+    "logs_storage_first_month": "0.08",
+    "athena": "1.43",
+    "nat_processing": "0.00"
+   },
+   "total_usd": "68.88"
+  }
+ },
+ "hypotheses": {
+  "H1_byte_metered_volume_ge_10x_raw_in_D0": {
+   "result": true,
+   "multiple": "188.78"
+  },
+  "H2_dedup_cuts_path_cost_ge_30pct": {
+   "result": true,
+   "reduction": "0.3719",
+   "d0_usd": "109.67",
+   "d1_usd": "68.88"
+  }
+ }
+}

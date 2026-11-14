@@ -1,0 +1,658 @@
+{
+ "snapshot": "2026-11-15",
+ "replicas": 20,
+ "node": "m7g.large",
+ "assumptions": {
+  "kube_reserved_cpu": "0.07",
+  "kube_reserved_mem_gib": "0.658",
+  "daemonsets_per_node": {
+   "pods": "3",
+   "cpu": "0.15",
+   "mem_gib": "0.2"
+  },
+  "coredns": {
+   "pods": "2",
+   "cpu": "0.1",
+   "mem_gib": "0.07"
+  },
+  "lambda": {
+   "memory_mb": 1024
+  },
+  "traffic": {
+   "requests_per_month": 3000000,
+   "avg_ms": 120
+  }
+ },
+ "cpu_sweep": {
+  "axis": "cpu",
+  "fixed": "0.5",
+  "replicas": 20,
+  "rows": [
+   {
+    "cpu": "1",
+    "mem_gb": "0.5",
+    "usd": {
+     "eks_ec2": "1537.38",
+     "eks_fargate": "922.71",
+     "ecs_fargate": "828.99",
+     "lambda": "6.60"
+    },
+    "eks_ec2_nodes": 20,
+    "eks_ec2_packing": {
+     "slots_per_node_for_pods": 26,
+     "alloc_cpu": "1.78",
+     "alloc_mem_gib": "7.142",
+     "lower_bound_nodes": {
+      "cpu": 12,
+      "mem": 2,
+      "slots": 1
+     },
+     "binding": "cpu",
+     "first_fit_nodes": 20
+    },
+    "eks_fargate_provisioned": [
+     "1",
+     "2"
+    ],
+    "ecs_fargate_provisioned": [
+     "1",
+     "2"
+    ]
+   },
+   {
+    "cpu": "0.5",
+    "mem_gb": "0.5",
+    "usd": {
+     "eks_ec2": "585.53",
+     "eks_fargate": "508.22",
+     "ecs_fargate": "414.49",
+     "lambda": "6.60"
+    },
+    "eks_ec2_nodes": 7,
+    "eks_ec2_packing": {
+     "slots_per_node_for_pods": 26,
+     "alloc_cpu": "1.78",
+     "alloc_mem_gib": "7.142",
+     "lower_bound_nodes": {
+      "cpu": 6,
+      "mem": 2,
+      "slots": 1
+     },
+     "binding": "cpu",
+     "first_fit_nodes": 7
+    },
+    "eks_fargate_provisioned": [
+     "0.5",
+     "1"
+    ],
+    "ecs_fargate_provisioned": [
+     "0.5",
+     "1"
+    ]
+   },
+   {
+    "cpu": "0.4",
+    "mem_gb": "0.5",
+    "usd": {
+     "eks_ec2": "512.31",
+     "eks_fargate": "508.22",
+     "ecs_fargate": "414.49",
+     "lambda": "6.60"
+    },
+    "eks_ec2_nodes": 6,
+    "eks_ec2_packing": {
+     "slots_per_node_for_pods": 26,
+     "alloc_cpu": "1.78",
+     "alloc_mem_gib": "7.142",
+     "lower_bound_nodes": {
+      "cpu": 5,
+      "mem": 2,
+      "slots": 1
+     },
+     "binding": "cpu",
+     "first_fit_nodes": 6
+    },
+    "eks_fargate_provisioned": [
+     "0.5",
+     "1"
+    ],
+    "ecs_fargate_provisioned": [
+     "0.5",
+     "1"
+    ]
+   },
+   {
+    "cpu": "0.25",
+    "mem_gb": "0.5",
+    "usd": {
+     "eks_ec2": "292.66",
+     "eks_fargate": "338.27",
+     "ecs_fargate": "207.25",
+     "lambda": "6.60"
+    },
+    "eks_ec2_nodes": 3,
+    "eks_ec2_packing": {
+     "slots_per_node_for_pods": 26,
+     "alloc_cpu": "1.78",
+     "alloc_mem_gib": "7.142",
+     "lower_bound_nodes": {
+      "cpu": 3,
+      "mem": 2,
+      "slots": 1
+     },
+     "binding": "cpu",
+     "first_fit_nodes": 3
+    },
+    "eks_fargate_provisioned": [
+     "0.25",
+     "1"
+    ],
+    "ecs_fargate_provisioned": [
+     "0.25",
+     "0.5"
+    ]
+   },
+   {
+    "cpu": "0.2",
+    "mem_gb": "0.5",
+    "usd": {
+     "eks_ec2": "292.66",
+     "eks_fargate": "338.27",
+     "ecs_fargate": "207.25",
+     "lambda": "6.60"
+    },
+    "eks_ec2_nodes": 3,
+    "eks_ec2_packing": {
+     "slots_per_node_for_pods": 26,
+     "alloc_cpu": "1.78",
+     "alloc_mem_gib": "7.142",
+     "lower_bound_nodes": {
+      "cpu": 3,
+      "mem": 2,
+      "slots": 1
+     },
+     "binding": "cpu",
+     "first_fit_nodes": 3
+    },
+    "eks_fargate_provisioned": [
+     "0.25",
+     "1"
+    ],
+    "ecs_fargate_provisioned": [
+     "0.25",
+     "0.5"
+    ]
+   },
+   {
+    "cpu": "0.1",
+    "mem_gb": "0.5",
+    "usd": {
+     "eks_ec2": "219.44",
+     "eks_fargate": "338.27",
+     "ecs_fargate": "207.25",
+     "lambda": "6.60"
+    },
+    "eks_ec2_nodes": 2,
+    "eks_ec2_packing": {
+     "slots_per_node_for_pods": 26,
+     "alloc_cpu": "1.78",
+     "alloc_mem_gib": "7.142",
+     "lower_bound_nodes": {
+      "cpu": 2,
+      "mem": 2,
+      "slots": 1
+     },
+     "binding": "cpu",
+     "first_fit_nodes": 2
+    },
+    "eks_fargate_provisioned": [
+     "0.25",
+     "1"
+    ],
+    "ecs_fargate_provisioned": [
+     "0.25",
+     "0.5"
+    ]
+   },
+   {
+    "cpu": "0.05",
+    "mem_gb": "0.5",
+    "usd": {
+     "eks_ec2": "219.44",
+     "eks_fargate": "338.27",
+     "ecs_fargate": "207.25",
+     "lambda": "6.60"
+    },
+    "eks_ec2_nodes": 2,
+    "eks_ec2_packing": {
+     "slots_per_node_for_pods": 26,
+     "alloc_cpu": "1.78",
+     "alloc_mem_gib": "7.142",
+     "lower_bound_nodes": {
+      "cpu": 1,
+      "mem": 2,
+      "slots": 1
+     },
+     "binding": "mem",
+     "first_fit_nodes": 2
+    },
+    "eks_fargate_provisioned": [
+     "0.25",
+     "1"
+    ],
+    "ecs_fargate_provisioned": [
+     "0.25",
+     "0.5"
+    ]
+   }
+  ],
+  "response": {
+   "eks_ec2": {
+    "steps": 6,
+    "steps_with_cost_drop": 4,
+    "total_reduction": "0.8573"
+   },
+   "eks_fargate": {
+    "steps": 6,
+    "steps_with_cost_drop": 2,
+    "total_reduction": "0.6334"
+   },
+   "ecs_fargate": {
+    "steps": 6,
+    "steps_with_cost_drop": 2,
+    "total_reduction": "0.7500"
+   },
+   "lambda": {
+    "steps": 6,
+    "steps_with_cost_drop": 0,
+    "total_reduction": "0.0000"
+   }
+  }
+ },
+ "mem_sweep": {
+  "axis": "mem",
+  "fixed": "0.25",
+  "replicas": 20,
+  "rows": [
+   {
+    "cpu": "0.25",
+    "mem_gb": "2",
+    "usd": {
+     "eks_ec2": "585.53",
+     "eks_fargate": "657.43",
+     "ecs_fargate": "319.16",
+     "lambda": "6.60"
+    },
+    "eks_ec2_nodes": 7,
+    "eks_ec2_packing": {
+     "slots_per_node_for_pods": 26,
+     "alloc_cpu": "1.78",
+     "alloc_mem_gib": "7.142",
+     "lower_bound_nodes": {
+      "cpu": 3,
+      "mem": 6,
+      "slots": 1
+     },
+     "binding": "mem",
+     "first_fit_nodes": 7
+    },
+    "eks_fargate_provisioned": [
+     "0.5",
+     "3"
+    ],
+    "ecs_fargate_provisioned": [
+     "0.25",
+     "2"
+    ]
+   },
+   {
+    "cpu": "0.25",
+    "mem_gb": "1.5",
+    "usd": {
+     "eks_ec2": "439.10",
+     "eks_fargate": "412.88",
+     "ecs_fargate": "319.16",
+     "lambda": "6.60"
+    },
+    "eks_ec2_nodes": 5,
+    "eks_ec2_packing": {
+     "slots_per_node_for_pods": 26,
+     "alloc_cpu": "1.78",
+     "alloc_mem_gib": "7.142",
+     "lower_bound_nodes": {
+      "cpu": 3,
+      "mem": 5,
+      "slots": 1
+     },
+     "binding": "mem",
+     "first_fit_nodes": 5
+    },
+    "eks_fargate_provisioned": [
+     "0.25",
+     "2"
+    ],
+    "ecs_fargate_provisioned": [
+     "0.25",
+     "2"
+    ]
+   },
+   {
+    "cpu": "0.25",
+    "mem_gb": "1",
+    "usd": {
+     "eks_ec2": "292.66",
+     "eks_fargate": "412.88",
+     "ecs_fargate": "244.55",
+     "lambda": "6.60"
+    },
+    "eks_ec2_nodes": 3,
+    "eks_ec2_packing": {
+     "slots_per_node_for_pods": 26,
+     "alloc_cpu": "1.78",
+     "alloc_mem_gib": "7.142",
+     "lower_bound_nodes": {
+      "cpu": 3,
+      "mem": 3,
+      "slots": 1
+     },
+     "binding": "cpu",
+     "first_fit_nodes": 3
+    },
+    "eks_fargate_provisioned": [
+     "0.25",
+     "2"
+    ],
+    "ecs_fargate_provisioned": [
+     "0.25",
+     "1"
+    ]
+   },
+   {
+    "cpu": "0.25",
+    "mem_gb": "0.75",
+    "usd": {
+     "eks_ec2": "292.66",
+     "eks_fargate": "338.27",
+     "ecs_fargate": "244.55",
+     "lambda": "6.60"
+    },
+    "eks_ec2_nodes": 3,
+    "eks_ec2_packing": {
+     "slots_per_node_for_pods": 26,
+     "alloc_cpu": "1.78",
+     "alloc_mem_gib": "7.142",
+     "lower_bound_nodes": {
+      "cpu": 3,
+      "mem": 3,
+      "slots": 1
+     },
+     "binding": "cpu",
+     "first_fit_nodes": 3
+    },
+    "eks_fargate_provisioned": [
+     "0.25",
+     "1"
+    ],
+    "ecs_fargate_provisioned": [
+     "0.25",
+     "1"
+    ]
+   },
+   {
+    "cpu": "0.25",
+    "mem_gb": "0.5",
+    "usd": {
+     "eks_ec2": "292.66",
+     "eks_fargate": "338.27",
+     "ecs_fargate": "207.25",
+     "lambda": "6.60"
+    },
+    "eks_ec2_nodes": 3,
+    "eks_ec2_packing": {
+     "slots_per_node_for_pods": 26,
+     "alloc_cpu": "1.78",
+     "alloc_mem_gib": "7.142",
+     "lower_bound_nodes": {
+      "cpu": 3,
+      "mem": 2,
+      "slots": 1
+     },
+     "binding": "cpu",
+     "first_fit_nodes": 3
+    },
+    "eks_fargate_provisioned": [
+     "0.25",
+     "1"
+    ],
+    "ecs_fargate_provisioned": [
+     "0.25",
+     "0.5"
+    ]
+   },
+   {
+    "cpu": "0.25",
+    "mem_gb": "0.25",
+    "usd": {
+     "eks_ec2": "292.66",
+     "eks_fargate": "300.97",
+     "ecs_fargate": "207.25",
+     "lambda": "6.60"
+    },
+    "eks_ec2_nodes": 3,
+    "eks_ec2_packing": {
+     "slots_per_node_for_pods": 26,
+     "alloc_cpu": "1.78",
+     "alloc_mem_gib": "7.142",
+     "lower_bound_nodes": {
+      "cpu": 3,
+      "mem": 1,
+      "slots": 1
+     },
+     "binding": "cpu",
+     "first_fit_nodes": 3
+    },
+    "eks_fargate_provisioned": [
+     "0.25",
+     "0.5"
+    ],
+    "ecs_fargate_provisioned": [
+     "0.25",
+     "0.5"
+    ]
+   }
+  ],
+  "response": {
+   "eks_ec2": {
+    "steps": 5,
+    "steps_with_cost_drop": 2,
+    "total_reduction": "0.5002"
+   },
+   "eks_fargate": {
+    "steps": 5,
+    "steps_with_cost_drop": 3,
+    "total_reduction": "0.5422"
+   },
+   "ecs_fargate": {
+    "steps": 5,
+    "steps_with_cost_drop": 2,
+    "total_reduction": "0.3506"
+   },
+   "lambda": {
+    "steps": 5,
+    "steps_with_cost_drop": 0,
+    "total_reduction": "0.0000"
+   }
+  }
+ },
+ "small_pods_cpu_sweep": {
+  "axis": "cpu",
+  "fixed": "0.1",
+  "replicas": 60,
+  "rows": [
+   {
+    "cpu": "0.05",
+    "mem_gb": "0.1",
+    "usd": {
+     "eks_ec2": "292.66",
+     "eks_fargate": "715.47",
+     "ecs_fargate": "621.74",
+     "lambda": "6.60"
+    },
+    "eks_ec2_nodes": 3,
+    "eks_ec2_packing": {
+     "slots_per_node_for_pods": 26,
+     "alloc_cpu": "1.78",
+     "alloc_mem_gib": "7.142",
+     "lower_bound_nodes": {
+      "cpu": 2,
+      "mem": 1,
+      "slots": 3
+     },
+     "binding": "slots",
+     "first_fit_nodes": 3
+    },
+    "eks_fargate_provisioned": [
+     "0.25",
+     "0.5"
+    ],
+    "ecs_fargate_provisioned": [
+     "0.25",
+     "0.5"
+    ]
+   },
+   {
+    "cpu": "0.04",
+    "mem_gb": "0.1",
+    "usd": {
+     "eks_ec2": "292.66",
+     "eks_fargate": "715.47",
+     "ecs_fargate": "621.74",
+     "lambda": "6.60"
+    },
+    "eks_ec2_nodes": 3,
+    "eks_ec2_packing": {
+     "slots_per_node_for_pods": 26,
+     "alloc_cpu": "1.78",
+     "alloc_mem_gib": "7.142",
+     "lower_bound_nodes": {
+      "cpu": 2,
+      "mem": 1,
+      "slots": 3
+     },
+     "binding": "slots",
+     "first_fit_nodes": 3
+    },
+    "eks_fargate_provisioned": [
+     "0.25",
+     "0.5"
+    ],
+    "ecs_fargate_provisioned": [
+     "0.25",
+     "0.5"
+    ]
+   },
+   {
+    "cpu": "0.03",
+    "mem_gb": "0.1",
+    "usd": {
+     "eks_ec2": "292.66",
+     "eks_fargate": "715.47",
+     "ecs_fargate": "621.74",
+     "lambda": "6.60"
+    },
+    "eks_ec2_nodes": 3,
+    "eks_ec2_packing": {
+     "slots_per_node_for_pods": 26,
+     "alloc_cpu": "1.78",
+     "alloc_mem_gib": "7.142",
+     "lower_bound_nodes": {
+      "cpu": 2,
+      "mem": 1,
+      "slots": 3
+     },
+     "binding": "slots",
+     "first_fit_nodes": 3
+    },
+    "eks_fargate_provisioned": [
+     "0.25",
+     "0.5"
+    ],
+    "ecs_fargate_provisioned": [
+     "0.25",
+     "0.5"
+    ]
+   },
+   {
+    "cpu": "0.02",
+    "mem_gb": "0.1",
+    "usd": {
+     "eks_ec2": "292.66",
+     "eks_fargate": "715.47",
+     "ecs_fargate": "621.74",
+     "lambda": "6.60"
+    },
+    "eks_ec2_nodes": 3,
+    "eks_ec2_packing": {
+     "slots_per_node_for_pods": 26,
+     "alloc_cpu": "1.78",
+     "alloc_mem_gib": "7.142",
+     "lower_bound_nodes": {
+      "cpu": 1,
+      "mem": 1,
+      "slots": 3
+     },
+     "binding": "slots",
+     "first_fit_nodes": 3
+    },
+    "eks_fargate_provisioned": [
+     "0.25",
+     "0.5"
+    ],
+    "ecs_fargate_provisioned": [
+     "0.25",
+     "0.5"
+    ]
+   }
+  ],
+  "response": {
+   "eks_ec2": {
+    "steps": 3,
+    "steps_with_cost_drop": 0,
+    "total_reduction": "0.0000"
+   },
+   "eks_fargate": {
+    "steps": 3,
+    "steps_with_cost_drop": 0,
+    "total_reduction": "0.0000"
+   },
+   "ecs_fargate": {
+    "steps": 3,
+    "steps_with_cost_drop": 0,
+    "total_reduction": "0.0000"
+   },
+   "lambda": {
+    "steps": 3,
+    "steps_with_cost_drop": 0,
+    "total_reduction": "0.0000"
+   }
+  }
+ },
+ "hypotheses": {
+  "H0_prompt_requests_down_cost_down_only_on_fargate": {
+   "result": false,
+   "note": "EKS+EC2 also drops whenever the node count changes; Fargate drops only at allowed-combination boundaries; Lambda never"
+  },
+  "H1_fargate_cost_drops_at_every_request_step": {
+   "result": false
+  },
+  "H2_eks_ec2_cost_changes_at_fewer_than_half_of_steps": {
+   "result": false
+  },
+  "H3_lambda_cost_never_changes": {
+   "result": true
+  },
+  "H4_small_pods_eks_ec2_bound_by_slots_no_drop": {
+   "result": true
+  }
+ }
+}

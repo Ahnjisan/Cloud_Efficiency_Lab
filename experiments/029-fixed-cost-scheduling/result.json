@@ -1,0 +1,203 @@
+{
+ "snapshot": "2026-11-15",
+ "work_hours_per_month": "220",
+ "hours_per_month": "730",
+ "variants": {
+  "classic": {
+   "always_on_usd": "607.23",
+   "work_hours_schedule_usd": "526.25",
+   "schedule_saving_ratio": "0.1334",
+   "schedule_but_rds_stopped_once_usd": "561.14",
+   "always_on_by_kind_usd": {
+    "delete_only": "478.22",
+    "scale_to_zero": "41.45",
+    "stoppable": "74.46",
+    "stays_billed": "13.10"
+   },
+   "rows_always_on": [
+    {
+     "name": "NAT gateway",
+     "kind": "delete_only",
+     "hours": "730",
+     "usd": "43.07"
+    },
+    {
+     "name": "ECS Fargate service",
+     "kind": "scale_to_zero",
+     "hours": "730",
+     "usd": "41.45"
+    },
+    {
+     "name": "RDS instance",
+     "kind": "stoppable",
+     "hours": "730",
+     "usd": "74.46"
+    },
+    {
+     "name": "RDS gp3 storage",
+     "kind": "stays_billed",
+     "hours": "730",
+     "usd": "13.10"
+    },
+    {
+     "name": "ElastiCache serverless Valkey (minimum storage)",
+     "kind": "delete_only",
+     "hours": "730",
+     "usd": "7.37"
+    },
+    {
+     "name": "OpenSearch Serverless Classic (minimum 2 OCU)",
+     "kind": "delete_only",
+     "hours": "730",
+     "usd": "427.78"
+    }
+   ],
+   "rows_schedule": [
+    {
+     "name": "NAT gateway",
+     "kind": "delete_only",
+     "hours": "730",
+     "usd": "43.07"
+    },
+    {
+     "name": "ECS Fargate service",
+     "kind": "scale_to_zero",
+     "hours": "220",
+     "usd": "12.49"
+    },
+    {
+     "name": "RDS instance",
+     "kind": "stoppable",
+     "hours": "220",
+     "usd": "22.44"
+    },
+    {
+     "name": "RDS gp3 storage",
+     "kind": "stays_billed",
+     "hours": "730",
+     "usd": "13.10"
+    },
+    {
+     "name": "ElastiCache serverless Valkey (minimum storage)",
+     "kind": "delete_only",
+     "hours": "730",
+     "usd": "7.37"
+    },
+    {
+     "name": "OpenSearch Serverless Classic (minimum 2 OCU)",
+     "kind": "delete_only",
+     "hours": "730",
+     "usd": "427.78"
+    }
+   ]
+  },
+  "nextgen": {
+   "always_on_usd": "607.23",
+   "work_hours_schedule_usd": "227.39",
+   "schedule_saving_ratio": "0.6255",
+   "schedule_but_rds_stopped_once_usd": "262.28",
+   "always_on_by_kind_usd": {
+    "delete_only": "50.44",
+    "scale_to_zero": "469.23",
+    "stoppable": "74.46",
+    "stays_billed": "13.10"
+   },
+   "rows_always_on": [
+    {
+     "name": "NAT gateway",
+     "kind": "delete_only",
+     "hours": "730",
+     "usd": "43.07"
+    },
+    {
+     "name": "ECS Fargate service",
+     "kind": "scale_to_zero",
+     "hours": "730",
+     "usd": "41.45"
+    },
+    {
+     "name": "RDS instance",
+     "kind": "stoppable",
+     "hours": "730",
+     "usd": "74.46"
+    },
+    {
+     "name": "RDS gp3 storage",
+     "kind": "stays_billed",
+     "hours": "730",
+     "usd": "13.10"
+    },
+    {
+     "name": "ElastiCache serverless Valkey (minimum storage)",
+     "kind": "delete_only",
+     "hours": "730",
+     "usd": "7.37"
+    },
+    {
+     "name": "OpenSearch Serverless NextGen (2 OCU while used)",
+     "kind": "scale_to_zero",
+     "hours": "730",
+     "usd": "427.78"
+    }
+   ],
+   "rows_schedule": [
+    {
+     "name": "NAT gateway",
+     "kind": "delete_only",
+     "hours": "730",
+     "usd": "43.07"
+    },
+    {
+     "name": "ECS Fargate service",
+     "kind": "scale_to_zero",
+     "hours": "220",
+     "usd": "12.49"
+    },
+    {
+     "name": "RDS instance",
+     "kind": "stoppable",
+     "hours": "220",
+     "usd": "22.44"
+    },
+    {
+     "name": "RDS gp3 storage",
+     "kind": "stays_billed",
+     "hours": "730",
+     "usd": "13.10"
+    },
+    {
+     "name": "ElastiCache serverless Valkey (minimum storage)",
+     "kind": "delete_only",
+     "hours": "730",
+     "usd": "7.37"
+    },
+    {
+     "name": "OpenSearch Serverless NextGen (2 OCU while used)",
+     "kind": "scale_to_zero",
+     "hours": "220",
+     "usd": "128.92"
+    }
+   ]
+  }
+ },
+ "hypotheses": {
+  "H1_schedule_saves_less_than_40pct_with_classic_vector_store": {
+   "result": true,
+   "saving_ratio": "0.1334"
+  },
+  "H2_delete_only_items_exceed_half_of_always_on": {
+   "result": true,
+   "delete_only_usd": "478.22",
+   "always_on_usd": "607.23"
+  },
+  "H3_forgotten_rds_stop_keeps_less_than_half_of_rds_saving": {
+   "result": true,
+   "rds_only": {
+    "always_usd": "74.46",
+    "schedule_usd": "22.44",
+    "stopped_once_usd": "57.32",
+    "saving_kept_ratio": "0.3294"
+   }
+  }
+ }
+}

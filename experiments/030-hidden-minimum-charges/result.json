@@ -1,0 +1,257 @@
+{
+ "snapshot": "2026-11-15",
+ "curves": {
+  "elasticache_serverless_storage": [
+   {
+    "data_gb": "0.01",
+    "engine": "Valkey",
+    "usage_usd": "0.74",
+    "billed_usd": "7.37",
+    "minimum_share": "0.9000"
+   },
+   {
+    "data_gb": "0.01",
+    "engine": "Redis",
+    "usage_usd": "1.10",
+    "billed_usd": "110.23",
+    "minimum_share": "0.9900"
+   },
+   {
+    "data_gb": "0.05",
+    "engine": "Valkey",
+    "usage_usd": "3.69",
+    "billed_usd": "7.37",
+    "minimum_share": "0.5000"
+   },
+   {
+    "data_gb": "0.05",
+    "engine": "Redis",
+    "usage_usd": "5.51",
+    "billed_usd": "110.23",
+    "minimum_share": "0.9500"
+   },
+   {
+    "data_gb": "0.1",
+    "engine": "Valkey",
+    "usage_usd": "7.37",
+    "billed_usd": "7.37",
+    "minimum_share": "0.0000"
+   },
+   {
+    "data_gb": "0.1",
+    "engine": "Redis",
+    "usage_usd": "11.02",
+    "billed_usd": "110.23",
+    "minimum_share": "0.9000"
+   },
+   {
+    "data_gb": "0.5",
+    "engine": "Valkey",
+    "usage_usd": "36.86",
+    "billed_usd": "36.86",
+    "minimum_share": "0.0000"
+   },
+   {
+    "data_gb": "0.5",
+    "engine": "Redis",
+    "usage_usd": "55.12",
+    "billed_usd": "110.23",
+    "minimum_share": "0.5000"
+   },
+   {
+    "data_gb": "1",
+    "engine": "Valkey",
+    "usage_usd": "73.73",
+    "billed_usd": "73.73",
+    "minimum_share": "0.0000"
+   },
+   {
+    "data_gb": "1",
+    "engine": "Redis",
+    "usage_usd": "110.23",
+    "billed_usd": "110.23",
+    "minimum_share": "0.0000"
+   },
+   {
+    "data_gb": "2",
+    "engine": "Valkey",
+    "usage_usd": "147.46",
+    "billed_usd": "147.46",
+    "minimum_share": "0.0000"
+   },
+   {
+    "data_gb": "2",
+    "engine": "Redis",
+    "usage_usd": "220.46",
+    "billed_usd": "220.46",
+    "minimum_share": "0.0000"
+   }
+  ],
+  "opensearch_classic_ocu": [
+   {
+    "needed_avg_ocu": "0.1",
+    "usage_usd": "21.39",
+    "billed_usd": "427.78",
+    "minimum_share": "0.9500"
+   },
+   {
+    "needed_avg_ocu": "0.5",
+    "usage_usd": "106.94",
+    "billed_usd": "427.78",
+    "minimum_share": "0.7500"
+   },
+   {
+    "needed_avg_ocu": "1",
+    "usage_usd": "213.89",
+    "billed_usd": "427.78",
+    "minimum_share": "0.5000"
+   },
+   {
+    "needed_avg_ocu": "2",
+    "usage_usd": "427.78",
+    "billed_usd": "427.78",
+    "minimum_share": "0.0000"
+   },
+   {
+    "needed_avg_ocu": "4",
+    "usage_usd": "855.56",
+    "billed_usd": "855.56",
+    "minimum_share": "0.0000"
+   }
+  ],
+  "fargate_task_minimum": [
+   {
+    "task_seconds": 5,
+    "billed_seconds": 60,
+    "usage_usd_per_10k_tasks": "0.1972",
+    "billed_usd_per_10k_tasks": "2.3658",
+    "minimum_share": "0.9167"
+   },
+   {
+    "task_seconds": 15,
+    "billed_seconds": 60,
+    "usage_usd_per_10k_tasks": "0.5915",
+    "billed_usd_per_10k_tasks": "2.3658",
+    "minimum_share": "0.7500"
+   },
+   {
+    "task_seconds": 30,
+    "billed_seconds": 60,
+    "usage_usd_per_10k_tasks": "1.1829",
+    "billed_usd_per_10k_tasks": "2.3658",
+    "minimum_share": "0.5000"
+   },
+   {
+    "task_seconds": 60,
+    "billed_seconds": 60,
+    "usage_usd_per_10k_tasks": "2.3658",
+    "billed_usd_per_10k_tasks": "2.3658",
+    "minimum_share": "0.0000"
+   },
+   {
+    "task_seconds": 120,
+    "billed_seconds": 120,
+    "usage_usd_per_10k_tasks": "4.7317",
+    "billed_usd_per_10k_tasks": "4.7317",
+    "minimum_share": "0.0000"
+   }
+  ],
+  "athena_query_minimum": [
+   {
+    "scan_mb": 0.1,
+    "billed_mb": 10,
+    "usage_usd_per_100k_queries": "0.05",
+    "billed_usd_per_100k_queries": "4.77",
+    "minimum_share": "0.9900"
+   },
+   {
+    "scan_mb": 1,
+    "billed_mb": 10,
+    "usage_usd_per_100k_queries": "0.48",
+    "billed_usd_per_100k_queries": "4.77",
+    "minimum_share": "0.9000"
+   },
+   {
+    "scan_mb": 5,
+    "billed_mb": 10,
+    "usage_usd_per_100k_queries": "2.38",
+    "billed_usd_per_100k_queries": "4.77",
+    "minimum_share": "0.5000"
+   },
+   {
+    "scan_mb": 10,
+    "billed_mb": 10,
+    "usage_usd_per_100k_queries": "4.77",
+    "billed_usd_per_100k_queries": "4.77",
+    "minimum_share": "0.0000"
+   },
+   {
+    "scan_mb": 50,
+    "billed_mb": 50,
+    "usage_usd_per_100k_queries": "23.84",
+    "billed_usd_per_100k_queries": "23.84",
+    "minimum_share": "0.0000"
+   }
+  ],
+  "guardrails_text_unit": [
+   {
+    "chars": 30,
+    "units": 1,
+    "usd_per_100k": "15.00",
+    "minimum_share": "0.9700"
+   },
+   {
+    "chars": 200,
+    "units": 1,
+    "usd_per_100k": "15.00",
+    "minimum_share": "0.8000"
+   },
+   {
+    "chars": 1000,
+    "units": 1,
+    "usd_per_100k": "15.00",
+    "minimum_share": "0.0000"
+   },
+   {
+    "chars": 1500,
+    "units": 2,
+    "usd_per_100k": "30.00",
+    "minimum_share": "0.2500"
+   }
+  ]
+ },
+ "scenario_web_llm_chatbot": {
+  "components_usd": {
+   "vector_store_opensearch_classic": {
+    "billed": "427.78",
+    "usage_based": null,
+    "note": "minimum 2 OCU; actual OCU need unknown for 2 GB of source data"
+   },
+   "cache_serverless_storage": {
+    "billed": "7.37",
+    "usage_based": "3.69"
+   },
+   "chatbot_model_tokens": {
+    "billed": "175.00",
+    "usage_based": "175.00"
+   }
+  },
+  "excluded": "Knowledge Base managed index storage (5 USD per source GB on pricing page) is in the snapshot's missing list",
+  "floor_driven_usd": "431.47",
+  "model_tokens_usd": "175.00",
+  "redis_instead_of_valkey_usd": "110.23"
+ },
+ "hypotheses": {
+  "H1_floor_driven_cost_exceeds_model_tokens_in_scenario2": {
+   "result": true,
+   "floor_driven_usd": "431.47",
+   "model_tokens_usd": "175.00"
+  },
+  "H2_valkey_cuts_small_cache_storage_cost_ge_90pct_vs_redis": {
+   "result": true,
+   "valkey_usd": "7.37",
+   "redis_usd": "110.23",
+   "reduction": "0.9331"
+  }
+ }
+}

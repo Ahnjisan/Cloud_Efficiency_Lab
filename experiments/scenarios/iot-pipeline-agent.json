@@ -1,0 +1,15 @@
+{
+ "name": "iot-pipeline-agent",
+ "title": "IoT 수집 → 실시간·배치 처리 → AI 에이전트",
+ "synthetic": true,
+ "period": {"days": 30, "hours": 730},
+ "devices": {"count": 100, "reading_bytes": 200, "interval_s": 10, "always_connected": true},
+ "ingest": {"path": "IoT Core rule -> Firehose -> S3", "rules": 1, "actions_per_rule": 1, "readings_per_message": 1, "firehose_buffer_s": 60},
+ "realtime": {"path": "IoT Core rule -> SQS -> Lambda", "lambda_memory_mb": 512, "ms_per_reading": 20, "fixed_ms_per_invoke": 30, "sqs_batch_size": 10},
+ "batch": {"glue_job": "spark_etl", "dpu": 2, "runs_per_day": 24, "minutes_per_run": 2},
+ "agent": {"requests_per_month": 3000, "model": "Claude Haiku 4.5", "model_calls_per_request": 4,
+           "system_and_tools_tokens": 2000, "question_tokens": 100, "tool_result_tokens": 800, "output_tokens_per_call": 300,
+           "athena_queries_per_request": 2, "scan_mb_per_query": 50},
+ "network": {"azs": 2, "nat_gateways": 1, "service_in_private_subnet": true},
+ "observability": {"log_gb_per_month": 20, "retention_days": null, "metrics_per_device": 3}
+}

@@ -1,0 +1,220 @@
+{
+ "config": {
+  "image": "redis:7.4-alpine",
+  "container_memory": "64m",
+  "maxmemory": "10mb",
+  "policies": [
+   "allkeys-lru",
+   "volatile-lru",
+   "volatile-ttl"
+  ],
+  "runs_per_policy": 3,
+  "seed": 35,
+  "keys": 60000,
+  "value_bytes": 512,
+  "ops": 150000,
+  "zipf_s": 1.0,
+  "ttl_share": 0.5,
+  "ttl_range_s": [
+   600,
+   3600
+  ],
+  "pipeline_chunk": 50
+ },
+ "environment": {
+  "free_memory_gib_before": 3.34,
+  "docker_server": "29.8.2",
+  "redis_version": "7.4.12",
+  "container_memory_peak": "13.34MiB / 64MiB",
+  "cleanup": {
+   "container_removed": true,
+   "image_removed": true
+  }
+ },
+ "runs": [
+  {
+   "policy": "allkeys-lru",
+   "ops": 150000,
+   "hits": 117781,
+   "misses": 32219,
+   "hit_ratio": 0.7852,
+   "hit_ratio_second_half": 0.8118,
+   "set_errors_oom": 0,
+   "evicted_keys": 19030,
+   "used_memory_bytes": 10485472,
+   "maxmemory_bytes": 10485760,
+   "keys_at_end": "13146",
+   "seconds": 10.0,
+   "run": 1
+  },
+  {
+   "policy": "allkeys-lru",
+   "ops": 150000,
+   "hits": 117720,
+   "misses": 32280,
+   "hit_ratio": 0.7848,
+   "hit_ratio_second_half": 0.8114,
+   "set_errors_oom": 0,
+   "evicted_keys": 19092,
+   "used_memory_bytes": 10485304,
+   "maxmemory_bytes": 10485760,
+   "keys_at_end": "13145",
+   "seconds": 7.9,
+   "run": 2
+  },
+  {
+   "policy": "allkeys-lru",
+   "ops": 150000,
+   "hits": 117703,
+   "misses": 32297,
+   "hit_ratio": 0.7847,
+   "hit_ratio_second_half": 0.8114,
+   "set_errors_oom": 0,
+   "evicted_keys": 19108,
+   "used_memory_bytes": 10485728,
+   "maxmemory_bytes": 10485760,
+   "keys_at_end": "13146",
+   "seconds": 9.1,
+   "run": 3
+  },
+  {
+   "policy": "volatile-lru",
+   "ops": 150000,
+   "hits": 113485,
+   "misses": 36515,
+   "hit_ratio": 0.7566,
+   "hit_ratio_second_half": 0.7554,
+   "set_errors_oom": 0,
+   "evicted_keys": 22929,
+   "used_memory_bytes": 10485816,
+   "maxmemory_bytes": 10485760,
+   "keys_at_end": "13444",
+   "seconds": 8.4,
+   "run": 1
+  },
+  {
+   "policy": "volatile-lru",
+   "ops": 150000,
+   "hits": 113606,
+   "misses": 36394,
+   "hit_ratio": 0.7574,
+   "hit_ratio_second_half": 0.7573,
+   "set_errors_oom": 0,
+   "evicted_keys": 22827,
+   "used_memory_bytes": 10485816,
+   "maxmemory_bytes": 10485760,
+   "keys_at_end": "13444",
+   "seconds": 9.8,
+   "run": 2
+  },
+  {
+   "policy": "volatile-lru",
+   "ops": 150000,
+   "hits": 113522,
+   "misses": 36478,
+   "hit_ratio": 0.7568,
+   "hit_ratio_second_half": 0.7561,
+   "set_errors_oom": 0,
+   "evicted_keys": 22910,
+   "used_memory_bytes": 10485816,
+   "maxmemory_bytes": 10485760,
+   "keys_at_end": "13444",
+   "seconds": 8.0,
+   "run": 3
+  },
+  {
+   "policy": "volatile-ttl",
+   "ops": 150000,
+   "hits": 107959,
+   "misses": 42041,
+   "hit_ratio": 0.7197,
+   "hit_ratio_second_half": 0.691,
+   "set_errors_oom": 0,
+   "evicted_keys": 28226,
+   "used_memory_bytes": 10485456,
+   "maxmemory_bytes": 10485760,
+   "keys_at_end": "13455",
+   "seconds": 8.6,
+   "run": 1
+  },
+  {
+   "policy": "volatile-ttl",
+   "ops": 150000,
+   "hits": 107955,
+   "misses": 42045,
+   "hit_ratio": 0.7197,
+   "hit_ratio_second_half": 0.691,
+   "set_errors_oom": 0,
+   "evicted_keys": 28240,
+   "used_memory_bytes": 10485456,
+   "maxmemory_bytes": 10485760,
+   "keys_at_end": "13455",
+   "seconds": 8.2,
+   "run": 2
+  },
+  {
+   "policy": "volatile-ttl",
+   "ops": 150000,
+   "hits": 108005,
+   "misses": 41995,
+   "hit_ratio": 0.72,
+   "hit_ratio_second_half": 0.6914,
+   "set_errors_oom": 0,
+   "evicted_keys": 28165,
+   "used_memory_bytes": 10485456,
+   "maxmemory_bytes": 10485760,
+   "keys_at_end": "13455",
+   "seconds": 8.4,
+   "run": 3
+  }
+ ],
+ "summary": {
+  "by_policy": {
+   "allkeys-lru": {
+    "runs": 3,
+    "hit_ratio_mean": 0.7849,
+    "hit_ratio_range": 0.0005,
+    "hit_ratio_second_half_mean": 0.8115,
+    "evicted_keys_mean": 19077,
+    "eviction_per_set": 0.5912,
+    "set_errors_oom_mean": 0
+   },
+   "volatile-lru": {
+    "runs": 3,
+    "hit_ratio_mean": 0.7569,
+    "hit_ratio_range": 0.0008,
+    "hit_ratio_second_half_mean": 0.7563,
+    "evicted_keys_mean": 22889,
+    "eviction_per_set": 0.6277,
+    "set_errors_oom_mean": 0
+   },
+   "volatile-ttl": {
+    "runs": 3,
+    "hit_ratio_mean": 0.7198,
+    "hit_ratio_range": 0.0003,
+    "hit_ratio_second_half_mean": 0.6911,
+    "evicted_keys_mean": 28210,
+    "eviction_per_set": 0.6712,
+    "set_errors_oom_mean": 0
+   }
+  },
+  "best_hit_ratio_policy": "allkeys-lru",
+  "max_within_policy_range": 0.0008,
+  "origin_cost_per_million_requests": {
+   "origin": "Claude Haiku 4.5 1500 in / 400 out tokens",
+   "usd_per_origin_call": "0.0035000000",
+   "allkeys-lru": {
+    "origin_calls": 215100,
+    "usd": "752.85"
+   },
+   "volatile-lru": {
+    "origin_calls": 243100,
+    "usd": "850.85"
+   },
+   "volatile-ttl": {
+    "origin_calls": 280200,
+    "usd": "980.70"
+   }
+  }
+ }
+}
