@@ -54,6 +54,28 @@
 4. 실제 에이전트 호출 로그의 캐시 적중률과 미스율은 손익분기(약 21%)와 비교해 어떤가? Geographic·리전 내 요율은 얼마인가?
 5. +10%~+30% 수준의 작은 급증과 월초 일괄 청구에서 급증 규칙의 오탐·미탐은 어떤가? 경보일 제외 상한은 며칠이 적절한가? (023에서 찾은 월초 세금과 2월 일수 효과의 오탐은 024에서 고쳤다. 작은 급증은 이 규칙으로 21.5%만 잡혀, 예측 잔차 누적 같은 다른 방법이 필요하다.)
 
+## 026~036: InfraFit 확장 범위 연구
+
+InfraFit의 확장 범위(설계 단계 아키텍처 비용 모델, 비용 누수 패턴 규칙과 서비스 팩, LLM·AI 에이전트 비용, 컨테이너 실행 방식 비용, 실제 환경 연동)를 구현하기 전에 필요한 학습 근거와 검증 근거를 만들었다. 학습은 신규 노트 3개(OpenSearch, ElastiCache, API Gateway), 기존 노트 보강 8개, [비용 누수 패턴 8가지](studies/methods/cost-leak-patterns.md)다. 실험은 일반화한 두 기준 시나리오([scenarios](experiments/scenarios/README.md))와 [서울 요율 사본 2026-11-15](references/aws-price-list-apn2-2026-11-15.json)만 쓰는 계산 10개와 로컬 Redis 실측 1개다. AWS 호출과 실제 LLM 호출은 하지 않았다.
+
+| 실험 | 검증 결과 | 적용 범위 |
+|---|---|---|
+| [026 · 과금 단위 올림](experiments/026-billing-unit-rounding/README.md) | 평균 크기로 과금량을 추정하면 단위 경계 바로 아래에서 분산이 클 때만 크게 틀렸다(최대 −33%, 경계를 조금 넘으면 +20%). 평균이 단위의 절반 미만이면 낭비율은 늘 50%를 넘었다. 측정값 200 B 개별 전송은 용량 기반 추정의 25.6배가 청구된다. | 로그정규 합성 분포, IoT 5 KB = 5,120 B 가정 |
+| [027 · 중복 전송](experiments/027-duplicate-transfer/README.md) | 원본 4.83 GB가 단계마다 다시 과금돼 바이트 과금 양이 189배였다. 규칙 중복·항목별 로그·NAT 재다운로드를 없애 경로 비용이 37% 줄었고, 절감의 70%가 NAT였다. 배수보다 단계별 GB 요율이 금액을 정했다. | 시나리오 ①, 에이전트 동작·로그 크기 가정 |
+| [028 · NAT vs 엔드포인트](experiments/028-nat-vs-vpc-endpoint/README.md) | 인터페이스 엔드포인트의 손익분기는 2 AZ·1개당 월 387 GB였다. 소규모 시나리오 ②에서는 S3 게이트웨이 엔드포인트만 이득이었고, 인터페이스 엔드포인트를 모두 두면 2.3배 비쌌다. | 서비스별 GB 가정, 흐름 로그 없음 |
+| [029 · 고정비와 일정 중지](experiments/029-fixed-cost-scheduling/README.md) | 근무 시간 일정으로 줄어든 것은 13%뿐이었다. 상시 비용의 79%가 삭제만 가능한 자원(대부분 OpenSearch Classic 최소 OCU)이었다. NextGen으로 바꾸면 63% 줄었다. RDS를 한 번 멈추고 잊으면 7일 뒤 자동 시작돼 절감의 33%만 남았다. | 시나리오 ② 개발 환경, NextGen 요율 미확인 |
+| [030 · 숨은 최소 요금](experiments/030-hidden-minimum-charges/README.md) | 시나리오 ②에서 최소치가 정하는 비용(431 USD)이 챗봇 모델 토큰(175 USD)의 2.5배였다. 50 MB 캐시는 서버리스 Valkey(7.37 USD)가 Redis OSS(110.23 USD)보다 93% 쌌다. | 실제 필요 OCU 미측정, KB 저장 요율 제외 |
+| [031 · 컨테이너 실행 방식](experiments/031-container-runtime-cost/README.md) | "요청 감소 → 비용 감소"가 Fargate형에서만 성립한다는 가정은 기각됐다. Fargate는 허용 조합 경계를 넘을 때만(2/6 단계), EKS+EC2는 노드 수가 바뀔 때만(4/6) 줄었고 Lambda는 무관했다. 작은 Pod 60개는 슬롯·최소 조합에 막혀 네 방식 모두 그대로였다. | EKS 예약량·시스템 Pod는 가정 |
+| [032 · LLM 요청 비용 분해](experiments/032-llm-request-cost-breakdown/README.md) | 챗봇 요청 비용에서 모델 토큰은 27%였고 벡터 저장소 최소치가 66%였다. 에이전트 호출 4회는 단일 호출의 5.83배였다. Haiku 4.5의 최소 캐시 길이(4,096토큰) 때문에 2,000토큰 고정 앞부분은 캐시되지 않아 절감 가설이 기각됐다. 모델 배분은 비용만 계산하고 판단을 보류했다. | 요청 안 캐시 재사용 상한, 품질 미평가 |
+| [033 · 입력 토큰 정의](experiments/033-input-token-definitions/README.md) | Converse `inputTokens`는 캐시를 빼고 Responses `input_tokens`는 포함한다. CloudWatch `InputTokenCount`의 정의는 문서에 없다. 정의를 잘못 잡으면 −57%~+115% 틀렸고, 청구 수량과 비교하면 캐시 비중 1%까지 정의를 가려냈다. | 합성 호출 기록, 실제 지표 정의는 미확인 |
+| [034 · 측정 비용](experiments/034-observability-cost/README.md) | 사용자 ID 차원 지표는 집계 지표의 92.6배였다. 디바이스별 지표 300개(90 USD)가 같은 데이터를 EMF 로그로 남기는 수집 요금(5.50 USD)의 16배였다. 무기한 보관의 월 저장 요금은 25개월째에야 수집 요금을 넘었다(가설 기각). 다만 36개월 누적은 30일 보관의 18.5배였다. | 로그 저장 압축 미확인(상한) |
+| [035 · 캐시 축출 정책](experiments/035-cache-eviction-policy/README.md) | 로컬 Redis 10 MB에서 allkeys-lru 0.785, volatile-lru 0.757, volatile-ttl 0.720(3회 범위 ≤ 0.0008)이었다. 원본이 LLM 호출이면 요청 100만 건당 약 228 USD 차이다. TTL 키만 반복 축출돼 OOM은 나지 않았다(가설 기각). | 로컬 실측 1회, Zipf 접근, 여유 메모리 3.34 GiB에서 사용자 지시로 실행 |
+| [036 · 설계 단계 비용 모델](experiments/036-architecture-cost-model/README.md) | 구성 요소별 "청구 예상"과 "요율 × 실사용량"을 함께 내는 모델이 019의 1,000건당 비용 8개를 그대로 재현했다. 시나리오 ① 월 294.88 USD(1,000건당 0.0114), ② 월 888.58 USD였고 검토 표시 비중은 57%·68%였다. | 첫 달 기준, 사본에 없는 요율은 제외 목록 |
+
+**공통 결론.** 작은 작업량에서는 사용량보다 **최소치·상시 시간·과금 단위**가 비용을 정했고(026·029·030·032·036), 요청·크기를 줄이는 권고의 효과는 서비스마다 다른 계단 함수였다(026·031). 서비스 이름이 아니라 이 구조를 패턴으로 묶으면, InfraFit은 패턴 규칙(일반식 + 판단 자료)과 서비스 팩(단위·최소치·중지 방식·요율 행 이름)으로 나눠 확장할 수 있다. 규칙 후보 20여 개와 근거 수준은 [InfraFit 적용 메모](experiments/infrafit-pipeline-ai-rules.md#확장-범위-규칙-후보-026036)에 있다. **모두 미구현**이며 구현은 InfraFit 저장소에서 한다.
+
+**확인하지 못한 것.** NextGen OCU 요율, KB 관리형 저장 요율, Glue Python Shell 요율·최소 과금, CloudWatch `InputTokenCount` 정의, EKS AMI 예약량, ECR 레이어 중복 제거, 로그 저장 압축은 미확인으로 남겼다. 실제 흐름 로그·지표 차원 수·캐시 접근 패턴으로 다시 확인해야 한다.
+
 ## InfraFit MVP
 
 읽기 전용 Python CLI는 청구 행, Terraform Plan JSON, 피크 관측을 명시적 자원·기간·후보 구성 매핑으로 연결한다. 결과에는 변경 검토 후보·유지·판단 보류, 판정 이유, 확인된 가상 비용과 p99가 포함된다.
@@ -77,7 +99,7 @@ InfraFit을 "합성 입력으로 검증한 연구용 CLI"에서 "실제 AWS 데�
 | [`--report`](infrafit/report.py) | 판정을 단일 HTML·Markdown으로 내보낸다. 요약, 규칙별 표, 이유, 기준값과 근거 수준, 보류 사유, 조사 대기열, 입력 종류, "예상 절감 ≠ 실제 청구"를 담는다 | 테스트 10개. 민감값·추가 필드 미출력, 이스케이프, 결정성 | — |
 | [tf_links.py](infrafit/tf_links.py) | `terraform show -json`에서 주소·유형·`values.id`만 읽어 주소 ↔ 자원 ID 연결 후보를 만든다. 민감 ID와 데이터 소스는 제외한다 | 합성 state로 테스트 7개 | 실제 state 미확인, `cli.py`에 아직 연결 안 함([설계](experiments/terraform-state-linking-plan.md)) |
 
-[025](experiments/025-billing-rule-probe/README.md)의 과금 규칙 판정은 청구 사용량이 반영된 뒤에 한다. 첫 조회(Cost Explorer 1건, 0.01 USD)에서는 아직 비어 있었다. 실제 프로젝트 데이터로 기준값을 다시 정하는 절차는 [수집·재설정 계획](experiments/real-account-calibration-plan.md) 8장에 명령 단위로 구체화했다.
+[025](experiments/025-billing-rule-probe/README.md)의 과금 규칙 판정은 청구 사용량이 반영된 뒤에 한다. 실행 후 24시간 시점까지 4회 조회(Cost Explorer 4건, 0.04 USD)했으나 아직 반영되지 않아 **반영 대기**다. 자원 삭제는 승인을 기다린다. 실제 프로젝트 데이터로 기준값을 다시 정하는 절차는 [수집·재설정 계획](experiments/real-account-calibration-plan.md) 8장에 명령 단위로 구체화했다.
 
 ## 실제 청구 자료 확보 후의 검증
 

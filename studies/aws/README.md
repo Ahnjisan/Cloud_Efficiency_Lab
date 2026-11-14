@@ -58,6 +58,25 @@ Docker·Kubernetes 자체의 구조와 자원 관리는 [Platforms](../platforms
 - [Bedrock 비용 산정 01 — 토큰 과금·프롬프트 캐싱·에이전트 호출 증폭](bedrock/README.md)
 - [SageMaker 비용 산정 01 — 학습·노트북·엔드포인트와 유휴 비용](sagemaker/README.md)
 
+### InfraFit 확장 범위 — 누수 패턴·컨테이너·LLM 비용 (서울 리전 공개 요율, 2026-11-15 확인)
+
+신규 노트
+- [OpenSearch Service 비용 산정 01 — Serverless OCU 최소치와 관리형 도메인 상시 요금](opensearch/README.md)
+- [ElastiCache 비용 산정 01 — 노드 시간, 서버리스 최소 저장량, ECPU](elasticache/README.md)
+- [API Gateway 비용 산정 01 — HTTP·REST 요청과 WebSocket 메시지·연결 분](api-gateway/README.md)
+
+기존 노트 보강(각 노트 끝의 "추가(2026-11-15)" 절)
+- [Bedrock](bedrock/README.md) — Guardrails 텍스트 단위, Knowledge Base 저장 최소 요금, 모델 배분
+- [Lambda](lambda/README.md) — 메시지마다 호출 vs 묶어 호출, 프로비저닝 폴러
+- [RDS](rds/README.md) — 중지와 7일 자동 재시작
+- [VPC](vpc/README.md) — NAT vs 인터페이스·게이트웨이 엔드포인트
+- [EKS](eks/README.md) — 표준·연장 지원 클러스터 요금, maxPods, 시스템 Pod 몫
+- [ECS·Fargate](ecs-fargate/README.md) — 허용 조합 올림, 과금 시작·종료, EKS vs ECS Fargate
+- [ECR](ecr/README.md) — 저장, 수명 주기, 이미지 크기와 시작 시간
+- [Athena·Glue](athena-glue/README.md) — Python Shell vs Spark DPU와 최소 과금(일부 미확인)
+
+패턴별 정리는 [비용 누수 패턴 8가지](../methods/cost-leak-patterns.md), 실험은 [026~036](../../experiments/README.md#infrafit-확장-범위-누수-패턴컨테이너llm-비용설계-단계-모델-026036-로컬합성계산-aws-호출-없음)에 있습니다.
+
 자료가 준비되어 있으며 사용자 학습 완료 여부는 미확인입니다.
 
 [전체 학습 목차와 순서](../README.md) · [공통 기초](../foundations/README.md) · [분석 방법론](../methods/README.md)

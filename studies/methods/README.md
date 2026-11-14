@@ -37,6 +37,7 @@ Docker·Kubernetes의 기본 구조와 자원 관리 기능은 [Platforms](../pl
 - [Rightsizing](rightsizing.md)
 - [예측](forecasting.md)
 - [이상탐지](anomaly-detection.md) — 일별 비용 급증 탐지 규칙과 평가 기준
+- [비용 누수 패턴 8가지](cost-leak-patterns.md) — 서비스와 무관한 과금 구조, InfraFit 서비스 팩 구조 제안
 - [구성 최적화](configuration-optimization.md)
 - [비용 배분](cost-allocation.md)
 - [서비스 간 분석](cross-service-analysis.md)

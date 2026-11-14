@@ -66,6 +66,14 @@ AWS 서비스별 작동 원리, 과금 항목과 비용 산정, 자원 구성과
 - [Bedrock 비용 산정 01 — 토큰 과금·프롬프트 캐싱·에이전트 호출 증폭](aws/bedrock/README.md)
 - [SageMaker 비용 산정 01 — 학습·노트북·엔드포인트와 유휴 비용](aws/sagemaker/README.md)
 
+### AWS 확장 — InfraFit 확장 범위 (서울 리전 공개 요율, 2026-11-15 확인)
+
+- [OpenSearch Service 비용 산정 01 — Serverless OCU 최소치와 관리형 도메인 상시 요금](aws/opensearch/README.md)
+- [ElastiCache 비용 산정 01 — 노드 시간, 서버리스 최소 저장량, ECPU](aws/elasticache/README.md)
+- [API Gateway 비용 산정 01 — HTTP·REST 요청과 WebSocket 메시지·연결 분](aws/api-gateway/README.md)
+- 보강: [Bedrock](aws/bedrock/README.md) · [Lambda](aws/lambda/README.md) · [RDS](aws/rds/README.md) · [VPC](aws/vpc/README.md) · [EKS](aws/eks/README.md) · [ECS·Fargate](aws/ecs-fargate/README.md) · [ECR](aws/ecr/README.md) · [Athena·Glue](aws/athena-glue/README.md) — 각 노트 끝 "추가(2026-11-15)" 절
+- [비용 누수 패턴 8가지](methods/cost-leak-patterns.md) — 서비스가 달라도 반복되는 과금 구조
+
 ### Docker
 
 - [Docker 구조](platforms/docker/README.md)
@@ -84,6 +92,7 @@ AWS 서비스별 작동 원리, 과금 항목과 비용 산정, 자원 구성과
 - [Rightsizing](methods/rightsizing.md)
 - [예측](methods/forecasting.md)
 - [이상탐지](methods/anomaly-detection.md) — 일별 비용 급증 탐지 절 포함
+- [비용 누수 패턴 8가지](methods/cost-leak-patterns.md) — 올림·상시 고정비·중복 전송·캐시 손익분기·보관 기간·일정 중지·최소 요금·측정 비용
 - [구성 최적화](methods/configuration-optimization.md)
 - [비용 배분](methods/cost-allocation.md)
 - [서비스 간 분석](methods/cross-service-analysis.md)

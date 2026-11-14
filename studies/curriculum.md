@@ -76,7 +76,7 @@ Linux 공식 문서의 프로세스·메모리·자원 제어 설명, 네트워�
 
 ## 과정 02. AWS Infrastructure & Pricing
 
-학습 자료 — [기존 AWS 자료](aws/README.md) · [EC2 Rightsizing·Auto Scaling](aws/ec2/rightsizing-and-autoscaling.md) · [ELB](aws/elb/README.md) · [CloudWatch](aws/cloudwatch/README.md) · [ECR](aws/ecr/README.md) · [ECS·Fargate](aws/ecs-fargate/README.md) · [DynamoDB](aws/dynamodb/README.md) · [Aurora](aws/aurora/README.md) · [EKS](aws/eks/README.md) · [AWS 비용 데이터](aws/cost-data/README.md) · [IoT Core](aws/iot-core/README.md) · [Firehose](aws/kinesis-firehose/README.md) · [Athena·Glue](aws/athena-glue/README.md) · [Bedrock](aws/bedrock/README.md) · [SageMaker](aws/sagemaker/README.md)
+학습 자료 — [기존 AWS 자료](aws/README.md) · [EC2 Rightsizing·Auto Scaling](aws/ec2/rightsizing-and-autoscaling.md) · [ELB](aws/elb/README.md) · [CloudWatch](aws/cloudwatch/README.md) · [ECR](aws/ecr/README.md) · [ECS·Fargate](aws/ecs-fargate/README.md) · [DynamoDB](aws/dynamodb/README.md) · [Aurora](aws/aurora/README.md) · [EKS](aws/eks/README.md) · [AWS 비용 데이터](aws/cost-data/README.md) · [IoT Core](aws/iot-core/README.md) · [Firehose](aws/kinesis-firehose/README.md) · [Athena·Glue](aws/athena-glue/README.md) · [Bedrock](aws/bedrock/README.md) · [SageMaker](aws/sagemaker/README.md) · [OpenSearch](aws/opensearch/README.md) · [ElastiCache](aws/elasticache/README.md) · [API Gateway](aws/api-gateway/README.md) · [Lambda](aws/lambda/README.md) · [RDS](aws/rds/README.md) · [VPC](aws/vpc/README.md)
 
 ### 목적과 필요성
 
@@ -214,7 +214,7 @@ CloudWatch·Prometheus·Grafana, AWS 비용 보고 기능, FOCUS 사양, 태그�
 
 ## 과정 05. Optimization Methods
 
-학습 자료 — [Rightsizing](methods/rightsizing.md) · [예측](methods/forecasting.md) · [이상탐지](methods/anomaly-detection.md) · [구성 최적화](methods/configuration-optimization.md) · [비용 배분](methods/cost-allocation.md) · [서비스 간 분석](methods/cross-service-analysis.md)
+학습 자료 — [Rightsizing](methods/rightsizing.md) · [예측](methods/forecasting.md) · [이상탐지](methods/anomaly-detection.md) · [구성 최적화](methods/configuration-optimization.md) · [비용 배분](methods/cost-allocation.md) · [서비스 간 분석](methods/cross-service-analysis.md) · [비용 누수 패턴 8가지](methods/cost-leak-patterns.md)
 
 ### 목적과 필요성
 
