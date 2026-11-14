@@ -33,6 +33,15 @@
 - [학술 논문](papers.md)
 - [공식 데이터 예제](datasets.md)
 
+## 서울 리전 요율 사본
+
+| 파일 | 확인일 | 범위 |
+|---|---|---|
+| [aws-price-list-apn2-2026-11-13.json](aws-price-list-apn2-2026-11-13.json) | 2026-11-13 | IoT Core, Firehose, Athena, Glue, S3, SageMaker, Bedrock (실험 016~022) |
+| [aws-price-list-apn2-2026-11-15.json](aws-price-list-apn2-2026-11-15.json) | 2026-11-15 | 위 서비스 일부 + OpenSearch, ElastiCache, API Gateway, Lambda, RDS, VPC 엔드포인트·NAT, EC2, EKS, ECS Fargate, ECR, CloudWatch, Bedrock Guardrails (실험 026~036) |
+
+두 사본 모두 AWS Price List Bulk API의 서울 오퍼 파일에서 온디맨드 공개 요율 행만 그대로 옮겼다. 무료 제공량·할인·세금은 없다. 2026-11-15 사본은 [extract-price-snapshot.py](extract-price-snapshot.py)로 만들었고, 오퍼마다 게시일(`publicationDate`)과 추출 조건(`selection`)을, 찾지 못한 요율은 `missing`에 적었다. 이전 사본은 고치지 않는다.
+
 기존 Foundations 문서의 [확인한 자료와 해석 범위](../studies/foundations/README.md#확인한-자료와-해석-범위)도 참고합니다.
 
 ## 외부 자료 재사용
