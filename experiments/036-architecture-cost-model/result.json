@@ -1,0 +1,335 @@
+{
+ "snapshot": "2026-11-15",
+ "reproduce_019": {
+  "baseline": {
+   "0": {
+    "model_usd_per_1000": "0.001926",
+    "019_usd_per_1000": "0.001926",
+    "abs_diff": "0.000000",
+    "model_total_usd": "49.93"
+   },
+   "0.1": {
+    "model_usd_per_1000": "0.002101",
+    "019_usd_per_1000": "0.002101",
+    "abs_diff": "0.000000",
+    "model_total_usd": "54.46"
+   },
+   "1": {
+    "model_usd_per_1000": "0.003675",
+    "019_usd_per_1000": "0.003675",
+    "abs_diff": "0.000000",
+    "model_total_usd": "95.27"
+   },
+   "10": {
+    "model_usd_per_1000": "0.019418",
+    "019_usd_per_1000": "0.019418",
+    "abs_diff": "0.000000",
+    "model_total_usd": "503.32"
+   }
+  },
+  "improved": {
+   "0": {
+    "model_usd_per_1000": "0.000110",
+    "019_usd_per_1000": "0.000110",
+    "abs_diff": "0.000000",
+    "model_total_usd": "2.85"
+   },
+   "0.1": {
+    "model_usd_per_1000": "0.000111",
+    "019_usd_per_1000": "0.000111",
+    "abs_diff": "0.000000",
+    "model_total_usd": "2.88"
+   },
+   "1": {
+    "model_usd_per_1000": "0.000123",
+    "019_usd_per_1000": "0.000123",
+    "abs_diff": "0.000000",
+    "model_total_usd": "3.19"
+   },
+   "10": {
+    "model_usd_per_1000": "0.000241",
+    "019_usd_per_1000": "0.000241",
+    "abs_diff": "0.000000",
+    "model_total_usd": "6.25"
+   }
+  }
+ },
+ "reproduce_019_max_abs_diff_usd_per_1000": "0.000000",
+ "scenario_iot_pipeline_agent": {
+  "total_usd": "294.88",
+  "components": [
+   {
+    "name": "IoT messages",
+    "service": "AWSIoT",
+    "billed_usd": "31.1040",
+    "usage_usd": "1.2150",
+    "share": "0.1055",
+    "flags": [
+     "minimum_or_rounding_ge_50pct"
+    ]
+   },
+   {
+    "name": "IoT rules+actions",
+    "service": "AWSIoT",
+    "billed_usd": "18.6624",
+    "usage_usd": "18.6624",
+    "share": "0.0633",
+    "flags": []
+   },
+   {
+    "name": "IoT connection",
+    "service": "AWSIoT",
+    "billed_usd": "0.4147",
+    "usage_usd": "0.4147",
+    "share": "0.0014",
+    "flags": []
+   },
+   {
+    "name": "Firehose ingest",
+    "service": "AmazonKinesisFirehose",
+    "billed_usd": "4.4495",
+    "usage_usd": "0.1738",
+    "share": "0.0151",
+    "flags": [
+     "minimum_or_rounding_ge_50pct"
+    ]
+   },
+   {
+    "name": "S3 PUT",
+    "service": "AmazonS3",
+    "billed_usd": "0.1944",
+    "usage_usd": "0.1944",
+    "share": "0.0007",
+    "flags": []
+   },
+   {
+    "name": "S3 storage (1 month)",
+    "service": "AmazonS3",
+    "billed_usd": "0.1207",
+    "usage_usd": "0.1207",
+    "share": "0.0004",
+    "flags": []
+   },
+   {
+    "name": "Lambda",
+    "service": "AWSLambda",
+    "billed_usd": "5.4864",
+    "usage_usd": "5.4864",
+    "share": "0.0186",
+    "flags": []
+   },
+   {
+    "name": "Glue Spark ETL job",
+    "service": "AWSGlue",
+    "billed_usd": "21.1200",
+    "usage_usd": "21.1200",
+    "share": "0.0716",
+    "flags": []
+   },
+   {
+    "name": "Athena scans",
+    "service": "AmazonAthena",
+    "billed_usd": "1.4305",
+    "usage_usd": "1.4305",
+    "share": "0.0049",
+    "flags": []
+   },
+   {
+    "name": "Bedrock Claude Haiku 4.5 tokens",
+    "service": "AmazonBedrockFoundationModels",
+    "billed_usd": "63.0000",
+    "usage_usd": "63.0000",
+    "share": "0.2136",
+    "flags": []
+   },
+   {
+    "name": "NAT gateway hours",
+    "service": "AmazonEC2",
+    "billed_usd": "43.0700",
+    "usage_usd": "43.0700",
+    "share": "0.1461",
+    "flags": [
+     "always_on"
+    ]
+   },
+   {
+    "name": "NAT processing",
+    "service": "AmazonEC2",
+    "billed_usd": "0.0000",
+    "usage_usd": "0.0000",
+    "share": "0.0000",
+    "flags": []
+   },
+   {
+    "name": "CloudWatch Logs ingest",
+    "service": "AmazonCloudWatch",
+    "billed_usd": "15.2000",
+    "usage_usd": "15.2000",
+    "share": "0.0515",
+    "flags": []
+   },
+   {
+    "name": "CloudWatch Logs storage (month 1)",
+    "service": "AmazonCloudWatch",
+    "billed_usd": "0.6280",
+    "usage_usd": "0.6280",
+    "share": "0.0021",
+    "flags": []
+   },
+   {
+    "name": "CloudWatch custom metrics",
+    "service": "AmazonCloudWatch",
+    "billed_usd": "90.0000",
+    "usage_usd": "90.0000",
+    "share": "0.3052",
+    "flags": [
+     "always_on"
+    ]
+   }
+  ],
+  "flagged_share": "0.5718",
+  "usd_per_1000_readings": "0.011377",
+  "excluded": [
+   "SQS requests (not in the 2026-11-15 snapshot)",
+   "Glue crawler",
+   "S3 GET by Athena"
+  ]
+ },
+ "scenario_web_llm_chatbot": {
+  "total_usd": "888.58",
+  "components": [
+   {
+    "name": "API Gateway HTTP",
+    "service": "AmazonApiGateway",
+    "billed_usd": "3.7515",
+    "usage_usd": "3.7515",
+    "share": "0.0042",
+    "flags": []
+   },
+   {
+    "name": "ECS Fargate tasks",
+    "service": "AmazonECS",
+    "billed_usd": "41.4494",
+    "usage_usd": "41.4494",
+    "share": "0.0466",
+    "flags": [
+     "always_on"
+    ]
+   },
+   {
+    "name": "RDS instance",
+    "service": "AmazonRDS",
+    "billed_usd": "74.4600",
+    "usage_usd": "74.4600",
+    "share": "0.0838",
+    "flags": [
+     "always_on"
+    ]
+   },
+   {
+    "name": "RDS storage",
+    "service": "AmazonRDS",
+    "billed_usd": "13.1000",
+    "usage_usd": "13.1000",
+    "share": "0.0147",
+    "flags": [
+     "always_on"
+    ]
+   },
+   {
+    "name": "ElastiCache serverless Valkey storage",
+    "service": "AmazonElastiCache",
+    "billed_usd": "7.3730",
+    "usage_usd": "3.6865",
+    "share": "0.0083",
+    "flags": [
+     "minimum_or_rounding_ge_50pct",
+     "always_on"
+    ]
+   },
+   {
+    "name": "ElastiCache serverless Valkey ECPU",
+    "service": "AmazonElastiCache",
+    "billed_usd": "0.0270",
+    "usage_usd": "0.0270",
+    "share": "0.0000",
+    "flags": []
+   },
+   {
+    "name": "Bedrock Claude Haiku 4.5 tokens",
+    "service": "AmazonBedrockFoundationModels",
+    "billed_usd": "175.0000",
+    "usage_usd": "175.0000",
+    "share": "0.1969",
+    "flags": []
+   },
+   {
+    "name": "Bedrock Guardrails",
+    "service": "AmazonBedrock",
+    "billed_usd": "45.0000",
+    "usage_usd": "25.5000",
+    "share": "0.0506",
+    "flags": []
+   },
+   {
+    "name": "OpenSearch Serverless Classic (min 2 OCU)",
+    "service": "AmazonES",
+    "billed_usd": "427.7800",
+    "usage_usd": null,
+    "share": "0.4814",
+    "flags": [
+     "usage_unknown",
+     "always_on"
+    ]
+   },
+   {
+    "name": "NAT gateway hours",
+    "service": "AmazonEC2",
+    "billed_usd": "43.0700",
+    "usage_usd": "43.0700",
+    "share": "0.0485",
+    "flags": [
+     "always_on"
+    ]
+   },
+   {
+    "name": "NAT processing",
+    "service": "AmazonEC2",
+    "billed_usd": "17.9950",
+    "usage_usd": "17.9950",
+    "share": "0.0203",
+    "flags": []
+   },
+   {
+    "name": "CloudWatch Logs ingest",
+    "service": "AmazonCloudWatch",
+    "billed_usd": "38.0000",
+    "usage_usd": "38.0000",
+    "share": "0.0428",
+    "flags": []
+   },
+   {
+    "name": "CloudWatch Logs storage (month 1)",
+    "service": "AmazonCloudWatch",
+    "billed_usd": "1.5700",
+    "usage_usd": "1.5700",
+    "share": "0.0018",
+    "flags": []
+   }
+  ],
+  "flagged_share": "0.6834",
+  "usd_per_chatbot_question": "0.017772",
+  "note": "per-question figure divides the whole stack by chatbot questions; web traffic shares the stack"
+ },
+ "hypotheses": {
+  "H1_reproduces_019_per_1000_within_0_000001": {
+   "result": true,
+   "max_abs_diff": "0.000000"
+  },
+  "H2_flagged_components_ge_50pct_in_both_scenarios": {
+   "result": true,
+   "iot_flagged_share": "0.5718",
+   "web_flagged_share": "0.6834"
+  }
+ }
+}

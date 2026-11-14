@@ -1,0 +1,89 @@
+{
+ "snapshot": "2026-11-15",
+ "assumptions": {
+  "emf_bytes_per_record": 300,
+  "stored_to_ingested_ratio": "1",
+  "log_gb_per_month": 20
+ },
+ "metric_designs": {
+  "A_aggregate_plus_group": {
+   "desc": "3 metrics without dimensions + 3 metrics x DeviceGroup(5)",
+   "billed_metric_months": "18.00",
+   "usd": "5.40"
+  },
+  "B_per_device": {
+   "desc": "3 metrics x DeviceId(100)",
+   "billed_metric_months": "300.00",
+   "usd": "90.00"
+  },
+  "C_high_cardinality_agent": {
+   "desc": "agent: 2 metrics x Tool(10) x Model(2) x User(500), each user active 2 h/day",
+   "billed_metric_months": "1666.67",
+   "usd": "500.00"
+  }
+ },
+ "emf_per_reading": {
+  "records": 25920000,
+  "ingest_gb": "7.24",
+  "ingest_usd": "5.50",
+  "storage_first_month_usd": "0.23"
+ },
+ "retention": [
+  {
+   "month": 1,
+   "ingest_usd": "15.20",
+   "storage_usd_infinite": "0.63",
+   "storage_usd_30d": "0.63",
+   "cumulative_storage_usd_infinite": "0.63",
+   "cumulative_storage_usd_30d": "0.63"
+  },
+  {
+   "month": 6,
+   "ingest_usd": "15.20",
+   "storage_usd_infinite": "3.77",
+   "storage_usd_30d": "0.63",
+   "cumulative_storage_usd_infinite": "13.19",
+   "cumulative_storage_usd_30d": "3.77"
+  },
+  {
+   "month": 12,
+   "ingest_usd": "15.20",
+   "storage_usd_infinite": "7.54",
+   "storage_usd_30d": "0.63",
+   "cumulative_storage_usd_infinite": "48.98",
+   "cumulative_storage_usd_30d": "7.54"
+  },
+  {
+   "month": 24,
+   "ingest_usd": "15.20",
+   "storage_usd_infinite": "15.07",
+   "storage_usd_30d": "0.63",
+   "cumulative_storage_usd_infinite": "188.40",
+   "cumulative_storage_usd_30d": "15.07"
+  },
+  {
+   "month": 36,
+   "ingest_usd": "15.20",
+   "storage_usd_infinite": "22.61",
+   "storage_usd_30d": "0.63",
+   "cumulative_storage_usd_infinite": "418.25",
+   "cumulative_storage_usd_30d": "22.61"
+  }
+ ],
+ "storage_exceeds_ingest_from_month": 25,
+ "hypotheses": {
+  "H1_high_cardinality_ge_10x_aggregate": {
+   "result": true,
+   "ratio": "92.6"
+  },
+  "H2_infinite_retention_storage_exceeds_ingest_within_12_months": {
+   "result": false,
+   "crossover_month": 25
+  },
+  "H3_per_device_metric_charge_exceeds_emf_ingest": {
+   "result": true,
+   "per_device_metrics_usd": "90.00",
+   "emf_ingest_usd": "5.50"
+  }
+ }
+}
