@@ -95,3 +95,27 @@ Gateway Endpoint로 S3만 우회하면 줄어드는 비용은 **8.00 USD**의 NA
 
 1. 외부 서비스 트래픽에 NAT를 계속 사용하기 때문입니다. S3 트래픽만 우회하면 NAT가 처리하던 200 GB의 처리료가 줄어듭니다.
 2. 처리료는 NAT가 처리한 송수신량에 적용합니다. 가상 전송료는 인터넷으로 나간 50 GB에만 적용하므로 같은 트래픽이라도 두 항목의 과금량이 다릅니다.
+
+## 추가(2026-11-15) — NAT 게이트웨이 vs 인터페이스·게이트웨이 엔드포인트
+
+> 사설 서브넷의 컨테이너가 S3·ECR·CloudWatch Logs로 보내는 트래픽을 NAT로 보낼 때와 VPC 엔드포인트로 보낼 때, 어느 지점부터 엔드포인트가 싼가?
+
+**과금 단위**(서울, [2026-11-15 사본](../../../references/aws-price-list-apn2-2026-11-15.json)):
+
+| 경로 | 시간 요금 | 처리 요금 |
+|---|---|---|
+| NAT 게이트웨이 | 0.059 USD/시간 (게이트웨이마다) | 0.059 USD/GB |
+| 인터페이스 엔드포인트 | 0.013 USD/시간 (**엔드포인트 × AZ마다**) | 0.01 USD/GB (1 PB까지) |
+| 게이트웨이 엔드포인트 (S3, DynamoDB) | 없음 | 없음 ("no additional charge") |
+
+**가상 예시.** 2개 AZ에 인터페이스 엔드포인트 1개를 두면 고정비가 0.013 × 2 × 730 = 18.98 USD/월이고, GB당 0.049 USD를 아낍니다. **손익분기는 그 서비스로 가는 트래픽 월 약 387 GB**입니다. ECR(api·dkr)과 Logs 3개를 두면 고정비 56.94 USD/월입니다. S3로 가는 트래픽은 무료인 게이트웨이 엔드포인트가 언제나 유리합니다. NAT 게이트웨이 자체는 인터넷으로 나가는 다른 트래픽이 남아 있으면 없앨 수 없으므로, 비교는 **처리 요금(GB) 부분**에서 합니다. 손익분기 일반식은 [실험 028](../../../experiments/028-nat-vs-vpc-endpoint/README.md)에서 다룹니다.
+
+**낭비 판단 자료.** NAT의 `BytesOutToDestination`을 목적지별로 나눈 값(VPC 흐름 로그 필요), 서비스별 월 GB, 엔드포인트 AZ 수, 기존 엔드포인트 목록. 흐름 로그 없이 NAT 총량만 있으면 서비스별 분해를 못 하므로 **판단 보류**입니다.
+
+**확인 문제.** S3로 월 2 TB를 NAT로 보내면 처리 요금은? 게이트웨이 엔드포인트로 바꾸면? **해설.** 2,048 × 0.059 = 120.83 USD에서 0 USD가 됩니다.
+
+| 공식 자료 (확인일 2026-11-15) | 확인 범위 |
+|---|---|
+| [Gateway endpoints](https://docs.aws.amazon.com/vpc/latest/privatelink/gateway-endpoints.html) | S3·DynamoDB 지원, 추가 요금 없음 |
+| [AWS PrivateLink pricing](https://aws.amazon.com/privatelink/pricing/) · [Amazon VPC pricing](https://aws.amazon.com/vpc/pricing/) | 인터페이스 엔드포인트 AZ별 시간·GB, NAT 시간·GB |
+| [Price List — AmazonVPC](https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonVPC/current/ap-northeast-2/index.json) · [AmazonEC2](https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonEC2/current/ap-northeast-2/index.json) | 엔드포인트(게시일 2026-11-05), NAT(AmazonEC2 오퍼, 게시일 2026-11-14) 서울 요율 |

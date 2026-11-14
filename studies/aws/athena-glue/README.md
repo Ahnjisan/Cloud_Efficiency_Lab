@@ -104,3 +104,28 @@ Price List에서 Athena·Glue 서울 요율을, AWS 문서에서 열 기반 형�
 1. 10 MB 최소가 적용되어 10 MB입니다.
 2. 대부분의 열을 읽는 쿼리(`SELECT *`), 그리고 원래 스캔이 10 MB 미만이라 최소 과금에 걸리는 쿼리입니다.
 3. 새로운 열이나 형식 변경을 자동으로 감지해 스키마를 갱신하는 기능입니다. 프로젝션은 미리 정한 파티션 규칙만 계산합니다.
+
+## 추가(2026-11-15) — Python Shell vs Spark DPU와 최소 과금
+
+> 50 MB짜리 CSV를 하루 30번 변환하는 작은 작업에 Spark ETL 작업을 쓰면 얼마나 비싼가?
+
+**과금 단위.** Glue 작업은 DPU-시간으로 초 단위 과금합니다. 서울 Spark ETL 0.44, Glue 6.0 이상(Gen2) 0.308, Flex 0.29·0.203 USD/DPU-시간([2026-11-15 사본](../../../references/aws-price-list-apn2-2026-11-15.json), AWSGlue 게시일 2026-11-08). **Python Shell 작업은 최대 용량을 0.0625 DPU(기본) 또는 1 DPU로 고릅니다.** 그런데 Price List에 Python Shell 전용 사용 유형이 없고, 요금 페이지도 Python Shell의 요율과 최소 과금 시간을 적지 않았습니다(**미확인**, `missing`에 기록). Spark 작업의 최소 과금 시간도 요금 페이지에서 확인하지 못했습니다(페이지의 "2 DPU, 1분 최소"는 Data Quality 작업 설명).
+
+**가상 예시.** 하루 30회 × 30일 = 900회, 1회 2분.
+
+| 방식 | 계산 | 월 비용 |
+|---|---|---:|
+| Spark ETL 2 DPU (0.44) | 2 × 2/60 × 0.44 × 900 | 26.40 USD |
+| Python Shell 0.0625 DPU (0.44를 쓴다고 **가정**) | 0.0625 × 2/60 × 0.44 × 900 | 0.83 USD |
+
+DPU 크기 차이만으로 32배입니다. 다만 Python Shell 요율과 최소 과금이 확인되지 않아 이 비교는 **임시값**입니다. 최소 과금 시간이 있으면(예: 1분) 1회 30초짜리 작업은 실제 시간의 2배가 과금됩니다. 이런 **최소 과금**의 일반식은 [실험 026](../../../experiments/026-billing-unit-rounding/README.md)에서 다룹니다.
+
+**낭비 판단 자료.** 작업 유형(Spark/Python Shell/Ray), 할당 DPU·작업자 수, 실행 시간 분포, 입력 크기. 작은 입력에 큰 DPU를 쓰는 작업이 후보지만, 작업이 Spark 기능(분산 조인 등)에 의존하는지 모르면 **판단 보류**입니다.
+
+**확인 문제.** Spark 작업을 Gen2(Glue 6.0+)로 바꾸면 위 예시는 얼마가 되나요? **해설.** 2 × 2/60 × 0.308 × 900 = 18.48 USD입니다. 버전 변경에 따른 코드 호환성은 따로 확인해야 합니다.
+
+| 공식 자료 (확인일 2026-11-15) | 확인 범위 |
+|---|---|
+| [AWS Glue pricing](https://aws.amazon.com/glue/pricing/) | 초 단위 과금, ETL·Flex 요율과 예시, Python Shell 요율·최소 과금 기재 없음 |
+| [Configuring job properties for Python shell jobs](https://docs.aws.amazon.com/glue/latest/dg/add-job-python.html) | 최대 용량 0.0625 또는 1 DPU |
+| [Price List — AWSGlue](https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AWSGlue/current/ap-northeast-2/index.json) | 서울 요율 |

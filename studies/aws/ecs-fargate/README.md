@@ -24,3 +24,44 @@ ECS 서비스는 원하는 수의 태스크 복제본을 유지하고, 필요에
 - [AWS Fargate Pricing — Duration, vCPU and Memory](https://aws.amazon.com/fargate/pricing/) · 2026-11-08 확인
 
 이 문서의 예시는 설명용 가정이다. 실제 환경의 결과와 적용 가능성은 별도로 확인한다.
+
+## 추가(2026-11-15) — 허용 조합 올림, 과금 시작·종료, EKS Fargate vs ECS Fargate
+
+> Pod에 1 vCPU·8 GB를 요청했는데 왜 2 vCPU 요금이 나오는가?
+
+**과금 단위.** Fargate는 vCPU·메모리·임시 저장(20 GB 초과분)을 초 단위로 과금합니다. 서울 x86: vCPU 0.04656, GB 0.00511 USD/시간, ARM: vCPU 0.03725, GB 0.00409([2026-11-15 사본](../../../references/aws-price-list-apn2-2026-11-15.json)). **과금은 컨테이너 이미지 다운로드를 시작한 순간부터 ECS 태스크나 EKS Pod가 끝날 때까지**이고, 초 단위로 올림하며 Linux는 **최소 1분**(Windows 5분)입니다.
+
+**허용 조합 올림.** 요청은 다음 조합 중 맞는 가장 작은 것으로 올라갑니다.
+
+| vCPU | 메모리 |
+|---:|---|
+| 0.25 | 0.5, 1, 2 GB |
+| 0.5 | 1~4 GB |
+| 1 | 2~8 GB |
+| 2 | 4~16 GB (1 GB 단위) |
+| 4 | 8~30 GB (1 GB 단위) |
+| 8 | 16~60 GB (4 GB 단위) |
+| 16 | 32~120 GB (8 GB 단위) |
+| 32 (ECS만) | 60, 120, 244 GB |
+
+**EKS Fargate는 Pod 메모리에 256 MB를 더한 뒤** 올립니다(Kubernetes 구성 요소 몫).
+
+**가상 예시.**
+
+| 요청 | ECS Fargate 프로비저닝 | EKS Fargate 프로비저닝 | 시간당(ECS → EKS) |
+|---|---|---|---|
+| 1 vCPU · 8 GB | 1 vCPU · 8 GB | 8.25 GB → **2 vCPU · 9 GB** | 0.08744 → 0.13911 USD (+59%) |
+| 0.25 vCPU · 0.5 GB | 0.25 · 0.5 GB | 0.75 GB → 0.25 · 1 GB | 0.01420 → 0.01675 USD (+18%) |
+
+EKS Fargate에서는 메모리를 조합 경계에 딱 맞춰 요청하면 256 MB 때문에 한 단계 올라갑니다. 경계보다 256 MB 이상 작게 요청하면 됩니다. 또 EKS는 클러스터 요금(0.10 USD/시간)이 따로 붙습니다. 실행이 1분보다 짧은 작업은 최소 1분이 과금되므로 짧은 작업을 많이 띄우는 구조는 **최소 과금**에 걸립니다.
+
+**낭비 판단 자료.** 요청한 vCPU·메모리와 실제 프로비저닝된 크기(EKS는 Pod 주석 `CapacityProvisioned`), 작업 실행 시간 분포, 이미지 다운로드 시간.
+
+**확인 문제.** EKS Fargate에서 2 vCPU · 15.9 GB를 요청하면? **해설.** 15.9 + 0.25 = 16.15 GB > 16 GB이므로 4 vCPU · 17 GB로 올라갑니다.
+
+| 공식 자료 (확인일 2026-11-15) | 확인 범위 |
+|---|---|
+| [AWS Fargate pricing](https://aws.amazon.com/fargate/pricing/) | 과금 시작(이미지 다운로드 시작)·종료, 초 단위 올림, Linux 최소 1분·Windows 5분 |
+| [Fargate Pod configuration (EKS)](https://docs.aws.amazon.com/eks/latest/userguide/fargate-pod-configuration.html) | 허용 조합, 256 MB 추가, 올림 예시 |
+| [Amazon ECS task CPU and memory](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-tasks-services.html) | ECS 허용 조합(32 vCPU 포함) |
+| [Price List — AmazonECS](https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonECS/current/ap-northeast-2/index.json) | 서울 Fargate 요율, 게시일 2026-11-11 |
