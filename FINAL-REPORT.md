@@ -99,7 +99,7 @@ InfraFit을 "합성 입력으로 검증한 연구용 CLI"에서 "실제 AWS 데�
 | [`--report`](infrafit/report.py) | 판정을 단일 HTML·Markdown으로 내보낸다. 요약, 규칙별 표, 이유, 기준값과 근거 수준, 보류 사유, 조사 대기열, 입력 종류, "예상 절감 ≠ 실제 청구"를 담는다 | 테스트 10개. 민감값·추가 필드 미출력, 이스케이프, 결정성 | — |
 | [tf_links.py](infrafit/tf_links.py) | `terraform show -json`에서 주소·유형·`values.id`만 읽어 주소 ↔ 자원 ID 연결 후보를 만든다. 민감 ID와 데이터 소스는 제외한다 | 합성 state로 테스트 7개 | 실제 state 미확인, `cli.py`에 아직 연결 안 함([설계](experiments/terraform-state-linking-plan.md)) |
 
-[025](experiments/025-billing-rule-probe/README.md)의 과금 규칙 판정은 청구 사용량이 반영된 뒤에 한다. 실행 후 24시간 시점까지 4회 조회(Cost Explorer 4건, 0.04 USD)했으나 아직 반영되지 않아 **반영 대기**다. 자원 삭제는 승인을 기다린다. 실제 프로젝트 데이터로 기준값을 다시 정하는 절차는 [수집·재설정 계획](experiments/real-account-calibration-plan.md) 8장에 명령 단위로 구체화했다.
+[025](experiments/025-billing-rule-probe/README.md)의 과금 규칙 판정은 청구 사용량이 반영된 뒤에 한다. 실행 후 24시간 시점까지 4회 조회(Cost Explorer 4건, 0.04 USD)했으나 아직 반영되지 않아 **반영 대기**다. 실험 자원은 승인을 받아 2026-11-15에 모두 삭제했다. 실제 프로젝트 데이터로 기준값을 다시 정하는 절차는 [수집·재설정 계획](experiments/real-account-calibration-plan.md) 8장에 명령 단위로 구체화했다.
 
 ## 실제 청구 자료 확보 후의 검증
 

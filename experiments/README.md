@@ -113,7 +113,7 @@ AWS 자원 생성·실행은 필수가 아닙니다. AWS 등 유료 자원을 �
 
 [최종 연구 보고서](../FINAL-REPORT.md)에서 001~015와 [InfraFit MVP](../infrafit/README.md)의 검증 범위를 함께 볼 수 있다. [InfraFit 개발 전 연구 기록](infrafit-predevelopment-review.md)은 개별 실행과 후속 검증의 맥락을 보존한다.
 
-미확인 과금 규칙을 작은 테스트 파이프라인으로 확인하는 [025](025-billing-rule-probe/README.md)는 실행을 마쳤다. 실행 후 24시간 시점까지 Cost Explorer를 4회 조회했으나 청구 사용량이 아직 반영되지 않아 **반영 대기**로 기록했다. 판정은 반영 후에 하며, 자원 삭제 대상과 순서는 025 README에 적고 승인을 기다린다. 실제 계정 데이터로 InfraFit 기준값을 다시 정하는 [수집·재설정 계획](real-account-calibration-plan.md)은 승인됐다. 하지만 실제 프로젝트 사용량이 없어 아직 데이터를 수집하지 않았다. 계획의 8장에 수집·변환 명령을 구체적으로 적었다.
+미확인 과금 규칙을 작은 테스트 파이프라인으로 확인하는 [025](025-billing-rule-probe/README.md)는 실행을 마쳤다. 실행 후 24시간 시점까지 Cost Explorer를 4회 조회했으나 청구 사용량이 아직 반영되지 않아 **반영 대기**로 기록했다. 판정은 반영 후에 한다. 실험 자원은 계정 소유자의 승인을 받아 2026-11-15에 모두 삭제했다(025 README에 기록). 실제 계정 데이터로 InfraFit 기준값을 다시 정하는 [수집·재설정 계획](real-account-calibration-plan.md)은 승인됐다. 하지만 실제 프로젝트 사용량이 없어 아직 데이터를 수집하지 않았다. 계획의 8장에 수집·변환 명령을 구체적으로 적었다.
 
 - [InfraFit 실제 AWS 출력 변환·수집·보고서](../infrafit/README.md#실제-aws-출력-변환기-convertpy) — `convert.py`(AWS 응답 → 입력 형식), `collect.py`(읽기 전용 수집, 드라이런·가짜 aws 테스트만), `--report`(HTML·Markdown). 모두 합성 응답으로만 검증했다
 - [Terraform 주소 ↔ 실제 자원 ID 자동 연결 설계](terraform-state-linking-plan.md) — `terraform show -json`에서 주소와 ID만 읽는 규칙과 합성 state 테스트. 실제 state로는 미확인
