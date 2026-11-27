@@ -193,3 +193,18 @@ ADR-0005 확장 범위(설계 단계 비용 모델, 누수 패턴 규칙과 서�
 | R-ARCH-1 | 구성 요소별 청구·사용량 기반 금액 | 구성 요소 목록과 구동량, 서비스 팩, 날짜 붙은 요율 사본 | `billed`, `usage`, `fixed`로 패턴 1·2·7 표시. 사본에 없는 요율은 구성 요소를 제외 목록에 남김. 019 1,000건당 비용 8개 재현 | 실험 확인 | [036](036-architecture-cost-model/README.md) |
 
 **실제 계정으로 다시 확인할 점(확장 범위 공통)**: 흐름 로그 기반 서비스별 NAT GB(R-NET-2), 실제 Fargate 프로비저닝 주석(R-FG-1), CloudWatch `InputTokenCount`와 청구 수량 비교(R-LLM-2), 지표 차원 조합 수(R-OBS-1), 실제 캐시 접근 패턴(R-CACHE-1), [025](025-billing-rule-probe/README.md)에서 확인할 Firehose 올림·Glue·Athena 과금 규칙.
+
+---
+
+## 측정지 파이프라인·챗봇 규칙 후보 (037~041) — 후보
+
+아래는 실험 037~041에서 나온 **후보**다. 확정된 규칙이 아니고 미구현이다. 수치는 가정 작업량·합성 데이터 기준이며, 실제 파이프라인 측정으로 다시 확인해야 한다. Bedrock 금액은 Global 교차 리전 요율 기준이다(국내 처리 요율 확인 필요).
+
+| 후보 ID | 후보 규칙 | 판정 입력 | 변경 검토 후보 / 판단 보류 (후보) | 근거 수준 | 근거 |
+|---|---|---|---|---|---|
+| C-OCR-1 | OCR 기능 선택 | Textract API·기능(Detect/Tables/Forms), 페이지 수, Bedrock 호출당 토큰 | 후보: Forms 기능을 켰는데 측정지가 표 위주 → Tables 또는 Detect + LLM 검토(Forms가 장당 비용의 90% 이상이 되는 조건). 보류: 기능별 정확도 비교 없음([040](040-ocr-vs-multimodal-plan/README.md) 미실행) | 요율은 공식 자료, 비중은 실험 확인(가정 작업량) | [037](037-measurement-sheet-unit-cost/README.md) |
+| C-SQS-1 | visibility timeout과 처리 시간 | 큐의 VisibilityTimeout, 처리 시간 p95, 메시지별 수신 횟수(ApproximateReceiveCount) | 후보: timeout < 처리 시간 p95 또는 수신 2회 이상 비율이 높음 → 재전달로 인한 OCR·LLM 재호출 검토. 보류: 처리 시간 분포 없음 | 실험 확인(합성 시뮬레이션) | [038](038-retry-duplicate-cost/README.md) |
+| C-DEDUP-1 | 중복 방지 키 범위 | 중복 방지 키 구성, 재구조화 요청 경로 | 후보: 키가 파일 해시뿐이고 요청 종류를 구분하지 않음 → 정당한 재처리를 막는 위험. OCR 결과 저장 여부도 함께 본다 | 실험 확인(합성 시뮬레이션) | [038](038-retry-duplicate-cost/README.md) |
+| C-SCALE-1 | 0까지 축소한 워커의 노드 공유 | KEDA minReplicaCount, 워커가 속한 노드 그룹·Fargate 프로필, 노드 수 변화 | 후보 아님 → 보고: 공유 노드 그룹에서 파드만 0으로 줄이면 EC2 절감 0. 절감 예상액에 파드 시간을 쓰지 않는다 | 실험 확인(계산), [031](031-container-runtime-cost/README.md) 결론과 일치 | [039](039-worker-scale-to-zero/README.md) |
+| C-SCALE-2 | 상시 워커의 근무 시간 일정 | 워커 사용 시간대, 도착 분포, 지연 요구 | 후보: 전용 노드·Fargate의 상시 워커가 근무 시간 밖에 거의 쓰이지 않음 → 근무 시간만 최소 1(W3) 검토. 보류: 첫 결과 지연 요구 모름 | 실험 확인(계산 + 파드 시작 로컬 실측), 노드·Fargate 기동 시간은 가정 | [039](039-worker-scale-to-zero/README.md) |
+| C-LLM-4 | 조회 결과 전달 크기 | 질문별 SQL 결과 행·열 수, 결과 토큰, 같은 결과의 재입력 횟수 | 후보: 결과 토큰이 질문 입력의 50% 이상 → 사전 집계·필요 열만·CSV 형식 검토. 같은 결과가 한 질문 안에서 2회 이상 입력되면 호출 증폭 검토. 보류: 답변 품질 평가 없음 | 실험 확인(합성 행, 문자 수 환산 가정) | [041](041-chatbot-result-size/README.md) |

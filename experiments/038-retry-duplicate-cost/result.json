@@ -1,0 +1,923 @@
+{
+ "rates": {
+  "textract_tables_per_page": "0.015",
+  "bedrock_haiku_medium_per_call": "0.0060000000"
+ },
+ "config": {
+  "seeds": [
+   1,
+   2,
+   3
+  ],
+  "sheets_per_seed": 5000,
+  "levels": {
+   "low": {
+    "dup": 0.001,
+    "throttle": 0.01,
+    "bad": 0.01,
+    "manual": 0.05
+   },
+   "base": {
+    "dup": 0.01,
+    "throttle": 0.05,
+    "bad": 0.03,
+    "manual": 0.1
+   },
+   "high": {
+    "dup": 0.03,
+    "throttle": 0.15,
+    "bad": 0.08,
+    "manual": 0.15
+   }
+  },
+  "retries": 3,
+  "max_receives": 5,
+  "ocr_time": [
+   3.0,
+   0.5
+  ],
+  "llm_time": [
+   10.0,
+   0.6
+  ]
+ },
+ "results": {
+  "low|30|A": {
+   "level": "low",
+   "timeout_s": 30,
+   "rule": "A",
+   "ocr_pages_per_sheet": 1.0561,
+   "ocr_pages_per_sheet_range": [
+    1.0492,
+    1.0622
+   ],
+   "bedrock_per_sheet": 1.1349,
+   "ocr_extra_ratio_vs_ideal": 0.1385,
+   "ocr_extra_ratio_range": [
+    0.1322,
+    0.1456
+   ],
+   "cost_per_sheet_usd": "0.022650",
+   "ideal_cost_per_sheet_usd": "0.020219",
+   "cost_vs_A": "1.0000",
+   "dup_redelivery_blocked_ratio": null,
+   "misjudged": 0,
+   "manual_requests": 763,
+   "misjudged_ratio_of_manual": 0.0,
+   "dlq": 0,
+   "ocr_by_cause_total": {
+    "first": 13914,
+    "dup": 13,
+    "redelivery": 1151,
+    "retry_after_fail": 0,
+    "manual": 763
+   }
+  },
+  "low|30|B": {
+   "level": "low",
+   "timeout_s": 30,
+   "rule": "B",
+   "ocr_pages_per_sheet": 0.9276,
+   "ocr_pages_per_sheet_range": [
+    0.9222,
+    0.9334
+   ],
+   "bedrock_per_sheet": 1.01,
+   "ocr_extra_ratio_vs_ideal": 0.0,
+   "ocr_extra_ratio_range": [
+    0.0,
+    0.0
+   ],
+   "cost_per_sheet_usd": "0.019974",
+   "ideal_cost_per_sheet_usd": "0.020219",
+   "cost_vs_A": "0.8818",
+   "dup_redelivery_blocked_ratio": 1.0,
+   "misjudged": 763,
+   "manual_requests": 763,
+   "misjudged_ratio_of_manual": 1.0,
+   "dlq": 0,
+   "ocr_by_cause_total": {
+    "first": 13914,
+    "dup": 0,
+    "redelivery": 0,
+    "retry_after_fail": 0,
+    "manual": 0
+   }
+  },
+  "low|30|C": {
+   "level": "low",
+   "timeout_s": 30,
+   "rule": "C",
+   "ocr_pages_per_sheet": 0.9276,
+   "ocr_pages_per_sheet_range": [
+    0.9222,
+    0.9334
+   ],
+   "bedrock_per_sheet": 1.0619,
+   "ocr_extra_ratio_vs_ideal": 0.0,
+   "ocr_extra_ratio_range": [
+    0.0,
+    0.0
+   ],
+   "cost_per_sheet_usd": "0.020286",
+   "ideal_cost_per_sheet_usd": "0.020219",
+   "cost_vs_A": "0.8956",
+   "dup_redelivery_blocked_ratio": 1.0,
+   "misjudged": 0,
+   "manual_requests": 763,
+   "misjudged_ratio_of_manual": 0.0,
+   "dlq": 0,
+   "ocr_by_cause_total": {
+    "first": 13914,
+    "dup": 0,
+    "redelivery": 0,
+    "retry_after_fail": 0,
+    "manual": 0
+   }
+  },
+  "low|60|A": {
+   "level": "low",
+   "timeout_s": 60,
+   "rule": "A",
+   "ocr_pages_per_sheet": 0.9783,
+   "ocr_pages_per_sheet_range": [
+    0.9732,
+    0.9836
+   ],
+   "bedrock_per_sheet": 1.066,
+   "ocr_extra_ratio_vs_ideal": 0.0546,
+   "ocr_extra_ratio_range": [
+    0.0538,
+    0.0553
+   ],
+   "cost_per_sheet_usd": "0.021070",
+   "ideal_cost_per_sheet_usd": "0.020219",
+   "cost_vs_A": "1.0000",
+   "dup_redelivery_blocked_ratio": null,
+   "misjudged": 0,
+   "manual_requests": 763,
+   "misjudged_ratio_of_manual": 0.0,
+   "dlq": 0,
+   "ocr_by_cause_total": {
+    "first": 13914,
+    "dup": 13,
+    "redelivery": 45,
+    "retry_after_fail": 0,
+    "manual": 702
+   }
+  },
+  "low|60|B": {
+   "level": "low",
+   "timeout_s": 60,
+   "rule": "B",
+   "ocr_pages_per_sheet": 0.9276,
+   "ocr_pages_per_sheet_range": [
+    0.9222,
+    0.9334
+   ],
+   "bedrock_per_sheet": 1.01,
+   "ocr_extra_ratio_vs_ideal": 0.0,
+   "ocr_extra_ratio_range": [
+    0.0,
+    0.0
+   ],
+   "cost_per_sheet_usd": "0.019974",
+   "ideal_cost_per_sheet_usd": "0.020219",
+   "cost_vs_A": "0.9480",
+   "dup_redelivery_blocked_ratio": 1.0,
+   "misjudged": 763,
+   "manual_requests": 763,
+   "misjudged_ratio_of_manual": 1.0,
+   "dlq": 0,
+   "ocr_by_cause_total": {
+    "first": 13914,
+    "dup": 0,
+    "redelivery": 0,
+    "retry_after_fail": 0,
+    "manual": 0
+   }
+  },
+  "low|60|C": {
+   "level": "low",
+   "timeout_s": 60,
+   "rule": "C",
+   "ocr_pages_per_sheet": 0.9276,
+   "ocr_pages_per_sheet_range": [
+    0.9222,
+    0.9334
+   ],
+   "bedrock_per_sheet": 1.0626,
+   "ocr_extra_ratio_vs_ideal": 0.0,
+   "ocr_extra_ratio_range": [
+    0.0,
+    0.0
+   ],
+   "cost_per_sheet_usd": "0.020290",
+   "ideal_cost_per_sheet_usd": "0.020219",
+   "cost_vs_A": "0.9630",
+   "dup_redelivery_blocked_ratio": 1.0,
+   "misjudged": 0,
+   "manual_requests": 763,
+   "misjudged_ratio_of_manual": 0.0,
+   "dlq": 0,
+   "ocr_by_cause_total": {
+    "first": 13914,
+    "dup": 0,
+    "redelivery": 0,
+    "retry_after_fail": 0,
+    "manual": 0
+   }
+  },
+  "low|120|A": {
+   "level": "low",
+   "timeout_s": 120,
+   "rule": "A",
+   "ocr_pages_per_sheet": 0.9749,
+   "ocr_pages_per_sheet_range": [
+    0.9704,
+    0.9798
+   ],
+   "bedrock_per_sheet": 1.0628,
+   "ocr_extra_ratio_vs_ideal": 0.051,
+   "ocr_extra_ratio_range": [
+    0.0497,
+    0.0523
+   ],
+   "cost_per_sheet_usd": "0.021000",
+   "ideal_cost_per_sheet_usd": "0.020219",
+   "cost_vs_A": "1.0000",
+   "dup_redelivery_blocked_ratio": null,
+   "misjudged": 0,
+   "manual_requests": 763,
+   "misjudged_ratio_of_manual": 0.0,
+   "dlq": 0,
+   "ocr_by_cause_total": {
+    "first": 13914,
+    "dup": 13,
+    "redelivery": 0,
+    "retry_after_fail": 0,
+    "manual": 696
+   }
+  },
+  "low|120|B": {
+   "level": "low",
+   "timeout_s": 120,
+   "rule": "B",
+   "ocr_pages_per_sheet": 0.9276,
+   "ocr_pages_per_sheet_range": [
+    0.9222,
+    0.9334
+   ],
+   "bedrock_per_sheet": 1.0093,
+   "ocr_extra_ratio_vs_ideal": 0.0,
+   "ocr_extra_ratio_range": [
+    0.0,
+    0.0
+   ],
+   "cost_per_sheet_usd": "0.019970",
+   "ideal_cost_per_sheet_usd": "0.020219",
+   "cost_vs_A": "0.9510",
+   "dup_redelivery_blocked_ratio": 1.0,
+   "misjudged": 763,
+   "manual_requests": 763,
+   "misjudged_ratio_of_manual": 1.0,
+   "dlq": 0,
+   "ocr_by_cause_total": {
+    "first": 13914,
+    "dup": 0,
+    "redelivery": 0,
+    "retry_after_fail": 0,
+    "manual": 0
+   }
+  },
+  "low|120|C": {
+   "level": "low",
+   "timeout_s": 120,
+   "rule": "C",
+   "ocr_pages_per_sheet": 0.9276,
+   "ocr_pages_per_sheet_range": [
+    0.9222,
+    0.9334
+   ],
+   "bedrock_per_sheet": 1.061,
+   "ocr_extra_ratio_vs_ideal": 0.0,
+   "ocr_extra_ratio_range": [
+    0.0,
+    0.0
+   ],
+   "cost_per_sheet_usd": "0.020280",
+   "ideal_cost_per_sheet_usd": "0.020219",
+   "cost_vs_A": "0.9657",
+   "dup_redelivery_blocked_ratio": 1.0,
+   "misjudged": 0,
+   "manual_requests": 763,
+   "misjudged_ratio_of_manual": 0.0,
+   "dlq": 0,
+   "ocr_by_cause_total": {
+    "first": 13914,
+    "dup": 0,
+    "redelivery": 0,
+    "retry_after_fail": 0,
+    "manual": 0
+   }
+  },
+  "base|30|A": {
+   "level": "base",
+   "timeout_s": 30,
+   "rule": "A",
+   "ocr_pages_per_sheet": 1.1194,
+   "ocr_pages_per_sheet_range": [
+    1.1084,
+    1.1356
+   ],
+   "bedrock_per_sheet": 1.2285,
+   "ocr_extra_ratio_vs_ideal": 0.2129,
+   "ocr_extra_ratio_range": [
+    0.1996,
+    0.2248
+   ],
+   "cost_per_sheet_usd": "0.024162",
+   "ideal_cost_per_sheet_usd": "0.020462",
+   "cost_vs_A": "1.0000",
+   "dup_redelivery_blocked_ratio": null,
+   "misjudged": 0,
+   "manual_requests": 1545,
+   "misjudged_ratio_of_manual": 0.0,
+   "dlq": 0,
+   "ocr_by_cause_total": {
+    "first": 13844,
+    "dup": 137,
+    "redelivery": 1217,
+    "retry_after_fail": 0,
+    "manual": 1593
+   }
+  },
+  "base|30|B": {
+   "level": "base",
+   "timeout_s": 30,
+   "rule": "B",
+   "ocr_pages_per_sheet": 0.923,
+   "ocr_pages_per_sheet_range": [
+    0.9128,
+    0.929
+   ],
+   "bedrock_per_sheet": 1.0306,
+   "ocr_extra_ratio_vs_ideal": 0.0001,
+   "ocr_extra_ratio_range": [
+    0.0,
+    0.0002
+   ],
+   "cost_per_sheet_usd": "0.020029",
+   "ideal_cost_per_sheet_usd": "0.020462",
+   "cost_vs_A": "0.8289",
+   "dup_redelivery_blocked_ratio": 0.9993,
+   "misjudged": 1545,
+   "manual_requests": 1545,
+   "misjudged_ratio_of_manual": 1.0,
+   "dlq": 0,
+   "ocr_by_cause_total": {
+    "first": 13844,
+    "dup": 0,
+    "redelivery": 1,
+    "retry_after_fail": 0,
+    "manual": 0
+   }
+  },
+  "base|30|C": {
+   "level": "base",
+   "timeout_s": 30,
+   "rule": "C",
+   "ocr_pages_per_sheet": 0.9229,
+   "ocr_pages_per_sheet_range": [
+    0.9128,
+    0.9288
+   ],
+   "bedrock_per_sheet": 1.1385,
+   "ocr_extra_ratio_vs_ideal": 0.0,
+   "ocr_extra_ratio_range": [
+    0.0,
+    0.0
+   ],
+   "cost_per_sheet_usd": "0.020675",
+   "ideal_cost_per_sheet_usd": "0.020462",
+   "cost_vs_A": "0.8557",
+   "dup_redelivery_blocked_ratio": 1.0,
+   "misjudged": 0,
+   "manual_requests": 1545,
+   "misjudged_ratio_of_manual": 0.0,
+   "dlq": 0,
+   "ocr_by_cause_total": {
+    "first": 13844,
+    "dup": 0,
+    "redelivery": 0,
+    "retry_after_fail": 0,
+    "manual": 0
+   }
+  },
+  "base|60|A": {
+   "level": "base",
+   "timeout_s": 60,
+   "rule": "A",
+   "ocr_pages_per_sheet": 1.0326,
+   "ocr_pages_per_sheet_range": [
+    1.0274,
+    1.039
+   ],
+   "bedrock_per_sheet": 1.1539,
+   "ocr_extra_ratio_vs_ideal": 0.1189,
+   "ocr_extra_ratio_range": [
+    0.1105,
+    0.1255
+   ],
+   "cost_per_sheet_usd": "0.022413",
+   "ideal_cost_per_sheet_usd": "0.020462",
+   "cost_vs_A": "1.0000",
+   "dup_redelivery_blocked_ratio": null,
+   "misjudged": 0,
+   "manual_requests": 1545,
+   "misjudged_ratio_of_manual": 0.0,
+   "dlq": 0,
+   "ocr_by_cause_total": {
+    "first": 13844,
+    "dup": 137,
+    "redelivery": 48,
+    "retry_after_fail": 0,
+    "manual": 1460
+   }
+  },
+  "base|60|B": {
+   "level": "base",
+   "timeout_s": 60,
+   "rule": "B",
+   "ocr_pages_per_sheet": 0.9229,
+   "ocr_pages_per_sheet_range": [
+    0.9128,
+    0.9288
+   ],
+   "bedrock_per_sheet": 1.0338,
+   "ocr_extra_ratio_vs_ideal": 0.0,
+   "ocr_extra_ratio_range": [
+    0.0,
+    0.0
+   ],
+   "cost_per_sheet_usd": "0.020047",
+   "ideal_cost_per_sheet_usd": "0.020462",
+   "cost_vs_A": "0.8944",
+   "dup_redelivery_blocked_ratio": 1.0,
+   "misjudged": 1545,
+   "manual_requests": 1545,
+   "misjudged_ratio_of_manual": 1.0,
+   "dlq": 0,
+   "ocr_by_cause_total": {
+    "first": 13844,
+    "dup": 0,
+    "redelivery": 0,
+    "retry_after_fail": 0,
+    "manual": 0
+   }
+  },
+  "base|60|C": {
+   "level": "base",
+   "timeout_s": 60,
+   "rule": "C",
+   "ocr_pages_per_sheet": 0.9229,
+   "ocr_pages_per_sheet_range": [
+    0.9128,
+    0.9288
+   ],
+   "bedrock_per_sheet": 1.1397,
+   "ocr_extra_ratio_vs_ideal": 0.0,
+   "ocr_extra_ratio_range": [
+    0.0,
+    0.0
+   ],
+   "cost_per_sheet_usd": "0.020682",
+   "ideal_cost_per_sheet_usd": "0.020462",
+   "cost_vs_A": "0.9228",
+   "dup_redelivery_blocked_ratio": 1.0,
+   "misjudged": 0,
+   "manual_requests": 1545,
+   "misjudged_ratio_of_manual": 0.0,
+   "dlq": 0,
+   "ocr_by_cause_total": {
+    "first": 13844,
+    "dup": 0,
+    "redelivery": 0,
+    "retry_after_fail": 0,
+    "manual": 0
+   }
+  },
+  "base|120|A": {
+   "level": "base",
+   "timeout_s": 120,
+   "rule": "A",
+   "ocr_pages_per_sheet": 1.0291,
+   "ocr_pages_per_sheet_range": [
+    1.0224,
+    1.035
+   ],
+   "bedrock_per_sheet": 1.1494,
+   "ocr_extra_ratio_vs_ideal": 0.115,
+   "ocr_extra_ratio_range": [
+    0.1087,
+    0.1201
+   ],
+   "cost_per_sheet_usd": "0.022332",
+   "ideal_cost_per_sheet_usd": "0.020462",
+   "cost_vs_A": "1.0000",
+   "dup_redelivery_blocked_ratio": null,
+   "misjudged": 0,
+   "manual_requests": 1545,
+   "misjudged_ratio_of_manual": 0.0,
+   "dlq": 0,
+   "ocr_by_cause_total": {
+    "first": 13844,
+    "dup": 137,
+    "redelivery": 0,
+    "retry_after_fail": 0,
+    "manual": 1455
+   }
+  },
+  "base|120|B": {
+   "level": "base",
+   "timeout_s": 120,
+   "rule": "B",
+   "ocr_pages_per_sheet": 0.9229,
+   "ocr_pages_per_sheet_range": [
+    0.9128,
+    0.9288
+   ],
+   "bedrock_per_sheet": 1.0321,
+   "ocr_extra_ratio_vs_ideal": 0.0,
+   "ocr_extra_ratio_range": [
+    0.0,
+    0.0
+   ],
+   "cost_per_sheet_usd": "0.020036",
+   "ideal_cost_per_sheet_usd": "0.020462",
+   "cost_vs_A": "0.8972",
+   "dup_redelivery_blocked_ratio": 1.0,
+   "misjudged": 1545,
+   "manual_requests": 1545,
+   "misjudged_ratio_of_manual": 1.0,
+   "dlq": 0,
+   "ocr_by_cause_total": {
+    "first": 13844,
+    "dup": 0,
+    "redelivery": 0,
+    "retry_after_fail": 0,
+    "manual": 0
+   }
+  },
+  "base|120|C": {
+   "level": "base",
+   "timeout_s": 120,
+   "rule": "C",
+   "ocr_pages_per_sheet": 0.9229,
+   "ocr_pages_per_sheet_range": [
+    0.9128,
+    0.9288
+   ],
+   "bedrock_per_sheet": 1.1403,
+   "ocr_extra_ratio_vs_ideal": 0.0,
+   "ocr_extra_ratio_range": [
+    0.0,
+    0.0
+   ],
+   "cost_per_sheet_usd": "0.020686",
+   "ideal_cost_per_sheet_usd": "0.020462",
+   "cost_vs_A": "0.9263",
+   "dup_redelivery_blocked_ratio": 1.0,
+   "misjudged": 0,
+   "manual_requests": 1545,
+   "misjudged_ratio_of_manual": 0.0,
+   "dlq": 0,
+   "ocr_by_cause_total": {
+    "first": 13844,
+    "dup": 0,
+    "redelivery": 0,
+    "retry_after_fail": 0,
+    "manual": 0
+   }
+  },
+  "high|30|A": {
+   "level": "high",
+   "timeout_s": 30,
+   "rule": "A",
+   "ocr_pages_per_sheet": 1.1996,
+   "ocr_pages_per_sheet_range": [
+    1.187,
+    1.212
+   ],
+   "bedrock_per_sheet": 1.4287,
+   "ocr_extra_ratio_vs_ideal": 0.3222,
+   "ocr_extra_ratio_range": [
+    0.311,
+    0.3284
+   ],
+   "cost_per_sheet_usd": "0.026566",
+   "ideal_cost_per_sheet_usd": "0.020513",
+   "cost_vs_A": "1.0000",
+   "dup_redelivery_blocked_ratio": null,
+   "misjudged": 0,
+   "manual_requests": 2260,
+   "misjudged_ratio_of_manual": 0.0,
+   "dlq": 0,
+   "ocr_by_cause_total": {
+    "first": 13609,
+    "dup": 403,
+    "redelivery": 1642,
+    "retry_after_fail": 29,
+    "manual": 2311
+   }
+  },
+  "high|30|B": {
+   "level": "high",
+   "timeout_s": 30,
+   "rule": "B",
+   "ocr_pages_per_sheet": 0.9096,
+   "ocr_pages_per_sheet_range": [
+    0.9066,
+    0.9148
+   ],
+   "bedrock_per_sheet": 1.0996,
+   "ocr_extra_ratio_vs_ideal": 0.0026,
+   "ocr_extra_ratio_range": [
+    0.0022,
+    0.0029
+   ],
+   "cost_per_sheet_usd": "0.020242",
+   "ideal_cost_per_sheet_usd": "0.020513",
+   "cost_vs_A": "0.7619",
+   "dup_redelivery_blocked_ratio": 0.9936,
+   "misjudged": 2260,
+   "manual_requests": 2260,
+   "misjudged_ratio_of_manual": 1.0,
+   "dlq": 0,
+   "ocr_by_cause_total": {
+    "first": 13609,
+    "dup": 0,
+    "redelivery": 13,
+    "retry_after_fail": 22,
+    "manual": 0
+   }
+  },
+  "high|30|C": {
+   "level": "high",
+   "timeout_s": 30,
+   "rule": "C",
+   "ocr_pages_per_sheet": 0.9073,
+   "ocr_pages_per_sheet_range": [
+    0.904,
+    0.9124
+   ],
+   "bedrock_per_sheet": 1.2714,
+   "ocr_extra_ratio_vs_ideal": 0.0,
+   "ocr_extra_ratio_range": [
+    0.0,
+    0.0
+   ],
+   "cost_per_sheet_usd": "0.021237",
+   "ideal_cost_per_sheet_usd": "0.020513",
+   "cost_vs_A": "0.7994",
+   "dup_redelivery_blocked_ratio": 1.0,
+   "misjudged": 0,
+   "manual_requests": 2260,
+   "misjudged_ratio_of_manual": 0.0,
+   "dlq": 0,
+   "ocr_by_cause_total": {
+    "first": 13609,
+    "dup": 0,
+    "redelivery": 0,
+    "retry_after_fail": 0,
+    "manual": 0
+   }
+  },
+  "high|60|A": {
+   "level": "high",
+   "timeout_s": 60,
+   "rule": "A",
+   "ocr_pages_per_sheet": 1.0791,
+   "ocr_pages_per_sheet_range": [
+    1.0666,
+    1.097
+   ],
+   "bedrock_per_sheet": 1.3059,
+   "ocr_extra_ratio_vs_ideal": 0.1894,
+   "ocr_extra_ratio_range": [
+    0.178,
+    0.2023
+   ],
+   "cost_per_sheet_usd": "0.024023",
+   "ideal_cost_per_sheet_usd": "0.020513",
+   "cost_vs_A": "1.0000",
+   "dup_redelivery_blocked_ratio": null,
+   "misjudged": 0,
+   "manual_requests": 2260,
+   "misjudged_ratio_of_manual": 0.0,
+   "dlq": 0,
+   "ocr_by_cause_total": {
+    "first": 13609,
+    "dup": 403,
+    "redelivery": 76,
+    "retry_after_fail": 29,
+    "manual": 2070
+   }
+  },
+  "high|60|B": {
+   "level": "high",
+   "timeout_s": 60,
+   "rule": "B",
+   "ocr_pages_per_sheet": 0.9086,
+   "ocr_pages_per_sheet_range": [
+    0.905,
+    0.914
+   ],
+   "bedrock_per_sheet": 1.1001,
+   "ocr_extra_ratio_vs_ideal": 0.0015,
+   "ocr_extra_ratio_range": [
+    0.0011,
+    0.0018
+   ],
+   "cost_per_sheet_usd": "0.020230",
+   "ideal_cost_per_sheet_usd": "0.020513",
+   "cost_vs_A": "0.8421",
+   "dup_redelivery_blocked_ratio": 0.9979,
+   "misjudged": 2260,
+   "manual_requests": 2260,
+   "misjudged_ratio_of_manual": 1.0,
+   "dlq": 0,
+   "ocr_by_cause_total": {
+    "first": 13609,
+    "dup": 0,
+    "redelivery": 1,
+    "retry_after_fail": 19,
+    "manual": 0
+   }
+  },
+  "high|60|C": {
+   "level": "high",
+   "timeout_s": 60,
+   "rule": "C",
+   "ocr_pages_per_sheet": 0.9073,
+   "ocr_pages_per_sheet_range": [
+    0.904,
+    0.9124
+   ],
+   "bedrock_per_sheet": 1.2675,
+   "ocr_extra_ratio_vs_ideal": 0.0,
+   "ocr_extra_ratio_range": [
+    0.0,
+    0.0
+   ],
+   "cost_per_sheet_usd": "0.021214",
+   "ideal_cost_per_sheet_usd": "0.020513",
+   "cost_vs_A": "0.8831",
+   "dup_redelivery_blocked_ratio": 1.0,
+   "misjudged": 0,
+   "manual_requests": 2260,
+   "misjudged_ratio_of_manual": 0.0,
+   "dlq": 0,
+   "ocr_by_cause_total": {
+    "first": 13609,
+    "dup": 0,
+    "redelivery": 0,
+    "retry_after_fail": 0,
+    "manual": 0
+   }
+  },
+  "high|120|A": {
+   "level": "high",
+   "timeout_s": 120,
+   "rule": "A",
+   "ocr_pages_per_sheet": 1.0739,
+   "ocr_pages_per_sheet_range": [
+    1.0624,
+    1.0908
+   ],
+   "bedrock_per_sheet": 1.3007,
+   "ocr_extra_ratio_vs_ideal": 0.1837,
+   "ocr_extra_ratio_range": [
+    0.1734,
+    0.1955
+   ],
+   "cost_per_sheet_usd": "0.023913",
+   "ideal_cost_per_sheet_usd": "0.020513",
+   "cost_vs_A": "1.0000",
+   "dup_redelivery_blocked_ratio": null,
+   "misjudged": 0,
+   "manual_requests": 2260,
+   "misjudged_ratio_of_manual": 0.0,
+   "dlq": 0,
+   "ocr_by_cause_total": {
+    "first": 13609,
+    "dup": 403,
+    "redelivery": 0,
+    "retry_after_fail": 42,
+    "manual": 2055
+   }
+  },
+  "high|120|B": {
+   "level": "high",
+   "timeout_s": 120,
+   "rule": "B",
+   "ocr_pages_per_sheet": 0.9101,
+   "ocr_pages_per_sheet_range": [
+    0.9064,
+    0.9148
+   ],
+   "bedrock_per_sheet": 1.1017,
+   "ocr_extra_ratio_vs_ideal": 0.0031,
+   "ocr_extra_ratio_range": [
+    0.0026,
+    0.004
+   ],
+   "cost_per_sheet_usd": "0.020261",
+   "ideal_cost_per_sheet_usd": "0.020513",
+   "cost_vs_A": "0.8473",
+   "dup_redelivery_blocked_ratio": 0.9975,
+   "misjudged": 2260,
+   "manual_requests": 2260,
+   "misjudged_ratio_of_manual": 1.0,
+   "dlq": 0,
+   "ocr_by_cause_total": {
+    "first": 13609,
+    "dup": 1,
+    "redelivery": 0,
+    "retry_after_fail": 41,
+    "manual": 0
+   }
+  },
+  "high|120|C": {
+   "level": "high",
+   "timeout_s": 120,
+   "rule": "C",
+   "ocr_pages_per_sheet": 0.9073,
+   "ocr_pages_per_sheet_range": [
+    0.904,
+    0.9124
+   ],
+   "bedrock_per_sheet": 1.2766,
+   "ocr_extra_ratio_vs_ideal": 0.0,
+   "ocr_extra_ratio_range": [
+    0.0,
+    0.0
+   ],
+   "cost_per_sheet_usd": "0.021269",
+   "ideal_cost_per_sheet_usd": "0.020513",
+   "cost_vs_A": "0.8894",
+   "dup_redelivery_blocked_ratio": 1.0,
+   "misjudged": 0,
+   "manual_requests": 2260,
+   "misjudged_ratio_of_manual": 0.0,
+   "dlq": 0,
+   "ocr_by_cause_total": {
+    "first": 13609,
+    "dup": 0,
+    "redelivery": 0,
+    "retry_after_fail": 0,
+    "manual": 0
+   }
+  }
+ },
+ "hypotheses": {
+  "H1_A_timeout30_extra_ocr_ge_10pct": {
+   "result": true,
+   "extra": 0.2129
+  },
+  "H2_B_blocks_ge_90pct_dup_redelivery_and_misjudges_all_manual": {
+   "result": true,
+   "by_timeout": {
+    "30": [
+     0.9993,
+     1.0
+    ],
+    "60": [
+     1.0,
+     1.0
+    ],
+    "120": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  "H3_C_no_misjudge_and_cost_le_90pct_of_A": {
+   "result": false,
+   "by_timeout": {
+    "30": [
+     0,
+     "0.8557"
+    ],
+    "60": [
+     0,
+     "0.9228"
+    ],
+    "120": [
+     0,
+     "0.9263"
+    ]
+   }
+  }
+ }
+}

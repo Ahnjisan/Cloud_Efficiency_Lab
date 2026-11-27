@@ -111,6 +111,26 @@ AWS 자원 생성·실행은 필수가 아닙니다. AWS 등 유료 자원을 �
 | 035 | 6개 통과 | Redis 측정은 Docker로 1회 실행(정책별 3회, 시작 시 여유 메모리 3.34 GiB — 기준 4 GiB 미만이지만 사용자 지시로 실행). 테스트는 저장된 측정값에서 요약 재계산(`--resummarize`)·일치. 컨테이너·이미지 삭제 확인 |
 | 036 | 5개 통과 | 테스트 안에서 재실행·일치, 019 재현 8개 일치 |
 
+### Fac:Hub 측정지 파이프라인·챗봇 (로컬·합성·계산)
+
+사람이 올린 측정지(손글씨 사진·CSV)를 S3 → SQS → structurer-worker → Textract → Bedrock으로 구조화하고, 챗봇이 PostgreSQL 조회 결과를 Bedrock에 넘기는 구조(EKS, 서울 리전)의 비용을 계산한다. 데이터는 모두 합성이고 작업량·토큰은 가정값이다. 요율은 [2026-11-15 사본](../references/aws-price-list-apn2-2026-11-15.json)과, 사본에 없는 Textract·SQS의 [rates_manual.json](037-measurement-sheet-unit-cost/rates_manual.json)(서울 Price List 오퍼, 2026-11-27 확인)에서 읽는다. Bedrock은 Global 교차 리전 요율이며 국내 처리 요율은 확인 필요다.
+
+- [037 · 측정지 1장당 구조화 비용](037-measurement-sheet-unit-cost/README.md) — 기준 구성 장당 0.0197 USD 중 Textract 69%·Bedrock 30%·S3+SQS 0.26%. Textract 종류가 모델보다 비용을 크게 바꿈(8.8배 대 1.7배)
+- [038 · 재시도·중복 처리 비용](038-retry-duplicate-cost/README.md) — 방지 없이 visibility timeout 30초면 OCR 21% 추가. 파일 해시만으로 막으면 재구조화 요청을 100% 잘못 막음, 요청 종류 구분 + OCR 재사용(C)은 오판 0
+- [039 · 워커 상시 실행 vs KEDA 0까지 축소](039-worker-scale-to-zero/README.md) — 공유 노드면 절감 0, Fargate면 81~94% 절감하지만 꺼진 상태 도착분은 약 96초 대기. 파드 시작 로컬 실측(캐시 있음 1.1초, 없음 12.8초)
+- [040 · Textract + Bedrock vs Bedrock 이미지 직접 입력 (계획, 미실행)](040-ocr-vs-multimodal-plan/README.md) — 합성 손글씨 측정지 30장으로 정확도·장당 비용 비교 계획, 예산 상한 15 USD, 승인 체크리스트
+- [041 · 챗봇 조회 결과를 LLM에 얼마나 넘기나](041-chatbot-result-size/README.md) — 1,000행 원본 JSON은 사전 집계의 9.7배, JSON은 CSV의 2.4~2.7배 토큰, 1,000행에서는 컨텍스트 한도에 닿지 않음
+
+#### 037~041 테스트 기록 (2026-11-27, Windows 11, Python 3.14.7, Docker 29.8.2, Minikube v1.39.0)
+
+| 실험 | 단위 테스트 | `result.json` 재현 |
+|---|---|---|
+| 037 | 5개 통과 | 테스트 안에서 재실행·일치 |
+| 038 | 6개 통과 | 테스트 안에서 재실행·일치(시드 3개 × 5,000장, 약 2.5초) |
+| 039 | 8개 통과 | 계산은 테스트 안에서 재실행·일치. 파드 시작 실측(`measure.py`)은 1회 실행(10회 측정), 테스트는 저장된 `measurement.json`의 기록·정리 확인만 검사 |
+| 040 | 해당 없음 | 계획, 미실행 |
+| 041 | 7개 통과 | 테스트 안에서 재실행·일치 |
+
 [최종 연구 보고서](../FINAL-REPORT.md)에서 001~015와 [InfraFit MVP](../infrafit/README.md)의 검증 범위를 함께 볼 수 있다. [InfraFit 개발 전 연구 기록](infrafit-predevelopment-review.md)은 개별 실행과 후속 검증의 맥락을 보존한다.
 
 미확인 과금 규칙을 작은 테스트 파이프라인으로 확인하는 [025](025-billing-rule-probe/README.md)는 실행을 마쳤다. 실행 후 24시간 시점까지 Cost Explorer를 4회 조회했으나 청구 사용량이 아직 반영되지 않아 **반영 대기**로 기록했다. 판정은 반영 후에 한다. 실험 자원은 계정 소유자의 승인을 받아 2026-11-15에 모두 삭제했다(025 README에 기록). 실제 계정 데이터로 InfraFit 기준값을 다시 정하는 [수집·재설정 계획](real-account-calibration-plan.md)은 승인됐다. 하지만 실제 프로젝트 사용량이 없어 아직 데이터를 수집하지 않았다. 계획의 8장에 수집·변환 명령을 구체적으로 적었다.

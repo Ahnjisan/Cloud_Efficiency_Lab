@@ -1,0 +1,3641 @@
+{
+ "pod_start": {
+  "source": "measurement.json",
+  "status": "measured",
+  "warm_s": 1.08,
+  "cold_s": 12.78,
+  "warm_range": [
+   0.98,
+   1.34
+  ],
+  "cold_range": [
+   8.09,
+   27.47
+  ],
+  "n": [
+   5,
+   5
+  ]
+ },
+ "shared_nodes": {
+  "nodes_with_worker": 2,
+  "nodes_without_worker": 2,
+  "note": "saving appears only if other workloads' CPU requests fall within 0.5 vCPU below a node boundary (k x 1.78 vCPU)"
+ },
+ "worker": {
+  "vcpu": "0.5",
+  "mem_gb": "1"
+ },
+ "assumptions": {
+  "node_boot_s": {
+   "low": 60,
+   "base": 120,
+   "high": 180
+  },
+  "fargate_start_s": {
+   "low": 30,
+   "base": 60,
+   "high": 120
+  },
+  "node_scale_down_delay_s": {
+   "base": 600,
+   "none": 0
+  },
+  "processing": [
+   20.0,
+   0.5
+  ],
+  "poll_cooldown": {
+   "fast": [
+    15,
+    120
+   ],
+   "base": [
+    30,
+    300
+   ],
+   "slow": [
+    60,
+    600
+   ]
+  },
+  "seeds": [
+   1,
+   2,
+   3
+  ]
+ },
+ "results": {
+  "small|fast|a_shared|base|W1": {
+   "volume": "small",
+   "poll_cooldown": [
+    15,
+    120
+   ],
+   "case": "a_shared",
+   "startup_s": 1.08,
+   "mode": "W1",
+   "monthly_usd": {
+    "base": "0.00"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "0.00",
+     "0.00"
+    ]
+   },
+   "billed_hours": {
+    "base": 720.0
+   },
+   "latency_mean_s": 23.0,
+   "latency_max_s": 107.8,
+   "cold_sheets": 0,
+   "cold_latency_mean_s": null,
+   "cold_latency_max_s": null,
+   "scale_up_sessions_mean": 1.0
+  },
+  "small|fast|a_shared|base|W2": {
+   "volume": "small",
+   "poll_cooldown": [
+    15,
+    120
+   ],
+   "case": "a_shared",
+   "startup_s": 1.08,
+   "mode": "W2",
+   "monthly_usd": {
+    "base": "0.00"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "0.00",
+     "0.00"
+    ]
+   },
+   "billed_hours": {
+    "base": 16.1389
+   },
+   "latency_mean_s": 31.2,
+   "latency_max_s": 111.4,
+   "cold_sheets": 1247,
+   "cold_latency_mean_s": 31.3,
+   "cold_latency_max_s": 111.4,
+   "scale_up_sessions_mean": 414.0
+  },
+  "small|fast|a_shared|base|W3": {
+   "volume": "small",
+   "poll_cooldown": [
+    15,
+    120
+   ],
+   "case": "a_shared",
+   "startup_s": 1.08,
+   "mode": "W3",
+   "monthly_usd": {
+    "base": "0.00"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "0.00",
+     "0.00"
+    ]
+   },
+   "billed_hours": {
+    "base": 221.1597
+   },
+   "latency_mean_s": 23.6,
+   "latency_max_s": 107.8,
+   "cold_sheets": 90,
+   "cold_latency_mean_s": 32.6,
+   "cold_latency_max_s": 86.3,
+   "scale_up_sessions_mean": 52.0
+  },
+  "small|fast|b1_node|base|W1": {
+   "volume": "small",
+   "poll_cooldown": [
+    15,
+    120
+   ],
+   "case": "b1_node",
+   "startup_s": 132.78,
+   "mode": "W1",
+   "monthly_usd": {
+    "base": "29.95",
+    "none": "29.95"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "29.95",
+     "29.95"
+    ],
+    "none": [
+     "29.95",
+     "29.95"
+    ]
+   },
+   "billed_hours": {
+    "base": 720.0,
+    "none": 720.0
+   },
+   "latency_mean_s": 23.0,
+   "latency_max_s": 107.8,
+   "cold_sheets": 0,
+   "cold_latency_mean_s": null,
+   "cold_latency_max_s": null,
+   "scale_up_sessions_mean": 1.0
+  },
+  "small|fast|b1_node|base|W2": {
+   "volume": "small",
+   "poll_cooldown": [
+    15,
+    120
+   ],
+   "case": "b1_node",
+   "startup_s": 132.78,
+   "mode": "W2",
+   "monthly_usd": {
+    "base": "3.56",
+    "none": "1.23"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "3.52",
+     "3.64"
+    ],
+    "none": [
+     "1.22",
+     "1.24"
+    ]
+   },
+   "billed_hours": {
+    "base": 85.6139,
+    "none": 29.4736
+   },
+   "latency_mean_s": 151.5,
+   "latency_max_s": 243.1,
+   "cold_sheets": 1228,
+   "cold_latency_mean_s": 161.1,
+   "cold_latency_max_s": 243.1,
+   "scale_up_sessions_mean": 387.0
+  },
+  "small|fast|b1_node|base|W3": {
+   "volume": "small",
+   "poll_cooldown": [
+    15,
+    120
+   ],
+   "case": "b1_node",
+   "startup_s": 132.78,
+   "mode": "W3",
+   "monthly_usd": {
+    "base": "9.59",
+    "none": "9.24"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "9.57",
+     "9.61"
+    ],
+    "none": [
+     "9.24",
+     "9.25"
+    ]
+   },
+   "billed_hours": {
+    "base": 230.6272,
+    "none": 222.225
+   },
+   "latency_mean_s": 32.6,
+   "latency_max_s": 218.0,
+   "cold_sheets": 90,
+   "cold_latency_mean_s": 164.5,
+   "cold_latency_max_s": 218.0,
+   "scale_up_sessions_mean": 51.7
+  },
+  "small|fast|b2_fargate|base|W1": {
+   "volume": "small",
+   "poll_cooldown": [
+    15,
+    120
+   ],
+   "case": "b2_fargate",
+   "startup_s": 60,
+   "mode": "W1",
+   "monthly_usd": {
+    "base": "24.12"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "24.12",
+     "24.12"
+    ]
+   },
+   "billed_hours": {
+    "base": 720.0
+   },
+   "latency_mean_s": 23.0,
+   "latency_max_s": 107.8,
+   "cold_sheets": 0,
+   "cold_latency_mean_s": null,
+   "cold_latency_max_s": null,
+   "scale_up_sessions_mean": 1.0
+  },
+  "small|fast|b2_fargate|base|W2": {
+   "volume": "small",
+   "poll_cooldown": [
+    15,
+    120
+   ],
+   "case": "b2_fargate",
+   "startup_s": 60,
+   "mode": "W2",
+   "monthly_usd": {
+    "base": "0.75"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "0.74",
+     "0.75"
+    ]
+   },
+   "billed_hours": {
+    "base": 22.3667
+   },
+   "latency_mean_s": 86.1,
+   "latency_max_s": 170.3,
+   "cold_sheets": 1243,
+   "cold_latency_mean_s": 90.1,
+   "cold_latency_max_s": 170.3,
+   "scale_up_sessions_mean": 401.3
+  },
+  "small|fast|b2_fargate|base|W3": {
+   "volume": "small",
+   "poll_cooldown": [
+    15,
+    120
+   ],
+   "case": "b2_fargate",
+   "startup_s": 60,
+   "mode": "W3",
+   "monthly_usd": {
+    "base": "7.42"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "7.42",
+     "7.43"
+    ]
+   },
+   "billed_hours": {
+    "base": 221.6361
+   },
+   "latency_mean_s": 27.6,
+   "latency_max_s": 145.3,
+   "cold_sheets": 90,
+   "cold_latency_mean_s": 91.7,
+   "cold_latency_max_s": 145.3,
+   "scale_up_sessions_mean": 51.7
+  },
+  "small|base|a_shared|base|W1": {
+   "volume": "small",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "a_shared",
+   "startup_s": 1.08,
+   "mode": "W1",
+   "monthly_usd": {
+    "base": "0.00"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "0.00",
+     "0.00"
+    ]
+   },
+   "billed_hours": {
+    "base": 720.0
+   },
+   "latency_mean_s": 23.0,
+   "latency_max_s": 107.8,
+   "cold_sheets": 0,
+   "cold_latency_mean_s": null,
+   "cold_latency_max_s": null,
+   "scale_up_sessions_mean": 1.0
+  },
+  "small|base|a_shared|base|W2": {
+   "volume": "small",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "a_shared",
+   "startup_s": 1.08,
+   "mode": "W2",
+   "monthly_usd": {
+    "base": "0.00"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "0.00",
+     "0.00"
+    ]
+   },
+   "billed_hours": {
+    "base": 34.8194
+   },
+   "latency_mean_s": 36.7,
+   "latency_max_s": 135.6,
+   "cold_sheets": 1129,
+   "cold_latency_mean_s": 39.0,
+   "cold_latency_max_s": 135.6,
+   "scale_up_sessions_mean": 373.7
+  },
+  "small|base|a_shared|base|W3": {
+   "volume": "small",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "a_shared",
+   "startup_s": 1.08,
+   "mode": "W3",
+   "monthly_usd": {
+    "base": "0.00"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "0.00",
+     "0.00"
+    ]
+   },
+   "billed_hours": {
+    "base": 222.6495
+   },
+   "latency_mean_s": 24.0,
+   "latency_max_s": 107.8,
+   "cold_sheets": 88,
+   "cold_latency_mean_s": 37.8,
+   "cold_latency_max_s": 78.3,
+   "scale_up_sessions_mean": 51.3
+  },
+  "small|base|b1_node|low|W1": {
+   "volume": "small",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b1_node",
+   "startup_s": 72.78,
+   "mode": "W1",
+   "monthly_usd": {
+    "base": "29.95",
+    "none": "29.95"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "29.95",
+     "29.95"
+    ],
+    "none": [
+     "29.95",
+     "29.95"
+    ]
+   },
+   "billed_hours": {
+    "base": 720.0,
+    "none": 720.0
+   },
+   "latency_mean_s": 23.0,
+   "latency_max_s": 107.8,
+   "cold_sheets": 0,
+   "cold_latency_mean_s": null,
+   "cold_latency_max_s": null,
+   "scale_up_sessions_mean": 1.0
+  },
+  "small|base|b1_node|low|W2": {
+   "volume": "small",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b1_node",
+   "startup_s": 72.78,
+   "mode": "W2",
+   "monthly_usd": {
+    "base": "3.93",
+    "none": "1.71"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "3.88",
+     "4.02"
+    ],
+    "none": [
+     "1.69",
+     "1.73"
+    ]
+   },
+   "billed_hours": {
+    "base": 94.4139,
+    "none": 41.0556
+   },
+   "latency_mean_s": 97.6,
+   "latency_max_s": 207.3,
+   "cold_sheets": 1135,
+   "cold_latency_mean_s": 110.0,
+   "cold_latency_max_s": 207.3,
+   "scale_up_sessions_mean": 363.7
+  },
+  "small|base|b1_node|low|W3": {
+   "volume": "small",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b1_node",
+   "startup_s": 72.78,
+   "mode": "W3",
+   "monthly_usd": {
+    "base": "9.63",
+    "none": "9.28"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "9.61",
+     "9.65"
+    ],
+    "none": [
+     "9.28",
+     "9.29"
+    ]
+   },
+   "billed_hours": {
+    "base": 231.5428,
+    "none": 223.1912
+   },
+   "latency_mean_s": 28.7,
+   "latency_max_s": 150.0,
+   "cold_sheets": 88,
+   "cold_latency_mean_s": 109.4,
+   "cold_latency_max_s": 150.0,
+   "scale_up_sessions_mean": 51.0
+  },
+  "small|base|b1_node|base|W1": {
+   "volume": "small",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b1_node",
+   "startup_s": 132.78,
+   "mode": "W1",
+   "monthly_usd": {
+    "base": "29.95",
+    "none": "29.95"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "29.95",
+     "29.95"
+    ],
+    "none": [
+     "29.95",
+     "29.95"
+    ]
+   },
+   "billed_hours": {
+    "base": 720.0,
+    "none": 720.0
+   },
+   "latency_mean_s": 23.0,
+   "latency_max_s": 107.8,
+   "cold_sheets": 0,
+   "cold_latency_mean_s": null,
+   "cold_latency_max_s": null,
+   "scale_up_sessions_mean": 1.0
+  },
+  "small|base|b1_node|base|W2": {
+   "volume": "small",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b1_node",
+   "startup_s": 132.78,
+   "mode": "W2",
+   "monthly_usd": {
+    "base": "4.09",
+    "none": "1.92"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "4.03",
+     "4.19"
+    ],
+    "none": [
+     "1.90",
+     "1.94"
+    ]
+   },
+   "billed_hours": {
+    "base": 98.3417,
+    "none": 46.1111
+   },
+   "latency_mean_s": 148.1,
+   "latency_max_s": 267.3,
+   "cold_sheets": 1139,
+   "cold_latency_mean_s": 168.1,
+   "cold_latency_max_s": 267.3,
+   "scale_up_sessions_mean": 358.0
+  },
+  "small|base|b1_node|base|W3": {
+   "volume": "small",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b1_node",
+   "startup_s": 132.78,
+   "mode": "W3",
+   "monthly_usd": {
+    "base": "9.65",
+    "none": "9.30"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "9.63",
+     "9.67"
+    ],
+    "none": [
+     "9.29",
+     "9.31"
+    ]
+   },
+   "billed_hours": {
+    "base": 231.9901,
+    "none": 223.6523
+   },
+   "latency_mean_s": 32.6,
+   "latency_max_s": 210.0,
+   "cold_sheets": 87,
+   "cold_latency_mean_s": 169.2,
+   "cold_latency_max_s": 210.0,
+   "scale_up_sessions_mean": 50.7
+  },
+  "small|base|b1_node|high|W1": {
+   "volume": "small",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b1_node",
+   "startup_s": 192.78,
+   "mode": "W1",
+   "monthly_usd": {
+    "base": "29.95",
+    "none": "29.95"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "29.95",
+     "29.95"
+    ],
+    "none": [
+     "29.95",
+     "29.95"
+    ]
+   },
+   "billed_hours": {
+    "base": 720.0,
+    "none": 720.0
+   },
+   "latency_mean_s": 23.0,
+   "latency_max_s": 107.8,
+   "cold_sheets": 0,
+   "cold_latency_mean_s": null,
+   "cold_latency_max_s": null,
+   "scale_up_sessions_mean": 1.0
+  },
+  "small|base|b1_node|high|W2": {
+   "volume": "small",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b1_node",
+   "startup_s": 192.78,
+   "mode": "W2",
+   "monthly_usd": {
+    "base": "4.24",
+    "none": "2.11"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "4.18",
+     "4.36"
+    ],
+    "none": [
+     "2.09",
+     "2.15"
+    ]
+   },
+   "billed_hours": {
+    "base": 101.975,
+    "none": 50.8
+   },
+   "latency_mean_s": 196.0,
+   "latency_max_s": 327.3,
+   "cold_sheets": 1144,
+   "cold_latency_mean_s": 222.7,
+   "cold_latency_max_s": 327.3,
+   "scale_up_sessions_mean": 346.7
+  },
+  "small|base|b1_node|high|W3": {
+   "volume": "small",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b1_node",
+   "startup_s": 192.78,
+   "mode": "W3",
+   "monthly_usd": {
+    "base": "9.67",
+    "none": "9.32"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "9.65",
+     "9.69"
+    ],
+    "none": [
+     "9.31",
+     "9.34"
+    ]
+   },
+   "billed_hours": {
+    "base": 232.4456,
+    "none": 224.1189
+   },
+   "latency_mean_s": 36.6,
+   "latency_max_s": 270.0,
+   "cold_sheets": 88,
+   "cold_latency_mean_s": 227.8,
+   "cold_latency_max_s": 270.0,
+   "scale_up_sessions_mean": 50.7
+  },
+  "small|base|b2_fargate|low|W1": {
+   "volume": "small",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b2_fargate",
+   "startup_s": 30,
+   "mode": "W1",
+   "monthly_usd": {
+    "base": "24.12"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "24.12",
+     "24.12"
+    ]
+   },
+   "billed_hours": {
+    "base": 720.0
+   },
+   "latency_mean_s": 23.0,
+   "latency_max_s": 107.8,
+   "cold_sheets": 0,
+   "cold_latency_mean_s": null,
+   "cold_latency_max_s": null,
+   "scale_up_sessions_mean": 1.0
+  },
+  "small|base|b2_fargate|low|W2": {
+   "volume": "small",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b2_fargate",
+   "startup_s": 30,
+   "mode": "W2",
+   "monthly_usd": {
+    "base": "1.25"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "1.24",
+     "1.26"
+    ]
+   },
+   "billed_hours": {
+    "base": 37.4083
+   },
+   "latency_mean_s": 61.4,
+   "latency_max_s": 164.5,
+   "cold_sheets": 1131,
+   "cold_latency_mean_s": 68.0,
+   "cold_latency_max_s": 164.5,
+   "scale_up_sessions_mean": 369.0
+  },
+  "small|base|b2_fargate|low|W3": {
+   "volume": "small",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b2_fargate",
+   "startup_s": 30,
+   "mode": "W3",
+   "monthly_usd": {
+    "base": "7.47"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "7.46",
+     "7.47"
+    ]
+   },
+   "billed_hours": {
+    "base": 222.8717
+   },
+   "latency_mean_s": 25.9,
+   "latency_max_s": 107.8,
+   "cold_sheets": 88,
+   "cold_latency_mean_s": 66.7,
+   "cold_latency_max_s": 107.2,
+   "scale_up_sessions_mean": 51.3
+  },
+  "small|base|b2_fargate|base|W1": {
+   "volume": "small",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b2_fargate",
+   "startup_s": 60,
+   "mode": "W1",
+   "monthly_usd": {
+    "base": "24.12"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "24.12",
+     "24.12"
+    ]
+   },
+   "billed_hours": {
+    "base": 720.0
+   },
+   "latency_mean_s": 23.0,
+   "latency_max_s": 107.8,
+   "cold_sheets": 0,
+   "cold_latency_mean_s": null,
+   "cold_latency_max_s": null,
+   "scale_up_sessions_mean": 1.0
+  },
+  "small|base|b2_fargate|base|W2": {
+   "volume": "small",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b2_fargate",
+   "startup_s": 60,
+   "mode": "W2",
+   "monthly_usd": {
+    "base": "1.34"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "1.33",
+     "1.35"
+    ]
+   },
+   "billed_hours": {
+    "base": 40.0
+   },
+   "latency_mean_s": 86.9,
+   "latency_max_s": 194.5,
+   "cold_sheets": 1133,
+   "cold_latency_mean_s": 97.6,
+   "cold_latency_max_s": 194.5,
+   "scale_up_sessions_mean": 365.7
+  },
+  "small|base|b2_fargate|base|W3": {
+   "volume": "small",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b2_fargate",
+   "startup_s": 60,
+   "mode": "W3",
+   "monthly_usd": {
+    "base": "7.47"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "7.47",
+     "7.48"
+    ]
+   },
+   "billed_hours": {
+    "base": 223.1134
+   },
+   "latency_mean_s": 27.9,
+   "latency_max_s": 137.2,
+   "cold_sheets": 89,
+   "cold_latency_mean_s": 96.7,
+   "cold_latency_max_s": 137.2,
+   "scale_up_sessions_mean": 51.3
+  },
+  "small|base|b2_fargate|high|W1": {
+   "volume": "small",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b2_fargate",
+   "startup_s": 120,
+   "mode": "W1",
+   "monthly_usd": {
+    "base": "24.12"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "24.12",
+     "24.12"
+    ]
+   },
+   "billed_hours": {
+    "base": 720.0
+   },
+   "latency_mean_s": 23.0,
+   "latency_max_s": 107.8,
+   "cold_sheets": 0,
+   "cold_latency_mean_s": null,
+   "cold_latency_max_s": null,
+   "scale_up_sessions_mean": 1.0
+  },
+  "small|base|b2_fargate|high|W2": {
+   "volume": "small",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b2_fargate",
+   "startup_s": 120,
+   "mode": "W2",
+   "monthly_usd": {
+    "base": "1.51"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "1.50",
+     "1.53"
+    ]
+   },
+   "billed_hours": {
+    "base": 45.0889
+   },
+   "latency_mean_s": 137.5,
+   "latency_max_s": 254.5,
+   "cold_sheets": 1137,
+   "cold_latency_mean_s": 156.0,
+   "cold_latency_max_s": 254.5,
+   "scale_up_sessions_mean": 359.7
+  },
+  "small|base|b2_fargate|high|W3": {
+   "volume": "small",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b2_fargate",
+   "startup_s": 120,
+   "mode": "W3",
+   "monthly_usd": {
+    "base": "7.49"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "7.48",
+     "7.50"
+    ]
+   },
+   "billed_hours": {
+    "base": 223.5689
+   },
+   "latency_mean_s": 31.8,
+   "latency_max_s": 197.2,
+   "cold_sheets": 87,
+   "cold_latency_mean_s": 156.5,
+   "cold_latency_max_s": 197.2,
+   "scale_up_sessions_mean": 50.7
+  },
+  "small|slow|a_shared|base|W1": {
+   "volume": "small",
+   "poll_cooldown": [
+    60,
+    600
+   ],
+   "case": "a_shared",
+   "startup_s": 1.08,
+   "mode": "W1",
+   "monthly_usd": {
+    "base": "0.00"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "0.00",
+     "0.00"
+    ]
+   },
+   "billed_hours": {
+    "base": 720.0
+   },
+   "latency_mean_s": 23.0,
+   "latency_max_s": 107.8,
+   "cold_sheets": 0,
+   "cold_latency_mean_s": null,
+   "cold_latency_max_s": null,
+   "scale_up_sessions_mean": 1.0
+  },
+  "small|slow|a_shared|base|W2": {
+   "volume": "small",
+   "poll_cooldown": [
+    60,
+    600
+   ],
+   "case": "a_shared",
+   "startup_s": 1.08,
+   "mode": "W2",
+   "monthly_usd": {
+    "base": "0.00"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "0.00",
+     "0.00"
+    ]
+   },
+   "billed_hours": {
+    "base": 62.75
+   },
+   "latency_mean_s": 46.3,
+   "latency_max_s": 146.7,
+   "cold_sheets": 988,
+   "cold_latency_mean_s": 54.1,
+   "cold_latency_max_s": 146.7,
+   "scale_up_sessions_mean": 325.0
+  },
+  "small|slow|a_shared|base|W3": {
+   "volume": "small",
+   "poll_cooldown": [
+    60,
+    600
+   ],
+   "case": "a_shared",
+   "startup_s": 1.08,
+   "mode": "W3",
+   "monthly_usd": {
+    "base": "0.00"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "0.00",
+     "0.00"
+    ]
+   },
+   "billed_hours": {
+    "base": 225.2739
+   },
+   "latency_mean_s": 25.1,
+   "latency_max_s": 107.8,
+   "cold_sheets": 85,
+   "cold_latency_mean_s": 55.6,
+   "cold_latency_max_s": 99.5,
+   "scale_up_sessions_mean": 50.3
+  },
+  "small|slow|b1_node|base|W1": {
+   "volume": "small",
+   "poll_cooldown": [
+    60,
+    600
+   ],
+   "case": "b1_node",
+   "startup_s": 132.78,
+   "mode": "W1",
+   "monthly_usd": {
+    "base": "29.95",
+    "none": "29.95"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "29.95",
+     "29.95"
+    ],
+    "none": [
+     "29.95",
+     "29.95"
+    ]
+   },
+   "billed_hours": {
+    "base": 720.0,
+    "none": 720.0
+   },
+   "latency_mean_s": 23.0,
+   "latency_max_s": 107.8,
+   "cold_sheets": 0,
+   "cold_latency_mean_s": null,
+   "cold_latency_max_s": null,
+   "scale_up_sessions_mean": 1.0
+  },
+  "small|slow|b1_node|base|W2": {
+   "volume": "small",
+   "poll_cooldown": [
+    60,
+    600
+   ],
+   "case": "b1_node",
+   "startup_s": 132.78,
+   "mode": "W2",
+   "monthly_usd": {
+    "base": "4.87",
+    "none": "2.95"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "4.79",
+     "5.00"
+    ],
+    "none": [
+     "2.91",
+     "3.01"
+    ]
+   },
+   "billed_hours": {
+    "base": 117.15,
+    "none": 70.85
+   },
+   "latency_mean_s": 144.0,
+   "latency_max_s": 278.4,
+   "cold_sheets": 1006,
+   "cold_latency_mean_s": 181.7,
+   "cold_latency_max_s": 278.4,
+   "scale_up_sessions_mean": 312.7
+  },
+  "small|slow|b1_node|base|W3": {
+   "volume": "small",
+   "poll_cooldown": [
+    60,
+    600
+   ],
+   "case": "b1_node",
+   "startup_s": 132.78,
+   "mode": "W3",
+   "monthly_usd": {
+    "base": "9.75",
+    "none": "9.41"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "9.73",
+     "9.78"
+    ],
+    "none": [
+     "9.39",
+     "9.43"
+    ]
+   },
+   "billed_hours": {
+    "base": 234.4217,
+    "none": 226.1683
+   },
+   "latency_mean_s": 33.7,
+   "latency_max_s": 231.2,
+   "cold_sheets": 86,
+   "cold_latency_mean_s": 186.3,
+   "cold_latency_max_s": 231.2,
+   "scale_up_sessions_mean": 50.0
+  },
+  "small|slow|b2_fargate|base|W1": {
+   "volume": "small",
+   "poll_cooldown": [
+    60,
+    600
+   ],
+   "case": "b2_fargate",
+   "startup_s": 60,
+   "mode": "W1",
+   "monthly_usd": {
+    "base": "24.12"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "24.12",
+     "24.12"
+    ]
+   },
+   "billed_hours": {
+    "base": 720.0
+   },
+   "latency_mean_s": 23.0,
+   "latency_max_s": 107.8,
+   "cold_sheets": 0,
+   "cold_latency_mean_s": null,
+   "cold_latency_max_s": null,
+   "scale_up_sessions_mean": 1.0
+  },
+  "small|slow|b2_fargate|base|W2": {
+   "volume": "small",
+   "poll_cooldown": [
+    60,
+    600
+   ],
+   "case": "b2_fargate",
+   "startup_s": 60,
+   "mode": "W2",
+   "monthly_usd": {
+    "base": "2.24"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "2.21",
+     "2.28"
+    ]
+   },
+   "billed_hours": {
+    "base": 66.7667
+   },
+   "latency_mean_s": 90.2,
+   "latency_max_s": 205.6,
+   "cold_sheets": 997,
+   "cold_latency_mean_s": 112.1,
+   "cold_latency_max_s": 205.6,
+   "scale_up_sessions_mean": 319.0
+  },
+  "small|slow|b2_fargate|base|W3": {
+   "volume": "small",
+   "poll_cooldown": [
+    60,
+    600
+   ],
+   "case": "b2_fargate",
+   "startup_s": 60,
+   "mode": "W3",
+   "monthly_usd": {
+    "base": "7.56"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "7.55",
+     "7.58"
+    ]
+   },
+   "billed_hours": {
+    "base": 225.7239
+   },
+   "latency_mean_s": 29.0,
+   "latency_max_s": 158.4,
+   "cold_sheets": 86,
+   "cold_latency_mean_s": 114.8,
+   "cold_latency_max_s": 158.4,
+   "scale_up_sessions_mean": 50.3
+  },
+  "medium|fast|a_shared|base|W1": {
+   "volume": "medium",
+   "poll_cooldown": [
+    15,
+    120
+   ],
+   "case": "a_shared",
+   "startup_s": 1.08,
+   "mode": "W1",
+   "monthly_usd": {
+    "base": "0.00"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "0.00",
+     "0.00"
+    ]
+   },
+   "billed_hours": {
+    "base": 720.0
+   },
+   "latency_mean_s": 23.4,
+   "latency_max_s": 129.7,
+   "cold_sheets": 0,
+   "cold_latency_mean_s": null,
+   "cold_latency_max_s": null,
+   "scale_up_sessions_mean": 1.0
+  },
+  "medium|fast|a_shared|base|W2": {
+   "volume": "medium",
+   "poll_cooldown": [
+    15,
+    120
+   ],
+   "case": "a_shared",
+   "startup_s": 1.08,
+   "mode": "W2",
+   "monthly_usd": {
+    "base": "0.00"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "0.00",
+     "0.00"
+    ]
+   },
+   "billed_hours": {
+    "base": 69.8222
+   },
+   "latency_mean_s": 30.0,
+   "latency_max_s": 129.7,
+   "cold_sheets": 4761,
+   "cold_latency_mean_s": 31.7,
+   "cold_latency_max_s": 118.6,
+   "scale_up_sessions_mean": 1546.0
+  },
+  "medium|fast|a_shared|base|W3": {
+   "volume": "medium",
+   "poll_cooldown": [
+    15,
+    120
+   ],
+   "case": "a_shared",
+   "startup_s": 1.08,
+   "mode": "W3",
+   "monthly_usd": {
+    "base": "0.00"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "0.00",
+     "0.00"
+    ]
+   },
+   "billed_hours": {
+    "base": 223.6553
+   },
+   "latency_mean_s": 23.7,
+   "latency_max_s": 129.7,
+   "cold_sheets": 275,
+   "cold_latency_mean_s": 31.2,
+   "cold_latency_max_s": 77.7,
+   "scale_up_sessions_mean": 113.7
+  },
+  "medium|fast|b1_node|base|W1": {
+   "volume": "medium",
+   "poll_cooldown": [
+    15,
+    120
+   ],
+   "case": "b1_node",
+   "startup_s": 132.78,
+   "mode": "W1",
+   "monthly_usd": {
+    "base": "29.95",
+    "none": "29.95"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "29.95",
+     "29.95"
+    ],
+    "none": [
+     "29.95",
+     "29.95"
+    ]
+   },
+   "billed_hours": {
+    "base": 720.0,
+    "none": 720.0
+   },
+   "latency_mean_s": 23.4,
+   "latency_max_s": 129.7,
+   "cold_sheets": 0,
+   "cold_latency_mean_s": null,
+   "cold_latency_max_s": null,
+   "scale_up_sessions_mean": 1.0
+  },
+  "medium|fast|b1_node|base|W2": {
+   "volume": "medium",
+   "poll_cooldown": [
+    15,
+    120
+   ],
+   "case": "b1_node",
+   "startup_s": 132.78,
+   "mode": "W2",
+   "monthly_usd": {
+    "base": "9.04",
+    "none": "4.36"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "8.88",
+     "9.25"
+    ],
+    "none": [
+     "4.32",
+     "4.41"
+    ]
+   },
+   "billed_hours": {
+    "base": 217.2958,
+    "none": 104.8028
+   },
+   "latency_mean_s": 122.5,
+   "latency_max_s": 250.3,
+   "cold_sheets": 5021,
+   "cold_latency_mean_s": 152.2,
+   "cold_latency_max_s": 250.3,
+   "scale_up_sessions_mean": 1249.0
+  },
+  "medium|fast|b1_node|base|W3": {
+   "volume": "medium",
+   "poll_cooldown": [
+    15,
+    120
+   ],
+   "case": "b1_node",
+   "startup_s": 132.78,
+   "mode": "W3",
+   "monthly_usd": {
+    "base": "10.14",
+    "none": "9.43"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "10.06",
+     "10.29"
+    ],
+    "none": [
+     "9.41",
+     "9.48"
+    ]
+   },
+   "billed_hours": {
+    "base": 243.716,
+    "none": 226.7539
+   },
+   "latency_mean_s": 29.1,
+   "latency_max_s": 209.4,
+   "cold_sheets": 274,
+   "cold_latency_mean_s": 160.2,
+   "cold_latency_max_s": 209.4,
+   "scale_up_sessions_mean": 110.0
+  },
+  "medium|fast|b2_fargate|base|W1": {
+   "volume": "medium",
+   "poll_cooldown": [
+    15,
+    120
+   ],
+   "case": "b2_fargate",
+   "startup_s": 60,
+   "mode": "W1",
+   "monthly_usd": {
+    "base": "24.12"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "24.12",
+     "24.12"
+    ]
+   },
+   "billed_hours": {
+    "base": 720.0
+   },
+   "latency_mean_s": 23.4,
+   "latency_max_s": 129.7,
+   "cold_sheets": 0,
+   "cold_latency_mean_s": null,
+   "cold_latency_max_s": null,
+   "scale_up_sessions_mean": 1.0
+  },
+  "medium|fast|b2_fargate|base|W2": {
+   "volume": "medium",
+   "poll_cooldown": [
+    15,
+    120
+   ],
+   "case": "b2_fargate",
+   "startup_s": 60,
+   "mode": "W2",
+   "monthly_usd": {
+    "base": "2.92"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "2.90",
+     "2.95"
+    ]
+   },
+   "billed_hours": {
+    "base": 87.2861
+   },
+   "latency_mean_s": 72.9,
+   "latency_max_s": 177.5,
+   "cold_sheets": 4904,
+   "cold_latency_mean_s": 88.9,
+   "cold_latency_max_s": 177.5,
+   "scale_up_sessions_mean": 1400.0
+  },
+  "medium|fast|b2_fargate|base|W3": {
+   "volume": "medium",
+   "poll_cooldown": [
+    15,
+    120
+   ],
+   "case": "b2_fargate",
+   "startup_s": 60,
+   "mode": "W3",
+   "monthly_usd": {
+    "base": "7.54"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "7.52",
+     "7.57"
+    ]
+   },
+   "billed_hours": {
+    "base": 225.0775
+   },
+   "latency_mean_s": 26.2,
+   "latency_max_s": 136.6,
+   "cold_sheets": 272,
+   "cold_latency_mean_s": 89.7,
+   "cold_latency_max_s": 136.6,
+   "scale_up_sessions_mean": 111.7
+  },
+  "medium|base|a_shared|base|W1": {
+   "volume": "medium",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "a_shared",
+   "startup_s": 1.08,
+   "mode": "W1",
+   "monthly_usd": {
+    "base": "0.00"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "0.00",
+     "0.00"
+    ]
+   },
+   "billed_hours": {
+    "base": 720.0
+   },
+   "latency_mean_s": 23.4,
+   "latency_max_s": 129.7,
+   "cold_sheets": 0,
+   "cold_latency_mean_s": null,
+   "cold_latency_max_s": null,
+   "scale_up_sessions_mean": 1.0
+  },
+  "medium|base|a_shared|base|W2": {
+   "volume": "medium",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "a_shared",
+   "startup_s": 1.08,
+   "mode": "W2",
+   "monthly_usd": {
+    "base": "0.00"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "0.00",
+     "0.00"
+    ]
+   },
+   "billed_hours": {
+    "base": 129.2444
+   },
+   "latency_mean_s": 31.4,
+   "latency_max_s": 129.7,
+   "cold_sheets": 3147,
+   "cold_latency_mean_s": 39.2,
+   "cold_latency_max_s": 123.7,
+   "scale_up_sessions_mean": 1002.3
+  },
+  "medium|base|a_shared|base|W3": {
+   "volume": "medium",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "a_shared",
+   "startup_s": 1.08,
+   "mode": "W3",
+   "monthly_usd": {
+    "base": "0.00"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "0.00",
+     "0.00"
+    ]
+   },
+   "billed_hours": {
+    "base": 228.2811
+   },
+   "latency_mean_s": 24.0,
+   "latency_max_s": 129.7,
+   "cold_sheets": 261,
+   "cold_latency_mean_s": 37.4,
+   "cold_latency_max_s": 90.3,
+   "scale_up_sessions_mean": 109.0
+  },
+  "medium|base|b1_node|low|W1": {
+   "volume": "medium",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b1_node",
+   "startup_s": 72.78,
+   "mode": "W1",
+   "monthly_usd": {
+    "base": "29.95",
+    "none": "29.95"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "29.95",
+     "29.95"
+    ],
+    "none": [
+     "29.95",
+     "29.95"
+    ]
+   },
+   "billed_hours": {
+    "base": 720.0,
+    "none": 720.0
+   },
+   "latency_mean_s": 23.4,
+   "latency_max_s": 129.7,
+   "cold_sheets": 0,
+   "cold_latency_mean_s": null,
+   "cold_latency_max_s": null,
+   "scale_up_sessions_mean": 1.0
+  },
+  "medium|base|b1_node|low|W2": {
+   "volume": "medium",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b1_node",
+   "startup_s": 72.78,
+   "mode": "W2",
+   "monthly_usd": {
+    "base": "9.40",
+    "none": "5.79"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "9.25",
+     "9.60"
+    ],
+    "none": [
+     "5.74",
+     "5.86"
+    ]
+   },
+   "billed_hours": {
+    "base": 225.9417,
+    "none": 139.1444
+   },
+   "latency_mean_s": 66.9,
+   "latency_max_s": 195.4,
+   "cold_sheets": 3387,
+   "cold_latency_mean_s": 107.2,
+   "cold_latency_max_s": 195.4,
+   "scale_up_sessions_mean": 928.0
+  },
+  "medium|base|b1_node|low|W3": {
+   "volume": "medium",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b1_node",
+   "startup_s": 72.78,
+   "mode": "W3",
+   "monthly_usd": {
+    "base": "10.25",
+    "none": "9.56"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "10.16",
+     "10.41"
+    ],
+    "none": [
+     "9.52",
+     "9.63"
+    ]
+   },
+   "billed_hours": {
+    "base": 246.3737,
+    "none": 229.8645
+   },
+   "latency_mean_s": 26.8,
+   "latency_max_s": 162.0,
+   "cold_sheets": 259,
+   "cold_latency_mean_s": 108.6,
+   "cold_latency_max_s": 162.0,
+   "scale_up_sessions_mean": 107.0
+  },
+  "medium|base|b1_node|base|W1": {
+   "volume": "medium",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b1_node",
+   "startup_s": 132.78,
+   "mode": "W1",
+   "monthly_usd": {
+    "base": "29.95",
+    "none": "29.95"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "29.95",
+     "29.95"
+    ],
+    "none": [
+     "29.95",
+     "29.95"
+    ]
+   },
+   "billed_hours": {
+    "base": 720.0,
+    "none": 720.0
+   },
+   "latency_mean_s": 23.4,
+   "latency_max_s": 129.7,
+   "cold_sheets": 0,
+   "cold_latency_mean_s": null,
+   "cold_latency_max_s": null,
+   "scale_up_sessions_mean": 1.0
+  },
+  "medium|base|b1_node|base|W2": {
+   "volume": "medium",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b1_node",
+   "startup_s": 132.78,
+   "mode": "W2",
+   "monthly_usd": {
+    "base": "9.49",
+    "none": "6.09"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "9.34",
+     "9.69"
+    ],
+    "none": [
+     "6.03",
+     "6.17"
+    ]
+   },
+   "billed_hours": {
+    "base": 228.2056,
+    "none": 146.375
+   },
+   "latency_mean_s": 96.5,
+   "latency_max_s": 255.4,
+   "cold_sheets": 3529,
+   "cold_latency_mean_s": 158.6,
+   "cold_latency_max_s": 255.4,
+   "scale_up_sessions_mean": 872.3
+  },
+  "medium|base|b1_node|base|W3": {
+   "volume": "medium",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b1_node",
+   "startup_s": 132.78,
+   "mode": "W3",
+   "monthly_usd": {
+    "base": "10.29",
+    "none": "9.62"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "10.20",
+     "10.46"
+    ],
+    "none": [
+     "9.57",
+     "9.70"
+    ]
+   },
+   "billed_hours": {
+    "base": 247.4653,
+    "none": 231.1339
+   },
+   "latency_mean_s": 29.1,
+   "latency_max_s": 222.0,
+   "cold_sheets": 261,
+   "cold_latency_mean_s": 166.7,
+   "cold_latency_max_s": 222.0,
+   "scale_up_sessions_mean": 106.0
+  },
+  "medium|base|b1_node|high|W1": {
+   "volume": "medium",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b1_node",
+   "startup_s": 192.78,
+   "mode": "W1",
+   "monthly_usd": {
+    "base": "29.95",
+    "none": "29.95"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "29.95",
+     "29.95"
+    ],
+    "none": [
+     "29.95",
+     "29.95"
+    ]
+   },
+   "billed_hours": {
+    "base": 720.0,
+    "none": 720.0
+   },
+   "latency_mean_s": 23.4,
+   "latency_max_s": 129.7,
+   "cold_sheets": 0,
+   "cold_latency_mean_s": null,
+   "cold_latency_max_s": null,
+   "scale_up_sessions_mean": 1.0
+  },
+  "medium|base|b1_node|high|W2": {
+   "volume": "medium",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b1_node",
+   "startup_s": 192.78,
+   "mode": "W2",
+   "monthly_usd": {
+    "base": "9.58",
+    "none": "6.36"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "9.42",
+     "9.79"
+    ],
+    "none": [
+     "6.29",
+     "6.47"
+    ]
+   },
+   "billed_hours": {
+    "base": 230.3528,
+    "none": 152.9333
+   },
+   "latency_mean_s": 126.3,
+   "latency_max_s": 315.4,
+   "cold_sheets": 3668,
+   "cold_latency_mean_s": 207.1,
+   "cold_latency_max_s": 315.4,
+   "scale_up_sessions_mean": 825.7
+  },
+  "medium|base|b1_node|high|W3": {
+   "volume": "medium",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b1_node",
+   "startup_s": 192.78,
+   "mode": "W3",
+   "monthly_usd": {
+    "base": "10.34",
+    "none": "9.67"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "10.24",
+     "10.51"
+    ],
+    "none": [
+     "9.62",
+     "9.76"
+    ]
+   },
+   "billed_hours": {
+    "base": 248.5431,
+    "none": 232.3839
+   },
+   "latency_mean_s": 31.4,
+   "latency_max_s": 282.0,
+   "cold_sheets": 264,
+   "cold_latency_mean_s": 223.3,
+   "cold_latency_max_s": 282.0,
+   "scale_up_sessions_mean": 105.0
+  },
+  "medium|base|b2_fargate|low|W1": {
+   "volume": "medium",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b2_fargate",
+   "startup_s": 30,
+   "mode": "W1",
+   "monthly_usd": {
+    "base": "24.12"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "24.12",
+     "24.12"
+    ]
+   },
+   "billed_hours": {
+    "base": 720.0
+   },
+   "latency_mean_s": 23.4,
+   "latency_max_s": 129.7,
+   "cold_sheets": 0,
+   "cold_latency_mean_s": null,
+   "cold_latency_max_s": null,
+   "scale_up_sessions_mean": 1.0
+  },
+  "medium|base|b2_fargate|low|W2": {
+   "volume": "medium",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b2_fargate",
+   "startup_s": 30,
+   "mode": "W2",
+   "monthly_usd": {
+    "base": "4.47"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "4.43",
+     "4.52"
+    ]
+   },
+   "billed_hours": {
+    "base": 133.4556
+   },
+   "latency_mean_s": 45.8,
+   "latency_max_s": 152.7,
+   "cold_sheets": 3245,
+   "cold_latency_mean_s": 67.8,
+   "cold_latency_max_s": 152.7,
+   "scale_up_sessions_mean": 973.3
+  },
+  "medium|base|b2_fargate|low|W3": {
+   "volume": "medium",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b2_fargate",
+   "startup_s": 30,
+   "mode": "W3",
+   "monthly_usd": {
+    "base": "7.67"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "7.64",
+     "7.72"
+    ]
+   },
+   "billed_hours": {
+    "base": 228.9339
+   },
+   "latency_mean_s": 25.1,
+   "latency_max_s": 129.7,
+   "cold_sheets": 259,
+   "cold_latency_mean_s": 66.3,
+   "cold_latency_max_s": 119.2,
+   "scale_up_sessions_mean": 108.0
+  },
+  "medium|base|b2_fargate|base|W1": {
+   "volume": "medium",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b2_fargate",
+   "startup_s": 60,
+   "mode": "W1",
+   "monthly_usd": {
+    "base": "24.12"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "24.12",
+     "24.12"
+    ]
+   },
+   "billed_hours": {
+    "base": 720.0
+   },
+   "latency_mean_s": 23.4,
+   "latency_max_s": 129.7,
+   "cold_sheets": 0,
+   "cold_latency_mean_s": null,
+   "cold_latency_max_s": null,
+   "scale_up_sessions_mean": 1.0
+  },
+  "medium|base|b2_fargate|base|W2": {
+   "volume": "medium",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b2_fargate",
+   "startup_s": 60,
+   "mode": "W2",
+   "monthly_usd": {
+    "base": "4.61"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "4.56",
+     "4.66"
+    ]
+   },
+   "billed_hours": {
+    "base": 137.5111
+   },
+   "latency_mean_s": 60.7,
+   "latency_max_s": 182.7,
+   "cold_sheets": 3367,
+   "cold_latency_mean_s": 95.6,
+   "cold_latency_max_s": 182.7,
+   "scale_up_sessions_mean": 942.7
+  },
+  "medium|base|b2_fargate|base|W3": {
+   "volume": "medium",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b2_fargate",
+   "startup_s": 60,
+   "mode": "W3",
+   "monthly_usd": {
+    "base": "7.69"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "7.66",
+     "7.75"
+    ]
+   },
+   "billed_hours": {
+    "base": 229.5867
+   },
+   "latency_mean_s": 26.3,
+   "latency_max_s": 149.2,
+   "cold_sheets": 261,
+   "cold_latency_mean_s": 95.8,
+   "cold_latency_max_s": 149.2,
+   "scale_up_sessions_mean": 107.7
+  },
+  "medium|base|b2_fargate|high|W1": {
+   "volume": "medium",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b2_fargate",
+   "startup_s": 120,
+   "mode": "W1",
+   "monthly_usd": {
+    "base": "24.12"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "24.12",
+     "24.12"
+    ]
+   },
+   "billed_hours": {
+    "base": 720.0
+   },
+   "latency_mean_s": 23.4,
+   "latency_max_s": 129.7,
+   "cold_sheets": 0,
+   "cold_latency_mean_s": null,
+   "cold_latency_max_s": null,
+   "scale_up_sessions_mean": 1.0
+  },
+  "medium|base|b2_fargate|high|W2": {
+   "volume": "medium",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b2_fargate",
+   "startup_s": 120,
+   "mode": "W2",
+   "monthly_usd": {
+    "base": "4.85"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "4.81",
+     "4.92"
+    ]
+   },
+   "billed_hours": {
+    "base": 144.8694
+   },
+   "latency_mean_s": 90.2,
+   "latency_max_s": 242.7,
+   "cold_sheets": 3502,
+   "cold_latency_mean_s": 147.9,
+   "cold_latency_max_s": 242.7,
+   "scale_up_sessions_mean": 883.7
+  },
+  "medium|base|b2_fargate|high|W3": {
+   "volume": "medium",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b2_fargate",
+   "startup_s": 120,
+   "mode": "W3",
+   "monthly_usd": {
+    "base": "7.73"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "7.70",
+     "7.80"
+    ]
+   },
+   "billed_hours": {
+    "base": 230.8617
+   },
+   "latency_mean_s": 28.6,
+   "latency_max_s": 209.2,
+   "cold_sheets": 261,
+   "cold_latency_mean_s": 154.4,
+   "cold_latency_max_s": 209.2,
+   "scale_up_sessions_mean": 106.3
+  },
+  "medium|slow|a_shared|base|W1": {
+   "volume": "medium",
+   "poll_cooldown": [
+    60,
+    600
+   ],
+   "case": "a_shared",
+   "startup_s": 1.08,
+   "mode": "W1",
+   "monthly_usd": {
+    "base": "0.00"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "0.00",
+     "0.00"
+    ]
+   },
+   "billed_hours": {
+    "base": 720.0
+   },
+   "latency_mean_s": 23.4,
+   "latency_max_s": 129.7,
+   "cold_sheets": 0,
+   "cold_latency_mean_s": null,
+   "cold_latency_max_s": null,
+   "scale_up_sessions_mean": 1.0
+  },
+  "medium|slow|a_shared|base|W2": {
+   "volume": "medium",
+   "poll_cooldown": [
+    60,
+    600
+   ],
+   "case": "a_shared",
+   "startup_s": 1.08,
+   "mode": "W2",
+   "monthly_usd": {
+    "base": "0.00"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "0.00",
+     "0.00"
+    ]
+   },
+   "billed_hours": {
+    "base": 187.55
+   },
+   "latency_mean_s": 31.4,
+   "latency_max_s": 134.1,
+   "cold_sheets": 1659,
+   "cold_latency_mean_s": 54.6,
+   "cold_latency_max_s": 134.1,
+   "scale_up_sessions_mean": 515.0
+  },
+  "medium|slow|a_shared|base|W3": {
+   "volume": "medium",
+   "poll_cooldown": [
+    60,
+    600
+   ],
+   "case": "a_shared",
+   "startup_s": 1.08,
+   "mode": "W3",
+   "monthly_usd": {
+    "base": "0.00"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "0.00",
+     "0.00"
+    ]
+   },
+   "billed_hours": {
+    "base": 236.1069
+   },
+   "latency_mean_s": 24.5,
+   "latency_max_s": 129.7,
+   "cold_sheets": 237,
+   "cold_latency_mean_s": 53.6,
+   "cold_latency_max_s": 103.5,
+   "scale_up_sessions_mean": 101.0
+  },
+  "medium|slow|b1_node|base|W1": {
+   "volume": "medium",
+   "poll_cooldown": [
+    60,
+    600
+   ],
+   "case": "b1_node",
+   "startup_s": 132.78,
+   "mode": "W1",
+   "monthly_usd": {
+    "base": "29.95",
+    "none": "29.95"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "29.95",
+     "29.95"
+    ],
+    "none": [
+     "29.95",
+     "29.95"
+    ]
+   },
+   "billed_hours": {
+    "base": 720.0,
+    "none": 720.0
+   },
+   "latency_mean_s": 23.4,
+   "latency_max_s": 129.7,
+   "cold_sheets": 0,
+   "cold_latency_mean_s": null,
+   "cold_latency_max_s": null,
+   "scale_up_sessions_mean": 1.0
+  },
+  "medium|slow|b1_node|base|W2": {
+   "volume": "medium",
+   "poll_cooldown": [
+    60,
+    600
+   ],
+   "case": "b1_node",
+   "startup_s": 132.78,
+   "mode": "W2",
+   "monthly_usd": {
+    "base": "10.07",
+    "none": "8.04"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "9.90",
+     "10.27"
+    ],
+    "none": [
+     "7.92",
+     "8.19"
+    ]
+   },
+   "billed_hours": {
+    "base": 242.0056,
+    "none": 193.1667
+   },
+   "latency_mean_s": 68.0,
+   "latency_max_s": 265.8,
+   "cold_sheets": 1972,
+   "cold_latency_mean_s": 171.5,
+   "cold_latency_max_s": 265.8,
+   "scale_up_sessions_mean": 481.0
+  },
+  "medium|slow|b1_node|base|W3": {
+   "volume": "medium",
+   "poll_cooldown": [
+    60,
+    600
+   ],
+   "case": "b1_node",
+   "startup_s": 132.78,
+   "mode": "W3",
+   "monthly_usd": {
+    "base": "10.55",
+    "none": "9.91"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "10.43",
+     "10.73"
+    ],
+    "none": [
+     "9.84",
+     "10.04"
+    ]
+   },
+   "billed_hours": {
+    "base": 253.6302,
+    "none": 238.3347
+   },
+   "latency_mean_s": 29.3,
+   "latency_max_s": 235.2,
+   "cold_sheets": 245,
+   "cold_latency_mean_s": 181.3,
+   "cold_latency_max_s": 235.2,
+   "scale_up_sessions_mean": 99.7
+  },
+  "medium|slow|b2_fargate|base|W1": {
+   "volume": "medium",
+   "poll_cooldown": [
+    60,
+    600
+   ],
+   "case": "b2_fargate",
+   "startup_s": 60,
+   "mode": "W1",
+   "monthly_usd": {
+    "base": "24.12"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "24.12",
+     "24.12"
+    ]
+   },
+   "billed_hours": {
+    "base": 720.0
+   },
+   "latency_mean_s": 23.4,
+   "latency_max_s": 129.7,
+   "cold_sheets": 0,
+   "cold_latency_mean_s": null,
+   "cold_latency_max_s": null,
+   "scale_up_sessions_mean": 1.0
+  },
+  "medium|slow|b2_fargate|base|W2": {
+   "volume": "medium",
+   "poll_cooldown": [
+    60,
+    600
+   ],
+   "case": "b2_fargate",
+   "startup_s": 60,
+   "mode": "W2",
+   "monthly_usd": {
+    "base": "6.38"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "6.28",
+     "6.50"
+    ]
+   },
+   "billed_hours": {
+    "base": 190.3278
+   },
+   "latency_mean_s": 47.2,
+   "latency_max_s": 193.1,
+   "cold_sheets": 1811,
+   "cold_latency_mean_s": 109.4,
+   "cold_latency_max_s": 193.1,
+   "scale_up_sessions_mean": 499.0
+  },
+  "medium|slow|b2_fargate|base|W3": {
+   "volume": "medium",
+   "poll_cooldown": [
+    60,
+    600
+   ],
+   "case": "b2_fargate",
+   "startup_s": 60,
+   "mode": "W3",
+   "monthly_usd": {
+    "base": "7.95"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "7.89",
+     "8.04"
+    ]
+   },
+   "billed_hours": {
+    "base": 237.2125
+   },
+   "latency_mean_s": 26.6,
+   "latency_max_s": 162.4,
+   "cold_sheets": 239,
+   "cold_latency_mean_s": 111.7,
+   "cold_latency_max_s": 162.4,
+   "scale_up_sessions_mean": 100.0
+  },
+  "large|fast|a_shared|base|W1": {
+   "volume": "large",
+   "poll_cooldown": [
+    15,
+    120
+   ],
+   "case": "a_shared",
+   "startup_s": 1.08,
+   "mode": "W1",
+   "monthly_usd": {
+    "base": "0.00"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "0.00",
+     "0.00"
+    ]
+   },
+   "billed_hours": {
+    "base": 720.0
+   },
+   "latency_mean_s": 28.6,
+   "latency_max_s": 200.8,
+   "cold_sheets": 0,
+   "cold_latency_mean_s": null,
+   "cold_latency_max_s": null,
+   "scale_up_sessions_mean": 1.0
+  },
+  "large|fast|a_shared|base|W2": {
+   "volume": "large",
+   "poll_cooldown": [
+    15,
+    120
+   ],
+   "case": "a_shared",
+   "startup_s": 1.08,
+   "mode": "W2",
+   "monthly_usd": {
+    "base": "0.00"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "0.00",
+     "0.00"
+    ]
+   },
+   "billed_hours": {
+    "base": 201.7194
+   },
+   "latency_mean_s": 31.0,
+   "latency_max_s": 200.8,
+   "cold_sheets": 6770,
+   "cold_latency_mean_s": 33.2,
+   "cold_latency_max_s": 152.6,
+   "scale_up_sessions_mean": 2067.3
+  },
+  "large|fast|a_shared|base|W3": {
+   "volume": "large",
+   "poll_cooldown": [
+    15,
+    120
+   ],
+   "case": "a_shared",
+   "startup_s": 1.08,
+   "mode": "W3",
+   "monthly_usd": {
+    "base": "0.00"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "0.00",
+     "0.00"
+    ]
+   },
+   "billed_hours": {
+    "base": 239.1164
+   },
+   "latency_mean_s": 29.0,
+   "latency_max_s": 200.8,
+   "cold_sheets": 1311,
+   "cold_latency_mean_s": 31.8,
+   "cold_latency_max_s": 105.3,
+   "scale_up_sessions_mean": 451.7
+  },
+  "large|fast|b1_node|base|W1": {
+   "volume": "large",
+   "poll_cooldown": [
+    15,
+    120
+   ],
+   "case": "b1_node",
+   "startup_s": 132.78,
+   "mode": "W1",
+   "monthly_usd": {
+    "base": "29.95",
+    "none": "29.95"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "29.95",
+     "29.95"
+    ],
+    "none": [
+     "29.95",
+     "29.95"
+    ]
+   },
+   "billed_hours": {
+    "base": 720.0,
+    "none": 720.0
+   },
+   "latency_mean_s": 28.6,
+   "latency_max_s": 200.8,
+   "cold_sheets": 0,
+   "cold_latency_mean_s": null,
+   "cold_latency_max_s": null,
+   "scale_up_sessions_mean": 1.0
+  },
+  "large|fast|b1_node|base|W2": {
+   "volume": "large",
+   "poll_cooldown": [
+    15,
+    120
+   ],
+   "case": "b1_node",
+   "startup_s": 132.78,
+   "mode": "W2",
+   "monthly_usd": {
+    "base": "12.11",
+    "none": "9.29"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "12.09",
+     "12.12"
+    ],
+    "none": [
+     "9.26",
+     "9.32"
+    ]
+   },
+   "billed_hours": {
+    "base": 291.0597,
+    "none": 223.2292
+   },
+   "latency_mean_s": 75.1,
+   "latency_max_s": 301.6,
+   "cold_sheets": 11348,
+   "cold_latency_mean_s": 146.9,
+   "cold_latency_max_s": 297.0,
+   "scale_up_sessions_mean": 1557.7
+  },
+  "large|fast|b1_node|base|W3": {
+   "volume": "large",
+   "poll_cooldown": [
+    15,
+    120
+   ],
+   "case": "b1_node",
+   "startup_s": 132.78,
+   "mode": "W3",
+   "monthly_usd": {
+    "base": "12.13",
+    "none": "10.40"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "12.11",
+     "12.14"
+    ],
+    "none": [
+     "10.39",
+     "10.42"
+    ]
+   },
+   "billed_hours": {
+    "base": 291.5278,
+    "none": 250.0691
+   },
+   "latency_mean_s": 34.1,
+   "latency_max_s": 246.8,
+   "cold_sheets": 1352,
+   "cold_latency_mean_s": 155.3,
+   "cold_latency_max_s": 246.8,
+   "scale_up_sessions_mean": 385.7
+  },
+  "large|fast|b2_fargate|base|W1": {
+   "volume": "large",
+   "poll_cooldown": [
+    15,
+    120
+   ],
+   "case": "b2_fargate",
+   "startup_s": 60,
+   "mode": "W1",
+   "monthly_usd": {
+    "base": "24.12"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "24.12",
+     "24.12"
+    ]
+   },
+   "billed_hours": {
+    "base": 720.0
+   },
+   "latency_mean_s": 28.6,
+   "latency_max_s": 200.8,
+   "cold_sheets": 0,
+   "cold_latency_mean_s": null,
+   "cold_latency_max_s": null,
+   "scale_up_sessions_mean": 1.0
+  },
+  "large|fast|b2_fargate|base|W2": {
+   "volume": "large",
+   "poll_cooldown": [
+    15,
+    120
+   ],
+   "case": "b2_fargate",
+   "startup_s": 60,
+   "mode": "W2",
+   "monthly_usd": {
+    "base": "7.12"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "7.11",
+     "7.15"
+    ]
+   },
+   "billed_hours": {
+    "base": 212.5736
+   },
+   "latency_mean_s": 48.8,
+   "latency_max_s": 228.8,
+   "cold_sheets": 9145,
+   "cold_latency_mean_s": 89.7,
+   "cold_latency_max_s": 224.2,
+   "scale_up_sessions_mean": 1790.0
+  },
+  "large|fast|b2_fargate|base|W3": {
+   "volume": "large",
+   "poll_cooldown": [
+    15,
+    120
+   ],
+   "case": "b2_fargate",
+   "startup_s": 60,
+   "mode": "W3",
+   "monthly_usd": {
+    "base": "8.19"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "8.18",
+     "8.20"
+    ]
+   },
+   "billed_hours": {
+    "base": 244.4636
+   },
+   "latency_mean_s": 31.3,
+   "latency_max_s": 200.8,
+   "cold_sheets": 1338,
+   "cold_latency_mean_s": 89.5,
+   "cold_latency_max_s": 174.0,
+   "scale_up_sessions_mean": 418.3
+  },
+  "large|base|a_shared|base|W1": {
+   "volume": "large",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "a_shared",
+   "startup_s": 1.08,
+   "mode": "W1",
+   "monthly_usd": {
+    "base": "0.00"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "0.00",
+     "0.00"
+    ]
+   },
+   "billed_hours": {
+    "base": 720.0
+   },
+   "latency_mean_s": 28.6,
+   "latency_max_s": 200.8,
+   "cold_sheets": 0,
+   "cold_latency_mean_s": null,
+   "cold_latency_max_s": null,
+   "scale_up_sessions_mean": 1.0
+  },
+  "large|base|a_shared|base|W2": {
+   "volume": "large",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "a_shared",
+   "startup_s": 1.08,
+   "mode": "W2",
+   "monthly_usd": {
+    "base": "0.00"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "0.00",
+     "0.00"
+    ]
+   },
+   "billed_hours": {
+    "base": 252.9444
+   },
+   "latency_mean_s": 29.6,
+   "latency_max_s": 200.8,
+   "cold_sheets": 1655,
+   "cold_latency_mean_s": 41.1,
+   "cold_latency_max_s": 174.4,
+   "scale_up_sessions_mean": 507.3
+  },
+  "large|base|a_shared|base|W3": {
+   "volume": "large",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "a_shared",
+   "startup_s": 1.08,
+   "mode": "W3",
+   "monthly_usd": {
+    "base": "0.00"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "0.00",
+     "0.00"
+    ]
+   },
+   "billed_hours": {
+    "base": 257.5819
+   },
+   "latency_mean_s": 29.1,
+   "latency_max_s": 200.8,
+   "cold_sheets": 968,
+   "cold_latency_mean_s": 39.5,
+   "cold_latency_max_s": 137.0,
+   "scale_up_sessions_mean": 338.0
+  },
+  "large|base|b1_node|low|W1": {
+   "volume": "large",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b1_node",
+   "startup_s": 72.78,
+   "mode": "W1",
+   "monthly_usd": {
+    "base": "29.95",
+    "none": "29.95"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "29.95",
+     "29.95"
+    ],
+    "none": [
+     "29.95",
+     "29.95"
+    ]
+   },
+   "billed_hours": {
+    "base": 720.0,
+    "none": 720.0
+   },
+   "latency_mean_s": 28.6,
+   "latency_max_s": 200.8,
+   "cold_sheets": 0,
+   "cold_latency_mean_s": null,
+   "cold_latency_max_s": null,
+   "scale_up_sessions_mean": 1.0
+  },
+  "large|base|b1_node|low|W2": {
+   "volume": "large",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b1_node",
+   "startup_s": 72.78,
+   "mode": "W2",
+   "monthly_usd": {
+    "base": "12.28",
+    "none": "10.68"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "12.26",
+     "12.30"
+    ],
+    "none": [
+     "10.66",
+     "10.70"
+    ]
+   },
+   "billed_hours": {
+    "base": 295.2861,
+    "none": 256.6944
+   },
+   "latency_mean_s": 34.5,
+   "latency_max_s": 265.7,
+   "cold_sheets": 2198,
+   "cold_latency_mean_s": 106.7,
+   "cold_latency_max_s": 246.1,
+   "scale_up_sessions_mean": 482.3
+  },
+  "large|base|b1_node|low|W3": {
+   "volume": "large",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b1_node",
+   "startup_s": 72.78,
+   "mode": "W3",
+   "monthly_usd": {
+    "base": "12.31",
+    "none": "10.87"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "12.28",
+     "12.32"
+    ],
+    "none": [
+     "10.85",
+     "10.88"
+    ]
+   },
+   "billed_hours": {
+    "base": 295.8558,
+    "none": 261.243
+   },
+   "latency_mean_s": 31.3,
+   "latency_max_s": 208.7,
+   "cold_sheets": 1018,
+   "cold_latency_mean_s": 108.1,
+   "cold_latency_max_s": 208.7,
+   "scale_up_sessions_mean": 316.7
+  },
+  "large|base|b1_node|base|W1": {
+   "volume": "large",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b1_node",
+   "startup_s": 132.78,
+   "mode": "W1",
+   "monthly_usd": {
+    "base": "29.95",
+    "none": "29.95"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "29.95",
+     "29.95"
+    ],
+    "none": [
+     "29.95",
+     "29.95"
+    ]
+   },
+   "billed_hours": {
+    "base": 720.0,
+    "none": 720.0
+   },
+   "latency_mean_s": 28.6,
+   "latency_max_s": 200.8,
+   "cold_sheets": 0,
+   "cold_latency_mean_s": null,
+   "cold_latency_max_s": null,
+   "scale_up_sessions_mean": 1.0
+  },
+  "large|base|b1_node|base|W2": {
+   "volume": "large",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b1_node",
+   "startup_s": 132.78,
+   "mode": "W2",
+   "monthly_usd": {
+    "base": "12.32",
+    "none": "10.79"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "12.29",
+     "12.34"
+    ],
+    "none": [
+     "10.78",
+     "10.80"
+    ]
+   },
+   "billed_hours": {
+    "base": 296.2278,
+    "none": 259.3417
+   },
+   "latency_mean_s": 39.7,
+   "latency_max_s": 325.7,
+   "cold_sheets": 2590,
+   "cold_latency_mean_s": 154.9,
+   "cold_latency_max_s": 306.1,
+   "scale_up_sessions_mean": 460.0
+  },
+  "large|base|b1_node|base|W3": {
+   "volume": "large",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b1_node",
+   "startup_s": 132.78,
+   "mode": "W3",
+   "monthly_usd": {
+    "base": "12.35",
+    "none": "10.97"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "12.32",
+     "12.37"
+    ],
+    "none": [
+     "10.96",
+     "10.98"
+    ]
+   },
+   "billed_hours": {
+    "base": 296.7947,
+    "none": 263.8069
+   },
+   "latency_mean_s": 33.0,
+   "latency_max_s": 245.2,
+   "cold_sheets": 1032,
+   "cold_latency_mean_s": 160.9,
+   "cold_latency_max_s": 245.2,
+   "scale_up_sessions_mean": 297.3
+  },
+  "large|base|b1_node|high|W1": {
+   "volume": "large",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b1_node",
+   "startup_s": 192.78,
+   "mode": "W1",
+   "monthly_usd": {
+    "base": "29.95",
+    "none": "29.95"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "29.95",
+     "29.95"
+    ],
+    "none": [
+     "29.95",
+     "29.95"
+    ]
+   },
+   "billed_hours": {
+    "base": 720.0,
+    "none": 720.0
+   },
+   "latency_mean_s": 28.6,
+   "latency_max_s": 200.8,
+   "cold_sheets": 0,
+   "cold_latency_mean_s": null,
+   "cold_latency_max_s": null,
+   "scale_up_sessions_mean": 1.0
+  },
+  "large|base|b1_node|high|W2": {
+   "volume": "large",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b1_node",
+   "startup_s": 192.78,
+   "mode": "W2",
+   "monthly_usd": {
+    "base": "12.36",
+    "none": "10.90"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "12.33",
+     "12.38"
+    ],
+    "none": [
+     "10.89",
+     "10.91"
+    ]
+   },
+   "billed_hours": {
+    "base": 297.1806,
+    "none": 261.9306
+   },
+   "latency_mean_s": 45.9,
+   "latency_max_s": 385.7,
+   "cold_sheets": 3068,
+   "cold_latency_mean_s": 197.4,
+   "cold_latency_max_s": 366.1,
+   "scale_up_sessions_mean": 446.7
+  },
+  "large|base|b1_node|high|W3": {
+   "volume": "large",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b1_node",
+   "startup_s": 192.78,
+   "mode": "W3",
+   "monthly_usd": {
+    "base": "12.39",
+    "none": "11.08"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "12.36",
+     "12.40"
+    ],
+    "none": [
+     "11.07",
+     "11.09"
+    ]
+   },
+   "billed_hours": {
+    "base": 297.7364,
+    "none": 266.3069
+   },
+   "latency_mean_s": 34.8,
+   "latency_max_s": 305.2,
+   "cold_sheets": 1089,
+   "cold_latency_mean_s": 209.1,
+   "cold_latency_max_s": 305.2,
+   "scale_up_sessions_mean": 287.0
+  },
+  "large|base|b2_fargate|low|W1": {
+   "volume": "large",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b2_fargate",
+   "startup_s": 30,
+   "mode": "W1",
+   "monthly_usd": {
+    "base": "24.12"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "24.12",
+     "24.12"
+    ]
+   },
+   "billed_hours": {
+    "base": 720.0
+   },
+   "latency_mean_s": 28.6,
+   "latency_max_s": 200.8,
+   "cold_sheets": 0,
+   "cold_latency_mean_s": null,
+   "cold_latency_max_s": null,
+   "scale_up_sessions_mean": 1.0
+  },
+  "large|base|b2_fargate|low|W2": {
+   "volume": "large",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b2_fargate",
+   "startup_s": 30,
+   "mode": "W2",
+   "monthly_usd": {
+    "base": "8.53"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "8.51",
+     "8.55"
+    ]
+   },
+   "billed_hours": {
+    "base": 254.5222
+   },
+   "latency_mean_s": 31.4,
+   "latency_max_s": 223.0,
+   "cold_sheets": 1866,
+   "cold_latency_mean_s": 69.6,
+   "cold_latency_max_s": 203.3,
+   "scale_up_sessions_mean": 496.7
+  },
+  "large|base|b2_fargate|low|W3": {
+   "volume": "large",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b2_fargate",
+   "startup_s": 30,
+   "mode": "W3",
+   "monthly_usd": {
+    "base": "8.68"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "8.66",
+     "8.70"
+    ]
+   },
+   "billed_hours": {
+    "base": 259.1235
+   },
+   "latency_mean_s": 30.0,
+   "latency_max_s": 200.8,
+   "cold_sheets": 993,
+   "cold_latency_mean_s": 68.1,
+   "cold_latency_max_s": 166.0,
+   "scale_up_sessions_mean": 329.7
+  },
+  "large|base|b2_fargate|base|W1": {
+   "volume": "large",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b2_fargate",
+   "startup_s": 60,
+   "mode": "W1",
+   "monthly_usd": {
+    "base": "24.12"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "24.12",
+     "24.12"
+    ]
+   },
+   "billed_hours": {
+    "base": 720.0
+   },
+   "latency_mean_s": 28.6,
+   "latency_max_s": 200.8,
+   "cold_sheets": 0,
+   "cold_latency_mean_s": null,
+   "cold_latency_max_s": null,
+   "scale_up_sessions_mean": 1.0
+  },
+  "large|base|b2_fargate|base|W2": {
+   "volume": "large",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b2_fargate",
+   "startup_s": 60,
+   "mode": "W2",
+   "monthly_usd": {
+    "base": "8.58"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "8.56",
+     "8.59"
+    ]
+   },
+   "billed_hours": {
+    "base": 256.0444
+   },
+   "latency_mean_s": 33.6,
+   "latency_max_s": 253.0,
+   "cold_sheets": 2085,
+   "cold_latency_mean_s": 96.3,
+   "cold_latency_max_s": 233.3,
+   "scale_up_sessions_mean": 486.7
+  },
+  "large|base|b2_fargate|base|W3": {
+   "volume": "large",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b2_fargate",
+   "startup_s": 60,
+   "mode": "W3",
+   "monthly_usd": {
+    "base": "8.73"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "8.72",
+     "8.74"
+    ]
+   },
+   "billed_hours": {
+    "base": 260.618
+   },
+   "latency_mean_s": 30.9,
+   "latency_max_s": 200.8,
+   "cold_sheets": 1014,
+   "cold_latency_mean_s": 96.2,
+   "cold_latency_max_s": 196.0,
+   "scale_up_sessions_mean": 320.3
+  },
+  "large|base|b2_fargate|high|W1": {
+   "volume": "large",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b2_fargate",
+   "startup_s": 120,
+   "mode": "W1",
+   "monthly_usd": {
+    "base": "24.12"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "24.12",
+     "24.12"
+    ]
+   },
+   "billed_hours": {
+    "base": 720.0
+   },
+   "latency_mean_s": 28.6,
+   "latency_max_s": 200.8,
+   "cold_sheets": 0,
+   "cold_latency_mean_s": null,
+   "cold_latency_max_s": null,
+   "scale_up_sessions_mean": 1.0
+  },
+  "large|base|b2_fargate|high|W2": {
+   "volume": "large",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b2_fargate",
+   "startup_s": 120,
+   "mode": "W2",
+   "monthly_usd": {
+    "base": "8.67"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "8.66",
+     "8.68"
+    ]
+   },
+   "billed_hours": {
+    "base": 258.8056
+   },
+   "latency_mean_s": 38.5,
+   "latency_max_s": 313.0,
+   "cold_sheets": 2515,
+   "cold_latency_mean_s": 145.1,
+   "cold_latency_max_s": 293.3,
+   "scale_up_sessions_mean": 466.3
+  },
+  "large|base|b2_fargate|high|W3": {
+   "volume": "large",
+   "poll_cooldown": [
+    30,
+    300
+   ],
+   "case": "b2_fargate",
+   "startup_s": 120,
+   "mode": "W3",
+   "monthly_usd": {
+    "base": "8.82"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "8.81",
+     "8.83"
+    ]
+   },
+   "billed_hours": {
+    "base": 263.2985
+   },
+   "latency_mean_s": 32.6,
+   "latency_max_s": 256.0,
+   "cold_sheets": 1034,
+   "cold_latency_mean_s": 150.1,
+   "cold_latency_max_s": 256.0,
+   "scale_up_sessions_mean": 302.7
+  },
+  "large|slow|a_shared|base|W1": {
+   "volume": "large",
+   "poll_cooldown": [
+    60,
+    600
+   ],
+   "case": "a_shared",
+   "startup_s": 1.08,
+   "mode": "W1",
+   "monthly_usd": {
+    "base": "0.00"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "0.00",
+     "0.00"
+    ]
+   },
+   "billed_hours": {
+    "base": 720.0
+   },
+   "latency_mean_s": 28.6,
+   "latency_max_s": 200.8,
+   "cold_sheets": 0,
+   "cold_latency_mean_s": null,
+   "cold_latency_max_s": null,
+   "scale_up_sessions_mean": 1.0
+  },
+  "large|slow|a_shared|base|W2": {
+   "volume": "large",
+   "poll_cooldown": [
+    60,
+    600
+   ],
+   "case": "a_shared",
+   "startup_s": 1.08,
+   "mode": "W2",
+   "monthly_usd": {
+    "base": "0.00"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "0.00",
+     "0.00"
+    ]
+   },
+   "billed_hours": {
+    "base": 278.0
+   },
+   "latency_mean_s": 29.4,
+   "latency_max_s": 200.8,
+   "cold_sheets": 705,
+   "cold_latency_mean_s": 56.5,
+   "cold_latency_max_s": 147.8,
+   "scale_up_sessions_mean": 216.3
+  },
+  "large|slow|a_shared|base|W3": {
+   "volume": "large",
+   "poll_cooldown": [
+    60,
+    600
+   ],
+   "case": "a_shared",
+   "startup_s": 1.08,
+   "mode": "W3",
+   "monthly_usd": {
+    "base": "0.00"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "0.00",
+     "0.00"
+    ]
+   },
+   "billed_hours": {
+    "base": 278.7505
+   },
+   "latency_mean_s": 29.3,
+   "latency_max_s": 200.8,
+   "cold_sheets": 603,
+   "cold_latency_mean_s": 55.8,
+   "cold_latency_max_s": 147.8,
+   "scale_up_sessions_mean": 213.0
+  },
+  "large|slow|b1_node|base|W1": {
+   "volume": "large",
+   "poll_cooldown": [
+    60,
+    600
+   ],
+   "case": "b1_node",
+   "startup_s": 132.78,
+   "mode": "W1",
+   "monthly_usd": {
+    "base": "29.95",
+    "none": "29.95"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "29.95",
+     "29.95"
+    ],
+    "none": [
+     "29.95",
+     "29.95"
+    ]
+   },
+   "billed_hours": {
+    "base": 720.0,
+    "none": 720.0
+   },
+   "latency_mean_s": 28.6,
+   "latency_max_s": 200.8,
+   "cold_sheets": 0,
+   "cold_latency_mean_s": null,
+   "cold_latency_max_s": null,
+   "scale_up_sessions_mean": 1.0
+  },
+  "large|slow|b1_node|base|W2": {
+   "volume": "large",
+   "poll_cooldown": [
+    60,
+    600
+   ],
+   "case": "b1_node",
+   "startup_s": 132.78,
+   "mode": "W2",
+   "monthly_usd": {
+    "base": "12.61",
+    "none": "11.66"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "12.58",
+     "12.63"
+    ],
+    "none": [
+     "11.65",
+     "11.69"
+    ]
+   },
+   "billed_hours": {
+    "base": 303.1,
+    "none": 280.3833
+   },
+   "latency_mean_s": 32.8,
+   "latency_max_s": 279.5,
+   "cold_sheets": 908,
+   "cold_latency_mean_s": 169.1,
+   "cold_latency_max_s": 279.5,
+   "scale_up_sessions_mean": 203.3
+  },
+  "large|slow|b1_node|base|W3": {
+   "volume": "large",
+   "poll_cooldown": [
+    60,
+    600
+   ],
+   "case": "b1_node",
+   "startup_s": 132.78,
+   "mode": "W3",
+   "monthly_usd": {
+    "base": "12.64",
+    "none": "11.70"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "12.61",
+     "12.65"
+    ],
+    "none": [
+     "11.68",
+     "11.72"
+    ]
+   },
+   "billed_hours": {
+    "base": 303.7838,
+    "none": 281.1338
+   },
+   "latency_mean_s": 31.8,
+   "latency_max_s": 279.5,
+   "cold_sheets": 689,
+   "cold_latency_mean_s": 172.2,
+   "cold_latency_max_s": 279.5,
+   "scale_up_sessions_mean": 200.0
+  },
+  "large|slow|b2_fargate|base|W1": {
+   "volume": "large",
+   "poll_cooldown": [
+    60,
+    600
+   ],
+   "case": "b2_fargate",
+   "startup_s": 60,
+   "mode": "W1",
+   "monthly_usd": {
+    "base": "24.12"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "24.12",
+     "24.12"
+    ]
+   },
+   "billed_hours": {
+    "base": 720.0
+   },
+   "latency_mean_s": 28.6,
+   "latency_max_s": 200.8,
+   "cold_sheets": 0,
+   "cold_latency_mean_s": null,
+   "cold_latency_max_s": null,
+   "scale_up_sessions_mean": 1.0
+  },
+  "large|slow|b2_fargate|base|W2": {
+   "volume": "large",
+   "poll_cooldown": [
+    60,
+    600
+   ],
+   "case": "b2_fargate",
+   "startup_s": 60,
+   "mode": "W2",
+   "monthly_usd": {
+    "base": "9.35"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "9.34",
+     "9.36"
+    ]
+   },
+   "billed_hours": {
+    "base": 279.1667
+   },
+   "latency_mean_s": 30.8,
+   "latency_max_s": 206.7,
+   "cold_sheets": 782,
+   "cold_latency_mean_s": 111.2,
+   "cold_latency_max_s": 206.7,
+   "scale_up_sessions_mean": 210.0
+  },
+  "large|slow|b2_fargate|base|W3": {
+   "volume": "large",
+   "poll_cooldown": [
+    60,
+    600
+   ],
+   "case": "b2_fargate",
+   "startup_s": 60,
+   "mode": "W3",
+   "monthly_usd": {
+    "base": "9.38"
+   },
+   "monthly_usd_range": {
+    "base": [
+     "9.37",
+     "9.39"
+    ]
+   },
+   "billed_hours": {
+    "base": 279.9172
+   },
+   "latency_mean_s": 30.4,
+   "latency_max_s": 206.7,
+   "cold_sheets": 636,
+   "cold_latency_mean_s": 111.4,
+   "cold_latency_max_s": 206.7,
+   "scale_up_sessions_mean": 206.7
+  }
+ },
+ "hypotheses": {
+  "H1_shared_saving_zero": {
+   "result": true,
+   "nodes": [
+    2,
+    2
+   ]
+  },
+  "H2_fargate_W2_saves_ge_50pct_small_medium": {
+   "result": true,
+   "saving_by_volume": {
+    "small": "0.9444",
+    "medium": "0.8089",
+    "large": "0.6443"
+   }
+  },
+  "H3_node_W2_cold_latency_ge_3x_W1": {
+   "result": true,
+   "ratio_by_volume": {
+    "small": 7.31,
+    "medium": 6.78,
+    "large": 5.42
+   }
+  }
+ }
+}

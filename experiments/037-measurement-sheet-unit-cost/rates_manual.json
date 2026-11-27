@@ -1,0 +1,23 @@
+{
+ "note": "Rates not in references/aws-price-list-apn2-2026-11-15.json. Values copied verbatim from the AWS Price List Bulk API Seoul offer files (public pricing endpoint, not an account API) or derived from the official pricing page as noted. Checked 2026-11-27. On-Demand, no free tier, no tax.",
+ "textract": {
+  "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonTextract/current/ap-northeast-2/index.json",
+  "publicationDate": "2026-11-18T00:19:26Z",
+  "unit": "USD per page, first 1M pages per month",
+  "DetectDocumentText": {"usagetype": "APN2-SyncTextPagesProcessed", "usd_per_page": "0.0015"},
+  "AnalyzeDocument_Tables": {"usagetype": "APN2-SyncTablesPagesProcessed", "usd_per_page": "0.015"},
+  "AnalyzeDocument_Forms": {"usagetype": "APN2-SyncFormsPagesProcessed", "usd_per_page": "0.05"},
+  "AnalyzeDocument_TablesForms": {"usd_per_page": "0.065", "derived": "sum of Tables and Forms; the offer has no combined Tables+Forms row and the pricing page example 4 bills Tables and Forms as separate line items (https://aws.amazon.com/textract/pricing/, US West (Oregon) example)"}
+ },
+ "sqs": {
+  "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AWSQueueService/current/ap-northeast-2/index.json",
+  "publicationDate": "2026-11-25T15:01:23Z",
+  "standard_usd_per_request": {"usagetype": "APN2-Requests-Tier1", "usd": "0.0000004"},
+  "rules": "Every SQS action counts as a request; each 64 KB chunk of payload is one request; 1-10 messages per request (https://aws.amazon.com/sqs/pricing/, checked 2026-11-27)"
+ },
+ "bedrock": {
+  "note": "Claude Haiku 4.5 / Sonnet 4.5 rates are read from the 2026-11-15 snapshot (Global cross-Region inference rows). The Seoul offer published 2026-11-23 lists only Global rows for these models with the same values.",
+  "global_routing": "With global inference profiles, Amazon Bedrock automatically selects a commercial AWS Region to process the request (https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html)",
+  "in_region_or_geographic_rates": "확인 필요 — not in the Seoul offer; conclusions that require in-Korea processing are held"
+ }
+}

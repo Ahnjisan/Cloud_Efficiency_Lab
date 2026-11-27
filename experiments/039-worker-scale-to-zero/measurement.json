@@ -1,0 +1,115 @@
+{
+ "profile_prefix": "cel039-",
+ "namespace": "cel-039",
+ "image": "python:3.12-alpine",
+ "pairs": 5,
+ "start_guard_gib": 4.0,
+ "stop_guard_gib": 1.5,
+ "free_gib_before": 5.44,
+ "runs": [
+  {
+   "cache": false,
+   "wall_s": 27.47,
+   "polls": 193,
+   "created_to_ready_s": 27.0,
+   "free_gib": 3.7,
+   "pair": 1
+  },
+  {
+   "cache": true,
+   "wall_s": 1.03,
+   "polls": 6,
+   "created_to_ready_s": 0.0,
+   "free_gib": 3.76,
+   "pair": 1
+  },
+  {
+   "cache": false,
+   "wall_s": 9.38,
+   "polls": 64,
+   "created_to_ready_s": 8.0,
+   "free_gib": 3.73,
+   "pair": 2
+  },
+  {
+   "cache": true,
+   "wall_s": 1.34,
+   "polls": 6,
+   "created_to_ready_s": 1.0,
+   "free_gib": 3.76,
+   "pair": 2
+  },
+  {
+   "cache": false,
+   "wall_s": 9.98,
+   "polls": 69,
+   "created_to_ready_s": 9.0,
+   "free_gib": 3.74,
+   "pair": 3
+  },
+  {
+   "cache": true,
+   "wall_s": 1.06,
+   "polls": 6,
+   "created_to_ready_s": 1.0,
+   "free_gib": 3.73,
+   "pair": 3
+  },
+  {
+   "cache": false,
+   "wall_s": 8.98,
+   "polls": 63,
+   "created_to_ready_s": 9.0,
+   "free_gib": 3.64,
+   "pair": 4
+  },
+  {
+   "cache": true,
+   "wall_s": 0.98,
+   "polls": 5,
+   "created_to_ready_s": 0.0,
+   "free_gib": 3.67,
+   "pair": 4
+  },
+  {
+   "cache": false,
+   "wall_s": 8.09,
+   "polls": 55,
+   "created_to_ready_s": 8.0,
+   "free_gib": 3.68,
+   "pair": 5
+  },
+  {
+   "cache": true,
+   "wall_s": 1.01,
+   "polls": 6,
+   "created_to_ready_s": 1.0,
+   "free_gib": 3.7,
+   "pair": 5
+  }
+ ],
+ "status": "measured",
+ "versions": {
+  "docker": "29.8.2",
+  "minikube": "v1.39.0",
+  "kubectl": "v1.36.1"
+ },
+ "host_before": {
+  "containers": 86,
+  "containers_sha256": "f8c7efb3b0c63abd87a4c793d736977433e98454a6fcce689f8873262c20c924",
+  "images": 103,
+  "images_sha256": "13e964ae20fe8c4722e4110dbc1a4f0e53d426ab0ac9b0ebb90cd5d3c1064ac1"
+ },
+ "node": {
+  "kubernetes": "v1.37.0",
+  "runtime": "containerd://2.3.4"
+ },
+ "free_gib_after_start": 4.03,
+ "cleanup": {
+  "profile_removed": true,
+  "containers_same": true,
+  "images_same": true,
+  "new_host_images": []
+ },
+ "free_gib_end": 3.99
+}
