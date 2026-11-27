@@ -111,9 +111,9 @@ AWS 자원 생성·실행은 필수가 아닙니다. AWS 등 유료 자원을 �
 | 035 | 6개 통과 | Redis 측정은 Docker로 1회 실행(정책별 3회, 시작 시 여유 메모리 3.34 GiB — 기준 4 GiB 미만이지만 사용자 지시로 실행). 테스트는 저장된 측정값에서 요약 재계산(`--resummarize`)·일치. 컨테이너·이미지 삭제 확인 |
 | 036 | 5개 통과 | 테스트 안에서 재실행·일치, 019 재현 8개 일치 |
 
-### Fac:Hub 측정지 파이프라인·챗봇 (로컬·합성·계산)
+### 측정 기록 구조화 파이프라인·사내 챗봇 (로컬·합성·계산, 040은 실제 AWS 호출)
 
-사람이 올린 측정지(손글씨 사진·CSV)를 S3 → SQS → structurer-worker → Textract → Bedrock으로 구조화하고, 챗봇이 PostgreSQL 조회 결과를 Bedrock에 넘기는 구조(EKS, 서울 리전)의 비용을 계산한다. 데이터는 모두 합성이고 작업량·토큰은 가정값이다. 요율은 [2026-11-15 사본](../references/aws-price-list-apn2-2026-11-15.json)과, 사본에 없는 Textract·SQS의 [rates_manual.json](037-measurement-sheet-unit-cost/rates_manual.json)(서울 Price List 오퍼, 2026-11-27 확인)에서 읽는다. Bedrock은 Global 교차 리전 요율이며 국내 처리 요율은 확인 필요다.
+사람이 올린 측정지(손글씨 사진·CSV)를 S3 → SQS → 구조화 워커 → Textract → Bedrock으로 구조화하고, 챗봇이 PostgreSQL 조회 결과를 Bedrock에 넘기는 구조(EKS, 서울 리전)의 비용을 계산한다. 데이터는 모두 합성이고 작업량·토큰은 가정값이다. 요율은 [2026-11-15 사본](../references/aws-price-list-apn2-2026-11-15.json)과, 사본에 없는 Textract·SQS의 [rates_manual.json](037-measurement-sheet-unit-cost/rates_manual.json)(서울 Price List 오퍼, 2026-11-27 확인)에서 읽는다. Bedrock은 Global 교차 리전 요율이며 국내 처리 요율은 확인 필요다.
 
 - [037 · 측정지 1장당 구조화 비용](037-measurement-sheet-unit-cost/README.md) — 기준 구성 장당 0.0197 USD 중 Textract 69%·Bedrock 30%·S3+SQS 0.26%. Textract 종류가 모델보다 비용을 크게 바꿈(8.8배 대 1.7배)
 - [038 · 재시도·중복 처리 비용](038-retry-duplicate-cost/README.md) — 방지 없이 visibility timeout 30초면 OCR 21% 추가. 파일 해시만으로 막으면 재구조화 요청을 100% 잘못 막음, 요청 종류 구분 + OCR 재사용(C)은 오판 0

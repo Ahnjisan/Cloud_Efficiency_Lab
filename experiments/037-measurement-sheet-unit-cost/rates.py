@@ -1,4 +1,4 @@
-"""Shared rates and workload assumptions for experiments 037-041 (Fac:Hub measurement-sheet pipeline).
+"""Shared rates and workload assumptions for experiments 037-041 (generic measurement-sheet structuring pipeline).
 
 Snapshot rates come from experiments/scenarios/pricebook.py (2026-11-15 Seoul snapshot);
 rates missing from the snapshot come from rates_manual.json next to this file.
