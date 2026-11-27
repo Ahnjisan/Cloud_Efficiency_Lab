@@ -1,0 +1,654 @@
+{
+ "answers": {
+  "fields": 982,
+  "handwritten": 805,
+  "sheets": 30
+ },
+ "textract_pages": 30,
+ "results": {
+  "haiku|P1": {
+   "fields": 2415,
+   "accuracy": 0.95404,
+   "strict_accuracy": 0.95404,
+   "error_rate_wilson95": [
+    0.03831,
+    0.05506
+   ],
+   "errors": {
+    "missing": 81,
+    "sign": 0,
+    "decimal": 18,
+    "other": 12
+   },
+   "printed_accuracy": 1.0,
+   "hard_fields_correct": "9/27",
+   "sign_error_rate_on_signed_fields": 0.0,
+   "fields_with_label_misread": 0,
+   "comma_for_period_in_missing": 72,
+   "posthoc_row_order_fallback": {
+    "accuracy": 0.95404,
+    "error_rate_wilson95": [
+     0.03831,
+     0.05506
+    ],
+    "errors": {
+     "missing": 81,
+     "sign": 0,
+     "decimal": 18,
+     "other": 12
+    },
+    "note": "post-hoc, not used for hypotheses"
+   },
+   "calls": 90,
+   "call_errors": 0,
+   "json_parse_failures": 0,
+   "usd_per_sheet": "0.018908",
+   "latency_ms_p50": 4040,
+   "latency_ms_p95": 4903
+  },
+  "haiku|P2": {
+   "fields": 2415,
+   "accuracy": 0.87826,
+   "strict_accuracy": 0.87702,
+   "error_rate_wilson95": [
+    0.10929,
+    0.13538
+   ],
+   "errors": {
+    "missing": 228,
+    "sign": 0,
+    "decimal": 42,
+    "other": 24
+   },
+   "printed_accuracy": 0.94915,
+   "hard_fields_correct": "18/27",
+   "sign_error_rate_on_signed_fields": 0.0,
+   "fields_with_label_misread": 225,
+   "comma_for_period_in_missing": 0,
+   "posthoc_row_order_fallback": {
+    "accuracy": 0.9677,
+    "error_rate_wilson95": [
+     0.02596,
+     0.04013
+    ],
+    "errors": {
+     "missing": 3,
+     "sign": 0,
+     "decimal": 48,
+     "other": 27
+    },
+    "note": "post-hoc, not used for hypotheses"
+   },
+   "calls": 90,
+   "call_errors": 0,
+   "json_parse_failures": 0,
+   "usd_per_sheet": "0.004830",
+   "latency_ms_p50": 4409,
+   "latency_ms_p95": 6264
+  },
+  "haiku|P3": {
+   "fields": 2415,
+   "accuracy": 0.9764,
+   "strict_accuracy": 0.9764,
+   "error_rate_wilson95": [
+    0.01826,
+    0.03046
+   ],
+   "errors": {
+    "missing": 36,
+    "sign": 0,
+    "decimal": 15,
+    "other": 6
+   },
+   "printed_accuracy": 1.0,
+   "hard_fields_correct": "21/27",
+   "sign_error_rate_on_signed_fields": 0.0,
+   "fields_with_label_misread": 0,
+   "comma_for_period_in_missing": 36,
+   "posthoc_row_order_fallback": {
+    "accuracy": 0.9764,
+    "error_rate_wilson95": [
+     0.01826,
+     0.03046
+    ],
+    "errors": {
+     "missing": 36,
+     "sign": 0,
+     "decimal": 15,
+     "other": 6
+    },
+    "note": "post-hoc, not used for hypotheses"
+   },
+   "calls": 90,
+   "call_errors": 0,
+   "json_parse_failures": 0,
+   "usd_per_sheet": "0.020500",
+   "latency_ms_p50": 5210,
+   "latency_ms_p95": 6395
+  },
+  "sonnet|P1": {
+   "fields": 2415,
+   "accuracy": 0.95652,
+   "strict_accuracy": 0.95652,
+   "error_rate_wilson95": [
+    0.03604,
+    0.05236
+   ],
+   "errors": {
+    "missing": 81,
+    "sign": 0,
+    "decimal": 18,
+    "other": 6
+   },
+   "printed_accuracy": 1.0,
+   "hard_fields_correct": "12/27",
+   "sign_error_rate_on_signed_fields": 0.0,
+   "fields_with_label_misread": 0,
+   "comma_for_period_in_missing": 72,
+   "posthoc_row_order_fallback": {
+    "accuracy": 0.95652,
+    "error_rate_wilson95": [
+     0.03604,
+     0.05236
+    ],
+    "errors": {
+     "missing": 81,
+     "sign": 0,
+     "decimal": 18,
+     "other": 6
+    },
+    "note": "post-hoc, not used for hypotheses"
+   },
+   "calls": 90,
+   "call_errors": 0,
+   "json_parse_failures": 0,
+   "usd_per_sheet": "0.024451",
+   "latency_ms_p50": 4264,
+   "latency_ms_p95": 5111
+  },
+  "sonnet|P2": {
+   "fields": 2415,
+   "accuracy": 0.98758,
+   "strict_accuracy": 0.98758,
+   "error_rate_wilson95": [
+    0.00872,
+    0.01768
+   ],
+   "errors": {
+    "missing": 0,
+    "sign": 0,
+    "decimal": 30,
+    "other": 0
+   },
+   "printed_accuracy": 1.0,
+   "hard_fields_correct": "27/27",
+   "sign_error_rate_on_signed_fields": 0.0,
+   "fields_with_label_misread": 0,
+   "comma_for_period_in_missing": 0,
+   "posthoc_row_order_fallback": {
+    "accuracy": 0.98758,
+    "error_rate_wilson95": [
+     0.00872,
+     0.01768
+    ],
+    "errors": {
+     "missing": 0,
+     "sign": 0,
+     "decimal": 30,
+     "other": 0
+    },
+    "note": "post-hoc, not used for hypotheses"
+   },
+   "calls": 90,
+   "call_errors": 0,
+   "json_parse_failures": 0,
+   "usd_per_sheet": "0.013478",
+   "latency_ms_p50": 6706,
+   "latency_ms_p95": 7614
+  },
+  "sonnet|P3": {
+   "fields": 2415,
+   "accuracy": 0.98882,
+   "strict_accuracy": 0.98882,
+   "error_rate_wilson95": [
+    0.00769,
+    0.01622
+   ],
+   "errors": {
+    "missing": 0,
+    "sign": 0,
+    "decimal": 27,
+    "other": 0
+   },
+   "printed_accuracy": 1.0,
+   "hard_fields_correct": "27/27",
+   "sign_error_rate_on_signed_fields": 0.0,
+   "fields_with_label_misread": 0,
+   "comma_for_period_in_missing": 0,
+   "posthoc_row_order_fallback": {
+    "accuracy": 0.98882,
+    "error_rate_wilson95": [
+     0.00769,
+     0.01622
+    ],
+    "errors": {
+     "missing": 0,
+     "sign": 0,
+     "decimal": 27,
+     "other": 0
+    },
+    "note": "post-hoc, not used for hypotheses"
+   },
+   "calls": 90,
+   "call_errors": 0,
+   "json_parse_failures": 0,
+   "usd_per_sheet": "0.030674",
+   "latency_ms_p50": 7503,
+   "latency_ms_p95": 8303
+  }
+ },
+ "per_rep": {
+  "haiku|P1|r1": {
+   "fields": 805,
+   "accuracy": 0.95404,
+   "strict_accuracy": 0.95404,
+   "error_rate_wilson95": [
+    0.03353,
+    0.06271
+   ],
+   "errors": {
+    "missing": 27,
+    "sign": 0,
+    "decimal": 6,
+    "other": 4
+   },
+   "printed_accuracy": 1.0,
+   "hard_fields_correct": "3/9",
+   "sign_error_rate_on_signed_fields": 0.0,
+   "fields_with_label_misread": 0,
+   "comma_for_period_in_missing": 24
+  },
+  "haiku|P1|r2": {
+   "fields": 805,
+   "accuracy": 0.95404,
+   "strict_accuracy": 0.95404,
+   "error_rate_wilson95": [
+    0.03353,
+    0.06271
+   ],
+   "errors": {
+    "missing": 27,
+    "sign": 0,
+    "decimal": 6,
+    "other": 4
+   },
+   "printed_accuracy": 1.0,
+   "hard_fields_correct": "3/9",
+   "sign_error_rate_on_signed_fields": 0.0,
+   "fields_with_label_misread": 0,
+   "comma_for_period_in_missing": 24
+  },
+  "haiku|P1|r3": {
+   "fields": 805,
+   "accuracy": 0.95404,
+   "strict_accuracy": 0.95404,
+   "error_rate_wilson95": [
+    0.03353,
+    0.06271
+   ],
+   "errors": {
+    "missing": 27,
+    "sign": 0,
+    "decimal": 6,
+    "other": 4
+   },
+   "printed_accuracy": 1.0,
+   "hard_fields_correct": "3/9",
+   "sign_error_rate_on_signed_fields": 0.0,
+   "fields_with_label_misread": 0,
+   "comma_for_period_in_missing": 24
+  },
+  "haiku|P2|r1": {
+   "fields": 805,
+   "accuracy": 0.87826,
+   "strict_accuracy": 0.87702,
+   "error_rate_wilson95": [
+    0.10093,
+    0.14614
+   ],
+   "errors": {
+    "missing": 76,
+    "sign": 0,
+    "decimal": 14,
+    "other": 8
+   },
+   "printed_accuracy": 0.94915,
+   "hard_fields_correct": "6/9",
+   "sign_error_rate_on_signed_fields": 0.0,
+   "fields_with_label_misread": 75,
+   "comma_for_period_in_missing": 0
+  },
+  "haiku|P2|r2": {
+   "fields": 805,
+   "accuracy": 0.87826,
+   "strict_accuracy": 0.87702,
+   "error_rate_wilson95": [
+    0.10093,
+    0.14614
+   ],
+   "errors": {
+    "missing": 76,
+    "sign": 0,
+    "decimal": 14,
+    "other": 8
+   },
+   "printed_accuracy": 0.94915,
+   "hard_fields_correct": "6/9",
+   "sign_error_rate_on_signed_fields": 0.0,
+   "fields_with_label_misread": 75,
+   "comma_for_period_in_missing": 0
+  },
+  "haiku|P2|r3": {
+   "fields": 805,
+   "accuracy": 0.87826,
+   "strict_accuracy": 0.87702,
+   "error_rate_wilson95": [
+    0.10093,
+    0.14614
+   ],
+   "errors": {
+    "missing": 76,
+    "sign": 0,
+    "decimal": 14,
+    "other": 8
+   },
+   "printed_accuracy": 0.94915,
+   "hard_fields_correct": "6/9",
+   "sign_error_rate_on_signed_fields": 0.0,
+   "fields_with_label_misread": 75,
+   "comma_for_period_in_missing": 0
+  },
+  "haiku|P3|r1": {
+   "fields": 805,
+   "accuracy": 0.9764,
+   "strict_accuracy": 0.9764,
+   "error_rate_wilson95": [
+    0.01516,
+    0.03657
+   ],
+   "errors": {
+    "missing": 12,
+    "sign": 0,
+    "decimal": 5,
+    "other": 2
+   },
+   "printed_accuracy": 1.0,
+   "hard_fields_correct": "7/9",
+   "sign_error_rate_on_signed_fields": 0.0,
+   "fields_with_label_misread": 0,
+   "comma_for_period_in_missing": 12
+  },
+  "haiku|P3|r2": {
+   "fields": 805,
+   "accuracy": 0.9764,
+   "strict_accuracy": 0.9764,
+   "error_rate_wilson95": [
+    0.01516,
+    0.03657
+   ],
+   "errors": {
+    "missing": 12,
+    "sign": 0,
+    "decimal": 5,
+    "other": 2
+   },
+   "printed_accuracy": 1.0,
+   "hard_fields_correct": "7/9",
+   "sign_error_rate_on_signed_fields": 0.0,
+   "fields_with_label_misread": 0,
+   "comma_for_period_in_missing": 12
+  },
+  "haiku|P3|r3": {
+   "fields": 805,
+   "accuracy": 0.9764,
+   "strict_accuracy": 0.9764,
+   "error_rate_wilson95": [
+    0.01516,
+    0.03657
+   ],
+   "errors": {
+    "missing": 12,
+    "sign": 0,
+    "decimal": 5,
+    "other": 2
+   },
+   "printed_accuracy": 1.0,
+   "hard_fields_correct": "7/9",
+   "sign_error_rate_on_signed_fields": 0.0,
+   "fields_with_label_misread": 0,
+   "comma_for_period_in_missing": 12
+  },
+  "sonnet|P1|r1": {
+   "fields": 805,
+   "accuracy": 0.95652,
+   "strict_accuracy": 0.95652,
+   "error_rate_wilson95": [
+    0.03143,
+    0.05987
+   ],
+   "errors": {
+    "missing": 27,
+    "sign": 0,
+    "decimal": 6,
+    "other": 2
+   },
+   "printed_accuracy": 1.0,
+   "hard_fields_correct": "4/9",
+   "sign_error_rate_on_signed_fields": 0.0,
+   "fields_with_label_misread": 0,
+   "comma_for_period_in_missing": 24
+  },
+  "sonnet|P1|r2": {
+   "fields": 805,
+   "accuracy": 0.95652,
+   "strict_accuracy": 0.95652,
+   "error_rate_wilson95": [
+    0.03143,
+    0.05987
+   ],
+   "errors": {
+    "missing": 27,
+    "sign": 0,
+    "decimal": 6,
+    "other": 2
+   },
+   "printed_accuracy": 1.0,
+   "hard_fields_correct": "4/9",
+   "sign_error_rate_on_signed_fields": 0.0,
+   "fields_with_label_misread": 0,
+   "comma_for_period_in_missing": 24
+  },
+  "sonnet|P1|r3": {
+   "fields": 805,
+   "accuracy": 0.95652,
+   "strict_accuracy": 0.95652,
+   "error_rate_wilson95": [
+    0.03143,
+    0.05987
+   ],
+   "errors": {
+    "missing": 27,
+    "sign": 0,
+    "decimal": 6,
+    "other": 2
+   },
+   "printed_accuracy": 1.0,
+   "hard_fields_correct": "4/9",
+   "sign_error_rate_on_signed_fields": 0.0,
+   "fields_with_label_misread": 0,
+   "comma_for_period_in_missing": 24
+  },
+  "sonnet|P2|r1": {
+   "fields": 805,
+   "accuracy": 0.98758,
+   "strict_accuracy": 0.98758,
+   "error_rate_wilson95": [
+    0.00676,
+    0.02271
+   ],
+   "errors": {
+    "missing": 0,
+    "sign": 0,
+    "decimal": 10,
+    "other": 0
+   },
+   "printed_accuracy": 1.0,
+   "hard_fields_correct": "9/9",
+   "sign_error_rate_on_signed_fields": 0.0,
+   "fields_with_label_misread": 0,
+   "comma_for_period_in_missing": 0
+  },
+  "sonnet|P2|r2": {
+   "fields": 805,
+   "accuracy": 0.98758,
+   "strict_accuracy": 0.98758,
+   "error_rate_wilson95": [
+    0.00676,
+    0.02271
+   ],
+   "errors": {
+    "missing": 0,
+    "sign": 0,
+    "decimal": 10,
+    "other": 0
+   },
+   "printed_accuracy": 1.0,
+   "hard_fields_correct": "9/9",
+   "sign_error_rate_on_signed_fields": 0.0,
+   "fields_with_label_misread": 0,
+   "comma_for_period_in_missing": 0
+  },
+  "sonnet|P2|r3": {
+   "fields": 805,
+   "accuracy": 0.98758,
+   "strict_accuracy": 0.98758,
+   "error_rate_wilson95": [
+    0.00676,
+    0.02271
+   ],
+   "errors": {
+    "missing": 0,
+    "sign": 0,
+    "decimal": 10,
+    "other": 0
+   },
+   "printed_accuracy": 1.0,
+   "hard_fields_correct": "9/9",
+   "sign_error_rate_on_signed_fields": 0.0,
+   "fields_with_label_misread": 0,
+   "comma_for_period_in_missing": 0
+  },
+  "sonnet|P3|r1": {
+   "fields": 805,
+   "accuracy": 0.98882,
+   "strict_accuracy": 0.98882,
+   "error_rate_wilson95": [
+    0.00589,
+    0.02111
+   ],
+   "errors": {
+    "missing": 0,
+    "sign": 0,
+    "decimal": 9,
+    "other": 0
+   },
+   "printed_accuracy": 1.0,
+   "hard_fields_correct": "9/9",
+   "sign_error_rate_on_signed_fields": 0.0,
+   "fields_with_label_misread": 0,
+   "comma_for_period_in_missing": 0
+  },
+  "sonnet|P3|r2": {
+   "fields": 805,
+   "accuracy": 0.98882,
+   "strict_accuracy": 0.98882,
+   "error_rate_wilson95": [
+    0.00589,
+    0.02111
+   ],
+   "errors": {
+    "missing": 0,
+    "sign": 0,
+    "decimal": 9,
+    "other": 0
+   },
+   "printed_accuracy": 1.0,
+   "hard_fields_correct": "9/9",
+   "sign_error_rate_on_signed_fields": 0.0,
+   "fields_with_label_misread": 0,
+   "comma_for_period_in_missing": 0
+  },
+  "sonnet|P3|r3": {
+   "fields": 805,
+   "accuracy": 0.98882,
+   "strict_accuracy": 0.98882,
+   "error_rate_wilson95": [
+    0.00589,
+    0.02111
+   ],
+   "errors": {
+    "missing": 0,
+    "sign": 0,
+    "decimal": 9,
+    "other": 0
+   },
+   "printed_accuracy": 1.0,
+   "hard_fields_correct": "9/9",
+   "sign_error_rate_on_signed_fields": 0.0,
+   "fields_with_label_misread": 0,
+   "comma_for_period_in_missing": 0
+  }
+ },
+ "hypotheses": {
+  "haiku": {
+   "H1_P2_not_worse_than_P1_by_1pp": {
+    "result": false,
+    "P1": 0.95404,
+    "P2": 0.87826
+   },
+   "H2_P2_cost_le_half_P1": {
+    "result": true,
+    "P1": "0.018908",
+    "P2": "0.004830"
+   },
+   "H3_P3_lowest_sign_decimal_errors": {
+    "result": true,
+    "counts": {
+     "P1": 18,
+     "P2": 42,
+     "P3": 15
+    }
+   }
+  },
+  "sonnet": {
+   "H1_P2_not_worse_than_P1_by_1pp": {
+    "result": true,
+    "P1": 0.95652,
+    "P2": 0.98758
+   },
+   "H2_P2_cost_le_half_P1": {
+    "result": false,
+    "P1": "0.024451",
+    "P2": "0.013478"
+   },
+   "H3_P3_lowest_sign_decimal_errors": {
+    "result": false,
+    "counts": {
+     "P1": 18,
+     "P2": 30,
+     "P3": 27
+    }
+   }
+  }
+ }
+}

@@ -118,17 +118,17 @@ AWS 자원 생성·실행은 필수가 아닙니다. AWS 등 유료 자원을 �
 - [037 · 측정지 1장당 구조화 비용](037-measurement-sheet-unit-cost/README.md) — 기준 구성 장당 0.0197 USD 중 Textract 69%·Bedrock 30%·S3+SQS 0.26%. Textract 종류가 모델보다 비용을 크게 바꿈(8.8배 대 1.7배)
 - [038 · 재시도·중복 처리 비용](038-retry-duplicate-cost/README.md) — 방지 없이 visibility timeout 30초면 OCR 21% 추가. 파일 해시만으로 막으면 재구조화 요청을 100% 잘못 막음, 요청 종류 구분 + OCR 재사용(C)은 오판 0
 - [039 · 워커 상시 실행 vs KEDA 0까지 축소](039-worker-scale-to-zero/README.md) — 공유 노드면 절감 0, Fargate면 81~94% 절감하지만 꺼진 상태 도착분은 약 96초 대기. 파드 시작 로컬 실측(캐시 있음 1.1초, 없음 12.8초)
-- [040 · Textract + Bedrock vs Bedrock 이미지 직접 입력 (계획, 미실행)](040-ocr-vs-multimodal-plan/README.md) — 합성 손글씨 측정지 30장으로 정확도·장당 비용 비교 계획, 예산 상한 15 USD, 승인 체크리스트
+- [040 · Textract + Bedrock vs Bedrock 이미지 직접 입력 (실제 AWS 호출)](040-ocr-vs-multimodal-plan/README.md) — 컴퓨터로 만든 손글씨풍 측정지 30장(손글씨 숫자 805개), Bedrock 540회·약 5.21 USD. Sonnet 4.6 이미지 직접(P2) 98.8%·장당 0.0135 USD로 Textract 경유(P1) 95.7%·0.0245 USD보다 정확하고 쌌다. Textract는 소수점을 쉼표로 읽는 오류가 전달됨, Haiku 이미지 직접은 한글 항목명 오독. 1% 목표는 충족 미확인(합성 손글씨)
 - [041 · 챗봇 조회 결과를 LLM에 얼마나 넘기나](041-chatbot-result-size/README.md) — 1,000행 원본 JSON은 사전 집계의 9.7배, JSON은 CSV의 2.4~2.7배 토큰, 1,000행에서는 컨텍스트 한도에 닿지 않음
 
-#### 037~041 테스트 기록 (2026-11-27, Windows 11, Python 3.14.7, Docker 29.8.2, Minikube v1.39.0)
+#### 037~041 테스트 기록 (2026-11-27, Windows 11, Python 3.14.7, Docker 29.8.2, Minikube v1.39.0; 040은 AWS CloudShell·CLI 2.41.0)
 
 | 실험 | 단위 테스트 | `result.json` 재현 |
 |---|---|---|
 | 037 | 5개 통과 | 테스트 안에서 재실행·일치 |
 | 038 | 6개 통과 | 테스트 안에서 재실행·일치(시드 3개 × 5,000장, 약 2.5초) |
 | 039 | 8개 통과 | 계산은 테스트 안에서 재실행·일치. 파드 시작 실측(`measure.py`)은 1회 실행(10회 측정), 테스트는 저장된 `measurement.json`의 기록·정리 확인만 검사 |
-| 040 | 해당 없음 | 계획, 미실행 |
+| 040 | 10개 통과 | 채점은 저장소 밖 원본(응답 540개)에서 재실행·일치(원본이 있을 때만 테스트). 실제 AWS 호출: Textract 30회, Bedrock 540회(Haiku 4.5·Sonnet 4.6), CloudShell, 예상 비용 5.21 USD, 정리 확인 |
 | 041 | 7개 통과 | 테스트 안에서 재실행·일치 |
 
 [최종 연구 보고서](../FINAL-REPORT.md)에서 001~015와 [InfraFit MVP](../infrafit/README.md)의 검증 범위를 함께 볼 수 있다. [InfraFit 개발 전 연구 기록](infrafit-predevelopment-review.md)은 개별 실행과 후속 검증의 맥락을 보존한다.

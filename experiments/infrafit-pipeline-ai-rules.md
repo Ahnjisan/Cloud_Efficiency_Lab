@@ -202,7 +202,7 @@ ADR-0005 확장 범위(설계 단계 비용 모델, 누수 패턴 규칙과 서�
 
 | 후보 ID | 후보 규칙 | 판정 입력 | 변경 검토 후보 / 판단 보류 (후보) | 근거 수준 | 근거 |
 |---|---|---|---|---|---|
-| C-OCR-1 | OCR 기능 선택 | Textract API·기능(Detect/Tables/Forms), 페이지 수, Bedrock 호출당 토큰 | 후보: Forms 기능을 켰는데 측정지가 표 위주 → Tables 또는 Detect + LLM 검토(Forms가 장당 비용의 90% 이상이 되는 조건). 보류: 기능별 정확도 비교 없음([040](040-ocr-vs-multimodal-plan/README.md) 미실행) | 요율은 공식 자료, 비중은 실험 확인(가정 작업량) | [037](037-measurement-sheet-unit-cost/README.md) |
+| C-OCR-1 | OCR 기능 선택 | Textract API·기능(Detect/Tables/Forms), 페이지 수, Bedrock 호출당 토큰 | 후보: Forms 기능을 켰는데 측정지가 표 위주 → Tables 또는 Detect + LLM 검토(Forms가 장당 비용의 90% 이상이 되는 조건). 추가 후보: Textract → LLM 텍스트 구성에서 이미지를 함께 주지 않음 → 소수점 오독 전달 위험, 상위 모델의 이미지 직접 입력이 더 싸고 정확할 수 있음([040](040-ocr-vs-multimodal-plan/README.md): 합성 손글씨에서 Sonnet 4.6 이미지 직접 98.8%·0.0135 USD 대 Textract 경유 95.7%·0.0245 USD). 보류: 실제 손글씨 정확도 미확인 | 요율은 공식 자료, 비중은 실험 확인(가정 작업량), 정확도는 실험 확인(합성 손글씨, 실제 호출) | [037](037-measurement-sheet-unit-cost/README.md), [040](040-ocr-vs-multimodal-plan/README.md) |
 | C-SQS-1 | visibility timeout과 처리 시간 | 큐의 VisibilityTimeout, 처리 시간 p95, 메시지별 수신 횟수(ApproximateReceiveCount) | 후보: timeout < 처리 시간 p95 또는 수신 2회 이상 비율이 높음 → 재전달로 인한 OCR·LLM 재호출 검토. 보류: 처리 시간 분포 없음 | 실험 확인(합성 시뮬레이션) | [038](038-retry-duplicate-cost/README.md) |
 | C-DEDUP-1 | 중복 방지 키 범위 | 중복 방지 키 구성, 재구조화 요청 경로 | 후보: 키가 파일 해시뿐이고 요청 종류를 구분하지 않음 → 정당한 재처리를 막는 위험. OCR 결과 저장 여부도 함께 본다 | 실험 확인(합성 시뮬레이션) | [038](038-retry-duplicate-cost/README.md) |
 | C-SCALE-1 | 0까지 축소한 워커의 노드 공유 | KEDA minReplicaCount, 워커가 속한 노드 그룹·Fargate 프로필, 노드 수 변화 | 후보 아님 → 보고: 공유 노드 그룹에서 파드만 0으로 줄이면 EC2 절감 0. 절감 예상액에 파드 시간을 쓰지 않는다 | 실험 확인(계산), [031](031-container-runtime-cost/README.md) 결론과 일치 | [039](039-worker-scale-to-zero/README.md) |
